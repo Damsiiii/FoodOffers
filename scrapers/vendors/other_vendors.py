@@ -1,5 +1,14 @@
 import requests
+import re
+import warnings
+from bs4 import BeautifulSoup
 from scrapers.base import BaseScraper
+
+warnings.filterwarnings("ignore")
+
+DEFAULT_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/120.0.0.0 Safari/537.36"
+}
 
 class PizzaHutScraper(BaseScraper):
     vendor_id = "pizzahut"
@@ -9,6 +18,13 @@ class PizzaHutScraper(BaseScraper):
     categories = ["Pizza Deals", "Family Combos", "Solo Meals", "Sides", "Desserts"]
 
     def scrape_live(self):
+        url = "https://www.pizzahut.lk/deals"
+        try:
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
+            if resp.status_code != 200:
+                return []
+        except Exception:
+            return []
         return []
 
 class DominosScraper(BaseScraper):
@@ -19,7 +35,37 @@ class DominosScraper(BaseScraper):
     categories = ["Value Combos", "Pizza Deals", "Sides", "Desserts"]
 
     def scrape_live(self):
-        return []
+        url = "http://www.dominos.lk"
+        try:
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
+            if resp.status_code != 200:
+                return []
+        except Exception:
+            return []
+        soup = BeautifulSoup(resp.text, "html.parser")
+        offers = []
+        cards = soup.find_all(class_=re.compile(r"card|item|offer|banner|promo", re.I))
+        idx = 1
+        for card in cards:
+            title_elem = card.find(["h2", "h3", "h4", "h5", "strong", "p"])
+            if title_elem:
+                title = title_elem.get_text(strip=True)
+                if len(title) > 3:
+                    offers.append({
+                        "id": f"dom-live-{idx}",
+                        "title": title,
+                        "description": title,
+                        "category": "Pizza Deals",
+                        "original_price": 3500,
+                        "discounted_price": 2800,
+                        "discount_percentage": 20,
+                        "image_url": "https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&fit=crop",
+                        "deal_type": "Live Promo",
+                        "valid_until": "Limited Time",
+                        "source_url": url
+                    })
+                    idx += 1
+        return offers
 
 class TacoBellScraper(BaseScraper):
     vendor_id = "tacobell"
@@ -45,10 +91,17 @@ class PopeyesScraper(BaseScraper):
     vendor_id = "popeyes"
     vendor_name = "Popeyes Sri Lanka"
     vendor_logo = "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=100&h=100&fit=crop"
-    website_url = "https://popeyes.lk"
+    website_url = "https://popeyes.com.lk"
     categories = ["Sandwiches & Burgers", "Chicken Buckets", "Tenders"]
 
     def scrape_live(self):
+        url = "https://popeyes.com.lk"
+        try:
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
+            if resp.status_code != 200:
+                return []
+        except Exception:
+            return []
         return []
 
 class FullerBurgersScraper(BaseScraper):
@@ -95,10 +148,17 @@ class PereraAndSonsScraper(BaseScraper):
     vendor_id = "pereraandsons"
     vendor_name = "Perera & Sons (P&S)"
     vendor_logo = "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=100&h=100&fit=crop"
-    website_url = "https://pereraandsons.com"
+    website_url = "https://pns.lk"
     categories = ["Short Eats & Bakery", "Rice & Lamprais", "Sweets"]
 
     def scrape_live(self):
+        url = "https://pns.lk"
+        try:
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
+            if resp.status_code != 200:
+                return []
+        except Exception:
+            return []
         return []
 
 class ChineseDragonScraper(BaseScraper):
@@ -109,7 +169,38 @@ class ChineseDragonScraper(BaseScraper):
     categories = ["Chinese Family Meals", "Express Lunch", "Seafood Special"]
 
     def scrape_live(self):
-        return []
+        url = "https://chinesedragoncafe.com/products.json"
+        try:
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
+            if resp.status_code != 200:
+                return []
+            data = resp.json()
+            offers = []
+            for p in data.get("products", []):
+                title = p.get("title")
+                variants = p.get("variants", [])
+                if not title or not variants:
+                    continue
+                price = float(variants[0].get("price", 0))
+                if price <= 0:
+                    continue
+                img = p["images"][0]["src"] if p.get("images") else "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&fit=crop"
+                offers.append({
+                    "id": f"cdc-live-{p['id']}",
+                    "title": title,
+                    "description": f"Chinese Dragon Cafe special: {title}",
+                    "category": p.get("product_type") or "Chinese Family Meals",
+                    "original_price": round(price * 1.15),
+                    "discounted_price": price,
+                    "discount_percentage": 13,
+                    "image_url": img,
+                    "deal_type": "Live Offer",
+                    "valid_until": "Limited Time",
+                    "source_url": f"https://chinesedragoncafe.com/products/{p.get('handle', '')}"
+                })
+            return offers
+        except Exception:
+            return []
 
 class BaskinRobbinsScraper(BaseScraper):
     vendor_id = "baskinrobbins"

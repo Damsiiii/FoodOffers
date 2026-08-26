@@ -43,6 +43,19 @@
         "deal_type": "Family Deal",
         "valid_until": "Limited Time",
         "source_url": "https://www.kfc.lk/promotions"
+      },
+      {
+        "id": "kfc-family-feast",
+        "title": "KFC Mega Family Bucket",
+        "description": "12 Pieces Hot & Crispy Chicken + 4 Zinger Burgers + Large Coleslaw + 2L Pepsi.",
+        "category": "Bucket Deals",
+        "original_price": 9800,
+        "discounted_price": 7950,
+        "discount_percentage": 19,
+        "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
+        "deal_type": "Mega Feast",
+        "valid_until": "Limited Time",
+        "source_url": "https://www.kfc.lk/promotions"
       }
     ]
   },
@@ -90,6 +103,19 @@
         "deal_type": "Lunch Special",
         "valid_until": "Daily 11 AM - 4 PM",
         "source_url": "https://www.pizzahut.lk/deals"
+      },
+      {
+        "id": "ph-double-pan-deal",
+        "title": "Double Medium Pizza Combo",
+        "description": "2 Medium Pan Pizzas (Devilled Chicken / Spicy Seafood) + 1.25L Coca-Cola.",
+        "category": "Pizza Deals",
+        "original_price": 4900,
+        "discounted_price": 3790,
+        "discount_percentage": 23,
+        "image_url": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&fit=crop",
+        "deal_type": "Saver Combo",
+        "valid_until": "Daily Offer",
+        "source_url": "https://www.pizzahut.lk/deals"
       }
     ]
   },
@@ -124,6 +150,19 @@
         "deal_type": "Special Feast",
         "valid_until": "Limited Time",
         "source_url": "https://www.dominos.lk"
+      },
+      {
+        "id": "dom-party-pack",
+        "title": "Domino's Party Feast for 4",
+        "description": "2 Large Pizzas + 2 Stuffed Garlic Breads + 4 Choco Lava Cakes + 1.5L Coke.",
+        "category": "Value Combos",
+        "original_price": 8200,
+        "discounted_price": 6390,
+        "discount_percentage": 22,
+        "image_url": "https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&fit=crop",
+        "deal_type": "Party Pack",
+        "valid_until": "Weekend Deal",
+        "source_url": "https://www.dominos.lk"
       }
     ]
   },
@@ -156,6 +195,19 @@
         "discount_percentage": 23,
         "image_url": "https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=500&fit=crop",
         "deal_type": "Meal Box",
+        "valid_until": "Daily Offer",
+        "source_url": "https://www.tacobell.lk"
+      },
+      {
+        "id": "tb-quesadilla-combo",
+        "title": "Cheesy Chicken Quesadilla Meal",
+        "description": "1 Cheesy Chicken Quesadilla + Cheesy Fries + 500ml Drink.",
+        "category": "Combos",
+        "original_price": 2350,
+        "discounted_price": 1820,
+        "discount_percentage": 23,
+        "image_url": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&fit=crop",
+        "deal_type": "Meal Deal",
         "valid_until": "Daily Offer",
         "source_url": "https://www.tacobell.lk"
       }
@@ -192,6 +244,19 @@
         "deal_type": "Family Pack",
         "valid_until": "Weekend Deal",
         "source_url": "https://burgerking.lk"
+      },
+      {
+        "id": "bk-chicken-royale-combo",
+        "title": "Chicken Royale Combo Deal",
+        "description": "1 Chicken Royale Burger + King Onion Rings + Soft Drink.",
+        "category": "Burgers",
+        "original_price": 2250,
+        "discounted_price": 1780,
+        "discount_percentage": 21,
+        "image_url": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&fit=crop",
+        "deal_type": "Saver Meal",
+        "valid_until": "Daily Offer",
+        "source_url": "https://burgerking.lk"
       }
     ]
   },
@@ -199,7 +264,7 @@
     "vendor_id": "popeyes",
     "vendor_name": "Popeyes Sri Lanka",
     "vendor_logo": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=100&h=100&fit=crop",
-    "website_url": "https://popeyes.lk",
+    "website_url": "https://popeyes.com.lk",
     "offers": [
       {
         "id": "pop-chicken-sandwich-combo",
@@ -212,7 +277,7 @@
         "image_url": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500&fit=crop",
         "deal_type": "Meal Combo",
         "valid_until": "Daily",
-        "source_url": "https://popeyes.lk"
+        "source_url": "https://popeyes.com.lk"
       },
       {
         "id": "pop-cajun-bucket",
@@ -225,7 +290,20 @@
         "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
         "deal_type": "Family Bucket",
         "valid_until": "Limited Time",
-        "source_url": "https://popeyes.lk"
+        "source_url": "https://popeyes.com.lk"
+      },
+      {
+        "id": "pop-tender-meal",
+        "title": "6 Pc Tender Spicy Box",
+        "description": "6 Hand-tenders + Cajun Fries + 2 Dipping Sauces + Beverage.",
+        "category": "Tenders",
+        "original_price": 2650,
+        "discounted_price": 2090,
+        "discount_percentage": 21,
+        "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
+        "deal_type": "Tender Box",
+        "valid_until": "Daily Offer",
+        "source_url": "https://popeyes.com.lk"
       }
     ]
   },
@@ -259,6 +337,19 @@
         "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&fit=crop",
         "deal_type": "Combo Special",
         "valid_until": "Limited Time",
+        "source_url": "https://fullerburgers.com"
+      },
+      {
+        "id": "fb-truffle-beef",
+        "title": "Truffle Mushroom Beef Smash Meal",
+        "description": "Aged Beef Patty + Truffle Mayo + Caramelized Onions + Loaded Potato Wedges.",
+        "category": "Artisanal Burgers",
+        "original_price": 3400,
+        "discounted_price": 2750,
+        "discount_percentage": 19,
+        "image_url": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&fit=crop",
+        "deal_type": "Gourmet Deal",
+        "valid_until": "Daily Offer",
         "source_url": "https://fullerburgers.com"
       }
     ]
@@ -294,6 +385,19 @@
         "deal_type": "Savory Deal",
         "valid_until": "Daily",
         "source_url": "https://creperunner.lk"
+      },
+      {
+        "id": "cr-sweet-duo",
+        "title": "Sweet Duo Waffle & Crepe Pack",
+        "description": "1 Strawberries & Cream Crepe + 1 Belgian Chocolate Waffle.",
+        "category": "Sweet Crepes",
+        "original_price": 2600,
+        "discounted_price": 2050,
+        "discount_percentage": 21,
+        "image_url": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=500&fit=crop",
+        "deal_type": "Duo Special",
+        "valid_until": "Daily Offer",
+        "source_url": "https://creperunner.lk"
       }
     ]
   },
@@ -327,6 +431,19 @@
         "image_url": "https://images.unsplash.com/photo-1554433607-66b5efe9d304?w=500&fit=crop",
         "deal_type": "Duo Deal",
         "valid_until": "Limited Time",
+        "source_url": "https://subway.lk"
+      },
+      {
+        "id": "sub-chicken-teriyaki-wrap",
+        "title": "Chicken Teriyaki Wrap Meal",
+        "description": "1 Chicken Teriyaki Loaded Wrap + Baked Chips + Beverage.",
+        "category": "Submarines & Wraps",
+        "original_price": 1950,
+        "discounted_price": 1520,
+        "discount_percentage": 22,
+        "image_url": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&fit=crop",
+        "deal_type": "Wrap Combo",
+        "valid_until": "Daily Offer",
         "source_url": "https://subway.lk"
       }
     ]
@@ -362,6 +479,19 @@
         "deal_type": "Family Platter",
         "valid_until": "Weekend Special",
         "source_url": "https://dinemore.lk"
+      },
+      {
+        "id": "dine-special-fried-rice",
+        "title": "Dinemore Special Fried Rice Combo",
+        "description": "Devilled Chicken Fried Rice + Chili Paste + Fried Egg + Soft Drink.",
+        "category": "Fried Rice",
+        "original_price": 1850,
+        "discounted_price": 1420,
+        "discount_percentage": 23,
+        "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&fit=crop",
+        "deal_type": "Lunch Saver",
+        "valid_until": "Daily Offer",
+        "source_url": "https://dinemore.lk"
       }
     ]
   },
@@ -369,7 +499,7 @@
     "vendor_id": "pereraandsons",
     "vendor_name": "Perera & Sons (P&S)",
     "vendor_logo": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=100&h=100&fit=crop",
-    "website_url": "https://pereraandsons.com",
+    "website_url": "https://pns.lk",
     "offers": [
       {
         "id": "ps-tea-time-pack",
@@ -382,7 +512,7 @@
         "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&fit=crop",
         "deal_type": "Party Box",
         "valid_until": "Daily",
-        "source_url": "https://pereraandsons.com"
+        "source_url": "https://pns.lk"
       },
       {
         "id": "ps-lamprais-deal",
@@ -395,7 +525,20 @@
         "image_url": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&fit=crop",
         "deal_type": "Meal Pack",
         "valid_until": "Daily",
-        "source_url": "https://pereraandsons.com"
+        "source_url": "https://pns.lk"
+      },
+      {
+        "id": "ps-snack-combo",
+        "title": "P&S Executive Short Eats Bundle",
+        "description": "3 Chicken Cutlets + 3 Egg Roti + 3 Sausage Rolls + 1L Passion Fruit Juice.",
+        "category": "Short Eats & Bakery",
+        "original_price": 2400,
+        "discounted_price": 1880,
+        "discount_percentage": 22,
+        "image_url": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&fit=crop",
+        "deal_type": "Short Eats Pack",
+        "valid_until": "Daily Offer",
+        "source_url": "https://pns.lk"
       }
     ]
   },
@@ -429,6 +572,19 @@
         "image_url": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=500&fit=crop",
         "deal_type": "Lunch Box",
         "valid_until": "Weekdays 11 AM - 3 PM",
+        "source_url": "https://chinesedragoncafe.com"
+      },
+      {
+        "id": "cdc-hot-butter-cuttlefish",
+        "title": "Hot Butter Cuttlefish Meal Deal",
+        "description": "Crispy Hot Butter Cuttlefish + Seafood Fried Rice + 2 Spring Rolls.",
+        "category": "Seafood Special",
+        "original_price": 3200,
+        "discounted_price": 2550,
+        "discount_percentage": 20,
+        "image_url": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&fit=crop",
+        "deal_type": "Seafood Combo",
+        "valid_until": "Daily Offer",
         "source_url": "https://chinesedragoncafe.com"
       }
     ]
@@ -464,6 +620,19 @@
         "deal_type": "Home Pack",
         "valid_until": "Weekend Offer",
         "source_url": "https://baskinrobbins.lk"
+      },
+      {
+        "id": "br-waffle-sundae",
+        "title": "Belgium Waffle Ice Cream Sundae",
+        "description": "Warm Belgian Waffle + 2 Scoops Pralines & Cream + Chocolate Sauce + Whipped Cream.",
+        "category": "Sundaes",
+        "original_price": 2200,
+        "discounted_price": 1750,
+        "discount_percentage": 20,
+        "image_url": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=500&fit=crop",
+        "deal_type": "Sundae Deal",
+        "valid_until": "Daily Offer",
+        "source_url": "https://baskinrobbins.lk"
       }
     ]
   },
@@ -497,6 +666,19 @@
         "image_url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&fit=crop",
         "deal_type": "Celebration Discount",
         "valid_until": "Limited Time",
+        "source_url": "https://breadtalk.lk"
+      },
+      {
+        "id": "bt-croissant-box",
+        "title": "Butter Croissant Box of 6",
+        "description": "6 Freshly Baked French Butter Croissants + 2 Iced Coffees.",
+        "category": "Pastries & Bread",
+        "original_price": 2500,
+        "discounted_price": 1950,
+        "discount_percentage": 22,
+        "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&fit=crop",
+        "deal_type": "Morning Special",
+        "valid_until": "Daily Offer",
         "source_url": "https://breadtalk.lk"
       }
     ]
