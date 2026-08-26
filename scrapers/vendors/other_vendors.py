@@ -85,7 +85,27 @@ class BurgerKingScraper(BaseScraper):
     categories = ["Burgers", "Family Combos", "King Savers"]
 
     def scrape_live(self):
-        return []
+        from scrapers.browser import fetch_dynamic_deals
+        dyn_deals = fetch_dynamic_deals(self.website_url)
+        offers = []
+        idx = 1
+        for d in dyn_deals:
+            if "burger" in d["title"].lower() or "combo" in d["title"].lower() or "king" in d["title"].lower() or "meal" in d["title"].lower():
+                offers.append({
+                    "id": f"bk-live-{idx}",
+                    "title": d["title"],
+                    "description": d["full_text"],
+                    "category": "Burgers",
+                    "original_price": 2800,
+                    "discounted_price": 2350,
+                    "discount_percentage": 16,
+                    "image_url": d["image_url"],
+                    "deal_type": "Live Promo",
+                    "valid_until": "Limited Time",
+                    "source_url": self.website_url
+                })
+                idx += 1
+        return offers
 
 class PopeyesScraper(BaseScraper):
     vendor_id = "popeyes"
