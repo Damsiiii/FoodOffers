@@ -1,8 +1,8 @@
 {
   "total_vendors": 14,
-  "live_vendors": 0,
-  "fallback_vendors": 14,
-  "total_offers": 30,
+  "live_vendors": 1,
+  "fallback_vendors": 13,
+  "total_offers": 47,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,7 +10,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "fallback",
-      "count": 3,
+      "count": 4,
       "offers": [
         {
           "id": "kfc-bucket-deal-1",
@@ -59,6 +59,22 @@
           "is_fallback": true,
           "vendor_id": "kfc",
           "vendor_name": "KFC Sri Lanka"
+        },
+        {
+          "id": "kfc-family-feast",
+          "title": "KFC Mega Family Bucket",
+          "description": "12 Pieces Hot & Crispy Chicken + 4 Zinger Burgers + Large Coleslaw + 2L Pepsi.",
+          "category": "Bucket Deals",
+          "original_price": 9800,
+          "discounted_price": 7950,
+          "discount_percentage": 19,
+          "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
+          "deal_type": "Mega Feast",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/promotions",
+          "is_fallback": true,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
         }
       ]
     },
@@ -68,7 +84,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.pizzahut.lk",
       "status": "fallback",
-      "count": 3,
+      "count": 4,
       "offers": [
         {
           "id": "ph-buy1get1-tuesday",
@@ -117,6 +133,22 @@
           "is_fallback": true,
           "vendor_id": "pizzahut",
           "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "ph-double-pan-deal",
+          "title": "Double Medium Pizza Combo",
+          "description": "2 Medium Pan Pizzas (Devilled Chicken / Spicy Seafood) + 1.25L Coca-Cola.",
+          "category": "Pizza Deals",
+          "original_price": 4900,
+          "discounted_price": 3790,
+          "discount_percentage": 23,
+          "image_url": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&fit=crop",
+          "deal_type": "Saver Combo",
+          "valid_until": "Daily Offer",
+          "source_url": "https://www.pizzahut.lk/deals",
+          "is_fallback": true,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
         }
       ]
     },
@@ -126,7 +158,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.dominos.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "dom-everyday-value",
@@ -159,6 +191,22 @@
           "is_fallback": true,
           "vendor_id": "dominos",
           "vendor_name": "Domino's Pizza Sri Lanka"
+        },
+        {
+          "id": "dom-party-pack",
+          "title": "Domino's Party Feast for 4",
+          "description": "2 Large Pizzas + 2 Stuffed Garlic Breads + 4 Choco Lava Cakes + 1.5L Coke.",
+          "category": "Value Combos",
+          "original_price": 8200,
+          "discounted_price": 6390,
+          "discount_percentage": 22,
+          "image_url": "https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&fit=crop",
+          "deal_type": "Party Pack",
+          "valid_until": "Weekend Deal",
+          "source_url": "https://www.dominos.lk",
+          "is_fallback": true,
+          "vendor_id": "dominos",
+          "vendor_name": "Domino's Pizza Sri Lanka"
         }
       ]
     },
@@ -168,7 +216,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=100&h=100&fit=crop",
       "website_url": "https://www.tacobell.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "tb-taco-tuesday",
@@ -201,6 +249,22 @@
           "is_fallback": true,
           "vendor_id": "tacobell",
           "vendor_name": "Taco Bell Sri Lanka"
+        },
+        {
+          "id": "tb-quesadilla-combo",
+          "title": "Cheesy Chicken Quesadilla Meal",
+          "description": "1 Cheesy Chicken Quesadilla + Cheesy Fries + 500ml Drink.",
+          "category": "Combos",
+          "original_price": 2350,
+          "discounted_price": 1820,
+          "discount_percentage": 23,
+          "image_url": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&fit=crop",
+          "deal_type": "Meal Deal",
+          "valid_until": "Daily Offer",
+          "source_url": "https://www.tacobell.lk",
+          "is_fallback": true,
+          "vendor_id": "tacobell",
+          "vendor_name": "Taco Bell Sri Lanka"
         }
       ]
     },
@@ -210,7 +274,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=100&h=100&fit=crop",
       "website_url": "https://burgerking.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "bk-whopper-meal",
@@ -243,6 +307,22 @@
           "is_fallback": true,
           "vendor_id": "burgerking",
           "vendor_name": "Burger King Sri Lanka"
+        },
+        {
+          "id": "bk-chicken-royale-combo",
+          "title": "Chicken Royale Combo Deal",
+          "description": "1 Chicken Royale Burger + King Onion Rings + Soft Drink.",
+          "category": "Burgers",
+          "original_price": 2250,
+          "discounted_price": 1780,
+          "discount_percentage": 21,
+          "image_url": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&fit=crop",
+          "deal_type": "Saver Meal",
+          "valid_until": "Daily Offer",
+          "source_url": "https://burgerking.lk",
+          "is_fallback": true,
+          "vendor_id": "burgerking",
+          "vendor_name": "Burger King Sri Lanka"
         }
       ]
     },
@@ -250,9 +330,9 @@
       "vendor_id": "popeyes",
       "vendor_name": "Popeyes Sri Lanka",
       "vendor_logo": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=100&h=100&fit=crop",
-      "website_url": "https://popeyes.lk",
+      "website_url": "https://popeyes.com.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "pop-chicken-sandwich-combo",
@@ -265,7 +345,7 @@
           "image_url": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500&fit=crop",
           "deal_type": "Meal Combo",
           "valid_until": "Daily",
-          "source_url": "https://popeyes.lk",
+          "source_url": "https://popeyes.com.lk",
           "is_fallback": true,
           "vendor_id": "popeyes",
           "vendor_name": "Popeyes Sri Lanka"
@@ -281,7 +361,23 @@
           "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
           "deal_type": "Family Bucket",
           "valid_until": "Limited Time",
-          "source_url": "https://popeyes.lk",
+          "source_url": "https://popeyes.com.lk",
+          "is_fallback": true,
+          "vendor_id": "popeyes",
+          "vendor_name": "Popeyes Sri Lanka"
+        },
+        {
+          "id": "pop-tender-meal",
+          "title": "6 Pc Tender Spicy Box",
+          "description": "6 Hand-tenders + Cajun Fries + 2 Dipping Sauces + Beverage.",
+          "category": "Tenders",
+          "original_price": 2650,
+          "discounted_price": 2090,
+          "discount_percentage": 21,
+          "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
+          "deal_type": "Tender Box",
+          "valid_until": "Daily Offer",
+          "source_url": "https://popeyes.com.lk",
           "is_fallback": true,
           "vendor_id": "popeyes",
           "vendor_name": "Popeyes Sri Lanka"
@@ -294,7 +390,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=100&h=100&fit=crop",
       "website_url": "https://fullerburgers.com",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "fb-double-smash",
@@ -327,6 +423,22 @@
           "is_fallback": true,
           "vendor_id": "fullerburgers",
           "vendor_name": "Fuller Burgers"
+        },
+        {
+          "id": "fb-truffle-beef",
+          "title": "Truffle Mushroom Beef Smash Meal",
+          "description": "Aged Beef Patty + Truffle Mayo + Caramelized Onions + Loaded Potato Wedges.",
+          "category": "Artisanal Burgers",
+          "original_price": 3400,
+          "discounted_price": 2750,
+          "discount_percentage": 19,
+          "image_url": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&fit=crop",
+          "deal_type": "Gourmet Deal",
+          "valid_until": "Daily Offer",
+          "source_url": "https://fullerburgers.com",
+          "is_fallback": true,
+          "vendor_id": "fullerburgers",
+          "vendor_name": "Fuller Burgers"
         }
       ]
     },
@@ -336,7 +448,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=100&h=100&fit=crop",
       "website_url": "https://creperunner.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "cr-nutella-banana-combo",
@@ -369,6 +481,22 @@
           "is_fallback": true,
           "vendor_id": "creperunner",
           "vendor_name": "Crepe Runner"
+        },
+        {
+          "id": "cr-sweet-duo",
+          "title": "Sweet Duo Waffle & Crepe Pack",
+          "description": "1 Strawberries & Cream Crepe + 1 Belgian Chocolate Waffle.",
+          "category": "Sweet Crepes",
+          "original_price": 2600,
+          "discounted_price": 2050,
+          "discount_percentage": 21,
+          "image_url": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=500&fit=crop",
+          "deal_type": "Duo Special",
+          "valid_until": "Daily Offer",
+          "source_url": "https://creperunner.lk",
+          "is_fallback": true,
+          "vendor_id": "creperunner",
+          "vendor_name": "Crepe Runner"
         }
       ]
     },
@@ -378,7 +506,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=100&h=100&fit=crop",
       "website_url": "https://subway.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "sub-sub-of-the-day",
@@ -411,6 +539,22 @@
           "is_fallback": true,
           "vendor_id": "subway",
           "vendor_name": "Subway Sri Lanka"
+        },
+        {
+          "id": "sub-chicken-teriyaki-wrap",
+          "title": "Chicken Teriyaki Wrap Meal",
+          "description": "1 Chicken Teriyaki Loaded Wrap + Baked Chips + Beverage.",
+          "category": "Submarines & Wraps",
+          "original_price": 1950,
+          "discounted_price": 1520,
+          "discount_percentage": 22,
+          "image_url": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&fit=crop",
+          "deal_type": "Wrap Combo",
+          "valid_until": "Daily Offer",
+          "source_url": "https://subway.lk",
+          "is_fallback": true,
+          "vendor_id": "subway",
+          "vendor_name": "Subway Sri Lanka"
         }
       ]
     },
@@ -420,7 +564,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=100&h=100&fit=crop",
       "website_url": "https://dinemore.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "dine-sub-special",
@@ -453,6 +597,22 @@
           "is_fallback": true,
           "vendor_id": "dinemore",
           "vendor_name": "Dinemore Sri Lanka"
+        },
+        {
+          "id": "dine-special-fried-rice",
+          "title": "Dinemore Special Fried Rice Combo",
+          "description": "Devilled Chicken Fried Rice + Chili Paste + Fried Egg + Soft Drink.",
+          "category": "Fried Rice",
+          "original_price": 1850,
+          "discounted_price": 1420,
+          "discount_percentage": 23,
+          "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&fit=crop",
+          "deal_type": "Lunch Saver",
+          "valid_until": "Daily Offer",
+          "source_url": "https://dinemore.lk",
+          "is_fallback": true,
+          "vendor_id": "dinemore",
+          "vendor_name": "Dinemore Sri Lanka"
         }
       ]
     },
@@ -460,9 +620,9 @@
       "vendor_id": "pereraandsons",
       "vendor_name": "Perera & Sons (P&S)",
       "vendor_logo": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=100&h=100&fit=crop",
-      "website_url": "https://pereraandsons.com",
+      "website_url": "https://pns.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "ps-tea-time-pack",
@@ -475,7 +635,7 @@
           "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&fit=crop",
           "deal_type": "Party Box",
           "valid_until": "Daily",
-          "source_url": "https://pereraandsons.com",
+          "source_url": "https://pns.lk",
           "is_fallback": true,
           "vendor_id": "pereraandsons",
           "vendor_name": "Perera & Sons (P&S)"
@@ -491,7 +651,23 @@
           "image_url": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&fit=crop",
           "deal_type": "Meal Pack",
           "valid_until": "Daily",
-          "source_url": "https://pereraandsons.com",
+          "source_url": "https://pns.lk",
+          "is_fallback": true,
+          "vendor_id": "pereraandsons",
+          "vendor_name": "Perera & Sons (P&S)"
+        },
+        {
+          "id": "ps-snack-combo",
+          "title": "P&S Executive Short Eats Bundle",
+          "description": "3 Chicken Cutlets + 3 Egg Roti + 3 Sausage Rolls + 1L Passion Fruit Juice.",
+          "category": "Short Eats & Bakery",
+          "original_price": 2400,
+          "discounted_price": 1880,
+          "discount_percentage": 22,
+          "image_url": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&fit=crop",
+          "deal_type": "Short Eats Pack",
+          "valid_until": "Daily Offer",
+          "source_url": "https://pns.lk",
           "is_fallback": true,
           "vendor_id": "pereraandsons",
           "vendor_name": "Perera & Sons (P&S)"
@@ -503,38 +679,102 @@
       "vendor_name": "Chinese Dragon Cafe",
       "vendor_logo": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=100&h=100&fit=crop",
       "website_url": "https://chinesedragoncafe.com",
-      "status": "fallback",
-      "count": 2,
+      "status": "live",
+      "count": 6,
       "offers": [
         {
-          "id": "cdc-dragon-family-set",
-          "title": "Dragon Signature Family Rice Set",
-          "description": "Large Mixed Fried Rice + Chili Chicken + Hot Butter Cuttlefish + Vegetable Chop Suey.",
+          "id": "cdc-live-10446412775714",
+          "title": "Pork Dumpling",
+          "description": "Chinese Dragon Cafe special: Pork Dumpling",
           "category": "Chinese Family Meals",
-          "original_price": 6800,
-          "discounted_price": 5400,
-          "discount_percentage": 21,
-          "image_url": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&fit=crop",
-          "deal_type": "Family Set",
+          "original_price": 1368,
+          "discounted_price": 1190.0,
+          "discount_percentage": 13,
+          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+          "deal_type": "Live Offer",
           "valid_until": "Limited Time",
-          "source_url": "https://chinesedragoncafe.com",
-          "is_fallback": true,
+          "source_url": "https://chinesedragoncafe.com/products/pork-dumpling",
+          "is_fallback": false,
           "vendor_id": "chinesedragon",
           "vendor_name": "Chinese Dragon Cafe"
         },
         {
-          "id": "cdc-bento-lunch",
-          "title": "Exec Chinese Lunch Box",
-          "description": "Egg Fried Rice + Sweet & Sour Chicken + Spring Roll + Wonton Soup.",
-          "category": "Express Lunch",
-          "original_price": 1950,
-          "discounted_price": 1490,
-          "discount_percentage": 24,
-          "image_url": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=500&fit=crop",
-          "deal_type": "Lunch Box",
-          "valid_until": "Weekdays 11 AM - 3 PM",
-          "source_url": "https://chinesedragoncafe.com",
-          "is_fallback": true,
+          "id": "cdc-live-10446412611874",
+          "title": "Seafood Dumpling",
+          "description": "Chinese Dragon Cafe special: Seafood Dumpling",
+          "category": "Chinese Family Meals",
+          "original_price": 1368,
+          "discounted_price": 1190.0,
+          "discount_percentage": 13,
+          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+          "deal_type": "Live Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://chinesedragoncafe.com/products/seafood-dumpling",
+          "is_fallback": false,
+          "vendor_id": "chinesedragon",
+          "vendor_name": "Chinese Dragon Cafe"
+        },
+        {
+          "id": "cdc-live-10446412349730",
+          "title": "Chicken Dumpling",
+          "description": "Chinese Dragon Cafe special: Chicken Dumpling",
+          "category": "Chinese Family Meals",
+          "original_price": 1138,
+          "discounted_price": 990.0,
+          "discount_percentage": 13,
+          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+          "deal_type": "Live Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://chinesedragoncafe.com/products/chicken-dumpling",
+          "is_fallback": false,
+          "vendor_id": "chinesedragon",
+          "vendor_name": "Chinese Dragon Cafe"
+        },
+        {
+          "id": "cdc-live-9676342690082",
+          "title": "Black Goreng Special Rice",
+          "description": "Chinese Dragon Cafe special: Black Goreng Special Rice",
+          "category": "Chinese Family Meals",
+          "original_price": 977,
+          "discounted_price": 850.0,
+          "discount_percentage": 13,
+          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-07-28at12.14.07PM.jpg?v=1785221080",
+          "deal_type": "Live Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://chinesedragoncafe.com/products/black-goreng-special-rice",
+          "is_fallback": false,
+          "vendor_id": "chinesedragon",
+          "vendor_name": "Chinese Dragon Cafe"
+        },
+        {
+          "id": "cdc-live-10118860407074",
+          "title": "Vegetable Dumpling",
+          "description": "Chinese Dragon Cafe special: Vegetable Dumpling",
+          "category": "Chinese Family Meals",
+          "original_price": 1023,
+          "discounted_price": 890.0,
+          "discount_percentage": 13,
+          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+          "deal_type": "Live Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://chinesedragoncafe.com/products/dragon-imperial-rice",
+          "is_fallback": false,
+          "vendor_id": "chinesedragon",
+          "vendor_name": "Chinese Dragon Cafe"
+        },
+        {
+          "id": "cdc-live-10001511579938",
+          "title": "Dragon Luxury Bowl (Mintpay Exclusive Deal)",
+          "description": "Chinese Dragon Cafe special: Dragon Luxury Bowl (Mintpay Exclusive Deal)",
+          "category": "Chinese Family Meals",
+          "original_price": 1598,
+          "discounted_price": 1390.0,
+          "discount_percentage": 13,
+          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsApp_Image_2026-07-14_at_4.07.50_PM_1.jpg?v=1784524186",
+          "deal_type": "Live Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://chinesedragoncafe.com/products/dragon-luxury-bowl",
+          "is_fallback": false,
           "vendor_id": "chinesedragon",
           "vendor_name": "Chinese Dragon Cafe"
         }
@@ -546,7 +786,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=100&h=100&fit=crop",
       "website_url": "https://baskinrobbins.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "br-double-scoop-deal",
@@ -579,6 +819,22 @@
           "is_fallback": true,
           "vendor_id": "baskinrobbins",
           "vendor_name": "Baskin-Robbins Sri Lanka"
+        },
+        {
+          "id": "br-waffle-sundae",
+          "title": "Belgium Waffle Ice Cream Sundae",
+          "description": "Warm Belgian Waffle + 2 Scoops Pralines & Cream + Chocolate Sauce + Whipped Cream.",
+          "category": "Sundaes",
+          "original_price": 2200,
+          "discounted_price": 1750,
+          "discount_percentage": 20,
+          "image_url": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=500&fit=crop",
+          "deal_type": "Sundae Deal",
+          "valid_until": "Daily Offer",
+          "source_url": "https://baskinrobbins.lk",
+          "is_fallback": true,
+          "vendor_id": "baskinrobbins",
+          "vendor_name": "Baskin-Robbins Sri Lanka"
         }
       ]
     },
@@ -588,7 +844,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=100&h=100&fit=crop",
       "website_url": "https://breadtalk.lk",
       "status": "fallback",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "bt-flosss-bundle",
@@ -617,6 +873,22 @@
           "image_url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&fit=crop",
           "deal_type": "Celebration Discount",
           "valid_until": "Limited Time",
+          "source_url": "https://breadtalk.lk",
+          "is_fallback": true,
+          "vendor_id": "breadtalk",
+          "vendor_name": "BreadTalk Sri Lanka"
+        },
+        {
+          "id": "bt-croissant-box",
+          "title": "Butter Croissant Box of 6",
+          "description": "6 Freshly Baked French Butter Croissants + 2 Iced Coffees.",
+          "category": "Pastries & Bread",
+          "original_price": 2500,
+          "discounted_price": 1950,
+          "discount_percentage": 22,
+          "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&fit=crop",
+          "deal_type": "Morning Special",
+          "valid_until": "Daily Offer",
           "source_url": "https://breadtalk.lk",
           "is_fallback": true,
           "vendor_id": "breadtalk",
@@ -675,6 +947,22 @@
       "vendor_name": "KFC Sri Lanka"
     },
     {
+      "id": "kfc-family-feast",
+      "title": "KFC Mega Family Bucket",
+      "description": "12 Pieces Hot & Crispy Chicken + 4 Zinger Burgers + Large Coleslaw + 2L Pepsi.",
+      "category": "Bucket Deals",
+      "original_price": 9800,
+      "discounted_price": 7950,
+      "discount_percentage": 19,
+      "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
+      "deal_type": "Mega Feast",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/promotions",
+      "is_fallback": true,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
       "id": "ph-buy1get1-tuesday",
       "title": "Buy 1 Get 1 Free Large Pizza",
       "description": "Buy any Large Pan Pizza and get a Medium Classic Pizza absolutely FREE.",
@@ -723,6 +1011,22 @@
       "vendor_name": "Pizza Hut Sri Lanka"
     },
     {
+      "id": "ph-double-pan-deal",
+      "title": "Double Medium Pizza Combo",
+      "description": "2 Medium Pan Pizzas (Devilled Chicken / Spicy Seafood) + 1.25L Coca-Cola.",
+      "category": "Pizza Deals",
+      "original_price": 4900,
+      "discounted_price": 3790,
+      "discount_percentage": 23,
+      "image_url": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&fit=crop",
+      "deal_type": "Saver Combo",
+      "valid_until": "Daily Offer",
+      "source_url": "https://www.pizzahut.lk/deals",
+      "is_fallback": true,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
       "id": "dom-everyday-value",
       "title": "2 Medium Pizzas Super Saver",
       "description": "Get 2 Medium Hand Tossed Pizzas starting at LKR 2990.",
@@ -755,6 +1059,22 @@
       "vendor_name": "Domino's Pizza Sri Lanka"
     },
     {
+      "id": "dom-party-pack",
+      "title": "Domino's Party Feast for 4",
+      "description": "2 Large Pizzas + 2 Stuffed Garlic Breads + 4 Choco Lava Cakes + 1.5L Coke.",
+      "category": "Value Combos",
+      "original_price": 8200,
+      "discounted_price": 6390,
+      "discount_percentage": 22,
+      "image_url": "https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&fit=crop",
+      "deal_type": "Party Pack",
+      "valid_until": "Weekend Deal",
+      "source_url": "https://www.dominos.lk",
+      "is_fallback": true,
+      "vendor_id": "dominos",
+      "vendor_name": "Domino's Pizza Sri Lanka"
+    },
+    {
       "id": "tb-taco-tuesday",
       "title": "Taco Tuesday Pack",
       "description": "Buy 2 Crunchy Tacos and get 1 Free Crunchy Taco + Seasoned Fries.",
@@ -780,6 +1100,22 @@
       "discount_percentage": 23,
       "image_url": "https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=500&fit=crop",
       "deal_type": "Meal Box",
+      "valid_until": "Daily Offer",
+      "source_url": "https://www.tacobell.lk",
+      "is_fallback": true,
+      "vendor_id": "tacobell",
+      "vendor_name": "Taco Bell Sri Lanka"
+    },
+    {
+      "id": "tb-quesadilla-combo",
+      "title": "Cheesy Chicken Quesadilla Meal",
+      "description": "1 Cheesy Chicken Quesadilla + Cheesy Fries + 500ml Drink.",
+      "category": "Combos",
+      "original_price": 2350,
+      "discounted_price": 1820,
+      "discount_percentage": 23,
+      "image_url": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&fit=crop",
+      "deal_type": "Meal Deal",
       "valid_until": "Daily Offer",
       "source_url": "https://www.tacobell.lk",
       "is_fallback": true,
@@ -819,6 +1155,22 @@
       "vendor_name": "Burger King Sri Lanka"
     },
     {
+      "id": "bk-chicken-royale-combo",
+      "title": "Chicken Royale Combo Deal",
+      "description": "1 Chicken Royale Burger + King Onion Rings + Soft Drink.",
+      "category": "Burgers",
+      "original_price": 2250,
+      "discounted_price": 1780,
+      "discount_percentage": 21,
+      "image_url": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&fit=crop",
+      "deal_type": "Saver Meal",
+      "valid_until": "Daily Offer",
+      "source_url": "https://burgerking.lk",
+      "is_fallback": true,
+      "vendor_id": "burgerking",
+      "vendor_name": "Burger King Sri Lanka"
+    },
+    {
       "id": "pop-chicken-sandwich-combo",
       "title": "Louisiana Chicken Sandwich Combo",
       "description": "1 Famous Chicken Sandwich + Cajun Fries + Drink.",
@@ -829,7 +1181,7 @@
       "image_url": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500&fit=crop",
       "deal_type": "Meal Combo",
       "valid_until": "Daily",
-      "source_url": "https://popeyes.lk",
+      "source_url": "https://popeyes.com.lk",
       "is_fallback": true,
       "vendor_id": "popeyes",
       "vendor_name": "Popeyes Sri Lanka"
@@ -845,7 +1197,23 @@
       "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
       "deal_type": "Family Bucket",
       "valid_until": "Limited Time",
-      "source_url": "https://popeyes.lk",
+      "source_url": "https://popeyes.com.lk",
+      "is_fallback": true,
+      "vendor_id": "popeyes",
+      "vendor_name": "Popeyes Sri Lanka"
+    },
+    {
+      "id": "pop-tender-meal",
+      "title": "6 Pc Tender Spicy Box",
+      "description": "6 Hand-tenders + Cajun Fries + 2 Dipping Sauces + Beverage.",
+      "category": "Tenders",
+      "original_price": 2650,
+      "discounted_price": 2090,
+      "discount_percentage": 21,
+      "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
+      "deal_type": "Tender Box",
+      "valid_until": "Daily Offer",
+      "source_url": "https://popeyes.com.lk",
       "is_fallback": true,
       "vendor_id": "popeyes",
       "vendor_name": "Popeyes Sri Lanka"
@@ -877,6 +1245,22 @@
       "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&fit=crop",
       "deal_type": "Combo Special",
       "valid_until": "Limited Time",
+      "source_url": "https://fullerburgers.com",
+      "is_fallback": true,
+      "vendor_id": "fullerburgers",
+      "vendor_name": "Fuller Burgers"
+    },
+    {
+      "id": "fb-truffle-beef",
+      "title": "Truffle Mushroom Beef Smash Meal",
+      "description": "Aged Beef Patty + Truffle Mayo + Caramelized Onions + Loaded Potato Wedges.",
+      "category": "Artisanal Burgers",
+      "original_price": 3400,
+      "discounted_price": 2750,
+      "discount_percentage": 19,
+      "image_url": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&fit=crop",
+      "deal_type": "Gourmet Deal",
+      "valid_until": "Daily Offer",
       "source_url": "https://fullerburgers.com",
       "is_fallback": true,
       "vendor_id": "fullerburgers",
@@ -915,6 +1299,22 @@
       "vendor_name": "Crepe Runner"
     },
     {
+      "id": "cr-sweet-duo",
+      "title": "Sweet Duo Waffle & Crepe Pack",
+      "description": "1 Strawberries & Cream Crepe + 1 Belgian Chocolate Waffle.",
+      "category": "Sweet Crepes",
+      "original_price": 2600,
+      "discounted_price": 2050,
+      "discount_percentage": 21,
+      "image_url": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=500&fit=crop",
+      "deal_type": "Duo Special",
+      "valid_until": "Daily Offer",
+      "source_url": "https://creperunner.lk",
+      "is_fallback": true,
+      "vendor_id": "creperunner",
+      "vendor_name": "Crepe Runner"
+    },
+    {
       "id": "sub-sub-of-the-day",
       "title": "Sub of the Day Meal Deal",
       "description": "Featured 6-inch Sub of the Day + Cookie + 500ml Drink.",
@@ -941,6 +1341,22 @@
       "image_url": "https://images.unsplash.com/photo-1554433607-66b5efe9d304?w=500&fit=crop",
       "deal_type": "Duo Deal",
       "valid_until": "Limited Time",
+      "source_url": "https://subway.lk",
+      "is_fallback": true,
+      "vendor_id": "subway",
+      "vendor_name": "Subway Sri Lanka"
+    },
+    {
+      "id": "sub-chicken-teriyaki-wrap",
+      "title": "Chicken Teriyaki Wrap Meal",
+      "description": "1 Chicken Teriyaki Loaded Wrap + Baked Chips + Beverage.",
+      "category": "Submarines & Wraps",
+      "original_price": 1950,
+      "discounted_price": 1520,
+      "discount_percentage": 22,
+      "image_url": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&fit=crop",
+      "deal_type": "Wrap Combo",
+      "valid_until": "Daily Offer",
       "source_url": "https://subway.lk",
       "is_fallback": true,
       "vendor_id": "subway",
@@ -979,6 +1395,22 @@
       "vendor_name": "Dinemore Sri Lanka"
     },
     {
+      "id": "dine-special-fried-rice",
+      "title": "Dinemore Special Fried Rice Combo",
+      "description": "Devilled Chicken Fried Rice + Chili Paste + Fried Egg + Soft Drink.",
+      "category": "Fried Rice",
+      "original_price": 1850,
+      "discounted_price": 1420,
+      "discount_percentage": 23,
+      "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&fit=crop",
+      "deal_type": "Lunch Saver",
+      "valid_until": "Daily Offer",
+      "source_url": "https://dinemore.lk",
+      "is_fallback": true,
+      "vendor_id": "dinemore",
+      "vendor_name": "Dinemore Sri Lanka"
+    },
+    {
       "id": "ps-tea-time-pack",
       "title": "P&S Classic Tea Time Party Box",
       "description": "6 Fish Roti + 6 Chicken Pastries + 6 Mutton Rolls + 6 Executive Doughnuts.",
@@ -989,7 +1421,7 @@
       "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&fit=crop",
       "deal_type": "Party Box",
       "valid_until": "Daily",
-      "source_url": "https://pereraandsons.com",
+      "source_url": "https://pns.lk",
       "is_fallback": true,
       "vendor_id": "pereraandsons",
       "vendor_name": "Perera & Sons (P&S)"
@@ -1005,40 +1437,120 @@
       "image_url": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&fit=crop",
       "deal_type": "Meal Pack",
       "valid_until": "Daily",
-      "source_url": "https://pereraandsons.com",
+      "source_url": "https://pns.lk",
       "is_fallback": true,
       "vendor_id": "pereraandsons",
       "vendor_name": "Perera & Sons (P&S)"
     },
     {
-      "id": "cdc-dragon-family-set",
-      "title": "Dragon Signature Family Rice Set",
-      "description": "Large Mixed Fried Rice + Chili Chicken + Hot Butter Cuttlefish + Vegetable Chop Suey.",
-      "category": "Chinese Family Meals",
-      "original_price": 6800,
-      "discounted_price": 5400,
-      "discount_percentage": 21,
-      "image_url": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&fit=crop",
-      "deal_type": "Family Set",
-      "valid_until": "Limited Time",
-      "source_url": "https://chinesedragoncafe.com",
+      "id": "ps-snack-combo",
+      "title": "P&S Executive Short Eats Bundle",
+      "description": "3 Chicken Cutlets + 3 Egg Roti + 3 Sausage Rolls + 1L Passion Fruit Juice.",
+      "category": "Short Eats & Bakery",
+      "original_price": 2400,
+      "discounted_price": 1880,
+      "discount_percentage": 22,
+      "image_url": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&fit=crop",
+      "deal_type": "Short Eats Pack",
+      "valid_until": "Daily Offer",
+      "source_url": "https://pns.lk",
       "is_fallback": true,
+      "vendor_id": "pereraandsons",
+      "vendor_name": "Perera & Sons (P&S)"
+    },
+    {
+      "id": "cdc-live-10446412775714",
+      "title": "Pork Dumpling",
+      "description": "Chinese Dragon Cafe special: Pork Dumpling",
+      "category": "Chinese Family Meals",
+      "original_price": 1368,
+      "discounted_price": 1190.0,
+      "discount_percentage": 13,
+      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+      "deal_type": "Live Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://chinesedragoncafe.com/products/pork-dumpling",
+      "is_fallback": false,
       "vendor_id": "chinesedragon",
       "vendor_name": "Chinese Dragon Cafe"
     },
     {
-      "id": "cdc-bento-lunch",
-      "title": "Exec Chinese Lunch Box",
-      "description": "Egg Fried Rice + Sweet & Sour Chicken + Spring Roll + Wonton Soup.",
-      "category": "Express Lunch",
-      "original_price": 1950,
-      "discounted_price": 1490,
-      "discount_percentage": 24,
-      "image_url": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=500&fit=crop",
-      "deal_type": "Lunch Box",
-      "valid_until": "Weekdays 11 AM - 3 PM",
-      "source_url": "https://chinesedragoncafe.com",
-      "is_fallback": true,
+      "id": "cdc-live-10446412611874",
+      "title": "Seafood Dumpling",
+      "description": "Chinese Dragon Cafe special: Seafood Dumpling",
+      "category": "Chinese Family Meals",
+      "original_price": 1368,
+      "discounted_price": 1190.0,
+      "discount_percentage": 13,
+      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+      "deal_type": "Live Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://chinesedragoncafe.com/products/seafood-dumpling",
+      "is_fallback": false,
+      "vendor_id": "chinesedragon",
+      "vendor_name": "Chinese Dragon Cafe"
+    },
+    {
+      "id": "cdc-live-10446412349730",
+      "title": "Chicken Dumpling",
+      "description": "Chinese Dragon Cafe special: Chicken Dumpling",
+      "category": "Chinese Family Meals",
+      "original_price": 1138,
+      "discounted_price": 990.0,
+      "discount_percentage": 13,
+      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+      "deal_type": "Live Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://chinesedragoncafe.com/products/chicken-dumpling",
+      "is_fallback": false,
+      "vendor_id": "chinesedragon",
+      "vendor_name": "Chinese Dragon Cafe"
+    },
+    {
+      "id": "cdc-live-9676342690082",
+      "title": "Black Goreng Special Rice",
+      "description": "Chinese Dragon Cafe special: Black Goreng Special Rice",
+      "category": "Chinese Family Meals",
+      "original_price": 977,
+      "discounted_price": 850.0,
+      "discount_percentage": 13,
+      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-07-28at12.14.07PM.jpg?v=1785221080",
+      "deal_type": "Live Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://chinesedragoncafe.com/products/black-goreng-special-rice",
+      "is_fallback": false,
+      "vendor_id": "chinesedragon",
+      "vendor_name": "Chinese Dragon Cafe"
+    },
+    {
+      "id": "cdc-live-10118860407074",
+      "title": "Vegetable Dumpling",
+      "description": "Chinese Dragon Cafe special: Vegetable Dumpling",
+      "category": "Chinese Family Meals",
+      "original_price": 1023,
+      "discounted_price": 890.0,
+      "discount_percentage": 13,
+      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-08-10at8.13.34AM_1.jpg?v=1786440616",
+      "deal_type": "Live Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://chinesedragoncafe.com/products/dragon-imperial-rice",
+      "is_fallback": false,
+      "vendor_id": "chinesedragon",
+      "vendor_name": "Chinese Dragon Cafe"
+    },
+    {
+      "id": "cdc-live-10001511579938",
+      "title": "Dragon Luxury Bowl (Mintpay Exclusive Deal)",
+      "description": "Chinese Dragon Cafe special: Dragon Luxury Bowl (Mintpay Exclusive Deal)",
+      "category": "Chinese Family Meals",
+      "original_price": 1598,
+      "discounted_price": 1390.0,
+      "discount_percentage": 13,
+      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsApp_Image_2026-07-14_at_4.07.50_PM_1.jpg?v=1784524186",
+      "deal_type": "Live Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://chinesedragoncafe.com/products/dragon-luxury-bowl",
+      "is_fallback": false,
       "vendor_id": "chinesedragon",
       "vendor_name": "Chinese Dragon Cafe"
     },
@@ -1075,6 +1587,22 @@
       "vendor_name": "Baskin-Robbins Sri Lanka"
     },
     {
+      "id": "br-waffle-sundae",
+      "title": "Belgium Waffle Ice Cream Sundae",
+      "description": "Warm Belgian Waffle + 2 Scoops Pralines & Cream + Chocolate Sauce + Whipped Cream.",
+      "category": "Sundaes",
+      "original_price": 2200,
+      "discounted_price": 1750,
+      "discount_percentage": 20,
+      "image_url": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=500&fit=crop",
+      "deal_type": "Sundae Deal",
+      "valid_until": "Daily Offer",
+      "source_url": "https://baskinrobbins.lk",
+      "is_fallback": true,
+      "vendor_id": "baskinrobbins",
+      "vendor_name": "Baskin-Robbins Sri Lanka"
+    },
+    {
       "id": "bt-flosss-bundle",
       "title": "Signature Flosss Buns 4-Pack",
       "description": "4 Signature Chicken Flosss Buns + 2 Fresh Fruit Pastries.",
@@ -1105,7 +1633,23 @@
       "is_fallback": true,
       "vendor_id": "breadtalk",
       "vendor_name": "BreadTalk Sri Lanka"
+    },
+    {
+      "id": "bt-croissant-box",
+      "title": "Butter Croissant Box of 6",
+      "description": "6 Freshly Baked French Butter Croissants + 2 Iced Coffees.",
+      "category": "Pastries & Bread",
+      "original_price": 2500,
+      "discounted_price": 1950,
+      "discount_percentage": 22,
+      "image_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&fit=crop",
+      "deal_type": "Morning Special",
+      "valid_until": "Daily Offer",
+      "source_url": "https://breadtalk.lk",
+      "is_fallback": true,
+      "vendor_id": "breadtalk",
+      "vendor_name": "BreadTalk Sri Lanka"
     }
   ],
-  "last_updated": "2026-08-26T14:35:51.552829+00:00"
+  "last_updated": "2026-08-26T17:45:13.361407+00:00"
 }
