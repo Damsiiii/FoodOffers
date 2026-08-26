@@ -1,0 +1,39 @@
+---
+import offersData from '../data/offers.json';
+
+const totalVendors = offersData.total_vendors || 0;
+const totalOffers = offersData.total_offers || 0;
+const lastUpdated = offersData.last_updated
+  ? new Date(offersData.last_updated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+  : 'Recently';
+---
+
+<header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-amber-500 flex items-center justify-center font-black text-2xl text-white shadow-lg shadow-red-500/20">
+        🇱🇰
+      </div>
+      <div>
+        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+          LankaFoodOffers <span class="bg-red-500/10 text-red-400 text-xs font-semibold px-2 py-0.5 rounded-full border border-red-500/20">Live Tracker</span>
+        </h1>
+        <p class="text-xs text-gray-400">Discover hot deals from Sri Lanka's top food chains</p>
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-4 text-xs sm:text-sm text-gray-400 border-t md:border-t-0 border-gray-800 pt-3 md:pt-0">
+      <div class="flex items-center space-x-1.5 bg-gray-900 px-3 py-1.5 rounded-lg border border-gray-800">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-gray-300 font-medium">{totalVendors} Vendors</span>
+      </div>
+      <div class="flex items-center space-x-1.5 bg-gray-900 px-3 py-1.5 rounded-lg border border-gray-800">
+        <span class="text-amber-400 font-bold">{totalOffers}</span>
+        <span>Active Offers</span>
+      </div>
+      <div class="hidden sm:block text-gray-500 text-xs">
+        Updated: {lastUpdated}
+      </div>
+    </div>
+  </div>
+</header>
