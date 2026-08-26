@@ -4,36 +4,45 @@ import offersData from '../data/offers.json';
 const totalVendors = offersData.total_vendors || 0;
 const totalOffers = offersData.total_offers || 0;
 const lastUpdated = offersData.last_updated
-  ? new Date(offersData.last_updated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
-  : 'Recently';
+  ? new Date(offersData.last_updated).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })
+  : 'Live';
 ---
 
-<header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+<header class="border-b border-paper-800/80 bg-paper-950/90 backdrop-blur-md sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-    <div class="flex items-center space-x-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-amber-500 flex items-center justify-center font-black text-2xl text-white shadow-lg shadow-red-500/20">
-        🇱🇰
+
+    <!-- Brand & Ledger Title -->
+    <div class="flex items-center space-x-3.5">
+      <div class="w-9 h-9 border border-spice-700/60 bg-spice-900/30 text-spice-600 flex items-center justify-center font-mono text-sm font-bold tracking-tighter">
+        LK
       </div>
       <div>
-        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
-          LankaFoodOffers <span class="bg-red-500/10 text-red-400 text-xs font-semibold px-2 py-0.5 rounded-full border border-red-500/20">Live Tracker</span>
-        </h1>
-        <p class="text-xs text-gray-400">Discover hot deals from Sri Lanka's top food chains</p>
+        <div class="flex items-center gap-2.5">
+          <h1 class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-paper-50">
+            Lanka Food Offer Ledger
+          </h1>
+          <span class="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 bg-paper-850 text-paper-200 border border-paper-700/60">
+            v2.4 Live
+          </span>
+        </div>
+        <p class="text-xs text-paper-200 font-sans">Automated discount tracker for mainstream Sri Lankan food chains</p>
       </div>
     </div>
 
-    <div class="flex items-center space-x-4 text-xs sm:text-sm text-gray-400 border-t md:border-t-0 border-gray-800 pt-3 md:pt-0">
-      <div class="flex items-center space-x-1.5 bg-gray-900 px-3 py-1.5 rounded-lg border border-gray-800">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span class="text-gray-300 font-medium">{totalVendors} Vendors</span>
+    <!-- Status Stats -->
+    <div class="flex items-center gap-4 text-xs font-mono text-paper-200 border-t md:border-t-0 border-paper-800/60 pt-3 md:pt-0">
+      <div class="flex items-center gap-2 px-3 py-1.5 bg-paper-900 border border-paper-800">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        <span class="text-paper-100 font-medium">{totalVendors} Chains Tracked</span>
       </div>
-      <div class="flex items-center space-x-1.5 bg-gray-900 px-3 py-1.5 rounded-lg border border-gray-800">
-        <span class="text-amber-400 font-bold">{totalOffers}</span>
-        <span>Active Offers</span>
+      <div class="flex items-center gap-1.5 px-3 py-1.5 bg-paper-900 border border-paper-800">
+        <span class="text-spice-600 font-bold">{totalOffers}</span>
+        <span>Active Promos</span>
       </div>
-      <div class="hidden sm:block text-gray-500 text-xs">
-        Updated: {lastUpdated}
+      <div class="hidden sm:block text-[11px] text-paper-200 pl-2 border-l border-paper-800">
+        Synced: <time class="text-paper-100 font-mono">{lastUpdated}</time>
       </div>
     </div>
+
   </div>
 </header>
