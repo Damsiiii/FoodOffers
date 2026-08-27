@@ -18,14 +18,8 @@ class PizzaHutScraper(BaseScraper):
     categories = ["Pizza Deals", "Family Combos", "Solo Meals", "Sides", "Desserts"]
 
     def scrape_live(self):
-        url = "https://www.pizzahut.lk/deals"
-        try:
-            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
-            if resp.status_code != 200:
-                return []
-        except Exception:
-            return []
-        return []
+        from scrapers.browser import fetch_dynamic_deals
+        return fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
 
 class DominosScraper(BaseScraper):
     vendor_id = "dominos"
@@ -35,37 +29,8 @@ class DominosScraper(BaseScraper):
     categories = ["Value Combos", "Pizza Deals", "Sides", "Desserts"]
 
     def scrape_live(self):
-        url = "http://www.dominos.lk"
-        try:
-            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
-            if resp.status_code != 200:
-                return []
-        except Exception:
-            return []
-        soup = BeautifulSoup(resp.text, "html.parser")
-        offers = []
-        cards = soup.find_all(class_=re.compile(r"card|item|offer|banner|promo", re.I))
-        idx = 1
-        for card in cards:
-            title_elem = card.find(["h2", "h3", "h4", "h5", "strong", "p"])
-            if title_elem:
-                title = title_elem.get_text(strip=True)
-                if len(title) > 3:
-                    offers.append({
-                        "id": f"dom-live-{idx}",
-                        "title": title,
-                        "description": title,
-                        "category": "Pizza Deals",
-                        "original_price": 3500,
-                        "discounted_price": 2800,
-                        "discount_percentage": 20,
-                        "image_url": "https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&fit=crop",
-                        "deal_type": "Live Promo",
-                        "valid_until": "Limited Time",
-                        "source_url": url
-                    })
-                    idx += 1
-        return offers
+        from scrapers.browser import fetch_dynamic_deals
+        return fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
 
 class TacoBellScraper(BaseScraper):
     vendor_id = "tacobell"
@@ -75,7 +40,8 @@ class TacoBellScraper(BaseScraper):
     categories = ["Tacos & Burritos", "Combos", "Loaded Nachos"]
 
     def scrape_live(self):
-        return []
+        from scrapers.browser import fetch_dynamic_deals
+        return fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
 
 class BurgerKingScraper(BaseScraper):
     vendor_id = "burgerking"
@@ -86,26 +52,7 @@ class BurgerKingScraper(BaseScraper):
 
     def scrape_live(self):
         from scrapers.browser import fetch_dynamic_deals
-        dyn_deals = fetch_dynamic_deals(self.website_url)
-        offers = []
-        idx = 1
-        for d in dyn_deals:
-            if "burger" in d["title"].lower() or "combo" in d["title"].lower() or "king" in d["title"].lower() or "meal" in d["title"].lower():
-                offers.append({
-                    "id": f"bk-live-{idx}",
-                    "title": d["title"],
-                    "description": d["full_text"],
-                    "category": "Burgers",
-                    "original_price": 2800,
-                    "discounted_price": 2350,
-                    "discount_percentage": 16,
-                    "image_url": d["image_url"],
-                    "deal_type": "Live Promo",
-                    "valid_until": "Limited Time",
-                    "source_url": self.website_url
-                })
-                idx += 1
-        return offers
+        return fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
 
 class PopeyesScraper(BaseScraper):
     vendor_id = "popeyes"
@@ -115,14 +62,8 @@ class PopeyesScraper(BaseScraper):
     categories = ["Sandwiches & Burgers", "Chicken Buckets", "Tenders"]
 
     def scrape_live(self):
-        url = "https://popeyes.com.lk"
-        try:
-            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=8)
-            if resp.status_code != 200:
-                return []
-        except Exception:
-            return []
-        return []
+        from scrapers.browser import fetch_dynamic_deals
+        return fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
 
 class FullerBurgersScraper(BaseScraper):
     vendor_id = "fullerburgers"

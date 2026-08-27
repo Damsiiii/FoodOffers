@@ -14,41 +14,6 @@ class KFCScraper(BaseScraper):
     categories = ["Bucket Deals", "Combos", "Rice Meals", "Burgers", "Snacks"]
 
     def scrape_live(self):
-        url = "https://www.kfc.lk"
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-        try:
-            resp = requests.get(url, headers=headers, timeout=8)
-        except Exception:
-            return []
-        if resp.status_code != 200:
-            return []
-
-        soup = BeautifulSoup(resp.text, "html.parser")
-        offers = []
-        cards = soup.find_all(class_=re.compile(r"card|item|product|promo|deal", re.I))
-        idx = 1
-        for card in cards:
-            title_elem = card.find(["h2", "h3", "h4", "h5"])
-            price_elem = card.find(string=re.compile(r"Rs\.?\s*\d+", re.I))
-            if title_elem and price_elem:
-                title = title_elem.get_text(strip=True)
-                if len(title) > 3 and "LOCALLY SOURCED" not in title.upper():
-                    price_match = re.search(r"(\d[\d,]+)", str(price_elem))
-                    if price_match:
-                        price = float(price_match.group(1).replace(",", ""))
-                        if price >= 300:
-                            offers.append({
-                                "id": f"kfc-live-{idx}",
-                                "title": title,
-                                "description": f"Featured KFC deal: {title}",
-                                "category": "Promotions",
-                                "original_price": round(price * 1.15),
-                                "discounted_price": price,
-                                "discount_percentage": 13,
-                                "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&fit=crop",
-                                "deal_type": "Live Offer",
-                                "valid_until": "Limited Time",
-                                "source_url": url
-                            })
-                            idx += 1
+        from scrapers.browser import fetch_dynamic_deals
+        offers = fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
         return offers
