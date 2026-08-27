@@ -145,15 +145,32 @@ class ChineseDragonScraper(BaseScraper):
                 price = float(variants[0].get("price", 0))
                 if price <= 0:
                     continue
+                compare_at_price_raw = variants[0].get("compare_at_price")
+                if compare_at_price_raw:
+                    try:
+                        compare_at = float(compare_at_price_raw)
+                        if compare_at > price:
+                            orig_price = compare_at
+                            disc_pct = int(round((orig_price - price) / orig_price * 100))
+                        else:
+                            orig_price = price
+                            disc_pct = 0
+                    except (ValueError, TypeError):
+                        orig_price = price
+                        disc_pct = 0
+                else:
+                    orig_price = price
+                    disc_pct = 0
+
                 img = p["images"][0]["src"] if p.get("images") else "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&fit=crop"
                 offers.append({
                     "id": f"cdc-live-{p['id']}",
                     "title": title,
                     "description": f"Chinese Dragon Cafe special: {title}",
                     "category": p.get("product_type") or "Chinese Family Meals",
-                    "original_price": round(price * 1.15),
+                    "original_price": orig_price,
                     "discounted_price": price,
-                    "discount_percentage": 13,
+                    "discount_percentage": disc_pct,
                     "image_url": img,
                     "deal_type": "Live Offer",
                     "valid_until": "Limited Time",

@@ -90,8 +90,18 @@ def fetch_dynamic_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
                 price = float(price_match.group(1).replace(",", ""))
                 if price < 150 or price > 50000:
                     continue
-                orig_price = round(price * 1.15)
-                disc_pct = 13
+
+                pct_match = re.search(r"(\d+)%\s*(?:OFF|discount)", full_text, re.I)
+                if pct_match:
+                    disc_pct = int(pct_match.group(1))
+                    if 0 < disc_pct < 100:
+                        orig_price = round(price / (1 - disc_pct / 100))
+                    else:
+                        orig_price = price
+                        disc_pct = 0
+                else:
+                    orig_price = price
+                    disc_pct = 0
 
                 seen_titles.add(title)
 
