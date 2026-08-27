@@ -2,21 +2,19 @@ import logging
 from typing import List, Dict, Any
 from scrapers.base import BaseScraper
 from scrapers.vendors.kfc import KFCScraper
-from scrapers.vendors.other_vendors import (
-    PizzaHutScraper,
-    DominosScraper,
-    TacoBellScraper,
-    BurgerKingScraper,
-    PopeyesScraper,
-    FullerBurgersScraper,
-    CrepeRunnerScraper,
-    SubwayScraper,
-    DinemoreScraper,
-    PereraAndSonsScraper,
-    ChineseDragonScraper,
-    BaskinRobbinsScraper,
-    BreadTalkScraper,
-)
+from scrapers.vendors.pizzahut import PizzaHutScraper
+from scrapers.vendors.dominos import DominosScraper
+from scrapers.vendors.tacobell import TacoBellScraper
+from scrapers.vendors.burgerking import BurgerKingScraper
+from scrapers.vendors.popeyes import PopeyesScraper
+from scrapers.vendors.fullerburgers import FullerBurgersScraper
+from scrapers.vendors.creperunner import CrepeRunnerScraper
+from scrapers.vendors.subway import SubwayScraper
+from scrapers.vendors.dinemore import DinemoreScraper
+from scrapers.vendors.pereraandsons import PereraAndSonsScraper
+from scrapers.vendors.chinesedragon import ChineseDragonScraper
+from scrapers.vendors.baskinrobbins import BaskinRobbinsScraper
+from scrapers.vendors.breadtalk import BreadTalkScraper
 
 logger = logging.getLogger(__name__)
 
