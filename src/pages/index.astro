@@ -3,8 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import offersData from '../data/offers.json';
 
-const vendors = offersData.vendors || [];
-const allOffers = offersData.all_offers || [];
+const rawVendors = offersData.vendors || [];
+const rawOffers = offersData.all_offers || [];
+
+// Sort vendors hierarchically: highest offer count first, then alphabetical by name
+const vendors = [...rawVendors].sort((a: any, b: any) => {
+  if (b.count !== a.count) {
+    return b.count - a.count;
+  }
+  return (a.vendor_name || '').localeCompare(b.vendor_name || '');
+});
+
+// Map vendor_id to rank index in sorted hierarchy
+const vendorRankMap = new Map(vendors.map((v: any, idx: number) => [v.vendor_id, idx]));
+
+// Sort offers according to vendor hierarchy (vendor with most offers appears first)
+const allOffers = [...rawOffers].sort((a: any, b: any) => {
+  const rankA = vendorRankMap.get(a.vendor_id) ?? 999;
+  const rankB = vendorRankMap.get(b.vendor_id) ?? 999;
+  return rankA - rankB;
+});
 ---
 
 <Layout title="Lanka Food Offer Ledger | Sri Lanka Fast Food Deals">
