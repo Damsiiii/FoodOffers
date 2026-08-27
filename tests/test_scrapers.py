@@ -22,6 +22,40 @@ def test_fetch_all_offers_live():
     assert result["total_vendors"] == len(EXPECTED_VENDORS)
     assert "all_offers" in result
 
+def test_base_scraper_normalization():
+    from scrapers.base import BaseScraper
+
+    class DummyScraper(BaseScraper):
+        vendor_id = "dummy"
+        vendor_name = "Dummy Vendor"
+
+        def scrape_live(self):
+            return [
+                # Item without compare price or discount
+                {"title": "Item A", "discounted_price": 1000},
+                # Item with inflated original price
+                {"title": "Item B", "discounted_price": 1000, "original_price": 2000},
+                # Item with invalid original price less than discounted price
+                {"title": "Item C", "discounted_price": 1500, "original_price": 1200},
+            ]
+
+    scraper = DummyScraper()
+    result = scraper.get_offers()
+    offers = result["offers"]
+
+    assert offers[0]["discounted_price"] == 1000
+    assert offers[0]["original_price"] == 1000
+    assert offers[0]["discount_percentage"] == 0
+
+    assert offers[1]["discounted_price"] == 1000
+    assert offers[1]["original_price"] == 2000
+    assert offers[1]["discount_percentage"] == 50
+
+    assert offers[2]["discounted_price"] == 1500
+    assert offers[2]["original_price"] == 1500
+    assert offers[2]["discount_percentage"] == 0
+
+
 def test_update_offers_script():
     import subprocess
     import sys

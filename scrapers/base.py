@@ -26,20 +26,38 @@ class BaseScraper:
         try:
             live_offers = self.scrape_live()
             if live_offers:
+                sanitized_offers = []
                 for offer in live_offers:
                     offer["is_fallback"] = False
                     if "vendor_id" not in offer:
                         offer["vendor_id"] = self.vendor_id
                     if "vendor_name" not in offer:
                         offer["vendor_name"] = self.vendor_name
+
+                    # Sanitize and strictly normalize price and discount calculations
+                    disc_price = float(offer.get("discounted_price", 0))
+                    orig_price = float(offer.get("original_price", disc_price))
+
+                    if orig_price > disc_price and disc_price > 0:
+                        calculated_disc = int(round((orig_price - disc_price) / orig_price * 100))
+                        offer["original_price"] = orig_price
+                        offer["discounted_price"] = disc_price
+                        offer["discount_percentage"] = calculated_disc
+                    else:
+                        offer["original_price"] = disc_price
+                        offer["discounted_price"] = disc_price
+                        offer["discount_percentage"] = 0
+
+                    sanitized_offers.append(offer)
+
                 return {
                     "vendor_id": self.vendor_id,
                     "vendor_name": self.vendor_name,
                     "vendor_logo": self.vendor_logo,
                     "website_url": self.website_url,
                     "status": "live",
-                    "count": len(live_offers),
-                    "offers": live_offers
+                    "count": len(sanitized_offers),
+                    "offers": sanitized_offers
                 }
         except Exception as e:
             logger.error(f"Live scraping failed for {self.vendor_name} ({self.vendor_id}): {e}")
