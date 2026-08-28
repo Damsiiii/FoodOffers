@@ -21,32 +21,37 @@ class BurgerKingScraper(BaseScraper):
     def scrape_live(self):
         offers = []
         try:
-            resp = requests.get(self.website_url, headers=DEFAULT_HEADERS, verify=False, timeout=8)
-            if resp.status_code == 200:
-                soup = BeautifulSoup(resp.text, "html.parser")
-                idx = 1
-                for img in soup.find_all("img"):
-                    src = img.get("src") or ""
-                    if "uploads" in src and ("Banner" in src or "Header" in src) and not "LOGO" in src:
-                        full_src = src if src.startswith("http") else "https://burgerking.lk/" + src.lstrip("/")
-                        offers.append({
-                            "id": f"bk-promo-{idx}",
-                            "title": f"Burger King Saver Bundle #{idx}",
-                            "description": "Burger King Sri Lanka special burger deal and king saver combo.",
-                            "category": "King Savers",
-                            "original_price": 2500.0,
-                            "discounted_price": 1950.0,
-                            "discount_percentage": 22,
-                            "image_url": full_src,
-                            "deal_type": "Live Website Promotion",
-                            "valid_until": "Limited Time",
-                            "source_url": self.website_url
-                        })
-                        idx += 1
+            from scrapers.browser import intercept_api_deals
+            offers = intercept_api_deals("https://burgerking.lk", self.vendor_id, self.vendor_name)
         except Exception:
             pass
 
         if not offers:
-            from scrapers.browser import intercept_api_deals
-            offers = intercept_api_deals(self.website_url, self.vendor_id, self.vendor_name)
+            try:
+                resp = requests.get(self.website_url, headers=DEFAULT_HEADERS, verify=False, timeout=8)
+                if resp.status_code == 200:
+                    soup = BeautifulSoup(resp.text, "html.parser")
+                    idx = 1
+                    for img in soup.find_all("img"):
+                        src = img.get("src") or ""
+                        alt = img.get("alt") or ""
+                        if "uploads" in src and ("Header_Banner" in src or "Saver" in src) and not "LOGO" in src:
+                            full_src = src if src.startswith("http") else "https://burgerking.lk/" + src.lstrip("/")
+                            title = alt.strip() if alt and len(alt) > 3 else "Burger King Promotional Deal"
+                            offers.append({
+                                "id": f"bk-promo-{idx}",
+                                "title": title,
+                                "description": "Burger King Sri Lanka special promotional offer.",
+                                "category": "King Savers",
+                                "original_price": 1950.0,
+                                "discounted_price": 1950.0,
+                                "discount_percentage": 0,
+                                "image_url": full_src,
+                                "deal_type": "Official Banner",
+                                "valid_until": "Limited Time",
+                                "source_url": self.website_url
+                            })
+                            idx += 1
+            except Exception:
+                pass
         return offers
