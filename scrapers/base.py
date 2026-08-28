@@ -21,7 +21,7 @@ class BaseScraper:
     def get_offers(self, force_fallback: bool = False) -> Dict[str, Any]:
         """
         Get live offers for this vendor.
-        Executes live dynamic web scraping. Filters to genuine discount offers.
+        Executes live dynamic web scraping and normalizes offer data.
         """
         try:
             live_offers = self.scrape_live()
@@ -37,22 +37,18 @@ class BaseScraper:
                     disc_price = float(offer.get("discounted_price", 0))
                     orig_price = float(offer.get("original_price", disc_price))
 
-                    # If compare price exists and indicates a discount
                     if orig_price > disc_price and disc_price > 0:
                         calculated_disc = int(round((orig_price - disc_price) / orig_price * 100))
-                        if calculated_disc > 0:
-                            offer["original_price"] = orig_price
-                            offer["discounted_price"] = disc_price
-                            offer["discount_percentage"] = calculated_disc
-                            sanitized_offers.append(offer)
-                    elif offer.get("discount_percentage", 0) > 0 and disc_price > 0:
-                        disc_pct = int(offer["discount_percentage"])
-                        if orig_price <= disc_price:
-                            orig_price = round(disc_price / (1 - disc_pct / 100))
+                        offer["original_price"] = orig_price
+                        offer["discounted_price"] = disc_price
+                        offer["discount_percentage"] = calculated_disc
+                    else:
+                        disc_pct = int(offer.get("discount_percentage", 0))
                         offer["original_price"] = orig_price
                         offer["discounted_price"] = disc_price
                         offer["discount_percentage"] = disc_pct
-                        sanitized_offers.append(offer)
+
+                    sanitized_offers.append(offer)
 
                 return {
                     "vendor_id": self.vendor_id,

@@ -114,7 +114,7 @@
         {
           "id": "cdc-live-9676342690082",
           "title": "Black Goreng Special Rice",
-          "description": "Chinese Dragon Cafe special: Black Goreng Special Rice",
+          "description": "Chinese Dragon Cafe deal: Black Goreng Special Rice",
           "category": "Chinese Family Meals",
           "original_price": 1700.0,
           "discounted_price": 850.0,
@@ -130,7 +130,7 @@
         {
           "id": "cdc-live-10001511579938",
           "title": "Dragon Luxury Bowl (Mintpay Exclusive Deal)",
-          "description": "Chinese Dragon Cafe special: Dragon Luxury Bowl (Mintpay Exclusive Deal)",
+          "description": "Chinese Dragon Cafe deal: Dragon Luxury Bowl (Mintpay Exclusive Deal)",
           "category": "Chinese Family Meals",
           "original_price": 1650.0,
           "discounted_price": 1390.0,
@@ -146,7 +146,7 @@
         {
           "id": "cdc-live-10308540825890",
           "title": "Dragon 50:50",
-          "description": "Chinese Dragon Cafe special: Dragon 50:50",
+          "description": "Chinese Dragon Cafe deal: Dragon 50:50",
           "category": "Chinese Family Meals",
           "original_price": 2160.0,
           "discounted_price": 1090.0,
@@ -162,7 +162,7 @@
         {
           "id": "cdc-live-10053541265698",
           "title": "Shanghai Legend Rice",
-          "description": "Chinese Dragon Cafe special: Shanghai Legend Rice",
+          "description": "Chinese Dragon Cafe deal: Shanghai Legend Rice",
           "category": "Chinese Family Meals",
           "original_price": 2000.0,
           "discounted_price": 1000.0,
@@ -178,7 +178,7 @@
         {
           "id": "cdc-live-9914640105762",
           "title": "Happy Dolphin Rice",
-          "description": "Chinese Dragon Cafe special: Happy Dolphin Rice",
+          "description": "Chinese Dragon Cafe deal: Happy Dolphin Rice",
           "category": "Chinese Family Meals",
           "original_price": 1800.0,
           "discounted_price": 900.0,
@@ -194,7 +194,7 @@
         {
           "id": "cdc-live-9808254304546",
           "title": "Black Goreng Xtreme",
-          "description": "Chinese Dragon Cafe special: Black Goreng Xtreme",
+          "description": "Chinese Dragon Cafe deal: Black Goreng Xtreme",
           "category": "Chinese Family Meals",
           "original_price": 1780.0,
           "discounted_price": 890.0,
@@ -210,7 +210,7 @@
         {
           "id": "cdc-live-10048715882786",
           "title": "Dragon 3X Blast",
-          "description": "Chinese Dragon Cafe special: Dragon 3X Blast",
+          "description": "Chinese Dragon Cafe deal: Dragon 3X Blast",
           "category": "Chinese Family Meals",
           "original_price": 4900.0,
           "discounted_price": 2990.0,
@@ -226,7 +226,7 @@
         {
           "id": "cdc-live-9769380774178",
           "title": "Shanghai Chicken Rice",
-          "description": "Chinese Dragon Cafe special: Shanghai Chicken Rice",
+          "description": "Chinese Dragon Cafe deal: Shanghai Chicken Rice",
           "category": "Chinese Family Meals",
           "original_price": 1480.0,
           "discounted_price": 790.0,
@@ -242,7 +242,7 @@
         {
           "id": "cdc-live-9965618790690",
           "title": "Hot Butter CPC Rice Bowl",
-          "description": "Chinese Dragon Cafe special: Hot Butter CPC Rice Bowl",
+          "description": "Chinese Dragon Cafe deal: Hot Butter CPC Rice Bowl",
           "category": "Chinese Family Meals",
           "original_price": 2990.0,
           "discounted_price": 2200.0,
@@ -258,7 +258,7 @@
         {
           "id": "cdc-live-9447538721058",
           "title": "Pork Dragon Pack",
-          "description": "Chinese Dragon Cafe special: Pork Dragon Pack",
+          "description": "Chinese Dragon Cafe deal: Pork Dragon Pack",
           "category": "Chinese Family Meals",
           "original_price": 1490.0,
           "discounted_price": 1450.0,
@@ -274,7 +274,7 @@
         {
           "id": "cdc-live-9914648035618",
           "title": "Family Dolphin Rice",
-          "description": "Chinese Dragon Cafe special: Family Dolphin Rice",
+          "description": "Chinese Dragon Cafe deal: Family Dolphin Rice",
           "category": "Chinese Family Meals",
           "original_price": 2990.0,
           "discounted_price": 1990.0,
@@ -312,7 +312,7 @@
     {
       "id": "cdc-live-9676342690082",
       "title": "Black Goreng Special Rice",
-      "description": "Chinese Dragon Cafe special: Black Goreng Special Rice",
+      "description": "Chinese Dragon Cafe deal: Black Goreng Special Rice",
       "category": "Chinese Family Meals",
       "original_price": 1700.0,
       "discounted_price": 850.0,
@@ -328,7 +328,7 @@
     {
       "id": "cdc-live-10001511579938",
       "title": "Dragon Luxury Bowl (Mintpay Exclusive Deal)",
-      "description": "Chinese Dragon Cafe special: Dragon Luxury Bowl (Mintpay Exclusive Deal)",
+      "description": "Chinese Dragon Cafe deal: Dragon Luxury Bowl (Mintpay Exclusive Deal)",
       "category": "Chinese Family Meals",
       "original_price": 1650.0,
       "discounted_price": 1390.0,
@@ -344,7 +344,7 @@
     {
       "id": "cdc-live-10308540825890",
       "title": "Dragon 50:50",
-      "description": "Chinese Dragon Cafe special: Dragon 50:50",
+      "description": "Chinese Dragon Cafe deal: Dragon 50:50",
       "category": "Chinese Family Meals",
       "original_price": 2160.0,
       "discounted_price": 1090.0,
@@ -360,7 +360,7 @@
     {
       "id": "cdc-live-10053541265698",
       "title": "Shanghai Legend Rice",
-      "description": "Chinese Dragon Cafe special: Shanghai Legend Rice",
+      "description": "Chinese Dragon Cafe deal: Shanghai Legend Rice",
       "category": "Chinese Family Meals",
       "original_price": 2000.0,
       "discounted_price": 1000.0,
@@ -376,7 +376,7 @@
     {
       "id": "cdc-live-9914640105762",
       "title": "Happy Dolphin Rice",
-      "description": "Chinese Dragon Cafe special: Happy Dolphin Rice",
+      "description": "Chinese Dragon Cafe deal: Happy Dolphin Rice",
       "category": "Chinese Family Meals",
       "original_price": 1800.0,
       "discounted_price": 900.0,
@@ -392,7 +392,7 @@
     {
       "id": "cdc-live-9808254304546",
       "title": "Black Goreng Xtreme",
-      "description": "Chinese Dragon Cafe special: Black Goreng Xtreme",
+      "description": "Chinese Dragon Cafe deal: Black Goreng Xtreme",
       "category": "Chinese Family Meals",
       "original_price": 1780.0,
       "discounted_price": 890.0,
@@ -408,7 +408,7 @@
     {
       "id": "cdc-live-10048715882786",
       "title": "Dragon 3X Blast",
-      "description": "Chinese Dragon Cafe special: Dragon 3X Blast",
+      "description": "Chinese Dragon Cafe deal: Dragon 3X Blast",
       "category": "Chinese Family Meals",
       "original_price": 4900.0,
       "discounted_price": 2990.0,
@@ -424,7 +424,7 @@
     {
       "id": "cdc-live-9769380774178",
       "title": "Shanghai Chicken Rice",
-      "description": "Chinese Dragon Cafe special: Shanghai Chicken Rice",
+      "description": "Chinese Dragon Cafe deal: Shanghai Chicken Rice",
       "category": "Chinese Family Meals",
       "original_price": 1480.0,
       "discounted_price": 790.0,
@@ -440,7 +440,7 @@
     {
       "id": "cdc-live-9965618790690",
       "title": "Hot Butter CPC Rice Bowl",
-      "description": "Chinese Dragon Cafe special: Hot Butter CPC Rice Bowl",
+      "description": "Chinese Dragon Cafe deal: Hot Butter CPC Rice Bowl",
       "category": "Chinese Family Meals",
       "original_price": 2990.0,
       "discounted_price": 2200.0,
@@ -456,7 +456,7 @@
     {
       "id": "cdc-live-9447538721058",
       "title": "Pork Dragon Pack",
-      "description": "Chinese Dragon Cafe special: Pork Dragon Pack",
+      "description": "Chinese Dragon Cafe deal: Pork Dragon Pack",
       "category": "Chinese Family Meals",
       "original_price": 1490.0,
       "discounted_price": 1450.0,
@@ -472,7 +472,7 @@
     {
       "id": "cdc-live-9914648035618",
       "title": "Family Dolphin Rice",
-      "description": "Chinese Dragon Cafe special: Family Dolphin Rice",
+      "description": "Chinese Dragon Cafe deal: Family Dolphin Rice",
       "category": "Chinese Family Meals",
       "original_price": 2990.0,
       "discounted_price": 1990.0,
@@ -486,5 +486,5 @@
       "vendor_name": "Chinese Dragon Cafe"
     }
   ],
-  "last_updated": "2026-08-28T05:03:39.271434+00:00"
+  "last_updated": "2026-08-28T05:24:36.548790+00:00"
 }
