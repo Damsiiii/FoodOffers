@@ -18,7 +18,7 @@ class BaseScraper:
         """Scrape live offers from vendor website. Override in subclasses."""
         raise NotImplementedError("scrape_live must be implemented by subclass")
 
-    def get_offers(self, force_fallback: bool = False) -> Dict[str, Any]:
+    def get_offers(self) -> Dict[str, Any]:
         """
         Get live offers for this vendor.
         Executes live dynamic web / network API scraping and normalizes offer data.
