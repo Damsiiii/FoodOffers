@@ -21,32 +21,37 @@ class KFCScraper(BaseScraper):
     def scrape_live(self):
         offers = []
         try:
-            resp = requests.get(self.website_url, headers=DEFAULT_HEADERS, verify=False, timeout=8)
-            if resp.status_code == 200:
-                soup = BeautifulSoup(resp.text, "html.parser")
-                idx = 1
-                for img in soup.find_all("img"):
-                    src = img.get("src") or ""
-                    if "sliderimages" in src:
-                        full_src = src if src.startswith("http") else "https://admin-kfc-web.azurewebsites.net/" + src.lstrip("/")
-                        offers.append({
-                            "id": f"kfc-promo-{idx}",
-                            "title": f"KFC Special Bucket Deal #{idx}",
-                            "description": "KFC Sri Lanka special promotion and hot bucket deal.",
-                            "category": "Bucket Deals",
-                            "original_price": 3800.0,
-                            "discounted_price": 2990.0,
-                            "discount_percentage": 21,
-                            "image_url": full_src,
-                            "deal_type": "Live Website Promotion",
-                            "valid_until": "Limited Time",
-                            "source_url": self.website_url
-                        })
-                        idx += 1
+            from scrapers.browser import intercept_api_deals
+            offers = intercept_api_deals("https://www.kfc.lk/menu", self.vendor_id, self.vendor_name)
         except Exception:
             pass
 
         if not offers:
-            from scrapers.browser import intercept_api_deals
-            offers = intercept_api_deals(self.website_url, self.vendor_id, self.vendor_name)
+            try:
+                resp = requests.get(self.website_url, headers=DEFAULT_HEADERS, verify=False, timeout=8)
+                if resp.status_code == 200:
+                    soup = BeautifulSoup(resp.text, "html.parser")
+                    idx = 1
+                    for img in soup.find_all("img"):
+                        src = img.get("src") or ""
+                        alt = img.get("alt") or ""
+                        if "sliderimages" in src:
+                            full_src = src if src.startswith("http") else "https://admin-kfc-web.azurewebsites.net/" + src.lstrip("/")
+                            title = alt.strip() if alt and len(alt) > 3 and "KFC" not in alt else f"KFC Promotional Bucket Deal"
+                            offers.append({
+                                "id": f"kfc-promo-{idx}",
+                                "title": title,
+                                "description": f"KFC Sri Lanka official promotional banner deal.",
+                                "category": "Bucket Deals",
+                                "original_price": 2860.0,
+                                "discounted_price": 2860.0,
+                                "discount_percentage": 0,
+                                "image_url": full_src,
+                                "deal_type": "Official Banner",
+                                "valid_until": "Limited Time",
+                                "source_url": self.website_url
+                            })
+                            idx += 1
+            except Exception:
+                pass
         return offers

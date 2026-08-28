@@ -13,9 +13,9 @@ PROMO_KEYWORDS = [
 
 def intercept_api_deals(url: str, vendor_id: str, vendor_name: str, timeout: int = 25000) -> List[Dict[str, Any]]:
     """
-    Network XHR / Internal API Interception Engine.
-    Intercepts JSON responses sent by vendor web applications (React, Angular, Vue, Next.js)
-    and extracts deal items directly from internal API payloads.
+    Network XHR & SPA DOM Interception Engine.
+    Emulates a Sri Lanka browser session (Colombo geolocation, en-LK locale)
+    to extract actual menu item titles, prices, and photo URLs.
     """
     offers = []
     intercepted_json_payloads = []
@@ -24,7 +24,6 @@ def intercept_api_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
         try:
             content_type = response.headers.get("content-type", "")
             if "application/json" in content_type:
-                # Filter out analytics, tracking, or telemetry endpoints
                 url_lower = response.url.lower()
                 if any(x in url_lower for x in ["google", "analytics", "facebook", "sentry", "clarity", "hotjar", "gtm"]):
                     return
@@ -44,6 +43,8 @@ def intercept_api_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
                 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/120.0.0.0 Safari/537.36",
                 locale="en-LK",
                 timezone_id="Asia/Colombo",
+                geolocation={"latitude": 6.9271, "longitude": 79.8612},
+                permissions=["geolocation"],
                 extra_http_headers={
                     "Accept-Language": "en-LK,en-US;q=0.9,en;q=0.8"
                 }
@@ -53,22 +54,75 @@ def intercept_api_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
 
             try:
                 page.goto(url, timeout=timeout, wait_until="domcontentloaded")
-                page.wait_for_timeout(4000)
+                page.wait_for_timeout(3500)
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight/2)")
+                page.wait_for_timeout(1000)
             except Exception as nav_e:
                 logger.warning(f"Navigation timeout for {url}: {nav_e}")
+
+            # Also extract rendered DOM cards directly from the page
+            dom_items = page.evaluate("""() => {
+                const results = [];
+                const seen = new Set();
+                document.querySelectorAll("div.product-card, div.menu-item, div.card, div.col-md-4, div.col-sm-6, div.col-lg-3, article").forEach(card => {
+                    const titleEl = card.querySelector("h1, h2, h3, h4, h5, .title, .product-name, font");
+                    const priceEl = card.querySelector(".price, .product-price, .amount");
+                    const imgEl = card.querySelector("img");
+                    if (titleEl && priceEl && imgEl) {
+                        const title = titleEl.innerText.trim();
+                        const priceText = priceEl.innerText.trim();
+                        const img = imgEl.src || imgEl.getAttribute("data-src") || "";
+                        if (title && priceText && img && !seen.has(title) && title.length >= 3 && title.length < 60 && !img.includes("logo")) {
+                            seen.add(title);
+                            results.push({ title, priceText, img });
+                        }
+                    }
+                });
+                return results;
+            }""")
 
             browser.close()
     except Exception as e:
         logger.warning(f"Playwright XHR Interception error for {url}: {e}")
+        dom_items = []
 
-    # Parse intercepted JSON payloads for deal objects
     seen_titles = set()
     idx = 1
 
+    # 1. Process DOM items
+    for item in dom_items:
+        title = item.get("title", "").strip()
+        price_text = item.get("priceText", "")
+        img = item.get("img", "")
+
+        price_match = re.search(r"(?:Rs\.?|LKR)\s*([\d,]+(?:\.\d{2})?)", price_text, re.I)
+        if price_match and title not in seen_titles:
+            try:
+                price_val = float(price_match.group(1).replace(",", ""))
+                if price_val >= 200:
+                    seen_titles.add(title)
+                    offers.append({
+                        "id": f"{vendor_id}-dom-{idx}",
+                        "title": title,
+                        "description": f"{vendor_name} menu deal: {title}",
+                        "category": "Live Deals",
+                        "original_price": price_val,
+                        "discounted_price": price_val,
+                        "discount_percentage": 0,
+                        "image_url": img,
+                        "deal_type": "Menu Deal",
+                        "valid_until": "Limited Time",
+                        "source_url": url,
+                        "is_fallback": False
+                    })
+                    idx += 1
+            except Exception:
+                pass
+
+    # 2. Process intercepted JSON API payloads
     def recursive_extract_deals(data):
         nonlocal idx
         if isinstance(data, dict):
-            # Check if this dict looks like a product/deal item
             title = data.get("name") or data.get("title") or data.get("productName") or data.get("itemName")
             price = data.get("price") or data.get("discountedPrice") or data.get("offerPrice") or data.get("sellingPrice")
             compare_price = data.get("compareAtPrice") or data.get("originalPrice") or data.get("oldPrice") or data.get("listPrice")
@@ -89,22 +143,19 @@ def intercept_api_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
                             disc_pct = int(round((comp_val - price_val) / comp_val * 100))
 
                         title_clean = title.strip()
-                        title_lower = title_clean.lower()
-                        is_promo = any(kw in title_lower for kw in PROMO_KEYWORDS) or disc_pct > 0
-
-                        if is_promo and title_clean not in seen_titles and len(title_clean) > 3:
+                        if title_clean not in seen_titles and len(title_clean) > 3 and not any(x in title_clean.lower() for x in ["delivery", "cart", "close"]):
                             seen_titles.add(title_clean)
                             img_str = str(img) if img else "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&fit=crop"
                             offers.append({
                                 "id": f"{vendor_id}-api-{idx}",
                                 "title": title_clean,
-                                "description": f"{vendor_name} promotional deal: {title_clean}",
+                                "description": f"{vendor_name} special offer: {title_clean}",
                                 "category": "API Deals",
                                 "original_price": comp_val,
                                 "discounted_price": price_val,
                                 "discount_percentage": disc_pct,
                                 "image_url": img_str,
-                                "deal_type": "Internal API Deal",
+                                "deal_type": "Live API Offer",
                                 "valid_until": "Limited Time",
                                 "source_url": url,
                                 "is_fallback": False
