@@ -1,7 +1,4 @@
-import re
-import requests
 import warnings
-from bs4 import BeautifulSoup
 from scrapers.base import BaseScraper
 
 warnings.filterwarnings("ignore")
@@ -14,6 +11,5 @@ class KFCScraper(BaseScraper):
     categories = ["Bucket Deals", "Combos", "Rice Meals", "Burgers", "Snacks"]
 
     def scrape_live(self):
-        from scrapers.browser import fetch_dynamic_deals
-        offers = fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
-        return offers
+        from scrapers.browser import intercept_api_deals
+        return intercept_api_deals(self.website_url, self.vendor_id, self.vendor_name)

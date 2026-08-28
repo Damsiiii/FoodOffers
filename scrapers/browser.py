@@ -1,4 +1,5 @@
 import logging
+import json
 import re
 from typing import List, Dict, Any
 from playwright.sync_api import sync_playwright
@@ -7,14 +8,35 @@ logger = logging.getLogger(__name__)
 
 PROMO_KEYWORDS = [
     "promo", "deal", "combo", "special", "save", "offer",
-    "discount", "off", "free", "bogo", "bucket", "saver"
+    "discount", "off", "free", "bogo", "bucket", "saver", "value"
 ]
 
-def fetch_dynamic_deals(url: str, vendor_id: str, vendor_name: str, timeout: int = 25000) -> List[Dict[str, Any]]:
+def intercept_api_deals(url: str, vendor_id: str, vendor_name: str, timeout: int = 25000) -> List[Dict[str, Any]]:
     """
-    Intelligent dynamic live deal and image extraction engine using Playwright with Sri Lankan localization headers.
+    Network XHR / Internal API Interception Engine.
+    Intercepts JSON responses sent by vendor web applications (React, Angular, Vue, Next.js)
+    and extracts deal items directly from internal API payloads.
     """
     offers = []
+    intercepted_json_payloads = []
+
+    def handle_response(response):
+        try:
+            content_type = response.headers.get("content-type", "")
+            if "application/json" in content_type:
+                # Filter out analytics, tracking, or telemetry endpoints
+                url_lower = response.url.lower()
+                if any(x in url_lower for x in ["google", "analytics", "facebook", "sentry", "clarity", "hotjar", "gtm"]):
+                    return
+                try:
+                    payload = response.json()
+                    if payload:
+                        intercepted_json_payloads.append((response.url, payload))
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
@@ -27,111 +49,77 @@ def fetch_dynamic_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
                 }
             )
             page = context.new_page()
+            page.on("response", handle_response)
 
             try:
                 page.goto(url, timeout=timeout, wait_until="domcontentloaded")
-                page.wait_for_timeout(3500)
+                page.wait_for_timeout(4000)
             except Exception as nav_e:
                 logger.warning(f"Navigation timeout for {url}: {nav_e}")
 
-            extracted = page.evaluate("""() => {
-                const results = [];
-                const imgs = Array.from(document.querySelectorAll("img"));
-
-                imgs.forEach(img => {
-                    const src = img.src || img.getAttribute("data-src") || img.getAttribute("srcset");
-                    if (!src || src.startsWith("data:") || src.includes("logo") || src.includes("icon") || src.includes("avatar")) return;
-
-                    const card = img.closest("div, article, section, li, a") || img.parentElement;
-                    if (!card) return;
-
-                    const text = card.innerText ? card.innerText.trim() : "";
-                    if (!text || text.length < 5 || text.length > 500) return;
-
-                    const lines = text.split("\\n").map(l => l.trim()).filter(l => l.length > 2);
-                    if (lines.length > 0) {
-                        results.push({
-                            title: lines[0],
-                            full_text: text.replace(/\\n/g, " "),
-                            image_url: src
-                        });
-                    }
-                });
-                return results;
-            }""")
-
-            seen_titles = set()
-            idx = 1
-            for item in extracted:
-                title = item["title"]
-                img_url = item["image_url"]
-                full_text = item["full_text"]
-
-                if (
-                    not title
-                    or len(title) < 4
-                    or len(title) > 80
-                    or title in seen_titles
-                    or title.startswith("http")
-                    or "DELIVERY" in title.upper()
-                    or "SHOW MORE" in title.upper()
-                    or "SIGN IN" in title.upper()
-                    or "PRIVACY" in title.upper()
-                    or "TERMS" in title.upper()
-                    or "HOME" in title.upper()
-                    or "MENU" in title.upper()
-                ):
-                    continue
-
-                if re.match(r"^[\d\s\-\+\(\)]+$", title):
-                    continue
-
-                # Ensure card text or title indicates a genuine deal/promo/offer
-                text_lower = full_text.lower()
-                is_deal = any(kw in text_lower for kw in PROMO_KEYWORDS) or re.search(r"\d+%\s*off", text_lower)
-                if not is_deal:
-                    continue
-
-                price_match = re.search(r"(?:Rs\.?|LKR)\s*([\d,]+(?:\.\d{2})?)", full_text, re.I)
-                if not price_match:
-                    continue
-
-                price = float(price_match.group(1).replace(",", ""))
-                if price < 150 or price > 50000:
-                    continue
-
-                pct_match = re.search(r"(\d+)%\s*(?:OFF|discount)", full_text, re.I)
-                if pct_match:
-                    disc_pct = int(pct_match.group(1))
-                    if 0 < disc_pct < 100:
-                        orig_price = round(price / (1 - disc_pct / 100))
-                    else:
-                        orig_price = price
-                        disc_pct = 0
-                else:
-                    orig_price = price
-                    disc_pct = 0
-
-                seen_titles.add(title)
-
-                offers.append({
-                    "id": f"{vendor_id}-live-{idx}",
-                    "title": title,
-                    "description": full_text[:140],
-                    "category": "Live Deals",
-                    "original_price": orig_price,
-                    "discounted_price": price,
-                    "discount_percentage": disc_pct,
-                    "image_url": img_url,
-                    "deal_type": "Live Web Offer",
-                    "valid_until": "Limited Time",
-                    "source_url": url,
-                    "is_fallback": False
-                })
-                idx += 1
-
             browser.close()
     except Exception as e:
-        logger.warning(f"Playwright live fetch error for {url}: {e}")
+        logger.warning(f"Playwright XHR Interception error for {url}: {e}")
+
+    # Parse intercepted JSON payloads for deal objects
+    seen_titles = set()
+    idx = 1
+
+    def recursive_extract_deals(data):
+        nonlocal idx
+        if isinstance(data, dict):
+            # Check if this dict looks like a product/deal item
+            title = data.get("name") or data.get("title") or data.get("productName") or data.get("itemName")
+            price = data.get("price") or data.get("discountedPrice") or data.get("offerPrice") or data.get("sellingPrice")
+            compare_price = data.get("compareAtPrice") or data.get("originalPrice") or data.get("oldPrice") or data.get("listPrice")
+            img = data.get("image") or data.get("imageUrl") or data.get("img") or data.get("thumbnail") or data.get("picture")
+
+            if isinstance(img, list) and len(img) > 0:
+                img = img[0]
+            if isinstance(img, dict):
+                img = img.get("src") or img.get("url")
+
+            if title and isinstance(title, str) and price is not None:
+                try:
+                    price_val = float(price)
+                    if price_val > 100:
+                        comp_val = float(compare_price) if compare_price is not None else price_val
+                        disc_pct = 0
+                        if comp_val > price_val:
+                            disc_pct = int(round((comp_val - price_val) / comp_val * 100))
+
+                        title_clean = title.strip()
+                        title_lower = title_clean.lower()
+                        is_promo = any(kw in title_lower for kw in PROMO_KEYWORDS) or disc_pct > 0
+
+                        if is_promo and title_clean not in seen_titles and len(title_clean) > 3:
+                            seen_titles.add(title_clean)
+                            img_str = str(img) if img else "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&fit=crop"
+                            offers.append({
+                                "id": f"{vendor_id}-api-{idx}",
+                                "title": title_clean,
+                                "description": f"{vendor_name} promotional deal: {title_clean}",
+                                "category": "API Deals",
+                                "original_price": comp_val,
+                                "discounted_price": price_val,
+                                "discount_percentage": disc_pct,
+                                "image_url": img_str,
+                                "deal_type": "Internal API Deal",
+                                "valid_until": "Limited Time",
+                                "source_url": url,
+                                "is_fallback": False
+                            })
+                            idx += 1
+                except (ValueError, TypeError):
+                    pass
+
+            for v in data.values():
+                recursive_extract_deals(v)
+        elif isinstance(data, list):
+            for item in data:
+                recursive_extract_deals(item)
+
+    for resp_url, payload in intercepted_json_payloads:
+        recursive_extract_deals(payload)
 
     return offers

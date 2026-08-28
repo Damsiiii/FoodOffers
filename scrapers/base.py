@@ -21,7 +21,7 @@ class BaseScraper:
     def get_offers(self, force_fallback: bool = False) -> Dict[str, Any]:
         """
         Get live offers for this vendor.
-        Executes live dynamic web scraping and normalizes offer data.
+        Executes live dynamic web / network API scraping and normalizes offer data.
         """
         try:
             live_offers = self.scrape_live()
@@ -60,7 +60,7 @@ class BaseScraper:
                     "offers": sanitized_offers
                 }
         except Exception as e:
-            logger.error(f"Live scraping failed for {self.vendor_name} ({self.vendor_id}): {e}")
+            logger.error(f"Live API scraping failed for {self.vendor_name} ({self.vendor_id}): {e}")
 
         return {
             "vendor_id": self.vendor_id,
