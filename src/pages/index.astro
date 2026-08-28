@@ -106,9 +106,11 @@ const allOffers = [...rawOffers].sort((a: any, b: any) => {
               />
 
               <!-- Off Tag Badge -->
-              <div class="absolute top-2.5 right-2.5 bg-spice-700 text-white font-mono font-bold text-xs px-2 py-0.5 border border-spice-600 shadow-sm">
-                -{offer.discount_percentage}%
-              </div>
+              {offer.discount_percentage > 0 && (
+                <div class="absolute top-2.5 right-2.5 bg-spice-700 text-white font-mono font-bold text-xs px-2 py-0.5 border border-spice-600 shadow-sm">
+                  -{offer.discount_percentage}%
+                </div>
+              )}
 
               <!-- Vendor Tag Badge -->
               <div class="absolute bottom-2.5 left-2.5 bg-paper-950/90 text-paper-200 font-mono text-[11px] px-2 py-0.5 border border-paper-800">

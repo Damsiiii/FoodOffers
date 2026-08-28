@@ -21,7 +21,7 @@ class BaseScraper:
     def get_offers(self, force_fallback: bool = False) -> Dict[str, Any]:
         """
         Get live offers for this vendor.
-        Executes live dynamic web scraping.
+        Executes live dynamic web scraping and normalizes offer data.
         """
         try:
             live_offers = self.scrape_live()
@@ -34,7 +34,6 @@ class BaseScraper:
                     if "vendor_name" not in offer:
                         offer["vendor_name"] = self.vendor_name
 
-                    # Sanitize and strictly normalize price and discount calculations
                     disc_price = float(offer.get("discounted_price", 0))
                     orig_price = float(offer.get("original_price", disc_price))
 
@@ -44,9 +43,10 @@ class BaseScraper:
                         offer["discounted_price"] = disc_price
                         offer["discount_percentage"] = calculated_disc
                     else:
-                        offer["original_price"] = disc_price
+                        disc_pct = int(offer.get("discount_percentage", 0))
+                        offer["original_price"] = orig_price
                         offer["discounted_price"] = disc_price
-                        offer["discount_percentage"] = 0
+                        offer["discount_percentage"] = disc_pct
 
                     sanitized_offers.append(offer)
 

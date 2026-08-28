@@ -31,11 +31,11 @@ def test_base_scraper_normalization():
 
         def scrape_live(self):
             return [
-                # Item without compare price or discount
+                # Item without compare price
                 {"title": "Item A", "discounted_price": 1000},
-                # Item with inflated original price
+                # Item with genuine discount (2000 down to 1000)
                 {"title": "Item B", "discounted_price": 1000, "original_price": 2000},
-                # Item with invalid original price less than discounted price
+                # Item with compare price less than discounted price
                 {"title": "Item C", "discounted_price": 1500, "original_price": 1200},
             ]
 
@@ -52,7 +52,7 @@ def test_base_scraper_normalization():
     assert offers[1]["discount_percentage"] == 50
 
     assert offers[2]["discounted_price"] == 1500
-    assert offers[2]["original_price"] == 1500
+    assert offers[2]["original_price"] == 1200
     assert offers[2]["discount_percentage"] == 0
 
 

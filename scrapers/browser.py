@@ -5,9 +5,14 @@ from playwright.sync_api import sync_playwright
 
 logger = logging.getLogger(__name__)
 
+PROMO_KEYWORDS = [
+    "promo", "deal", "combo", "special", "save", "offer",
+    "discount", "off", "free", "bogo", "bucket", "saver"
+]
+
 def fetch_dynamic_deals(url: str, vendor_id: str, vendor_name: str, timeout: int = 25000) -> List[Dict[str, Any]]:
     """
-    Intelligent dynamic live deal and image extraction engine using Playwright Firefox with Sri Lankan localization headers.
+    Intelligent dynamic live deal and image extraction engine using Playwright with Sri Lankan localization headers.
     """
     offers = []
     try:
@@ -78,11 +83,15 @@ def fetch_dynamic_deals(url: str, vendor_id: str, vendor_name: str, timeout: int
                 ):
                     continue
 
-                # Filter out pure phone numbers or address strings
                 if re.match(r"^[\d\s\-\+\(\)]+$", title):
                     continue
 
-                # Check price match in LKR
+                # Ensure card text or title indicates a genuine deal/promo/offer
+                text_lower = full_text.lower()
+                is_deal = any(kw in text_lower for kw in PROMO_KEYWORDS) or re.search(r"\d+%\s*off", text_lower)
+                if not is_deal:
+                    continue
+
                 price_match = re.search(r"(?:Rs\.?|LKR)\s*([\d,]+(?:\.\d{2})?)", full_text, re.I)
                 if not price_match:
                     continue
