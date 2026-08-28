@@ -11,5 +11,5 @@ class PereraAndSonsScraper(BaseScraper):
     categories = ["Short Eats & Bakery", "Rice & Lamprais", "Sweets"]
 
     def scrape_live(self):
-        from scrapers.browser import fetch_dynamic_deals
-        return fetch_dynamic_deals(self.website_url, self.vendor_id, self.vendor_name)
+        from scrapers.browser import intercept_api_deals
+        return intercept_api_deals(self.website_url, self.vendor_id, self.vendor_name)

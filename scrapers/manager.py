@@ -51,34 +51,26 @@ class ScraperManager:
             for scraper in self.scrapers.values()
         ]
 
-    def fetch_all_offers(self, force_fallback: bool = False) -> Dict[str, Any]:
+    def fetch_all_offers(self) -> Dict[str, Any]:
         """Fetch offers across all vendors."""
         results = []
         all_offers = []
-        fallback_count = 0
         live_count = 0
 
         for vendor_id, scraper in self.scrapers.items():
             try:
-                data = scraper.get_offers(force_fallback=force_fallback)
+                data = scraper.get_offers()
                 results.append(data)
                 offers = data.get("offers", [])
                 all_offers.extend(offers)
-                if data.get("status") == "fallback":
-                    fallback_count += 1
-                else:
-                    live_count += 1
+                live_count += 1
             except Exception as e:
                 logger.error(f"Error fetching offers for {vendor_id}: {e}")
-                fallback_data = scraper.get_offers(force_fallback=True)
-                results.append(fallback_data)
-                all_offers.extend(fallback_data.get("offers", []))
-                fallback_count += 1
 
         return {
             "total_vendors": len(self.scrapers),
             "live_vendors": live_count,
-            "fallback_vendors": fallback_count,
+            "fallback_vendors": 0,
             "total_offers": len(all_offers),
             "vendors": results,
             "all_offers": all_offers,
