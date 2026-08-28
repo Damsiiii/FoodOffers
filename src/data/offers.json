@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 11,
+  "total_offers": 14,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,8 +10,57 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 0,
-      "offers": []
+      "count": 3,
+      "offers": [
+        {
+          "id": "kfc-live-1",
+          "title": "BOGO Free 6Pc Hot & Crispy Bucket",
+          "description": "Official KFC Sri Lanka promotional offer: BOGO Free 6Pc Hot & Crispy Bucket",
+          "category": "Bucket Deals",
+          "original_price": 7980.0,
+          "discounted_price": 3990.0,
+          "discount_percentage": 50,
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree6pchcbucketc1f5e8a393264503ac53c4fd21ba8048.jpg",
+          "deal_type": "Live Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
+        },
+        {
+          "id": "kfc-live-2",
+          "title": "BOGO Free 8Pc Hot & Crispy Bucket",
+          "description": "Official KFC Sri Lanka promotional offer: BOGO Free 8Pc Hot & Crispy Bucket",
+          "category": "Bucket Deals",
+          "original_price": 10780.0,
+          "discounted_price": 5390.0,
+          "discount_percentage": 50,
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree8pchcbucketa3205ea1b4a340db99db008267d8395b.jpg",
+          "deal_type": "Live Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
+        },
+        {
+          "id": "kfc-live-3",
+          "title": "Super Savoury Sawan Deal",
+          "description": "Official KFC Sri Lanka promotional offer: Super Savoury Sawan Deal",
+          "category": "Bucket Deals",
+          "original_price": 4988.0,
+          "discounted_price": 3990.0,
+          "discount_percentage": 20,
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+          "deal_type": "Live Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
+        }
+      ]
     },
     {
       "vendor_id": "pizzahut",
@@ -310,6 +359,54 @@
   ],
   "all_offers": [
     {
+      "id": "kfc-live-1",
+      "title": "BOGO Free 6Pc Hot & Crispy Bucket",
+      "description": "Official KFC Sri Lanka promotional offer: BOGO Free 6Pc Hot & Crispy Bucket",
+      "category": "Bucket Deals",
+      "original_price": 7980.0,
+      "discounted_price": 3990.0,
+      "discount_percentage": 50,
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree6pchcbucketc1f5e8a393264503ac53c4fd21ba8048.jpg",
+      "deal_type": "Live Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
+      "id": "kfc-live-2",
+      "title": "BOGO Free 8Pc Hot & Crispy Bucket",
+      "description": "Official KFC Sri Lanka promotional offer: BOGO Free 8Pc Hot & Crispy Bucket",
+      "category": "Bucket Deals",
+      "original_price": 10780.0,
+      "discounted_price": 5390.0,
+      "discount_percentage": 50,
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree8pchcbucketa3205ea1b4a340db99db008267d8395b.jpg",
+      "deal_type": "Live Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
+      "id": "kfc-live-3",
+      "title": "Super Savoury Sawan Deal",
+      "description": "Official KFC Sri Lanka promotional offer: Super Savoury Sawan Deal",
+      "category": "Bucket Deals",
+      "original_price": 4988.0,
+      "discounted_price": 3990.0,
+      "discount_percentage": 20,
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+      "deal_type": "Live Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
       "id": "cdc-live-9676342690082",
       "title": "Black Goreng Special Rice",
       "description": "Chinese Dragon Cafe deal: Black Goreng Special Rice",
@@ -486,5 +583,5 @@
       "vendor_name": "Chinese Dragon Cafe"
     }
   ],
-  "last_updated": "2026-08-28T11:59:44.291164+00:00"
+  "last_updated": "2026-08-28T14:16:51.460344+00:00"
 }
