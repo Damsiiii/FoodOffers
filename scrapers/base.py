@@ -1,12 +1,11 @@
 import json
 import logging
-from pathlib import Path
 from typing import Dict, List, Any
 
 logger = logging.getLogger(__name__)
 
 class BaseScraper:
-    """Base class for all vendor food scrapers."""
+    """Base class for all Sri Lanka food deal scrapers."""
 
     vendor_id: str = "base"
     vendor_name: str = "Base Vendor"
@@ -15,13 +14,13 @@ class BaseScraper:
     categories: List[str] = []
 
     def scrape_live(self) -> List[Dict[str, Any]]:
-        """Scrape live offers from vendor website. Override in subclasses."""
+        """Scrape live offers from vendor website/API. Must be overridden by subclasses."""
         raise NotImplementedError("scrape_live must be implemented by subclass")
 
     def get_offers(self) -> Dict[str, Any]:
         """
         Get live offers for this vendor.
-        Executes live dynamic web / network API scraping and normalizes offer data.
+        Executes live dynamic web / API scraping and strictly filters for genuine promotional deals (>0% discount).
         """
         try:
             live_offers = self.scrape_live()
@@ -37,18 +36,22 @@ class BaseScraper:
                     disc_price = float(offer.get("discounted_price", 0))
                     orig_price = float(offer.get("original_price", disc_price))
 
+                    # Strict discount normalization: only keep genuine promotional discounts
                     if orig_price > disc_price and disc_price > 0:
                         calculated_disc = int(round((orig_price - disc_price) / orig_price * 100))
-                        offer["original_price"] = orig_price
-                        offer["discounted_price"] = disc_price
-                        offer["discount_percentage"] = calculated_disc
-                    else:
-                        disc_pct = int(offer.get("discount_percentage", 0))
+                        if calculated_disc > 0:
+                            offer["original_price"] = orig_price
+                            offer["discounted_price"] = disc_price
+                            offer["discount_percentage"] = calculated_disc
+                            sanitized_offers.append(offer)
+                    elif offer.get("discount_percentage", 0) > 0 and disc_price > 0:
+                        disc_pct = int(offer["discount_percentage"])
+                        if orig_price <= disc_price:
+                            orig_price = round(disc_price / (1 - disc_pct / 100))
                         offer["original_price"] = orig_price
                         offer["discounted_price"] = disc_price
                         offer["discount_percentage"] = disc_pct
-
-                    sanitized_offers.append(offer)
+                        sanitized_offers.append(offer)
 
                 return {
                     "vendor_id": self.vendor_id,
@@ -60,7 +63,7 @@ class BaseScraper:
                     "offers": sanitized_offers
                 }
         except Exception as e:
-            logger.error(f"Live API scraping failed for {self.vendor_name} ({self.vendor_id}): {e}")
+            logger.error(f"Live scraping failed for {self.vendor_name} ({self.vendor_id}): {e}")
 
         return {
             "vendor_id": self.vendor_id,
