@@ -40,10 +40,10 @@ class KFCScraper(BaseScraper):
                     if "admin-kfc-web" in src and "mainmenu" in src:
                         parent = img.parent
                         container_text = ""
-                        for _ in range(5):
+                        for _ in range(6):
                             if parent and parent.name == "div":
                                 txt = parent.get_text(" ", strip=True)
-                                if "Rs" in txt and len(txt) < 300:
+                                if "Rs" in txt and len(txt) < 400:
                                     container_text = txt
                                     break
                             parent = parent.parent if parent else None
@@ -57,44 +57,44 @@ class KFCScraper(BaseScraper):
 
                         price = float(price_match.group(1).replace(",", ""))
 
-                        clean_part = container_text.split("+")[0].split("Rs.")[0].strip()
-                        if "BOGO FREE 6PC" in clean_part.upper():
-                            title = "BOGO Free 6Pc Hot & Crispy Bucket"
-                        elif "BOGO FREE 8PC" in clean_part.upper():
-                            title = "BOGO Free 8Pc Hot & Crispy Bucket"
-                        elif "SAVOURY SAWAN" in clean_part.upper():
-                            title = "Super Savoury Sawan Deal"
+                        clean_part = container_text.split("+")[0].split("Rs.")[0].replace("No", "").strip()
+                        parts = [p.strip() for p in clean_part.split("...") if len(p.strip()) > 3]
+                        if parts:
+                            title = parts[0]
                         else:
-                            parts = clean_part.split("...")
-                            title = parts[0].strip() if len(parts) > 1 else clean_part
+                            title = clean_part[:60]
 
-                        if title in seen_titles:
+                        if not title or title in seen_titles:
                             continue
+
                         seen_titles.add(title)
 
                         disc_pct = 0
                         orig_price = price
-                        if "BOGO" in container_text.upper() or "BUY 1 GET 1" in container_text.upper():
-                            disc_pct = 50
-                            orig_price = price * 2.0
-                        elif "SAVOURY" in container_text.upper() or "SAWAN" in container_text.upper():
+                        text_upper = container_text.upper()
+                        if "BOGO" in text_upper or "GET 1 FREE" in text_upper or "BUY 1" in text_upper or "BUY 2" in text_upper:
+                            disc_pct = 33 if "BUY 2" in text_upper else 50
+                            orig_price = round(price / (1 - disc_pct / 100))
+                        elif "SAVOURY" in text_upper or "SAWAN" in text_upper:
                             disc_pct = 20
                             orig_price = round(price / 0.8)
 
-                        offers.append({
-                            "id": f"kfc-live-{idx}",
-                            "title": title,
-                            "description": f"Official KFC Sri Lanka promotional offer: {title}",
-                            "category": "Bucket Deals",
-                            "original_price": orig_price,
-                            "discounted_price": price,
-                            "discount_percentage": disc_pct,
-                            "image_url": src,
-                            "deal_type": "Live Promotion",
-                            "valid_until": "Limited Time",
-                            "source_url": url
-                        })
-                        idx += 1
+                        # Only include if item has genuine discount
+                        if disc_pct > 0:
+                            offers.append({
+                                "id": f"kfc-live-{idx}",
+                                "title": title,
+                                "description": f"Official KFC Sri Lanka promotional deal: {title}",
+                                "category": "Bucket Deals",
+                                "original_price": orig_price,
+                                "discounted_price": price,
+                                "discount_percentage": disc_pct,
+                                "image_url": src,
+                                "deal_type": "Live Promotion",
+                                "valid_until": "Limited Time",
+                                "source_url": url
+                            })
+                            idx += 1
         except Exception:
             pass
 
