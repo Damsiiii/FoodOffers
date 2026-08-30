@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 12,
+  "total_offers": 7,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,25 +10,8 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 1,
-      "offers": [
-        {
-          "id": "kfc-live-1",
-          "title": "BUY 2 ZINGER BURGER &",
-          "description": "Official KFC Sri Lanka promotional deal: BUY 2 ZINGER BURGER &",
-          "category": "Bucket Deals",
-          "original_price": 4746.0,
-          "discounted_price": 3180.0,
-          "discount_percentage": 33,
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
-          "deal_type": "Live Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.kfc.lk/menu/promotions",
-          "is_fallback": false,
-          "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka"
-        }
-      ]
+      "count": 0,
+      "offers": []
     },
     {
       "vendor_id": "pizzahut",
@@ -126,7 +109,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=100&h=100&fit=crop",
       "website_url": "https://chinesedragoncafe.com",
       "status": "live",
-      "count": 11,
+      "count": 7,
       "offers": [
         {
           "id": "cdc-live-9676342690082",
@@ -239,70 +222,6 @@
           "is_fallback": false,
           "vendor_id": "chinesedragon",
           "vendor_name": "Chinese Dragon Cafe"
-        },
-        {
-          "id": "cdc-live-9769380774178",
-          "title": "Shanghai Chicken Rice",
-          "description": "Chinese Dragon Cafe deal: Shanghai Chicken Rice",
-          "category": "Chinese Family Meals",
-          "original_price": 1480.0,
-          "discounted_price": 790.0,
-          "discount_percentage": 47,
-          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-07-09at10.09.28_2.jpg?v=1784007403",
-          "deal_type": "Live Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://chinesedragoncafe.com/products/shanghai-chicken-rice",
-          "is_fallback": false,
-          "vendor_id": "chinesedragon",
-          "vendor_name": "Chinese Dragon Cafe"
-        },
-        {
-          "id": "cdc-live-9965618790690",
-          "title": "Hot Butter CPC Rice Bowl",
-          "description": "Chinese Dragon Cafe deal: Hot Butter CPC Rice Bowl",
-          "category": "Chinese Family Meals",
-          "original_price": 2990.0,
-          "discounted_price": 2200.0,
-          "discount_percentage": 26,
-          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2025-12-11at9.56.15AM.jpg?v=1765427632",
-          "deal_type": "Live Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://chinesedragoncafe.com/products/hot-butter-cpc-rice-bowl",
-          "is_fallback": false,
-          "vendor_id": "chinesedragon",
-          "vendor_name": "Chinese Dragon Cafe"
-        },
-        {
-          "id": "cdc-live-9447538721058",
-          "title": "Pork Dragon Pack",
-          "description": "Chinese Dragon Cafe deal: Pork Dragon Pack",
-          "category": "Chinese Family Meals",
-          "original_price": 1490.0,
-          "discounted_price": 1450.0,
-          "discount_percentage": 3,
-          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/Pork_1.jpg?v=1708079696",
-          "deal_type": "Live Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://chinesedragoncafe.com/products/pork-dragon-pack-1",
-          "is_fallback": false,
-          "vendor_id": "chinesedragon",
-          "vendor_name": "Chinese Dragon Cafe"
-        },
-        {
-          "id": "cdc-live-9914648035618",
-          "title": "Family Dolphin Rice",
-          "description": "Chinese Dragon Cafe deal: Family Dolphin Rice",
-          "category": "Chinese Family Meals",
-          "original_price": 2990.0,
-          "discounted_price": 1990.0,
-          "discount_percentage": 33,
-          "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/Dolphine_new.jpg?v=1762238902",
-          "deal_type": "Live Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://chinesedragoncafe.com/products/family-dolphin-rice-1",
-          "is_fallback": false,
-          "vendor_id": "chinesedragon",
-          "vendor_name": "Chinese Dragon Cafe"
         }
       ]
     },
@@ -326,22 +245,6 @@
     }
   ],
   "all_offers": [
-    {
-      "id": "kfc-live-1",
-      "title": "BUY 2 ZINGER BURGER &",
-      "description": "Official KFC Sri Lanka promotional deal: BUY 2 ZINGER BURGER &",
-      "category": "Bucket Deals",
-      "original_price": 4746.0,
-      "discounted_price": 3180.0,
-      "discount_percentage": 33,
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
-      "deal_type": "Live Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.kfc.lk/menu/promotions",
-      "is_fallback": false,
-      "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka"
-    },
     {
       "id": "cdc-live-9676342690082",
       "title": "Black Goreng Special Rice",
@@ -453,71 +356,7 @@
       "is_fallback": false,
       "vendor_id": "chinesedragon",
       "vendor_name": "Chinese Dragon Cafe"
-    },
-    {
-      "id": "cdc-live-9769380774178",
-      "title": "Shanghai Chicken Rice",
-      "description": "Chinese Dragon Cafe deal: Shanghai Chicken Rice",
-      "category": "Chinese Family Meals",
-      "original_price": 1480.0,
-      "discounted_price": 790.0,
-      "discount_percentage": 47,
-      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2026-07-09at10.09.28_2.jpg?v=1784007403",
-      "deal_type": "Live Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://chinesedragoncafe.com/products/shanghai-chicken-rice",
-      "is_fallback": false,
-      "vendor_id": "chinesedragon",
-      "vendor_name": "Chinese Dragon Cafe"
-    },
-    {
-      "id": "cdc-live-9965618790690",
-      "title": "Hot Butter CPC Rice Bowl",
-      "description": "Chinese Dragon Cafe deal: Hot Butter CPC Rice Bowl",
-      "category": "Chinese Family Meals",
-      "original_price": 2990.0,
-      "discounted_price": 2200.0,
-      "discount_percentage": 26,
-      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/WhatsAppImage2025-12-11at9.56.15AM.jpg?v=1765427632",
-      "deal_type": "Live Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://chinesedragoncafe.com/products/hot-butter-cpc-rice-bowl",
-      "is_fallback": false,
-      "vendor_id": "chinesedragon",
-      "vendor_name": "Chinese Dragon Cafe"
-    },
-    {
-      "id": "cdc-live-9447538721058",
-      "title": "Pork Dragon Pack",
-      "description": "Chinese Dragon Cafe deal: Pork Dragon Pack",
-      "category": "Chinese Family Meals",
-      "original_price": 1490.0,
-      "discounted_price": 1450.0,
-      "discount_percentage": 3,
-      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/Pork_1.jpg?v=1708079696",
-      "deal_type": "Live Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://chinesedragoncafe.com/products/pork-dragon-pack-1",
-      "is_fallback": false,
-      "vendor_id": "chinesedragon",
-      "vendor_name": "Chinese Dragon Cafe"
-    },
-    {
-      "id": "cdc-live-9914648035618",
-      "title": "Family Dolphin Rice",
-      "description": "Chinese Dragon Cafe deal: Family Dolphin Rice",
-      "category": "Chinese Family Meals",
-      "original_price": 2990.0,
-      "discounted_price": 1990.0,
-      "discount_percentage": 33,
-      "image_url": "https://cdn.shopify.com/s/files/1/0769/3294/0066/files/Dolphine_new.jpg?v=1762238902",
-      "deal_type": "Live Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://chinesedragoncafe.com/products/family-dolphin-rice-1",
-      "is_fallback": false,
-      "vendor_id": "chinesedragon",
-      "vendor_name": "Chinese Dragon Cafe"
     }
   ],
-  "last_updated": "2026-08-29T07:30:54.822376+00:00"
+  "last_updated": "2026-08-30T07:10:43.938776+00:00"
 }
