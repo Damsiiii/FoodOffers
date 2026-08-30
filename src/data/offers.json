@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 7,
+  "total_offers": 8,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,8 +10,25 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 0,
-      "offers": []
+      "count": 1,
+      "offers": [
+        {
+          "id": "kfc-live-1",
+          "title": "8PC H&C BUCKET FOR RS.2990",
+          "description": "Official KFC Sri Lanka promotional offer: 8PC H&C BUCKET FOR RS.2990",
+          "category": "Bucket Deals",
+          "original_price": 5390.0,
+          "discounted_price": 2990.0,
+          "discount_percentage": 45,
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pchcbucketforrs.2990b745be4b019046158266dcc1eccf5d66.jpg",
+          "deal_type": "Live Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
+        }
+      ]
     },
     {
       "vendor_id": "pizzahut",
@@ -246,6 +263,22 @@
   ],
   "all_offers": [
     {
+      "id": "kfc-live-1",
+      "title": "8PC H&C BUCKET FOR RS.2990",
+      "description": "Official KFC Sri Lanka promotional offer: 8PC H&C BUCKET FOR RS.2990",
+      "category": "Bucket Deals",
+      "original_price": 5390.0,
+      "discounted_price": 2990.0,
+      "discount_percentage": 45,
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pchcbucketforrs.2990b745be4b019046158266dcc1eccf5d66.jpg",
+      "deal_type": "Live Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
       "id": "cdc-live-9676342690082",
       "title": "Black Goreng Special Rice",
       "description": "Chinese Dragon Cafe deal: Black Goreng Special Rice",
@@ -358,5 +391,5 @@
       "vendor_name": "Chinese Dragon Cafe"
     }
   ],
-  "last_updated": "2026-08-30T07:10:43.938776+00:00"
+  "last_updated": "2026-08-30T11:37:45.917192+00:00"
 }
