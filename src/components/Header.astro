@@ -29,17 +29,34 @@ const lastUpdated = offersData.last_updated
       </div>
     </div>
 
-    <!-- Status Stats -->
-    <div class="flex items-center gap-4 text-xs font-mono text-paper-200 border-t md:border-t-0 border-paper-800/60 pt-3 md:pt-0">
+    <!-- Status Stats & Location Selector -->
+    <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-paper-200 border-t md:border-t-0 border-paper-800/60 pt-3 md:pt-0">
+
+      <!-- Location Selector Toggle -->
+      <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-paper-900 border border-spice-700/60 text-paper-100">
+        <svg class="w-3.5 h-3.5 text-spice-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        <span class="text-paper-200 text-[11px]">Region:</span>
+        <select id="location-selector" class="bg-transparent text-paper-50 font-bold focus:outline-none cursor-pointer">
+          <option value="colombo" class="bg-paper-900 text-paper-50">Colombo (LK-1)</option>
+          <option value="kandy" class="bg-paper-900 text-paper-50">Kandy (LK-2)</option>
+          <option value="galle" class="bg-paper-900 text-paper-50">Galle (LK-3)</option>
+          <option value="negombo" class="bg-paper-900 text-paper-50">Negombo (LK-4)</option>
+          <option value="all" class="bg-paper-900 text-paper-50">All Sri Lanka</option>
+        </select>
+      </div>
+
       <div class="flex items-center gap-2 px-3 py-1.5 bg-paper-900 border border-paper-800">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        <span class="text-paper-100 font-medium">{totalVendors} Chains Tracked</span>
+        <span class="text-paper-100 font-medium">{totalVendors} Chains</span>
       </div>
       <div class="flex items-center gap-1.5 px-3 py-1.5 bg-paper-900 border border-paper-800">
         <span class="text-spice-600 font-bold">{totalOffers}</span>
         <span>Active Promos</span>
       </div>
-      <div class="hidden sm:block text-[11px] text-paper-200 pl-2 border-l border-paper-800">
+      <div class="hidden lg:block text-[11px] text-paper-200 pl-2 border-l border-paper-800">
         Synced: <time class="text-paper-100 font-mono">{lastUpdated}</time>
       </div>
     </div>

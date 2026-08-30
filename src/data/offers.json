@@ -2,7 +2,7 @@
   "total_vendors": 16,
   "live_vendors": 16,
   "fallback_vendors": 0,
-  "total_offers": 15,
+  "total_offers": 13,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -266,12 +266,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 7,
+      "count": 5,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "Island Tea & Ceylon Coffee Club",
+          "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -286,8 +286,8 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
+          "title": "Saveira Indian Restaurant",
+          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -302,8 +302,8 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+          "title": "Luire Matcha & Coffee",
+          "description": "Uber Eats Sri Lanka promotion: Luire Matcha & Coffee",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -334,40 +334,8 @@
         },
         {
           "id": "ubereats-dom-5",
-          "title": "Croffle SL",
-          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
-          "category": "Delivery Deals",
-          "original_price": 2000.0,
-          "discounted_price": 1500.0,
-          "discount_percentage": 25,
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-6",
-          "title": "LKR 400.00",
-          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "category": "Delivery Deals",
-          "original_price": 2000.0,
-          "discounted_price": 1500.0,
-          "discount_percentage": 25,
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-7",
-          "title": "Luire Matcha & Coffee",
-          "description": "Uber Eats Sri Lanka promotion: Luire Matcha & Coffee",
+          "title": "Coffee Colombo",
+          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -523,8 +491,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "Island Tea & Ceylon Coffee Club",
+      "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -539,8 +507,8 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
+      "title": "Saveira Indian Restaurant",
+      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -555,8 +523,8 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+      "title": "Luire Matcha & Coffee",
+      "description": "Uber Eats Sri Lanka promotion: Luire Matcha & Coffee",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -587,40 +555,8 @@
     },
     {
       "id": "ubereats-dom-5",
-      "title": "Croffle SL",
-      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
-      "category": "Delivery Deals",
-      "original_price": 2000.0,
-      "discounted_price": 1500.0,
-      "discount_percentage": 25,
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-6",
-      "title": "LKR 400.00",
-      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "category": "Delivery Deals",
-      "original_price": 2000.0,
-      "discounted_price": 1500.0,
-      "discount_percentage": 25,
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-7",
-      "title": "Luire Matcha & Coffee",
-      "description": "Uber Eats Sri Lanka promotion: Luire Matcha & Coffee",
+      "title": "Coffee Colombo",
+      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -634,5 +570,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-08-30T13:25:19.505255+00:00"
+  "last_updated": "2026-08-30T16:09:43.381764+00:00"
 }
