@@ -144,7 +144,7 @@ export function CoverFlowCarousel({
 
   return (
     <section
-      className={`relative w-full min-h-[760px] flex items-center justify-center overflow-hidden py-12 select-none ${className}`}
+      className={`relative w-full min-h-[560px] flex items-center justify-center overflow-hidden py-8 select-none ${className}`}
       style={{
         backgroundColor: "#0c0a09",
         color: "#ffffff",
@@ -180,7 +180,7 @@ export function CoverFlowCarousel({
       <div className="relative w-full max-w-6xl mx-auto px-4 z-10 flex flex-col items-center">
         {/* Eyebrow */}
         {sectionLabel && (
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-6">
             <span style={{ width: "36px", height: "1px", background: "linear-gradient(90deg, transparent, #c5a880)" }} />
             <h3
               style={{
@@ -200,7 +200,7 @@ export function CoverFlowCarousel({
 
         {/* 3D Coverflow Stage */}
         <div
-          className="relative w-full h-[520px] flex justify-center items-center mb-8"
+          className="relative w-full h-[460px] flex justify-center items-center mb-6"
           style={{ perspective: "1400px" }}
         >
           {items.map((item, idx) => {
@@ -219,22 +219,22 @@ export function CoverFlowCarousel({
               zIndex = 30;
               filter = "brightness(1)";
             } else if (offset === 1) {
-              transform = "translateX(285px) scale(0.84) rotateY(-24deg)";
+              transform = "translateX(250px) scale(0.84) rotateY(-24deg)";
               opacity = 0.65;
               zIndex = 20;
               filter = "brightness(0.75)";
             } else if (offset === 2) {
-              transform = "translateX(510px) scale(0.68) rotateY(-38deg)";
+              transform = "translateX(450px) scale(0.68) rotateY(-38deg)";
               opacity = 0.38;
               zIndex = 10;
               filter = "brightness(0.55) blur(1px)";
             } else if (offset === total - 1) {
-              transform = "translateX(-285px) scale(0.84) rotateY(24deg)";
+              transform = "translateX(-250px) scale(0.84) rotateY(24deg)";
               opacity = 0.65;
               zIndex = 20;
               filter = "brightness(0.75)";
             } else if (offset === total - 2) {
-              transform = "translateX(-510px) scale(0.68) rotateY(38deg)";
+              transform = "translateX(-450px) scale(0.68) rotateY(38deg)";
               opacity = 0.38;
               zIndex = 10;
               filter = "brightness(0.55) blur(1px)";
@@ -246,8 +246,10 @@ export function CoverFlowCarousel({
                 onClick={() => !isCenter && goToSlide(idx)}
                 style={{
                   position: "absolute",
-                  width: "330px",
-                  height: "500px",
+                  left: "calc(50% - 150px)",
+                  top: "10px",
+                  width: "300px",
+                  height: "440px",
                   borderRadius: "18px",
                   overflow: "hidden",
                   backgroundColor: "#171311",
