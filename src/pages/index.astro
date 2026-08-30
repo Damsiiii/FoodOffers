@@ -111,6 +111,7 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
           data-title={offer.title.toLowerCase()}
           data-category={(offer.category || '').toLowerCase()}
           data-description={(offer.description || '').toLowerCase()}
+          data-location="colombo"
         >
           <div>
             <!-- Image & Header Tag Header -->
@@ -202,29 +203,33 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
 
   <script>
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const locationSelector = document.getElementById('location-selector') as HTMLSelectElement;
     const vendorTabs = document.querySelectorAll('.vendor-tab');
     const offerCards = document.querySelectorAll('.offer-card');
     const visibleCount = document.getElementById('visible-count');
     const noResults = document.getElementById('no-results');
 
     let activeVendor = 'all';
+    let activeLocation = 'all';
     let searchQuery = '';
 
     function filterOffers() {
       let count = 0;
       offerCards.forEach((card) => {
         const vendor = card.getAttribute('data-vendor');
+        const cardLoc = card.getAttribute('data-location') || 'colombo';
         const title = card.getAttribute('data-title') || '';
         const category = card.getAttribute('data-category') || '';
         const desc = card.getAttribute('data-description') || '';
 
         const matchesVendor = activeVendor === 'all' || vendor === activeVendor;
+        const matchesLocation = activeLocation === 'all' || cardLoc === activeLocation || cardLoc === 'all';
         const matchesSearch = !searchQuery ||
           title.includes(searchQuery) ||
           category.includes(searchQuery) ||
           desc.includes(searchQuery);
 
-        if (matchesVendor && matchesSearch) {
+        if (matchesVendor && matchesLocation && matchesSearch) {
           (card as HTMLElement).style.display = 'flex';
           count++;
         } else {
@@ -259,6 +264,11 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
 
     searchInput?.addEventListener('input', (e) => {
       searchQuery = (e.target as HTMLInputElement).value.toLowerCase().trim();
+      filterOffers();
+    });
+
+    locationSelector?.addEventListener('change', (e) => {
+      activeLocation = (e.target as HTMLSelectElement).value.toLowerCase();
       filterOffers();
     });
   </script>
