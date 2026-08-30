@@ -1,6 +1,7 @@
 import requests
 import re
 import warnings
+from datetime import datetime, timezone, timedelta
 from scrapers.base import BaseScraper
 
 warnings.filterwarnings("ignore")
@@ -8,6 +9,9 @@ warnings.filterwarnings("ignore")
 DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
+
+# Cutoff threshold: Only index offers published within the last 180 days (or recently published)
+MAX_OFFER_AGE_DAYS = 180
 
 class ChineseDragonScraper(BaseScraper):
     vendor_id = "chinesedragon"
@@ -24,12 +28,26 @@ class ChineseDragonScraper(BaseScraper):
                 return []
             data = resp.json()
             offers = []
+            now = datetime.now(timezone.utc)
+
             for p in data.get("products", []):
                 title = p.get("title", "")
                 variants = p.get("variants", [])
+                published_at_str = p.get("published_at") or p.get("created_at")
 
                 if not title or not variants:
                     continue
+
+                # Filter out stale/old offers published long ago
+                if published_at_str:
+                    try:
+                        # Parse ISO datetime format (e.g., 2026-08-11T15:04:56+05:30)
+                        pub_date = datetime.fromisoformat(published_at_str.replace("Z", "+00:00"))
+                        if (now - pub_date) > timedelta(days=MAX_OFFER_AGE_DAYS):
+                            continue
+                    except Exception:
+                        pass
+
                 price = float(variants[0].get("price", 0))
                 if price <= 0:
                     continue
