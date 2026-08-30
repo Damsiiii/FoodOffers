@@ -15,6 +15,8 @@ from scrapers.vendors.pereraandsons import PereraAndSonsScraper
 from scrapers.vendors.chinesedragon import ChineseDragonScraper
 from scrapers.vendors.baskinrobbins import BaskinRobbinsScraper
 from scrapers.vendors.breadtalk import BreadTalkScraper
+from scrapers.vendors.ubereats import UberEatsScraper
+from scrapers.vendors.pickme import PickMeScraper
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +39,8 @@ class ScraperManager:
             "chinesedragon": ChineseDragonScraper(),
             "baskinrobbins": BaskinRobbinsScraper(),
             "breadtalk": BreadTalkScraper(),
+            "ubereats": UberEatsScraper(),
+            "pickme": PickMeScraper(),
         }
 
     def get_registered_vendors(self) -> List[Dict[str, str]]:
