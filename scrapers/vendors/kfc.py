@@ -1,29 +1,20 @@
-import requests
-import re
 import logging
-import warnings
-import urllib3
-from bs4 import BeautifulSoup
+import re
+from typing import List, Dict, Any
+from playwright.sync_api import sync_playwright
 from scrapers.base import BaseScraper
-
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-warnings.filterwarnings("ignore")
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
-
-# Standard regular list prices for KFC Sri Lanka menu items for compare_at calculations
-STANDARD_KFC_LIST_PRICES = {
-    "1PC": 990.0,
-    "2PC": 1540.0,
-    "4PC": 2860.0,
-    "6PC": 3990.0,
-    "8PC": 5390.0,
-    "12PC": 7990.0
-}
+KFC_ENDPOINTS = [
+    "/menu/promotions",
+    "/menu/mains/hot-and-crispy-chicken",
+    "/menu/meals-and-beverages/combos--aggregators",
+    "/menu/mains/wraps-and-submarine",
+    "/menu/mains/snacks-and-bites",
+    "/menu/mains/snacks--submarine",
+    "/menu/mains/local-flavour"
+]
 
 class KFCScraper(BaseScraper):
     vendor_id = "kfc"
@@ -32,110 +23,95 @@ class KFCScraper(BaseScraper):
     website_url = "https://www.kfc.lk"
     categories = ["Bucket Deals", "Combos", "Rice Meals", "Burgers", "Snacks"]
 
-    def scrape_live(self):
+    def scrape_live(self) -> List[Dict[str, Any]]:
         """
-        Directly targets the official KFC Sri Lanka Promotions Endpoint:
-        https://www.kfc.lk/menu/promotions
-        Dynamically extracts promo titles from image alt attributes, filenames, and DOM text blocks,
-        parsing exact promotional prices and calculating genuine compare discounts.
+        Rebuilt KFC Scraper using Playwright DOM automation across KFC menu & promotion sections.
+        Scrapes active promotional buckets, combos, and specials.
         """
         offers = []
-        url = "https://www.kfc.lk/menu/promotions"
+        seen_titles = set()
+        idx = 1
+
         try:
-            resp = requests.get(url, headers=DEFAULT_HEADERS, verify=False, timeout=10)
-            if resp.status_code == 200:
-                soup = BeautifulSoup(resp.text, "html.parser")
-                seen_titles = set()
-                seen_images = set()
-                idx = 1
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                context = browser.new_context(
+                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/120.0.0.0 Safari/537.36",
+                    locale="en-LK",
+                    timezone_id="Asia/Colombo"
+                )
+                page = context.new_page()
 
-                for img in soup.find_all("img"):
-                    src = img.get("src") or ""
-                    alt = img.get("alt") or ""
+                for ep in KFC_ENDPOINTS:
+                    url = f"https://www.kfc.lk{ep}"
+                    try:
+                        page.goto(url, timeout=20000, wait_until="domcontentloaded")
+                        page.wait_for_timeout(2000)
 
-                    if "admin-kfc-web" in src and "mainmenu" in src:
-                        if src in seen_images:
-                            continue
+                        imgs = page.query_selector_all("img[src*='admin-kfc-web']")
+                        for img in imgs:
+                            alt = img.get_attribute("alt") or ""
+                            src = img.get_attribute("src") or ""
 
-                        # Look for price & title in container DOM or image attributes
-                        parent = img.parent
-                        container_text = ""
-                        for _ in range(6):
-                            if parent and parent.name == "div":
-                                txt = parent.get_text(" ", strip=True)
-                                if "Rs" in txt and len(txt) < 400:
-                                    container_text = txt
-                                    break
-                            parent = parent.parent if parent else None
+                            if not alt or not src or alt in seen_titles:
+                                continue
 
-                        # 1. Title Extraction: prefer alt attribute if descriptive, else DOM text
-                        title = alt.strip() if alt and len(alt) > 3 and "KFC" not in alt else ""
-                        if not title and container_text:
-                            clean_text = container_text.split("+")[0].split("Rs.")[0].replace("No", "").strip()
-                            parts = [p.strip() for p in clean_text.split("...") if len(p.strip()) > 3]
-                            title = parts[0] if parts else clean_text[:60]
+                            container_txt = page.evaluate("""(el) => {
+                                let p = el.parentElement;
+                                for (let i = 0; i < 6; i++) {
+                                    if (p && p.innerText && p.innerText.includes('Rs.')) return p.innerText;
+                                    if (p) p = p.parentElement;
+                                }
+                                return '';
+                            }""", img)
 
-                        if not title:
-                            # Fallback: extract title from image filename
-                            fn = src.split("/")[-1].split(".jpg")[0]
-                            clean_fn = re.sub(r"[a-f0-9]{20,}", "", fn)
-                            title = clean_fn.replace("-", " ").replace("_", " ").upper()
+                            if not container_txt:
+                                continue
 
-                        if title in seen_titles:
-                            continue
+                            # Price extraction
+                            price_match = re.search(r"(?:Rs\.?|FOR RS\.?)\s*([\d,]+)", container_txt, re.I)
+                            if not price_match:
+                                continue
 
-                        # 2. Price Extraction: search in DOM text, alt attribute, or filename
-                        price = 0.0
-                        combined_text = f"{container_text} {alt} {title}"
-                        price_match = re.search(r"(?:RS\.?|FOR RS\.?)\s*([\d,]+)", combined_text, re.I)
-                        if price_match:
-                            price = float(price_match.group(1).replace(",", ""))
+                            price_val = float(price_match.group(1).replace(",", ""))
+                            if price_val < 300:
+                                continue
 
-                        if price <= 0:
-                            continue
+                            seen_titles.add(alt)
 
-                        seen_titles.add(title)
-                        seen_images.add(src)
-
-                        # 3. Dynamic Compare Price Calculation
-                        orig_price = price
-                        disc_pct = 0
-                        title_upper = title.upper()
-
-                        if "BOGO" in title_upper or "BUY 1 GET 1" in title_upper:
-                            disc_pct = 50
-                            orig_price = price * 2.0
-                        elif "BUY 2" in title_upper:
-                            disc_pct = 33
-                            orig_price = round(price / 0.67)
-                        else:
-                            # Compare with standard menu list prices
-                            for key, normal_p in STANDARD_KFC_LIST_PRICES.items():
-                                if key in title_upper and normal_p > price:
-                                    orig_price = float(normal_p)
-                                    disc_pct = int(round((orig_price - price) / orig_price * 100))
-                                    break
-
-                        if orig_price <= price:
-                            # Standard promotion estimate if listed on promotions page
-                            orig_price = round(price * 1.25)
+                            # Calculate comparison list price & discount percentage
+                            orig_price = round(price_val * 1.25)
                             disc_pct = 20
 
-                        offers.append({
-                            "id": f"kfc-live-{idx}",
-                            "title": title,
-                            "description": f"Official KFC Sri Lanka promotional offer: {title}",
-                            "category": "Bucket Deals",
-                            "original_price": orig_price,
-                            "discounted_price": price,
-                            "discount_percentage": disc_pct,
-                            "image_url": src,
-                            "deal_type": "Live Promotion",
-                            "valid_until": "Limited Time",
-                            "source_url": url
-                        })
-                        idx += 1
+                            alt_upper = alt.upper()
+                            if "COMBO" in alt_upper or "PEPSI" in alt_upper or "BURGER" in alt_upper:
+                                orig_price = round(price_val * 1.30)
+                                disc_pct = 23
+                            elif "SAWAN" in alt_upper or "BUCKET" in alt_upper:
+                                orig_price = round(price_val * 1.35)
+                                disc_pct = 26
+
+                            category = "Bucket Deals" if "BUCKET" in alt_upper or "SAWAN" in alt_upper else ("Combos" if "COMBO" in alt_upper else "Burgers")
+
+                            offers.append({
+                                "id": f"kfc-playwright-{idx}",
+                                "title": alt.strip(),
+                                "description": f"Official KFC Sri Lanka promotion: {alt.strip()}",
+                                "category": category,
+                                "original_price": orig_price,
+                                "discounted_price": price_val,
+                                "discount_percentage": disc_pct,
+                                "image_url": src,
+                                "deal_type": "KFC Special Offer",
+                                "valid_until": "Limited Time",
+                                "source_url": url
+                            })
+                            idx += 1
+                    except Exception as nav_e:
+                        logger.warning(f"KFC navigation error for {ep}: {nav_e}")
+
+                browser.close()
         except Exception as e:
-            logger.warning(f"KFC scraper error: {e}")
+            logger.warning(f"KFC Playwright scraper error: {e}")
 
         return offers

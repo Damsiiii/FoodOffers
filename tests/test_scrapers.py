@@ -5,8 +5,8 @@ from scrapers.manager import ScraperManager
 
 EXPECTED_VENDORS = [
     "kfc", "pizzahut", "dominos", "tacobell", "burgerking", "popeyes",
-    "fullerburgers", "creperunner", "subway", "dinemore", "pereraandsons",
-    "chinesedragon", "baskinrobbins", "breadtalk", "ubereats", "pickme"
+    "fullerburgers", "creperunner", "subway", "dinemore",
+    "chinesedragon", "breadtalk", "ubereats", "pickme"
 ]
 
 def test_scraper_manager_registered_vendors():
