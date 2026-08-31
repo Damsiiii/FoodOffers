@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 11,
+  "total_offers": 12,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -15,13 +15,13 @@
         {
           "id": "kfc-promo-1",
           "title": "4 BBQ MAYO BURGER+8PC DRUMLETS & 1.5LTR PEPSI",
-          "description": "Official KFC Sri Lanka promotion: 4 BBQ MAYO BURGER+8PC DRUMLETS & 1.5LTR PEPSI",
+          "description": "Official KFC Sri Lanka promotion: 4 BBQ MAYO BURGER+8PC DRUMLETS & 1.5LTR PEPSI (KFC ULTIMATE COMBO SERVES 4 TRCAPPLY)",
           "category": "Promotions",
           "original_price": 3738.0,
           "discounted_price": 2990.0,
           "discount_percentage": 20,
           "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/4bbqmayoburger8pcdrumlets1.5ltrpepsi8d2021df210b44e3a3f2aa3c58c9a1da.jpg",
-          "deal_type": "Special Promotion",
+          "deal_type": "Value Combo Pack",
           "valid_until": "Limited Time",
           "source_url": "https://www.kfc.lk/menu/promotions",
           "is_fallback": false,
@@ -31,13 +31,13 @@
         {
           "id": "kfc-promo-2",
           "title": "2 BBQ MAYO BURGER+4PC DRUMLETS & 400ML PEPSI",
-          "description": "Official KFC Sri Lanka promotion: 2 BBQ MAYO BURGER+4PC DRUMLETS & 400ML PEPSI",
+          "description": "Official KFC Sri Lanka promotion: 2 BBQ MAYO BURGER+4PC DRUMLETS & 400ML PEPSI (4pc Drumlets {#5 KFC ULTIMATE COMBO SERVES 2 T&C APPLY)",
           "category": "Promotions",
           "original_price": 1988.0,
           "discounted_price": 1590.0,
           "discount_percentage": 20,
           "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/2bbqmayoburger4pcdrumlets400mlpepsi6a5c005e60d5452ea81394433a0e8167.jpg",
-          "deal_type": "Special Promotion",
+          "deal_type": "Value Combo Pack",
           "valid_until": "Limited Time",
           "source_url": "https://www.kfc.lk/menu/promotions",
           "is_fallback": false,
@@ -264,10 +264,26 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 2,
+      "count": 3,
       "offers": [
         {
           "id": "ubereats-dom-1",
+          "title": "Coffee Colombo",
+          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "category": "Delivery Deals",
+          "original_price": 2000.0,
+          "discounted_price": 1500.0,
+          "discount_percentage": 25,
+          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-dom-2",
           "title": "Saveira Indian Restaurant",
           "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
           "category": "Delivery Deals",
@@ -283,9 +299,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-2",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "id": "ubereats-dom-3",
+          "title": "CyberDeals.lk",
+          "description": "Uber Eats Sri Lanka promotion: CyberDeals.lk",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -314,13 +330,13 @@
     {
       "id": "kfc-promo-1",
       "title": "4 BBQ MAYO BURGER+8PC DRUMLETS & 1.5LTR PEPSI",
-      "description": "Official KFC Sri Lanka promotion: 4 BBQ MAYO BURGER+8PC DRUMLETS & 1.5LTR PEPSI",
+      "description": "Official KFC Sri Lanka promotion: 4 BBQ MAYO BURGER+8PC DRUMLETS & 1.5LTR PEPSI (KFC ULTIMATE COMBO SERVES 4 TRCAPPLY)",
       "category": "Promotions",
       "original_price": 3738.0,
       "discounted_price": 2990.0,
       "discount_percentage": 20,
       "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/4bbqmayoburger8pcdrumlets1.5ltrpepsi8d2021df210b44e3a3f2aa3c58c9a1da.jpg",
-      "deal_type": "Special Promotion",
+      "deal_type": "Value Combo Pack",
       "valid_until": "Limited Time",
       "source_url": "https://www.kfc.lk/menu/promotions",
       "is_fallback": false,
@@ -330,13 +346,13 @@
     {
       "id": "kfc-promo-2",
       "title": "2 BBQ MAYO BURGER+4PC DRUMLETS & 400ML PEPSI",
-      "description": "Official KFC Sri Lanka promotion: 2 BBQ MAYO BURGER+4PC DRUMLETS & 400ML PEPSI",
+      "description": "Official KFC Sri Lanka promotion: 2 BBQ MAYO BURGER+4PC DRUMLETS & 400ML PEPSI (4pc Drumlets {#5 KFC ULTIMATE COMBO SERVES 2 T&C APPLY)",
       "category": "Promotions",
       "original_price": 1988.0,
       "discounted_price": 1590.0,
       "discount_percentage": 20,
       "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/2bbqmayoburger4pcdrumlets400mlpepsi6a5c005e60d5452ea81394433a0e8167.jpg",
-      "deal_type": "Special Promotion",
+      "deal_type": "Value Combo Pack",
       "valid_until": "Limited Time",
       "source_url": "https://www.kfc.lk/menu/promotions",
       "is_fallback": false,
@@ -457,6 +473,22 @@
     },
     {
       "id": "ubereats-dom-1",
+      "title": "Coffee Colombo",
+      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "category": "Delivery Deals",
+      "original_price": 2000.0,
+      "discounted_price": 1500.0,
+      "discount_percentage": 25,
+      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-dom-2",
       "title": "Saveira Indian Restaurant",
       "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
       "category": "Delivery Deals",
@@ -472,9 +504,9 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-2",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "id": "ubereats-dom-3",
+      "title": "CyberDeals.lk",
+      "description": "Uber Eats Sri Lanka promotion: CyberDeals.lk",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -488,5 +520,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-08-31T11:50:58.396601+00:00"
+  "last_updated": "2026-08-31T13:17:09.240652+00:00"
 }
