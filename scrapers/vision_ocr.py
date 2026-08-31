@@ -3,9 +3,14 @@ import io
 import re
 from typing import Dict, Any, Optional
 import requests
-from PIL import Image
 
 logger = logging.getLogger(__name__)
+
+try:
+    from PIL import Image
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
 
 try:
     import pytesseract
@@ -19,7 +24,7 @@ def parse_banner_with_ocr(image_url: str, vendor_name: str) -> Optional[Dict[str
     Downloads promo banner graphics and performs OCR to verify promo title,
     discount percentage, and promo terms directly from banner image graphics.
     """
-    if not image_url or not image_url.startswith("http"):
+    if not image_url or not image_url.startswith("http") or not HAS_PIL:
         return None
 
     try:
