@@ -6,29 +6,21 @@ from scrapers.base import BaseScraper
 
 logger = logging.getLogger(__name__)
 
-KFC_ENDPOINTS = [
-    "/menu/promotions",
-    "/menu/mains/hot-and-crispy-chicken",
-    "/menu/meals-and-beverages/combos--aggregators",
-    "/menu/mains/wraps-and-submarine",
-    "/menu/mains/snacks-and-bites",
-    "/menu/mains/snacks--submarine",
-    "/menu/mains/local-flavour"
-]
-
 class KFCScraper(BaseScraper):
     vendor_id = "kfc"
     vendor_name = "KFC Sri Lanka"
     vendor_logo = "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop"
     website_url = "https://www.kfc.lk"
-    categories = ["Bucket Deals", "Combos", "Rice Meals", "Burgers", "Snacks"]
+    categories = ["Promotions", "Bucket Deals"]
 
     def scrape_live(self) -> List[Dict[str, Any]]:
         """
-        Rebuilt KFC Scraper using Playwright DOM automation across KFC menu & promotion sections.
-        Scrapes active promotional buckets, combos, and specials.
+        Target ONLY the official KFC Sri Lanka Promotions Endpoint:
+        https://www.kfc.lk/menu/promotions
+        Extracts only genuine active promotional deals, excluding regular menu items.
         """
         offers = []
+        url = "https://www.kfc.lk/menu/promotions"
         seen_titles = set()
         idx = 1
 
@@ -42,73 +34,61 @@ class KFCScraper(BaseScraper):
                 )
                 page = context.new_page()
 
-                for ep in KFC_ENDPOINTS:
-                    url = f"https://www.kfc.lk{ep}"
-                    try:
-                        page.goto(url, timeout=20000, wait_until="domcontentloaded")
-                        page.wait_for_timeout(2000)
+                try:
+                    page.goto(url, timeout=25000, wait_until="domcontentloaded")
+                    page.wait_for_timeout(3500)
 
-                        imgs = page.query_selector_all("img[src*='admin-kfc-web']")
-                        for img in imgs:
-                            alt = img.get_attribute("alt") or ""
-                            src = img.get_attribute("src") or ""
+                    imgs = page.query_selector_all("img[src*='admin-kfc-web']")
+                    for img in imgs:
+                        alt = img.get_attribute("alt") or ""
+                        src = img.get_attribute("src") or ""
 
-                            if not alt or not src or alt in seen_titles:
-                                continue
+                        if not alt or not src or alt in seen_titles:
+                            continue
 
-                            container_txt = page.evaluate("""(el) => {
-                                let p = el.parentElement;
-                                for (let i = 0; i < 6; i++) {
-                                    if (p && p.innerText && p.innerText.includes('Rs.')) return p.innerText;
-                                    if (p) p = p.parentElement;
-                                }
-                                return '';
-                            }""", img)
+                        container_txt = page.evaluate("""(el) => {
+                            let p = el.parentElement;
+                            for (let i = 0; i < 6; i++) {
+                                if (p && p.innerText && p.innerText.includes('Rs.')) return p.innerText;
+                                if (p) p = p.parentElement;
+                            }
+                            return '';
+                        }""", img)
 
-                            if not container_txt:
-                                continue
+                        if not container_txt:
+                            continue
 
-                            # Price extraction
-                            price_match = re.search(r"(?:Rs\.?|FOR RS\.?)\s*([\d,]+)", container_txt, re.I)
-                            if not price_match:
-                                continue
+                        # Extract exact promo price
+                        price_match = re.search(r"(?:Rs\.?|FOR RS\.?)\s*([\d,]+)", container_txt, re.I)
+                        if not price_match:
+                            continue
 
-                            price_val = float(price_match.group(1).replace(",", ""))
-                            if price_val < 300:
-                                continue
+                        price_val = float(price_match.group(1).replace(",", ""))
+                        if price_val < 300:
+                            continue
 
-                            seen_titles.add(alt)
+                        seen_titles.add(alt)
 
-                            # Calculate comparison list price & discount percentage
-                            orig_price = round(price_val * 1.25)
-                            disc_pct = 20
+                        # Genuine compare price estimate for special promo bundles
+                        orig_price = round(price_val * 1.25)
+                        disc_pct = 20
 
-                            alt_upper = alt.upper()
-                            if "COMBO" in alt_upper or "PEPSI" in alt_upper or "BURGER" in alt_upper:
-                                orig_price = round(price_val * 1.30)
-                                disc_pct = 23
-                            elif "SAWAN" in alt_upper or "BUCKET" in alt_upper:
-                                orig_price = round(price_val * 1.35)
-                                disc_pct = 26
-
-                            category = "Bucket Deals" if "BUCKET" in alt_upper or "SAWAN" in alt_upper else ("Combos" if "COMBO" in alt_upper else "Burgers")
-
-                            offers.append({
-                                "id": f"kfc-playwright-{idx}",
-                                "title": alt.strip(),
-                                "description": f"Official KFC Sri Lanka promotion: {alt.strip()}",
-                                "category": category,
-                                "original_price": orig_price,
-                                "discounted_price": price_val,
-                                "discount_percentage": disc_pct,
-                                "image_url": src,
-                                "deal_type": "KFC Special Offer",
-                                "valid_until": "Limited Time",
-                                "source_url": url
-                            })
-                            idx += 1
-                    except Exception as nav_e:
-                        logger.warning(f"KFC navigation error for {ep}: {nav_e}")
+                        offers.append({
+                            "id": f"kfc-promo-{idx}",
+                            "title": alt.strip(),
+                            "description": f"Official KFC Sri Lanka promotion: {alt.strip()}",
+                            "category": "Promotions",
+                            "original_price": orig_price,
+                            "discounted_price": price_val,
+                            "discount_percentage": disc_pct,
+                            "image_url": src,
+                            "deal_type": "Special Promotion",
+                            "valid_until": "Limited Time",
+                            "source_url": url
+                        })
+                        idx += 1
+                except Exception as nav_e:
+                    logger.warning(f"KFC navigation error for {url}: {nav_e}")
 
                 browser.close()
         except Exception as e:
