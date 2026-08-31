@@ -11,9 +11,7 @@ from scrapers.vendors.fullerburgers import FullerBurgersScraper
 from scrapers.vendors.creperunner import CrepeRunnerScraper
 from scrapers.vendors.subway import SubwayScraper
 from scrapers.vendors.dinemore import DinemoreScraper
-from scrapers.vendors.pereraandsons import PereraAndSonsScraper
 from scrapers.vendors.chinesedragon import ChineseDragonScraper
-from scrapers.vendors.baskinrobbins import BaskinRobbinsScraper
 from scrapers.vendors.breadtalk import BreadTalkScraper
 from scrapers.vendors.ubereats import UberEatsScraper
 from scrapers.vendors.pickme import PickMeScraper
@@ -35,9 +33,7 @@ class ScraperManager:
             "creperunner": CrepeRunnerScraper(),
             "subway": SubwayScraper(),
             "dinemore": DinemoreScraper(),
-            "pereraandsons": PereraAndSonsScraper(),
             "chinesedragon": ChineseDragonScraper(),
-            "baskinrobbins": BaskinRobbinsScraper(),
             "breadtalk": BreadTalkScraper(),
             "ubereats": UberEatsScraper(),
             "pickme": PickMeScraper(),
