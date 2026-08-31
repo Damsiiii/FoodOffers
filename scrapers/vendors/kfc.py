@@ -15,9 +15,9 @@ class KFCScraper(BaseScraper):
 
     def scrape_live(self) -> List[Dict[str, Any]]:
         """
-        Target ONLY the official KFC Sri Lanka Promotions Endpoint:
+        Target official KFC Sri Lanka Promotions Endpoint:
         https://www.kfc.lk/menu/promotions
-        Extracts only genuine active promotional deals, excluding regular menu items.
+        Uses flexible DOM selectors and URL patterns to ensure consistent long-term scraping.
         """
         offers = []
         url = "https://www.kfc.lk/menu/promotions"
@@ -38,18 +38,19 @@ class KFCScraper(BaseScraper):
                     page.goto(url, timeout=25000, wait_until="domcontentloaded")
                     page.wait_for_timeout(3500)
 
-                    imgs = page.query_selector_all("img[src*='admin-kfc-web']")
+                    # Match product images across Azure admin, mainmenu, and menu CDN paths
+                    imgs = page.query_selector_all("img[src*='admin'], img[src*='mainmenu'], img[src*='promo'], img[src*='kfc']")
                     for img in imgs:
-                        alt = img.get_attribute("alt") or ""
-                        src = img.get_attribute("src") or ""
+                        alt = (img.get_attribute("alt") or "").strip()
+                        src = (img.get_attribute("src") or "").strip()
 
-                        if not alt or not src or alt in seen_titles:
+                        if not alt or not src or alt in seen_titles or "logo" in src.lower() or "icon" in src.lower() or "close" in src.lower():
                             continue
 
                         container_txt = page.evaluate("""(el) => {
                             let p = el.parentElement;
                             for (let i = 0; i < 6; i++) {
-                                if (p && p.innerText && p.innerText.includes('Rs.')) return p.innerText;
+                                if (p && p.innerText && (p.innerText.includes('Rs.') || p.innerText.includes('FOR RS'))) return p.innerText;
                                 if (p) p = p.parentElement;
                             }
                             return '';
@@ -69,14 +70,14 @@ class KFCScraper(BaseScraper):
 
                         seen_titles.add(alt)
 
-                        # Genuine compare price estimate for special promo bundles
+                        # Compare price calculation for special promo bundles
                         orig_price = round(price_val * 1.25)
                         disc_pct = 20
 
                         offers.append({
                             "id": f"kfc-promo-{idx}",
-                            "title": alt.strip(),
-                            "description": f"Official KFC Sri Lanka promotion: {alt.strip()}",
+                            "title": alt,
+                            "description": f"Official KFC Sri Lanka promotion: {alt}",
                             "category": "Promotions",
                             "original_price": orig_price,
                             "discounted_price": price_val,
