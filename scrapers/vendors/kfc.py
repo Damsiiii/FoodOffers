@@ -16,9 +16,9 @@ class KFCScraper(BaseScraper):
 
     def scrape_live(self) -> List[Dict[str, Any]]:
         """
-        Target official KFC Sri Lanka Promotions Endpoint:
-        https://www.kfc.lk/menu/promotions
-        Uses Playwright DOM automation and OCR banner validation to verify promo details.
+        Advanced Playwright Scraper for KFC Sri Lanka.
+        Directly targets the official promotions page https://www.kfc.lk/menu/promotions
+        with network asset route optimization, strict promo DOM scoping, and Vision OCR verification.
         """
         offers = []
         url = "https://www.kfc.lk/menu/promotions"
@@ -35,18 +35,23 @@ class KFCScraper(BaseScraper):
                 )
                 page = context.new_page()
 
+                # Advanced request interception: abort unnecessary fonts/analytics to speed up load
+                page.route("**/*", lambda route, req: route.abort() if req.resource_type in ["font", "media"] or any(x in req.url for x in ["google-analytics", "facebook", "tiktok", "doubleclick"]) else route.continue_())
+
                 try:
                     page.goto(url, timeout=25000, wait_until="domcontentloaded")
                     page.wait_for_timeout(3500)
 
-                    imgs = page.query_selector_all("img[src*='admin'], img[src*='mainmenu'], img[src*='promo'], img[src*='kfc']")
+                    # Strictly target main promotional card images
+                    imgs = page.query_selector_all("img[src*='admin-kfc-web']")
                     for img in imgs:
                         alt = (img.get_attribute("alt") or "").strip()
                         src = (img.get_attribute("src") or "").strip()
 
-                        if not alt or not src or alt in seen_titles or "logo" in src.lower() or "icon" in src.lower() or "close" in src.lower():
+                        if not alt or not src or alt in seen_titles or any(x in src.lower() for x in ["logo", "icon", "close", "pin"]):
                             continue
 
+                        # Extract price container text
                         container_txt = page.evaluate("""(el) => {
                             let p = el.parentElement;
                             for (let i = 0; i < 6; i++) {
@@ -59,7 +64,6 @@ class KFCScraper(BaseScraper):
                         if not container_txt:
                             continue
 
-                        # Extract exact promo price
                         price_match = re.search(r"(?:Rs\.?|FOR RS\.?)\s*([\d,]+)", container_txt, re.I)
                         if not price_match:
                             continue
@@ -70,7 +74,7 @@ class KFCScraper(BaseScraper):
 
                         seen_titles.add(alt)
 
-                        # Run OCR banner verification on image
+                        # Vision AI / OCR Banner Validation
                         ocr_data = parse_banner_with_ocr(src, self.vendor_name)
                         disc_pct = ocr_data["discount_percentage"] if ocr_data and "discount_percentage" in ocr_data else 20
                         orig_price = round(price_val * 1.25)
@@ -90,10 +94,10 @@ class KFCScraper(BaseScraper):
                         })
                         idx += 1
                 except Exception as nav_e:
-                    logger.warning(f"KFC navigation error for {url}: {nav_e}")
+                    logger.warning(f"KFC Playwright navigation error: {nav_e}")
 
                 browser.close()
         except Exception as e:
-            logger.warning(f"KFC Playwright scraper error: {e}")
+            logger.warning(f"KFC Playwright scraper exception: {e}")
 
         return offers
