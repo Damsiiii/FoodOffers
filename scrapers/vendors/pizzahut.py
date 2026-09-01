@@ -17,9 +17,9 @@ class PizzaHutScraper(BaseScraper):
 
     def scrape_live(self):
         """
-        Scrapes Pizza Hut Sri Lanka promotional offers and Cyber Savings directly from their official API:
+        Scrapes all promotional meal deals directly from Pizza Hut Sri Lanka's official API:
         OAuth Authentication: https://phapis.pizzahut.lk/gettoken
-        Promotions Endpoint: https://phapis.pizzahut.lk/api/home/promo
+        Deals Category Endpoint: https://phapis.pizzahut.lk/api/menu/items?webCategory=promo&menuCategory=meal-deal
         Homepage Banner Endpoint: https://phapis.pizzahut.lk/api/home/banner
         """
         offers = []
@@ -30,7 +30,6 @@ class PizzaHutScraper(BaseScraper):
             "Content-Type": "application/x-www-form-urlencoded"
         }
 
-        # Web client credentials loaded from environment or public web defaults
         auth_data = {
             "username": os.getenv("PIZZAHUT_API_USER", "JustWebUser"),
             "password": os.getenv("PIZZAHUT_API_PASS", "nxNCtHIDOJVbGBa"),
@@ -83,7 +82,6 @@ class PizzaHutScraper(BaseScraper):
                     orig_price = round(disc_price * (1 + disc_pct / 100))
 
                     banner_url = banner.get("Url") or "https://www.pizzahut.lk"
-                    # Normalize internal Azure staging URLs to canonical public site
                     if "azurewebsites.net" in banner_url or not banner_url.startswith("http"):
                         banner_url = "https://www.pizzahut.lk"
 
@@ -104,20 +102,32 @@ class PizzaHutScraper(BaseScraper):
             except Exception as b_err:
                 logger.warning(f"[{self.vendor_name}] Banner Cyber Savings extraction exception: {b_err}")
 
-            # 3. Fetch Active Promotional Deals
-            r_promo = requests.post("https://phapis.pizzahut.lk/api/home/promo", json={}, headers=auth_headers, verify=False, timeout=12)
-            promos = r_promo.json().get("Data", [])
+            # 3. Fetch All Promotional Deals from Deals Category (/api/menu/items?webCategory=promo&menuCategory=meal-deal)
+            r_promo = requests.post(
+                "https://phapis.pizzahut.lk/api/menu/items?webCategory=promo&menuCategory=meal-deal",
+                json={},
+                headers=auth_headers,
+                verify=False,
+                timeout=12
+            )
+            promos_res = r_promo.json()
+            promos = promos_res if isinstance(promos_res, list) else (promos_res.get("Data", []) if isinstance(promos_res, dict) else [])
 
             for idx, item in enumerate(promos):
-                title = item.get("WebName") or item.get("CategoryName") or item.get("Name")
+                title = item.get("WebName") or item.get("Name") or item.get("CategoryName") or item.get("Title")
                 if not title or title in seen_titles:
                     continue
+
+                # Exclude simple add-on items as requested
+                if "add on" in title.lower() or "addon" in title.lower():
+                    continue
+
                 seen_titles.add(title)
 
                 desc = item.get("Description") or item.get("DescriptionShort") or item.get("WebNameShort") or title
                 price_val = item.get("PromotionPrice") or item.get("Price")
 
-                img_url = item.get("FullImageUrl") or item.get("MealDealFullImageURL") or ""
+                img_url = item.get("FullImageUrl") or item.get("MealDealFullImageURL") or item.get("ImageURL") or ""
                 if not img_url or not img_url.startswith("http"):
                     img_url = "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop"
 
@@ -128,14 +138,16 @@ class PizzaHutScraper(BaseScraper):
                 ocr_data = parse_banner_with_ocr(img_url, self.vendor_name)
                 disc_pct = ocr_data.get("discount_percentage", 20) if ocr_data else 20
 
-                disc_price = float(price_val) if price_val and float(price_val) > 0 else 1800.0
+                disc_price = float(price_val) if price_val and float(price_val) > 0 else 2400.0
                 orig_price = round(disc_price * (1 + disc_pct / 100))
+
+                category = "Cyber Savings" if "cyber" in title.lower() else "Meal Deals"
 
                 offers.append({
                     "id": f"pizzahut-promo-{idx + 1}",
                     "title": title,
                     "description": f"Official Pizza Hut Sri Lanka Promo: {desc}",
-                    "category": "Meal Deals",
+                    "category": category,
                     "original_price": orig_price,
                     "discounted_price": disc_price,
                     "discount_percentage": disc_pct,
