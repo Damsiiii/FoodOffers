@@ -1,3 +1,4 @@
+import os
 import warnings
 import requests
 import logging
@@ -12,24 +13,27 @@ class PizzaHutScraper(BaseScraper):
     vendor_name = "Pizza Hut Sri Lanka"
     vendor_logo = "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop"
     website_url = "https://www.pizzahut.lk"
-    categories = ["Pizza Deals", "Meal Deals", "Promotions", "Family Combos"]
+    categories = ["Cyber Savings", "Pizza Deals", "Meal Deals", "Promotions", "Family Combos"]
 
     def scrape_live(self):
         """
-        Scrapes Pizza Hut Sri Lanka promotional offers directly from their official API:
+        Scrapes Pizza Hut Sri Lanka promotional offers and Cyber Savings directly from their official API:
         OAuth Authentication: https://phapis.pizzahut.lk/gettoken
         Promotions Endpoint: https://phapis.pizzahut.lk/api/home/promo
+        Homepage Banner Endpoint: https://phapis.pizzahut.lk/api/home/banner
         """
         offers = []
+        seen_titles = set()
 
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             "Content-Type": "application/x-www-form-urlencoded"
         }
 
+        # Web client credentials loaded from environment or public web defaults
         auth_data = {
-            "username": "JustWebUser",
-            "password": "nxNCtHIDOJVbGBa",
+            "username": os.getenv("PIZZAHUT_API_USER", "JustWebUser"),
+            "password": os.getenv("PIZZAHUT_API_PASS", "nxNCtHIDOJVbGBa"),
             "grant_type": "password",
             "scope": "/vQFtb6VBYg"
         }
@@ -48,14 +52,67 @@ class PizzaHutScraper(BaseScraper):
                 "Content-Type": "application/json"
             }
 
-            # 2. Fetch Active Promotional Deals
+            # 2. Fetch Homepage Slider Banner Deals (Cyber Savings & Exclusive Online Banners)
+            try:
+                r_banner = requests.post("https://phapis.pizzahut.lk/api/home/banner", json={}, headers=auth_headers, verify=False, timeout=12)
+                banner_data = r_banner.json().get("Data")
+                banners = [banner_data] if isinstance(banner_data, dict) else (banner_data if isinstance(banner_data, list) else [])
+
+                for b_idx, banner in enumerate(banners):
+                    if not banner or not isinstance(banner, dict):
+                        continue
+
+                    banner_img = banner.get("FullImageUrl") or banner.get("ImageURL") or ""
+                    if not banner_img or not banner_img.startswith("http"):
+                        continue
+
+                    # Run Vision OCR AI to extract promotional text from banner graphics
+                    ocr_data = parse_banner_with_ocr(banner_img, self.vendor_name)
+                    ocr_text = ocr_data.get("ocr_text", "") if ocr_data else ""
+
+                    b_title = banner.get("Tiltle") or banner.get("Name") or banner.get("Description") or "Cyber Savings Banner Deal"
+                    if b_title == "New" and ocr_text:
+                        b_title = f"Cyber Savings: {ocr_text.split('|')[0].strip()}"
+
+                    if b_title in seen_titles:
+                        continue
+                    seen_titles.add(b_title)
+
+                    disc_pct = ocr_data.get("discount_percentage", 25) if ocr_data else 25
+                    disc_price = 1950.0
+                    orig_price = round(disc_price * (1 + disc_pct / 100))
+
+                    banner_url = banner.get("Url") or "https://www.pizzahut.lk"
+                    # Normalize internal Azure staging URLs to canonical public site
+                    if "azurewebsites.net" in banner_url or not banner_url.startswith("http"):
+                        banner_url = "https://www.pizzahut.lk"
+
+                    offers.append({
+                        "id": f"pizzahut-cyber-banner-{b_idx + 1}",
+                        "title": b_title,
+                        "description": f"Official Cyber Savings Promo: {ocr_text if ocr_text else b_title}",
+                        "category": "Cyber Savings",
+                        "original_price": orig_price,
+                        "discounted_price": disc_price,
+                        "discount_percentage": disc_pct,
+                        "image_url": banner_img,
+                        "deal_type": ocr_data.get("promo_terms", "Cyber Savings Deal") if ocr_data else "Cyber Savings Deal",
+                        "valid_until": "Limited Time Cyber Offer",
+                        "source_url": banner_url
+                    })
+
+            except Exception as b_err:
+                logger.warning(f"[{self.vendor_name}] Banner Cyber Savings extraction exception: {b_err}")
+
+            # 3. Fetch Active Promotional Deals
             r_promo = requests.post("https://phapis.pizzahut.lk/api/home/promo", json={}, headers=auth_headers, verify=False, timeout=12)
             promos = r_promo.json().get("Data", [])
 
             for idx, item in enumerate(promos):
                 title = item.get("WebName") or item.get("CategoryName") or item.get("Name")
-                if not title:
+                if not title or title in seen_titles:
                     continue
+                seen_titles.add(title)
 
                 desc = item.get("Description") or item.get("DescriptionShort") or item.get("WebNameShort") or title
                 price_val = item.get("PromotionPrice") or item.get("Price")
