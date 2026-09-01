@@ -9,23 +9,17 @@ const lastUpdated = offersData.last_updated
 ---
 
 <header class="border-b border-paper-800/80 bg-paper-950/90 backdrop-blur-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 
-    <!-- Brand & Ledger Title -->
-    <div class="flex items-center space-x-3.5">
-      <div class="w-9 h-9 border border-spice-700/60 bg-spice-900/30 text-spice-600 flex items-center justify-center font-mono text-sm font-bold tracking-tighter">
+    <!-- Brand Title -->
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 border border-spice-700/60 bg-spice-900/30 text-spice-600 flex items-center justify-center font-mono text-xs font-bold tracking-tighter rounded">
         LK
       </div>
       <div>
-        <div class="flex items-center gap-2.5">
-          <h1 class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-paper-50">
-            Lanka Food Offer Ledger
-          </h1>
-          <span class="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 bg-paper-850 text-paper-200 border border-paper-700/60">
-            v2.4 Live
-          </span>
-        </div>
-        <p class="text-xs text-paper-200 font-sans">Automated discount tracker for mainstream Sri Lankan food chains</p>
+        <h1 class="font-serif text-lg sm:text-xl font-semibold tracking-tight text-paper-50">
+          Lanka Food Offer Ledger
+        </h1>
       </div>
     </div>
 
@@ -33,7 +27,7 @@ const lastUpdated = offersData.last_updated
     <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-paper-200 border-t md:border-t-0 border-paper-800/60 pt-3 md:pt-0">
 
       <!-- Location Selector Toggle -->
-      <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-paper-900 border border-spice-700/60 text-paper-100">
+      <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-paper-900 border border-paper-800 text-paper-100 rounded">
         <svg class="w-3.5 h-3.5 text-spice-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -48,16 +42,18 @@ const lastUpdated = offersData.last_updated
         </select>
       </div>
 
-      <div class="flex items-center gap-2 px-3 py-1.5 bg-paper-900 border border-paper-800">
+      <div class="flex items-center gap-2 px-3 py-1.5 bg-paper-900 border border-paper-800 rounded">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
         <span class="text-paper-100 font-medium">{totalVendors} Chains</span>
       </div>
-      <div class="flex items-center gap-1.5 px-3 py-1.5 bg-paper-900 border border-paper-800">
+
+      <div class="flex items-center gap-1.5 px-3 py-1.5 bg-paper-900 border border-paper-800 rounded">
         <span class="text-spice-600 font-bold">{totalOffers}</span>
-        <span>Active Promos</span>
+        <span>Active Deals</span>
       </div>
+
       <div class="hidden lg:block text-[11px] text-paper-200 pl-2 border-l border-paper-800">
-        Synced: <time class="text-paper-100 font-mono">{lastUpdated}</time>
+        Updated: <time class="text-paper-100 font-mono">{lastUpdated}</time>
       </div>
     </div>
 

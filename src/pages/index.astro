@@ -42,17 +42,11 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-8">
 
-    <!-- Hero / Editorial Context Header -->
+    <!-- Hero Header -->
     <section class="border-l-2 border-spice-700 pl-4 sm:pl-6 py-1 max-w-3xl">
-      <p class="font-mono text-xs text-spice-600 uppercase tracking-widest mb-1.5 font-semibold">
-        Official Market Bulletin
-      </p>
       <h2 class="font-serif text-3xl sm:text-4xl text-paper-50 font-semibold tracking-tight leading-snug">
         Compare active fast food deals, meal buckets & promotional discounts in Sri Lanka.
       </h2>
-      <p class="text-paper-200 text-sm sm:text-base leading-relaxed mt-3">
-        Independent automated scraper monitoring prices across 14 food chains. Updated continuously with direct links to vendor ordering platforms.
-      </p>
     </section>
 
     <!-- 3D Coverflow Showcase Carousel -->
@@ -70,7 +64,7 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
             type="text"
             id="search-input"
             placeholder="Search deals (e.g., burger, pizza, bucket)..."
-            class="w-full bg-paper-900 border border-paper-800 text-paper-100 placeholder-paper-200 text-xs px-3.5 py-2.5 pl-9 focus:outline-none focus:border-spice-700 transition font-mono"
+            class="w-full bg-paper-900 border border-paper-800 text-paper-100 placeholder-paper-200 text-xs px-3.5 py-2.5 pl-9 focus:outline-none focus:border-spice-700 transition font-mono rounded"
           />
           <svg class="w-4 h-4 text-paper-200 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -85,14 +79,14 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
       <!-- Vendor Filter Chips -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none font-mono text-xs">
         <button
-          class="vendor-tab active-tab bg-spice-700 text-paper-50 px-3 py-1.5 border border-spice-600 font-medium transition whitespace-nowrap"
+          class="vendor-tab active-tab bg-spice-700 text-paper-50 px-3 py-1.5 border border-spice-600 font-medium transition whitespace-nowrap rounded"
           data-vendor="all"
         >
           All Vendors [{allOffers.length}]
         </button>
         {vendors.map((vendor: any) => (
           <button
-            class="vendor-tab bg-paper-900 hover:bg-paper-850 text-paper-200 px-3 py-1.5 border border-paper-800 transition whitespace-nowrap flex items-center gap-1.5"
+            class="vendor-tab bg-paper-900 hover:bg-paper-850 text-paper-200 px-3 py-1.5 border border-paper-800 transition whitespace-nowrap flex items-center gap-1.5 rounded"
             data-vendor={vendor.vendor_id}
           >
             <span>{vendor.vendor_name}</span>
@@ -106,7 +100,7 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
     <section id="offers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {allOffers.map((offer: any) => (
         <article
-          class="offer-card group bg-paper-900 border border-paper-800 hover:border-paper-700 transition duration-200 flex flex-col justify-between"
+          class="offer-card group bg-paper-900 border border-paper-800 hover:border-paper-700 transition duration-200 flex flex-col justify-between rounded overflow-hidden"
           data-vendor={offer.vendor_id}
           data-title={offer.title.toLowerCase()}
           data-category={(offer.category || '').toLowerCase()}
@@ -125,21 +119,15 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
 
               <!-- Off Tag Badge -->
               {offer.discount_percentage > 0 && (
-                <div class="absolute top-2.5 right-2.5 bg-spice-700 text-white font-mono font-bold text-xs px-2 py-0.5 border border-spice-600 shadow-sm">
+                <div class="absolute top-2.5 right-2.5 bg-spice-700 text-white font-mono font-bold text-xs px-2 py-0.5 border border-spice-600 shadow-sm rounded">
                   -{offer.discount_percentage}%
                 </div>
               )}
 
               <!-- Vendor Tag Badge -->
-              <div class="absolute bottom-2.5 left-2.5 bg-paper-950/90 text-paper-200 font-mono text-[11px] px-2 py-0.5 border border-paper-800">
+              <div class="absolute bottom-2.5 left-2.5 bg-paper-950/90 text-paper-200 font-mono text-[11px] px-2 py-0.5 border border-paper-800 rounded">
                 {offer.vendor_name}
               </div>
-
-              {offer.is_fallback && (
-                <div class="absolute top-2.5 left-2.5 bg-paper-950/90 text-amber-500 font-mono text-[10px] px-2 py-0.5 border border-amber-800/60">
-                  Cached Data
-                </div>
-              )}
             </div>
 
             <!-- Main Info Block -->
@@ -170,7 +158,7 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
               href={offer.source_url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 bg-paper-850 hover:bg-spice-700 hover:text-white text-paper-200 font-mono text-xs px-3 py-1.5 border border-paper-700 hover:border-spice-600 transition"
+              class="inline-flex items-center gap-1.5 bg-paper-850 hover:bg-spice-700 hover:text-white text-paper-200 font-mono text-xs px-3 py-1.5 border border-paper-700 hover:border-spice-600 transition rounded"
             >
               <span>Claim Deal</span>
               <span class="text-xs">→</span>
@@ -181,7 +169,7 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
     </section>
 
     <!-- Empty Filter State -->
-    <div id="no-results" class="hidden text-center py-16 bg-paper-900 border border-paper-800 my-8">
+    <div id="no-results" class="hidden text-center py-16 bg-paper-900 border border-paper-800 my-8 rounded">
       <div class="font-mono text-xs text-spice-600 uppercase tracking-widest mb-2">[ No Matches ]</div>
       <h3 class="font-serif text-xl font-semibold text-paper-50 mb-1">No deals match your search criteria</h3>
       <p class="text-paper-200 text-xs font-mono">Adjust search terms or select another vendor filter above.</p>
@@ -192,8 +180,7 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
   <footer class="border-t border-paper-850 bg-paper-950 py-8 mt-16 text-xs font-mono text-paper-200">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <p class="text-paper-200 font-medium">Lanka Food Offer Ledger • Open Fast Food Intelligence</p>
-        <p class="text-[11px] text-paper-200 mt-0.5">Automated scrapers powered by Python, Astro static SSR, Tailwind CSS & GitHub Actions.</p>
+        <p class="text-paper-200 font-medium">Lanka Food Offer Ledger</p>
       </div>
       <div class="text-[11px] text-paper-200">
         Prices updated periodically from official Sri Lanka vendor platforms.
