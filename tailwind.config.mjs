@@ -4,28 +4,43 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Newsreader"', 'Georgia', 'serif'],
-        sans: ['"Outfit"', 'system-ui', 'sans-serif'],
+        sans: ['"Space Grotesk"', '"Inter"', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        paper: {
-          950: '#0F0E0D',
-          900: '#181614',
-          850: '#221F1C',
-          800: '#2C2825',
-          700: '#443E3A',
-          200: '#E7E5E4',
-          100: '#F5F5F4',
-          50: '#FAFAF9',
+        background: '#09090B',
+        foreground: '#FAFAFA',
+        muted: {
+          DEFAULT: '#27272A',
+          foreground: '#A1A1AA',
         },
-        spice: {
-          600: '#D97706',
-          700: '#C2410C',
-          800: '#9A3412',
-          900: '#7C2D12',
-        }
-      }
+        accent: {
+          DEFAULT: '#DFE104',
+          foreground: '#000000',
+        },
+        border: '#3F3F46',
+      },
+      borderRadius: {
+        DEFAULT: '0px',
+        none: '0px',
+        sm: '2px',
+      },
+      borderWidth: {
+        DEFAULT: '1px',
+        '2': '2px',
+        '4': '4px',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+        'marquee-fast': 'marquee 15s linear infinite',
+      },
     },
   },
   plugins: [],
