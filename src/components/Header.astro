@@ -5,55 +5,52 @@ const totalVendors = offersData.total_vendors || 0;
 const totalOffers = offersData.total_offers || 0;
 const lastUpdated = offersData.last_updated
   ? new Date(offersData.last_updated).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })
-  : 'Live';
+  : 'LIVE';
 ---
 
-<header class="border-b border-paper-800/80 bg-paper-950/90 backdrop-blur-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<header class="border-b-2 border-border bg-background sticky top-0 z-50">
+  <div class="max-w-[95vw] mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 
-    <!-- Brand Title -->
+    <!-- Brand Title Lockup -->
     <div class="flex items-center space-x-3">
-      <div class="w-8 h-8 border border-spice-700/60 bg-spice-900/30 text-spice-600 flex items-center justify-center font-mono text-xs font-bold tracking-tighter rounded">
+      <div class="w-10 h-10 border-2 border-border bg-accent text-accent-foreground flex items-center justify-center font-bold text-base tracking-tighter uppercase rounded-none">
         LK
       </div>
       <div>
-        <h1 class="font-serif text-lg sm:text-xl font-semibold tracking-tight text-paper-50">
+        <h1 class="font-bold text-xl sm:text-2xl tracking-tighter uppercase text-foreground leading-none">
           Lanka Food Offer Ledger
         </h1>
       </div>
     </div>
 
     <!-- Status Stats & Location Selector -->
-    <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-paper-200 border-t md:border-t-0 border-paper-800/60 pt-3 md:pt-0">
+    <div class="flex flex-wrap items-center gap-3 text-sm font-bold uppercase tracking-tight text-foreground border-t-2 md:border-t-0 border-border pt-3 md:pt-0">
 
       <!-- Location Selector Toggle -->
-      <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-paper-900 border border-paper-800 text-paper-100 rounded">
-        <svg class="w-3.5 h-3.5 text-spice-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-        </svg>
-        <span class="text-paper-200 text-[11px]">Region:</span>
-        <select id="location-selector" class="bg-transparent text-paper-50 font-bold focus:outline-none cursor-pointer">
-          <option value="colombo" class="bg-paper-900 text-paper-50">Colombo (LK-1)</option>
-          <option value="kandy" class="bg-paper-900 text-paper-50">Kandy (LK-2)</option>
-          <option value="galle" class="bg-paper-900 text-paper-50">Galle (LK-3)</option>
-          <option value="negombo" class="bg-paper-900 text-paper-50">Negombo (LK-4)</option>
-          <option value="all" class="bg-paper-900 text-paper-50">All Sri Lanka</option>
+      <div class="flex items-center gap-2 px-3 py-2 bg-background border-2 border-border text-foreground hover:border-accent transition-colors duration-200">
+        <span class="text-accent font-bold">●</span>
+        <span class="text-muted-foreground text-xs tracking-wider">REGION:</span>
+        <select id="location-selector" class="bg-transparent text-foreground font-bold focus:outline-none cursor-pointer uppercase tracking-tight text-xs">
+          <option value="colombo" class="bg-background text-foreground">COLOMBO (LK-1)</option>
+          <option value="kandy" class="bg-background text-foreground">KANDY (LK-2)</option>
+          <option value="galle" class="bg-background text-foreground">GALLE (LK-3)</option>
+          <option value="negombo" class="bg-background text-foreground">NEGOMBO (LK-4)</option>
+          <option value="all" class="bg-background text-foreground">ALL SRI LANKA</option>
         </select>
       </div>
 
-      <div class="flex items-center gap-2 px-3 py-1.5 bg-paper-900 border border-paper-800 rounded">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        <span class="text-paper-100 font-medium">{totalVendors} Chains</span>
+      <div class="flex items-center gap-2 px-3 py-2 bg-background border-2 border-border">
+        <span class="w-2 h-2 bg-emerald-500 rounded-none"></span>
+        <span>{totalVendors} CHAINS</span>
       </div>
 
-      <div class="flex items-center gap-1.5 px-3 py-1.5 bg-paper-900 border border-paper-800 rounded">
-        <span class="text-spice-600 font-bold">{totalOffers}</span>
-        <span>Active Deals</span>
+      <div class="flex items-center gap-2 px-3 py-2 bg-accent text-accent-foreground border-2 border-accent">
+        <span class="font-extrabold">{totalOffers}</span>
+        <span>ACTIVE PROMOS</span>
       </div>
 
-      <div class="hidden lg:block text-[11px] text-paper-200 pl-2 border-l border-paper-800">
-        Updated: <time class="text-paper-100 font-mono">{lastUpdated}</time>
+      <div class="hidden lg:block text-xs font-mono text-muted-foreground pl-3 border-l-2 border-border">
+        SYNCED: <time class="text-foreground font-bold">{lastUpdated}</time>
       </div>
     </div>
 
