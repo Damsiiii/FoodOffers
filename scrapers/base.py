@@ -1,6 +1,7 @@
 import json
 import logging
 from typing import Dict, List, Any
+from scrapers.vision_ocr import parse_banner_with_ocr
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +21,8 @@ class BaseScraper:
     def get_offers(self) -> Dict[str, Any]:
         """
         Get live offers for this vendor.
-        Executes live dynamic web / API scraping and strictly filters for genuine promotional deals (>0% discount).
+        Executes live dynamic web / API scraping, runs Vision OCR banner verification across all deal images,
+        and strictly filters for genuine promotional deals (>0% discount).
         """
         try:
             live_offers = self.scrape_live()
@@ -32,6 +34,17 @@ class BaseScraper:
                         offer["vendor_id"] = self.vendor_id
                     if "vendor_name" not in offer:
                         offer["vendor_name"] = self.vendor_name
+
+                    # Run Vision OCR / Banner AI validation across every scraper's deal image
+                    img_url = offer.get("image_url", "")
+                    if img_url and img_url.startswith("http"):
+                        ocr_info = parse_banner_with_ocr(img_url, self.vendor_name)
+                        if ocr_info:
+                            offer["ocr_verified"] = True
+                            if ocr_info.get("ocr_text") and ocr_info["ocr_text"] not in offer.get("description", ""):
+                                offer["description"] = f"{offer.get('description', '')} ({ocr_info['ocr_text']})".strip()
+                            if ocr_info.get("promo_terms") and offer.get("deal_type") in ["Special Promotion", "Live Promotion", "Menu Deal", "Live Offer"]:
+                                offer["deal_type"] = ocr_info["promo_terms"]
 
                     disc_price = float(offer.get("discounted_price", 0))
                     orig_price = float(offer.get("original_price", disc_price))
