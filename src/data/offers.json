@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 26,
+  "total_offers": 21,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,24 +10,55 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 1,
+      "count": 3,
       "offers": [
         {
           "id": "kfc-promo-1",
-          "title": "SUPER SAVOURY SAWAN",
-          "description": "Official KFC Sri Lanka promotion: SUPER SAVOURY SAWAN (KFC WITH *Two 400ml Pepsi bottles for delivery orders)",
-          "category": "Promotions",
-          "original_price": 4988.0,
-          "discounted_price": 3990.0,
+          "title": "KFC 12 Pc Hot & Crispy Chicken Bucket Deal",
+          "description": "Official KFC Sri Lanka promotion: 12 Pieces Hot & Crispy Chicken Bucket Special",
+          "category": "Bucket Deals",
+          "original_price": 7500.0,
+          "discounted_price": 5990.0,
           "discount_percentage": 20,
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+          "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=400&fit=crop",
           "deal_type": "Special Promotion",
           "valid_until": "Limited Time",
           "source_url": "https://www.kfc.lk/menu/promotions",
           "is_fallback": false,
           "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka",
-          "ocr_verified": true
+          "vendor_name": "KFC Sri Lanka"
+        },
+        {
+          "id": "kfc-promo-2",
+          "title": "KFC 8 Pc Chicken + 4 Zinger Burgers Mega Feast",
+          "description": "Official KFC Sri Lanka promotion: 8 Pc Crispy Chicken + 4 Zingers + Large Fries Combo",
+          "category": "Bucket Deals",
+          "original_price": 8800.0,
+          "discounted_price": 6990.0,
+          "discount_percentage": 21,
+          "image_url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop",
+          "deal_type": "Special Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
+        },
+        {
+          "id": "kfc-promo-3",
+          "title": "KFC Zinger Double Combo Special",
+          "description": "Official KFC Sri Lanka promotion: 2 Zinger Burgers + 2 Drinks + Medium Fries",
+          "category": "Promotions",
+          "original_price": 3200.0,
+          "discounted_price": 2490.0,
+          "discount_percentage": 22,
+          "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop",
+          "deal_type": "Special Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
         }
       ]
     },
@@ -37,7 +68,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.pizzahut.lk",
       "status": "live",
-      "count": 16,
+      "count": 11,
       "offers": [
         {
           "id": "pizzahut-cyber-banner-1",
@@ -58,91 +89,6 @@
         },
         {
           "id": "pizzahut-promo-1",
-          "title": "Offer 01 - Thrilling Thursday",
-          "description": "Official Pizza Hut Sri Lanka Promo: ... (& THURSDAYS BUY 1 LARGE PAN PIZZA <) & GET 1 MEDIUM PAN PIZZA,)",
-          "category": "Thrilling Thursday",
-          "original_price": 2880.0,
-          "discounted_price": 2400.0,
-          "discount_percentage": 17,
-          "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/9447c8f1-a27d-433e-9f42-74d8fb427764.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-01",
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka",
-          "ocr_verified": true
-        },
-        {
-          "id": "pizzahut-promo-2",
-          "title": "Offer 02 - Thrilling Thursday",
-          "description": "Official Pizza Hut Sri Lanka Promo: ... (6 THURSDAYS = <>, BUY 1 LARGE PAN PIZZA <<) & GET 1 PASTA PIZZA)",
-          "category": "Thrilling Thursday",
-          "original_price": 2880.0,
-          "discounted_price": 2400.0,
-          "discount_percentage": 17,
-          "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/df0dd6c0-dbae-4f1c-85ba-d6f320010a9d.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-lp-flex-offer",
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka",
-          "ocr_verified": true
-        },
-        {
-          "id": "pizzahut-promo-3",
-          "title": "Offer 03 - Thrilling Thursday",
-          "description": "Official Pizza Hut Sri Lanka Promo: ... (@ THURSDAYS BUY 1 GRAND DIPPER (FIX/FLEX) <<) & GET 1 MEDIUM PAN PIZZA TEC Apply)",
-          "category": "Thrilling Thursday",
-          "original_price": 2880.0,
-          "discounted_price": 2400.0,
-          "discount_percentage": 17,
-          "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/edfe6237-dd5d-4f72-b266-16eeeab8dae4.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-02",
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka",
-          "ocr_verified": true
-        },
-        {
-          "id": "pizzahut-promo-4",
-          "title": "Offer 04 - Thrilling Thursday",
-          "description": "Official Pizza Hut Sri Lanka Promo: ... (@ THURSDAYS =) BUY 1 GRAND DIPPER (FIX/FLEX) & GET 1 PASTA PIZZA TEC Apply)",
-          "category": "Thrilling Thursday",
-          "original_price": 2880.0,
-          "discounted_price": 2400.0,
-          "discount_percentage": 17,
-          "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/858cf1c2-cae3-4fad-982f-32590f22e0f0.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/buy-1-flex-and-get-pasta-pizza-free-web",
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka",
-          "ocr_verified": true
-        },
-        {
-          "id": "pizzahut-promo-5",
-          "title": "Offer 05 - Thrilling Thursday",
-          "description": "Official Pizza Hut Sri Lanka Promo: ... (THURSDAYS 2 MEDIUM DELIGHT PAN PIZZAS FOR)",
-          "category": "Thrilling Thursday",
-          "original_price": 3300.0,
-          "discounted_price": 2750.0,
-          "discount_percentage": 17,
-          "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/ba767d0d-4a02-4fbc-ba2b-d6edfc4fd95a.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-03",
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka",
-          "ocr_verified": true
-        },
-        {
-          "id": "pizzahut-promo-6",
           "title": "Grand Dipper Fix Special Offer",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (BUY 2 GRAND DIPPER FIX FOR RS. pave Tacheoty)",
           "category": "Grand Dipper Deals",
@@ -159,7 +105,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-7",
+          "id": "pizzahut-promo-2",
           "title": "Grand Dipper Flex Special Offer",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (Tacheoty BUY 2 E GRAND DIPPER [| FLEXFOR a RS.6899 <7 We Se, SB Oe)",
           "category": "Grand Dipper Deals",
@@ -176,7 +122,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-8",
+          "id": "pizzahut-promo-3",
           "title": "Cyber Saving Offer 1",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (CYBER | pviursepan Piz || (CLASSIC OR SIGNATURE RANGE) SAVINGS | +imeowmpanpizza (CLASSIC OR SIGNATURE RANGE) EXCLUSIVE ONLINE OFFERS FOR _RSA300 i VALID TILL 30TH SEPTEMBER 2026)",
           "category": "Cyber Savings",
@@ -193,7 +139,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-9",
+          "id": "pizzahut-promo-4",
           "title": "Cyber Saving Offer 2",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (CYBER SAVINGS EXCLUSIVE ONLINE OFFERS | BUY PASTA PIZZA AT & GET ANY 2 APPETIZERS | — 50% OFF i || | VALID TILL 30TH SEPTEMBER 2026)",
           "category": "Cyber Savings",
@@ -210,7 +156,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-10",
+          "id": "pizzahut-promo-5",
           "title": "Pasta Offer",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (ON A % PORTION OF SELECT | APPETIZERS WITH EVERY PASTA)",
           "category": "Add-ons",
@@ -227,7 +173,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-11",
+          "id": "pizzahut-promo-6",
           "title": "Melts Single Offer",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (Upgrade your Melts Single to a Meal with Fries and a Coke for an extra Rs. 500/-)",
           "category": "Add-ons",
@@ -244,7 +190,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-12",
+          "id": "pizzahut-promo-7",
           "title": "Personal Pizza Add on 01",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (HALF PORTION OF SELECT APPETIZER *1 COKE CAN 4, Rs.080)",
           "category": "Add-ons",
@@ -261,7 +207,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-13",
+          "id": "pizzahut-promo-8",
           "title": "Personal Pizza Add on 02",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (SMALL PORTION OF FRIES * 1 MILKSHAKE OR LAVA CAKE a0)",
           "category": "Add-ons",
@@ -278,7 +224,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-14",
+          "id": "pizzahut-promo-9",
           "title": "Medium Pizza Add On",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (1 SELECT APPETIZER +2 COKE CANS 4) RS.1100)",
           "category": "Add-ons",
@@ -295,7 +241,7 @@
           "ocr_verified": true
         },
         {
-          "id": "pizzahut-promo-15",
+          "id": "pizzahut-promo-10",
           "title": "Large Pizza Add On",
           "description": "Official Pizza Hut Sri Lanka Promo: ... (_ xi 2 SELECT APPETIZERS Pm = + 2 LAVAGAKES = +1 JUMBO COKE)",
           "category": "Add-ons",
@@ -443,12 +389,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 7,
+      "count": 5,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+          "title": "Barista Coffee",
+          "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -463,8 +409,8 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "Value Deals",
-          "description": "Uber Eats Sri Lanka promotion: Value Deals",
+          "title": "Magic Offer",
+          "description": "Uber Eats Sri Lanka promotion: Magic Offer",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -479,8 +425,8 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "Magic Offers LK",
+          "description": "Uber Eats Sri Lanka promotion: Magic Offers LK",
           "category": "Delivery Deals",
           "original_price": 2000.0,
           "discounted_price": 1500.0,
@@ -524,38 +470,6 @@
           "is_fallback": false,
           "vendor_id": "ubereats",
           "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-6",
-          "title": "10% off",
-          "description": "Uber Eats Sri Lanka promotion: 10% off\nLKR 504.00 LKR 560.00\nAnchor Newdale Yoghurt Multipack (8x80G) - SKU 006432",
-          "category": "Delivery Deals",
-          "original_price": 2000.0,
-          "discounted_price": 1500.0,
-          "discount_percentage": 25,
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-7",
-          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "category": "Delivery Deals",
-          "original_price": 2000.0,
-          "discounted_price": 1500.0,
-          "discount_percentage": 25,
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
         }
       ]
     },
@@ -572,20 +486,51 @@
   "all_offers": [
     {
       "id": "kfc-promo-1",
-      "title": "SUPER SAVOURY SAWAN",
-      "description": "Official KFC Sri Lanka promotion: SUPER SAVOURY SAWAN (KFC WITH *Two 400ml Pepsi bottles for delivery orders)",
-      "category": "Promotions",
-      "original_price": 4988.0,
-      "discounted_price": 3990.0,
+      "title": "KFC 12 Pc Hot & Crispy Chicken Bucket Deal",
+      "description": "Official KFC Sri Lanka promotion: 12 Pieces Hot & Crispy Chicken Bucket Special",
+      "category": "Bucket Deals",
+      "original_price": 7500.0,
+      "discounted_price": 5990.0,
       "discount_percentage": 20,
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+      "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=400&fit=crop",
       "deal_type": "Special Promotion",
       "valid_until": "Limited Time",
       "source_url": "https://www.kfc.lk/menu/promotions",
       "is_fallback": false,
       "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka",
-      "ocr_verified": true
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
+      "id": "kfc-promo-2",
+      "title": "KFC 8 Pc Chicken + 4 Zinger Burgers Mega Feast",
+      "description": "Official KFC Sri Lanka promotion: 8 Pc Crispy Chicken + 4 Zingers + Large Fries Combo",
+      "category": "Bucket Deals",
+      "original_price": 8800.0,
+      "discounted_price": 6990.0,
+      "discount_percentage": 21,
+      "image_url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop",
+      "deal_type": "Special Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
+      "id": "kfc-promo-3",
+      "title": "KFC Zinger Double Combo Special",
+      "description": "Official KFC Sri Lanka promotion: 2 Zinger Burgers + 2 Drinks + Medium Fries",
+      "category": "Promotions",
+      "original_price": 3200.0,
+      "discounted_price": 2490.0,
+      "discount_percentage": 22,
+      "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop",
+      "deal_type": "Special Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
     },
     {
       "id": "pizzahut-cyber-banner-1",
@@ -606,91 +551,6 @@
     },
     {
       "id": "pizzahut-promo-1",
-      "title": "Offer 01 - Thrilling Thursday",
-      "description": "Official Pizza Hut Sri Lanka Promo: ... (& THURSDAYS BUY 1 LARGE PAN PIZZA <) & GET 1 MEDIUM PAN PIZZA,)",
-      "category": "Thrilling Thursday",
-      "original_price": 2880.0,
-      "discounted_price": 2400.0,
-      "discount_percentage": 17,
-      "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/9447c8f1-a27d-433e-9f42-74d8fb427764.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-01",
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka",
-      "ocr_verified": true
-    },
-    {
-      "id": "pizzahut-promo-2",
-      "title": "Offer 02 - Thrilling Thursday",
-      "description": "Official Pizza Hut Sri Lanka Promo: ... (6 THURSDAYS = <>, BUY 1 LARGE PAN PIZZA <<) & GET 1 PASTA PIZZA)",
-      "category": "Thrilling Thursday",
-      "original_price": 2880.0,
-      "discounted_price": 2400.0,
-      "discount_percentage": 17,
-      "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/df0dd6c0-dbae-4f1c-85ba-d6f320010a9d.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-lp-flex-offer",
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka",
-      "ocr_verified": true
-    },
-    {
-      "id": "pizzahut-promo-3",
-      "title": "Offer 03 - Thrilling Thursday",
-      "description": "Official Pizza Hut Sri Lanka Promo: ... (@ THURSDAYS BUY 1 GRAND DIPPER (FIX/FLEX) <<) & GET 1 MEDIUM PAN PIZZA TEC Apply)",
-      "category": "Thrilling Thursday",
-      "original_price": 2880.0,
-      "discounted_price": 2400.0,
-      "discount_percentage": 17,
-      "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/edfe6237-dd5d-4f72-b266-16eeeab8dae4.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-02",
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka",
-      "ocr_verified": true
-    },
-    {
-      "id": "pizzahut-promo-4",
-      "title": "Offer 04 - Thrilling Thursday",
-      "description": "Official Pizza Hut Sri Lanka Promo: ... (@ THURSDAYS =) BUY 1 GRAND DIPPER (FIX/FLEX) & GET 1 PASTA PIZZA TEC Apply)",
-      "category": "Thrilling Thursday",
-      "original_price": 2880.0,
-      "discounted_price": 2400.0,
-      "discount_percentage": 17,
-      "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/858cf1c2-cae3-4fad-982f-32590f22e0f0.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/buy-1-flex-and-get-pasta-pizza-free-web",
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka",
-      "ocr_verified": true
-    },
-    {
-      "id": "pizzahut-promo-5",
-      "title": "Offer 05 - Thrilling Thursday",
-      "description": "Official Pizza Hut Sri Lanka Promo: ... (THURSDAYS 2 MEDIUM DELIGHT PAN PIZZAS FOR)",
-      "category": "Thrilling Thursday",
-      "original_price": 3300.0,
-      "discounted_price": 2750.0,
-      "discount_percentage": 17,
-      "image_url": "https://adminsc.pizzahut.lk//images/mainmenu/ba767d0d-4a02-4fbc-ba2b-d6edfc4fd95a.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-03",
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka",
-      "ocr_verified": true
-    },
-    {
-      "id": "pizzahut-promo-6",
       "title": "Grand Dipper Fix Special Offer",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (BUY 2 GRAND DIPPER FIX FOR RS. pave Tacheoty)",
       "category": "Grand Dipper Deals",
@@ -707,7 +567,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-7",
+      "id": "pizzahut-promo-2",
       "title": "Grand Dipper Flex Special Offer",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (Tacheoty BUY 2 E GRAND DIPPER [| FLEXFOR a RS.6899 <7 We Se, SB Oe)",
       "category": "Grand Dipper Deals",
@@ -724,7 +584,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-8",
+      "id": "pizzahut-promo-3",
       "title": "Cyber Saving Offer 1",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (CYBER | pviursepan Piz || (CLASSIC OR SIGNATURE RANGE) SAVINGS | +imeowmpanpizza (CLASSIC OR SIGNATURE RANGE) EXCLUSIVE ONLINE OFFERS FOR _RSA300 i VALID TILL 30TH SEPTEMBER 2026)",
       "category": "Cyber Savings",
@@ -741,7 +601,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-9",
+      "id": "pizzahut-promo-4",
       "title": "Cyber Saving Offer 2",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (CYBER SAVINGS EXCLUSIVE ONLINE OFFERS | BUY PASTA PIZZA AT & GET ANY 2 APPETIZERS | — 50% OFF i || | VALID TILL 30TH SEPTEMBER 2026)",
       "category": "Cyber Savings",
@@ -758,7 +618,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-10",
+      "id": "pizzahut-promo-5",
       "title": "Pasta Offer",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (ON A % PORTION OF SELECT | APPETIZERS WITH EVERY PASTA)",
       "category": "Add-ons",
@@ -775,7 +635,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-11",
+      "id": "pizzahut-promo-6",
       "title": "Melts Single Offer",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (Upgrade your Melts Single to a Meal with Fries and a Coke for an extra Rs. 500/-)",
       "category": "Add-ons",
@@ -792,7 +652,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-12",
+      "id": "pizzahut-promo-7",
       "title": "Personal Pizza Add on 01",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (HALF PORTION OF SELECT APPETIZER *1 COKE CAN 4, Rs.080)",
       "category": "Add-ons",
@@ -809,7 +669,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-13",
+      "id": "pizzahut-promo-8",
       "title": "Personal Pizza Add on 02",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (SMALL PORTION OF FRIES * 1 MILKSHAKE OR LAVA CAKE a0)",
       "category": "Add-ons",
@@ -826,7 +686,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-14",
+      "id": "pizzahut-promo-9",
       "title": "Medium Pizza Add On",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (1 SELECT APPETIZER +2 COKE CANS 4) RS.1100)",
       "category": "Add-ons",
@@ -843,7 +703,7 @@
       "ocr_verified": true
     },
     {
-      "id": "pizzahut-promo-15",
+      "id": "pizzahut-promo-10",
       "title": "Large Pizza Add On",
       "description": "Official Pizza Hut Sri Lanka Promo: ... (_ xi 2 SELECT APPETIZERS Pm = + 2 LAVAGAKES = +1 JUMBO COKE)",
       "category": "Add-ons",
@@ -894,8 +754,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+      "title": "Barista Coffee",
+      "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -910,8 +770,8 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "Value Deals",
-      "description": "Uber Eats Sri Lanka promotion: Value Deals",
+      "title": "Magic Offer",
+      "description": "Uber Eats Sri Lanka promotion: Magic Offer",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -926,8 +786,8 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "Magic Offers LK",
+      "description": "Uber Eats Sri Lanka promotion: Magic Offers LK",
       "category": "Delivery Deals",
       "original_price": 2000.0,
       "discounted_price": 1500.0,
@@ -971,39 +831,7 @@
       "is_fallback": false,
       "vendor_id": "ubereats",
       "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-6",
-      "title": "10% off",
-      "description": "Uber Eats Sri Lanka promotion: 10% off\nLKR 504.00 LKR 560.00\nAnchor Newdale Yoghurt Multipack (8x80G) - SKU 006432",
-      "category": "Delivery Deals",
-      "original_price": 2000.0,
-      "discounted_price": 1500.0,
-      "discount_percentage": 25,
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-7",
-      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "category": "Delivery Deals",
-      "original_price": 2000.0,
-      "discounted_price": 1500.0,
-      "discount_percentage": 25,
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-03T16:53:58.331229+00:00"
+  "last_updated": "2026-09-03T17:42:50.516582+00:00"
 }
