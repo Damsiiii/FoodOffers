@@ -9,17 +9,27 @@ export default {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        background: '#09090B',
-        foreground: '#FAFAFA',
+        background: '#FDFAD8', // Butter Bean
+        foreground: '#47510B', // Grassy Green
         muted: {
-          DEFAULT: '#27272A',
-          foreground: '#A1A1AA',
+          DEFAULT: '#CAD23C', // Seed Green
+          foreground: '#47510B', // Grassy Green
         },
         accent: {
-          DEFAULT: '#DFE104',
-          foreground: '#000000',
+          DEFAULT: '#FF5B03', // Sungold Orange
+          foreground: '#FFFFFF',
         },
-        border: '#3F3F46',
+        border: '#47510B', // Grassy Green
+        brand: {
+          orange: '#FF5B03', // Sungold Orange
+          yellow: '#FFF24D', // Lemon Yellow
+          cream: '#FDFAD8',  // Butter Bean
+          beet: '#AB1717',    // Beet Red
+          green: '#47510B',   // Grassy Green
+          pink: '#FFB6A9',    // Petal Pink
+          seed: '#CAD23C',    // Seed Green
+          blue: '#A1AED1',    // Blue Linen
+        },
       },
       borderRadius: {
         DEFAULT: '0px',

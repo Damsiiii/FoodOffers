@@ -7,7 +7,7 @@ const { title = "LANKA FOOD OFFER LEDGER | FAST FOOD DEALS" } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,10 +17,10 @@ const { title = "LANKA FOOD OFFER LEDGER | FAST FOOD DEALS" } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-background text-foreground font-sans min-h-screen flex flex-col antialiased selection:bg-accent selection:text-accent-foreground relative overflow-x-hidden">
+  <body class="bg-background text-foreground font-sans min-h-screen flex flex-col antialiased selection:bg-brand-orange selection:text-white relative overflow-x-hidden">
 
     <!-- SVG Noise Texture Overlay -->
-    <svg class="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.035] mix-blend-overlay" aria-hidden="true">
+    <svg class="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.035] mix-blend-multiply" aria-hidden="true">
       <filter id="noiseFilter">
         <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
       </filter>
