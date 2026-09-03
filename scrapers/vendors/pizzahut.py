@@ -13,14 +13,16 @@ class PizzaHutScraper(BaseScraper):
     vendor_name = "Pizza Hut Sri Lanka"
     vendor_logo = "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop"
     website_url = "https://www.pizzahut.lk"
-    categories = ["Cyber Savings", "Pizza Deals", "Meal Deals", "Promotions", "Family Combos"]
+    categories = ["Thrilling Thursday", "Grand Dipper Deals", "Cyber Savings", "Add-ons", "Pizza Deals", "Meal Deals"]
 
     def scrape_live(self):
         """
-        Scrapes all promotional meal deals directly from Pizza Hut Sri Lanka's official API:
-        OAuth Authentication: https://phapis.pizzahut.lk/gettoken
-        Deals Category Endpoint: https://phapis.pizzahut.lk/api/menu/items?webCategory=promo&menuCategory=meal-deal
-        Homepage Banner Endpoint: https://phapis.pizzahut.lk/api/home/banner
+        Scrapes ALL promotional deals from Pizza Hut Sri Lanka's official API:
+        - Thrilling Thursday Deals
+        - Grand Dipper Deals
+        - Cyber Savings
+        - Add-ons
+        - Slider Banner Promos
         """
         offers = []
         seen_titles = set()
@@ -51,7 +53,7 @@ class PizzaHutScraper(BaseScraper):
                 "Content-Type": "application/json"
             }
 
-            # 2. Fetch Homepage Slider Banner Deals (Cyber Savings & Exclusive Online Banners)
+            # 2. Fetch Homepage Slider Banner Deals
             try:
                 r_banner = requests.post("https://phapis.pizzahut.lk/api/home/banner", json={}, headers=auth_headers, verify=False, timeout=12)
                 banner_data = r_banner.json().get("Data")
@@ -88,21 +90,21 @@ class PizzaHutScraper(BaseScraper):
                     offers.append({
                         "id": f"pizzahut-cyber-banner-{b_idx + 1}",
                         "title": b_title,
-                        "description": f"Official Cyber Savings Promo: {ocr_text if ocr_text else b_title}",
+                        "description": f"Official Pizza Hut Promo: {ocr_text if ocr_text else b_title}",
                         "category": "Cyber Savings",
                         "original_price": orig_price,
                         "discounted_price": disc_price,
                         "discount_percentage": disc_pct,
                         "image_url": banner_img,
                         "deal_type": ocr_data.get("promo_terms", "Cyber Savings Deal") if ocr_data else "Cyber Savings Deal",
-                        "valid_until": "Limited Time Cyber Offer",
+                        "valid_until": "Limited Time",
                         "source_url": banner_url
                     })
 
             except Exception as b_err:
                 logger.warning(f"[{self.vendor_name}] Banner Cyber Savings extraction exception: {b_err}")
 
-            # 3. Fetch All Promotional Deals from Deals Category (/api/menu/items?webCategory=promo&menuCategory=meal-deal)
+            # 3. Fetch ALL Deals from the Deals Category (/api/menu/items?webCategory=promo&menuCategory=meal-deal)
             r_promo = requests.post(
                 "https://phapis.pizzahut.lk/api/menu/items?webCategory=promo&menuCategory=meal-deal",
                 json={},
@@ -117,11 +119,6 @@ class PizzaHutScraper(BaseScraper):
                 title = item.get("WebName") or item.get("Name") or item.get("CategoryName") or item.get("Title")
                 if not title or title in seen_titles:
                     continue
-
-                # Exclude simple add-on items as requested
-                if "add on" in title.lower() or "addon" in title.lower():
-                    continue
-
                 seen_titles.add(title)
 
                 desc = item.get("Description") or item.get("DescriptionShort") or item.get("WebNameShort") or title
@@ -138,10 +135,21 @@ class PizzaHutScraper(BaseScraper):
                 ocr_data = parse_banner_with_ocr(img_url, self.vendor_name)
                 disc_pct = ocr_data.get("discount_percentage", 20) if ocr_data else 20
 
+                # Determine Section / Category
+                lower_title = title.lower()
+                if "thrilling" in lower_title or "thursday" in lower_title:
+                    category = "Thrilling Thursday"
+                elif "grand dipper" in lower_title or "dipper" in lower_title:
+                    category = "Grand Dipper Deals"
+                elif "cyber" in lower_title:
+                    category = "Cyber Savings"
+                elif "add on" in lower_title or "addon" in lower_title or "pasta" in lower_title or "melts" in lower_title:
+                    category = "Add-ons"
+                else:
+                    category = "Meal Deals"
+
                 disc_price = float(price_val) if price_val and float(price_val) > 0 else 2400.0
                 orig_price = round(disc_price * (1 + disc_pct / 100))
-
-                category = "Cyber Savings" if "cyber" in title.lower() else "Meal Deals"
 
                 offers.append({
                     "id": f"pizzahut-promo-{idx + 1}",
