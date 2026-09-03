@@ -59,33 +59,6 @@ export const defaultDishes: CarouselItem[] = [
     ctaText: "View Menu",
     ctaUrl: "#",
   },
-  {
-    tag: "#Vegetarian",
-    titleLine1: "PANEER TIKKA",
-    titleLine2: "– CLAY ROASTED",
-    desc: "Artisan cottage cheese marinated in spiced yogurt, bell peppers & saffron",
-    img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&auto=format&fit=crop&q=80",
-    ctaText: "View Menu",
-    ctaUrl: "#",
-  },
-  {
-    tag: "#CoastalCatch",
-    titleLine1: "MALABAR PRAWNS",
-    titleLine2: "– COCONUT GRAVY",
-    desc: "Jumbo wild tiger prawns simmered in fragrant curry leaves and coconut milk",
-    img: "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&auto=format&fit=crop&q=80",
-    ctaText: "View Menu",
-    ctaUrl: "#",
-  },
-  {
-    tag: "#ArtisanBake",
-    titleLine1: "TRUFFLE NAAN",
-    titleLine2: "– CHARCOAL OVEN",
-    desc: "Crispy puffed leavened bread brushed with pure ghee and black winter truffle",
-    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
-    ctaText: "View Menu",
-    ctaUrl: "#",
-  },
 ];
 
 export function CoverFlowCarousel({
@@ -146,9 +119,9 @@ export function CoverFlowCarousel({
     <section
       className={`relative w-full min-h-[560px] flex items-center justify-center overflow-hidden py-8 select-none ${className}`}
       style={{
-        backgroundColor: "#0c0a09",
-        color: "#ffffff",
-        fontFamily: "system-ui, -apple-system, sans-serif",
+        backgroundColor: "#FDFAD8", // Butter Bean
+        color: "#47510B", // Grassy Green
+        fontFamily: "Space Grotesk, system-ui, -apple-system, sans-serif",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -164,7 +137,7 @@ export function CoverFlowCarousel({
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            filter: "brightness(0.22) blur(32px)",
+            filter: "brightness(0.5) blur(32px)",
             transform: "scale(1.15)",
             transition: "opacity 1000ms ease, filter 1000ms ease",
           }}
@@ -172,7 +145,7 @@ export function CoverFlowCarousel({
         <div
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(circle at center, rgba(12,10,9,0.3) 0%, rgba(12,10,9,0.92) 100%)",
+            background: "radial-gradient(circle at center, rgba(253,250,216,0.3) 0%, rgba(253,250,216,0.85) 100%)",
           }}
         />
       </div>
@@ -181,20 +154,20 @@ export function CoverFlowCarousel({
         {/* Eyebrow */}
         {sectionLabel && (
           <div className="flex items-center gap-3 mb-6">
-            <span style={{ width: "36px", height: "1px", background: "linear-gradient(90deg, transparent, #c5a880)" }} />
+            <span style={{ width: "36px", height: "2px", background: "#47510B" }} />
             <h3
               style={{
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                letterSpacing: "0.3em",
+                fontSize: "0.85rem",
+                fontWeight: 800,
+                letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#c5a880",
+                color: "#47510B",
                 margin: 0,
               }}
             >
               {sectionLabel}
             </h3>
-            <span style={{ width: "36px", height: "1px", background: "linear-gradient(90deg, #c5a880, transparent)" }} />
+            <span style={{ width: "36px", height: "2px", background: "#47510B" }} />
           </div>
         )}
 
@@ -209,7 +182,7 @@ export function CoverFlowCarousel({
             let transform = "translateX(0px) scale(0.4) rotateY(0deg)";
             let opacity = 0;
             let zIndex = 0;
-            let filter = "brightness(0.4) blur(2px)";
+            let filter = "brightness(0.7) blur(2px)";
             let isCenter = false;
 
             if (offset === 0) {
@@ -222,22 +195,22 @@ export function CoverFlowCarousel({
               transform = "translateX(250px) scale(0.84) rotateY(-24deg)";
               opacity = 0.65;
               zIndex = 20;
-              filter = "brightness(0.75)";
+              filter = "brightness(0.85)";
             } else if (offset === 2) {
               transform = "translateX(450px) scale(0.68) rotateY(-38deg)";
               opacity = 0.38;
               zIndex = 10;
-              filter = "brightness(0.55) blur(1px)";
+              filter = "brightness(0.75) blur(1px)";
             } else if (offset === total - 1) {
               transform = "translateX(-250px) scale(0.84) rotateY(24deg)";
               opacity = 0.65;
               zIndex = 20;
-              filter = "brightness(0.75)";
+              filter = "brightness(0.85)";
             } else if (offset === total - 2) {
               transform = "translateX(-450px) scale(0.68) rotateY(38deg)";
               opacity = 0.38;
               zIndex = 10;
-              filter = "brightness(0.55) blur(1px)";
+              filter = "brightness(0.75) blur(1px)";
             }
 
             return (
@@ -250,10 +223,10 @@ export function CoverFlowCarousel({
                   top: "10px",
                   width: "300px",
                   height: "440px",
-                  borderRadius: "18px",
+                  borderRadius: "0px",
                   overflow: "hidden",
-                  backgroundColor: "#171311",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  backgroundColor: "#FDFAD8",
+                  border: "2px solid #47510B",
                   transform,
                   opacity,
                   zIndex,
@@ -261,8 +234,8 @@ export function CoverFlowCarousel({
                   transformOrigin: "center center",
                   transition: "all 800ms cubic-bezier(0.25, 1, 0.5, 1)",
                   boxShadow: isCenter
-                    ? "0 25px 60px rgba(0,0,0,0.9), 0 0 35px rgba(197,168,128,0.25)"
-                    : "0 15px 35px rgba(0,0,0,0.5)",
+                    ? "0 20px 40px rgba(71,81,11,0.25)"
+                    : "0 10px 20px rgba(71,81,11,0.15)",
                   cursor: isCenter ? "default" : "pointer",
                 }}
               >
@@ -279,13 +252,13 @@ export function CoverFlowCarousel({
                   }}
                 />
 
-                {/* Dark Vignette Overlay */}
+                {/* Vignette Overlay */}
                 <div
                   style={{
                     position: "absolute",
                     inset: 0,
                     background:
-                      "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 25%, rgba(0,0,0,0.68) 60%, rgba(0,0,0,0.96) 100%)",
+                      "linear-gradient(180deg, rgba(71,81,11,0.2) 0%, rgba(71,81,11,0.1) 25%, rgba(71,81,11,0.7) 60%, rgba(71,81,11,0.95) 100%)",
                     pointerEvents: "none",
                     zIndex: 10,
                   }}
@@ -315,10 +288,12 @@ export function CoverFlowCarousel({
                       style={{
                         display: "inline-block",
                         fontSize: "0.78rem",
-                        fontWeight: 600,
+                        fontWeight: 700,
                         letterSpacing: "0.06em",
-                        color: "rgba(255,255,255,0.9)",
-                        textShadow: "0 2px 6px rgba(0,0,0,0.8)",
+                        backgroundColor: "#FF5B03",
+                        color: "#FFFFFF",
+                        padding: "2px 8px",
+                        border: "1px solid #47510B",
                       }}
                     >
                       {item.tag}
@@ -338,14 +313,13 @@ export function CoverFlowCarousel({
                   >
                     <h2
                       style={{
-                        fontSize: "1.65rem",
+                        fontSize: "1.5rem",
                         fontWeight: 900,
                         textTransform: "uppercase",
-                        letterSpacing: "0.04em",
-                        color: "#ffffff",
+                        letterSpacing: "0.02em",
+                        color: "#FDFAD8",
                         margin: 0,
                         lineHeight: 1.1,
-                        textShadow: "0 3px 12px rgba(0,0,0,0.95)",
                       }}
                     >
                       {item.titleLine1}
@@ -354,13 +328,12 @@ export function CoverFlowCarousel({
                     {item.titleLine2 && (
                       <span
                         style={{
-                          fontSize: "1.1rem",
+                          fontSize: "1rem",
                           fontWeight: 700,
                           textTransform: "uppercase",
-                          letterSpacing: "0.06em",
-                          color: "#f3f0ea",
+                          letterSpacing: "0.04em",
+                          color: "#FFF24D",
                           lineHeight: 1.2,
-                          textShadow: "0 3px 10px rgba(0,0,0,0.9)",
                         }}
                       >
                         {item.titleLine2}
@@ -370,24 +343,20 @@ export function CoverFlowCarousel({
                     <div
                       style={{
                         width: "34px",
-                        height: "2px",
-                        backgroundColor: "#c5a880",
-                        borderRadius: "2px",
+                        height: "3px",
+                        backgroundColor: "#FF5B03",
                         margin: "5px auto 4px",
-                        boxShadow: "0 0 8px rgba(197,168,128,0.7)",
                       }}
                     />
 
                     {item.desc && (
                       <p
                         style={{
-                          fontSize: "0.82rem",
-                          fontStyle: "italic",
-                          color: "rgba(255,255,255,0.9)",
+                          fontSize: "0.8rem",
+                          color: "#FDFAD8",
                           maxWidth: "280px",
                           margin: "0 0 10px",
                           lineHeight: 1.3,
-                          textShadow: "0 2px 8px rgba(0,0,0,0.9)",
                         }}
                       >
                         {item.desc}
@@ -406,18 +375,17 @@ export function CoverFlowCarousel({
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "6px",
-                        padding: "7px 18px",
-                        borderRadius: "9999px",
-                        background: "linear-gradient(135deg, #c5a880 0%, #a48256 100%)",
-                        color: "#110d0c",
-                        fontSize: "0.72rem",
+                        padding: "8px 18px",
+                        backgroundColor: "#FF5B03",
+                        color: "#FFFFFF",
+                        fontSize: "0.75rem",
                         fontWeight: 800,
-                        letterSpacing: "0.14em",
+                        letterSpacing: "0.1em",
                         textTransform: "uppercase",
                         textDecoration: "none",
-                        boxShadow: "0 4px 14px rgba(0,0,0,0.4), 0 0 15px rgba(197,168,128,0.3)",
+                        border: "2px solid #47510B",
                         cursor: "pointer",
-                        transition: "transform 200ms ease, box-shadow 200ms ease",
+                        transition: "transform 200ms ease",
                       }}
                     >
                       <span>{item.ctaText || "View Menu"}</span>
@@ -441,16 +409,13 @@ export function CoverFlowCarousel({
             transform: "translateY(-50%)",
             width: "46px",
             height: "46px",
-            borderRadius: "50%",
-            backgroundColor: "rgba(0,0,0,0.55)",
-            border: "1px solid rgba(255,255,255,0.2)",
-            color: "#ffffff",
+            backgroundColor: "#FDFAD8",
+            border: "2px solid #47510B",
+            color: "#47510B",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backdropFilter: "blur(8px)",
             cursor: "pointer",
-            boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
             zIndex: 40,
             transition: "all 200ms ease",
           }}
@@ -468,16 +433,13 @@ export function CoverFlowCarousel({
             transform: "translateY(-50%)",
             width: "46px",
             height: "46px",
-            borderRadius: "50%",
-            backgroundColor: "rgba(0,0,0,0.55)",
-            border: "1px solid rgba(255,255,255,0.2)",
-            color: "#ffffff",
+            backgroundColor: "#FDFAD8",
+            border: "2px solid #47510B",
+            color: "#47510B",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backdropFilter: "blur(8px)",
             cursor: "pointer",
-            boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
             zIndex: 40,
             transition: "all 200ms ease",
           }}
@@ -493,13 +455,12 @@ export function CoverFlowCarousel({
               onClick={() => goToSlide(idx)}
               aria-label={`Go to slide ${idx + 1}`}
               style={{
-                height: "8px",
-                width: idx === currentIndex ? "28px" : "8px",
-                borderRadius: "9999px",
-                backgroundColor: idx === currentIndex ? "#c5a880" : "rgba(255,255,255,0.25)",
-                border: "none",
+                height: "10px",
+                width: idx === currentIndex ? "28px" : "10px",
+                borderRadius: "0px",
+                backgroundColor: idx === currentIndex ? "#FF5B03" : "#47510B",
+                border: "1px solid #47510B",
                 cursor: "pointer",
-                boxShadow: idx === currentIndex ? "0 0 10px rgba(197,168,128,0.7)" : "none",
                 transition: "all 300ms ease",
               }}
             />
