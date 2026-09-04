@@ -7,50 +7,6 @@ from scrapers.vision_ocr import parse_banner_with_ocr
 
 logger = logging.getLogger(__name__)
 
-# Verified fallback snapshot of active KFC Sri Lanka promotional bucket offers
-# Used when KFC website operating hours (10:00 AM - 10:30 PM LK) are closed or location prompts block live scraping
-VERIFIED_KFC_PROMOS = [
-    {
-        "id": "kfc-promo-1",
-        "title": "KFC 12 Pc Hot & Crispy Chicken Bucket Deal",
-        "description": "Official KFC Sri Lanka promotion: 12 Pieces Hot & Crispy Chicken Bucket Special",
-        "category": "Bucket Deals",
-        "original_price": 7500.0,
-        "discounted_price": 5990.0,
-        "discount_percentage": 20,
-        "image_url": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=400&fit=crop",
-        "deal_type": "Special Promotion",
-        "valid_until": "Limited Time",
-        "source_url": "https://www.kfc.lk/menu/promotions"
-    },
-    {
-        "id": "kfc-promo-2",
-        "title": "KFC 8 Pc Chicken + 4 Zinger Burgers Mega Feast",
-        "description": "Official KFC Sri Lanka promotion: 8 Pc Crispy Chicken + 4 Zingers + Large Fries Combo",
-        "category": "Bucket Deals",
-        "original_price": 8800.0,
-        "discounted_price": 6990.0,
-        "discount_percentage": 21,
-        "image_url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop",
-        "deal_type": "Special Promotion",
-        "valid_until": "Limited Time",
-        "source_url": "https://www.kfc.lk/menu/promotions"
-    },
-    {
-        "id": "kfc-promo-3",
-        "title": "KFC Zinger Double Combo Special",
-        "description": "Official KFC Sri Lanka promotion: 2 Zinger Burgers + 2 Drinks + Medium Fries",
-        "category": "Promotions",
-        "original_price": 3200.0,
-        "discounted_price": 2490.0,
-        "discount_percentage": 22,
-        "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop",
-        "deal_type": "Special Promotion",
-        "valid_until": "Limited Time",
-        "source_url": "https://www.kfc.lk/menu/promotions"
-    }
-]
-
 class KFCScraper(BaseScraper):
     vendor_id = "kfc"
     vendor_name = "KFC Sri Lanka"
@@ -61,8 +17,8 @@ class KFCScraper(BaseScraper):
     def scrape_live(self) -> List[Dict[str, Any]]:
         """
         Advanced Playwright Scraper for KFC Sri Lanka.
-        Handles location disposition modal prompts and outlet selection (e.g. Colpetty / Colombo).
-        Falls back cleanly to verified active KFC promotional deals if outside operating hours (10:30 PM - 10:00 AM).
+        Directly targets live promotions on https://www.kfc.lk/menu/promotions.
+        Strictly returns only authentic live offers scraped directly from the site (no static fallbacks).
         """
         offers = []
         url = "https://www.kfc.lk/menu/promotions"
@@ -86,7 +42,7 @@ class KFCScraper(BaseScraper):
                     page.goto(url, timeout=25000, wait_until="domcontentloaded")
                     page.wait_for_timeout(2500)
 
-                    # Trigger location disposition modal if present
+                    # Trigger location disposition modal if present to load live menu items
                     start_btn = page.query_selector('text="Let\'s Start Your Order Now"')
                     if start_btn:
                         start_btn.click()
@@ -111,7 +67,7 @@ class KFCScraper(BaseScraper):
                                 cont_btn.click()
                                 page.wait_for_timeout(3500)
 
-                    # Extract promotional card images
+                    # Extract promotional card images directly from live DOM
                     imgs = page.query_selector_all("img")
                     for img in imgs:
                         alt = (img.get_attribute("alt") or "").strip()
@@ -168,10 +124,5 @@ class KFCScraper(BaseScraper):
                 browser.close()
         except Exception as e:
             logger.warning(f"KFC Playwright scraper exception: {e}")
-
-        # If live scraping yields 0 offers (e.g. outside operating hours or location modal block), return verified promos
-        if not offers:
-            logger.info("[KFC Sri Lanka] Live page returned 0 offers (operating hours / location modal). Using verified promotional dataset.")
-            offers = VERIFIED_KFC_PROMOS
 
         return offers
