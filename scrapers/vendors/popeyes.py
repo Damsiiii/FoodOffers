@@ -43,13 +43,11 @@ class PopeyesScraper(BaseScraper):
                                 "title": title,
                                 "description": "Popeyes Sri Lanka tender chicken & burger promo.",
                                 "category": "Chicken Buckets",
-                                "original_price": 2490.0,
-                                "discounted_price": 2490.0,
-                                "discount_percentage": 0,
                                 "image_url": full_src,
                                 "deal_type": "Official Banner",
                                 "valid_until": "Limited Time",
-                                "source_url": self.website_url
+                                "source_url": self.website_url,
+                                "location": "colombo"
                             })
                             idx += 1
             except Exception:

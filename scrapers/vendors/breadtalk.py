@@ -42,13 +42,11 @@ class BreadTalkScraper(BaseScraper):
                                 "title": title,
                                 "description": "BreadTalk Sri Lanka artisan bakery bundle promotion.",
                                 "category": "Pastries & Bread",
-                                "original_price": 1450.0,
-                                "discounted_price": 1450.0,
-                                "discount_percentage": 0,
                                 "image_url": src,
                                 "deal_type": "Official Banner",
                                 "valid_until": "Limited Time",
-                                "source_url": self.website_url
+                                "source_url": self.website_url,
+                                "location": "colombo"
                             })
                             idx += 1
             except Exception:

@@ -43,13 +43,11 @@ class BurgerKingScraper(BaseScraper):
                                 "title": title,
                                 "description": "Burger King Sri Lanka special promotional offer.",
                                 "category": "King Savers",
-                                "original_price": 1950.0,
-                                "discounted_price": 1950.0,
-                                "discount_percentage": 0,
                                 "image_url": full_src,
                                 "deal_type": "Official Banner",
                                 "valid_until": "Limited Time",
-                                "source_url": self.website_url
+                                "source_url": self.website_url,
+                                "location": "colombo"
                             })
                             idx += 1
             except Exception:
