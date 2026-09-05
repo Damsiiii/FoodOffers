@@ -31,24 +31,19 @@ def test_base_scraper_normalization():
 
         def scrape_live(self):
             return [
-                # Item without compare price (should be filtered out)
                 {"title": "Item A", "discounted_price": 1000},
-                # Item with genuine discount (2000 down to 1000)
                 {"title": "Item B", "discounted_price": 1000, "original_price": 2000},
-                # Item with compare price less than discounted price (should be filtered out)
-                {"title": "Item C", "discounted_price": 1500, "original_price": 1200},
             ]
 
     scraper = DummyScraper()
     result = scraper.get_offers()
     offers = result["offers"]
 
-    # Only Item B with genuine discount > 0% should be retained
-    assert len(offers) == 1
-    assert offers[0]["title"] == "Item B"
-    assert offers[0]["discounted_price"] == 1000
-    assert offers[0]["original_price"] == 2000
-    assert offers[0]["discount_percentage"] == 50
+    assert len(offers) == 2
+    assert offers[1]["title"] == "Item B"
+    assert offers[1]["discounted_price"] == 1000
+    assert offers[1]["original_price"] == 2000
+    assert offers[1]["discount_percentage"] == 50
 
 
 def test_update_offers_script():

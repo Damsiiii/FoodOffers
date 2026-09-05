@@ -43,8 +43,8 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
 <Layout title="LANKA FOOD OFFER LEDGER | FAST FOOD DEALS">
   <Header />
 
-  <!-- Infinite Ticker Marquee Bar (Sungold Orange / Cream text) -->
-  <div class="w-full bg-accent text-accent-foreground border-b-2 border-border overflow-hidden py-2.5 select-none font-bold">
+  <!-- Infinite Ticker Marquee Bar -->
+  <div class="w-full bg-accent text-accent-foreground border-b-2 border-border overflow-hidden py-2 select-none">
     <div class="flex whitespace-nowrap animate-marquee font-bold text-sm md:text-base tracking-tighter uppercase gap-8">
       {marqueeItems.concat(marqueeItems).map((text: string) => (
         <span class="flex items-center gap-4">
@@ -60,20 +60,20 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     <!-- Hero Section: Kinetic Typography Headline -->
     <section class="relative border-b-2 border-border pb-12 overflow-hidden">
       <!-- Massive Decorative Graphic Number in Background -->
-      <div class="absolute right-0 top-0 text-[10rem] md:text-[18rem] font-bold font-mono text-brand-seed/40 select-none pointer-events-none leading-none -translate-y-8">
+      <div class="absolute right-0 top-0 text-[10rem] md:text-[18rem] font-bold font-mono text-muted/20 select-none pointer-events-none leading-none -translate-y-8">
         LK
       </div>
 
       <div class="relative z-10 max-w-6xl space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow text-foreground border-2 border-border font-mono text-xs font-bold uppercase tracking-widest">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-border text-foreground font-mono text-xs font-bold uppercase tracking-widest">
           <span>AUTHENTIC FAST FOOD INTELLIGENCE</span>
         </div>
 
         <h2 class="text-[clamp(2.5rem,8vw,8rem)] font-bold uppercase tracking-tighter text-foreground leading-[0.85] font-display">
-          SRI LANKA'S LIVE <span class="text-accent underline decoration-brand-yellow decoration-wavy">FOOD OFFERS</span> & DISCOUNT LEDGER
+          SRI LANKA'S LIVE <span class="text-accent">FOOD OFFERS</span> & DISCOUNT LEDGER
         </h2>
 
-        <p class="text-lg md:text-xl text-foreground/80 font-medium max-w-3xl leading-snug">
+        <p class="text-lg md:text-xl text-muted-foreground font-medium max-w-3xl leading-snug">
           Real-time price tracking across Sri Lanka's fast food chains and delivery aggregators.
         </p>
       </div>
@@ -90,37 +90,37 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
 
         <!-- Search Field (Kinetic Style Input) -->
         <div class="w-full md:w-1/2 space-y-2">
-          <label for="search-input" class="block font-mono text-xs text-foreground/70 font-bold uppercase tracking-widest">SEARCH INDEXED PROMOTIONS</label>
+          <label for="search-input" class="block font-mono text-xs text-muted-foreground font-bold uppercase tracking-widest">SEARCH INDEXED PROMOTIONS</label>
           <div class="relative">
             <input
               type="text"
               id="search-input"
               placeholder="TYPE TO SEARCH (E.G., BURGER, PIZZA, BUCKET)..."
-              class="w-full bg-transparent border-b-2 border-border text-foreground placeholder:text-foreground/50 text-lg md:text-xl px-0 py-3 focus:outline-none focus:border-accent transition-colors font-bold uppercase tracking-tight"
+              class="w-full bg-transparent border-b-2 border-border text-foreground placeholder-muted-foreground text-lg md:text-xl px-0 py-3 focus:outline-none focus:border-accent transition-colors font-bold uppercase tracking-tight"
             />
           </div>
         </div>
 
         <div class="font-mono text-sm font-bold uppercase tracking-tight text-foreground flex items-center gap-3">
-          <span class="px-3 py-1.5 bg-brand-yellow border-2 border-border text-foreground">INDEXED: <strong id="visible-count" class="text-brand-beet font-extrabold">{allOffers.length}</strong> DEALS</span>
+          <span class="px-3 py-1.5 bg-muted border border-border">INDEXED: <strong id="visible-count" class="text-accent">{allOffers.length}</strong> DEALS</span>
         </div>
       </div>
 
       <!-- Vendor Filter Tabs (Sharp Brutalist Buttons) -->
       <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none font-bold text-xs uppercase tracking-tight">
         <button
-          class="vendor-tab active-tab bg-accent text-accent-foreground px-4 py-2.5 border-2 border-border transition-transform duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
+          class="vendor-tab active-tab bg-accent text-accent-foreground px-4 py-2.5 border-2 border-accent transition-transform duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
           data-vendor="all"
         >
           ALL VENDORS [{allOffers.length}]
         </button>
         {vendors.map((vendor: any) => (
           <button
-            class="vendor-tab bg-background hover:bg-brand-seed hover:text-foreground text-foreground px-4 py-2.5 border-2 border-border transition-all duration-200 whitespace-nowrap flex items-center gap-2 hover:scale-105 active:scale-95"
+            class="vendor-tab bg-background hover:bg-foreground hover:text-background text-foreground px-4 py-2.5 border-2 border-border transition-all duration-200 whitespace-nowrap flex items-center gap-2 hover:scale-105 active:scale-95"
             data-vendor={vendor.vendor_id}
           >
             <span>{vendor.vendor_name.toUpperCase()}</span>
-            <span class="text-foreground/70 font-mono text-[11px]">({vendor.count})</span>
+            <span class="text-muted-foreground hover:text-background font-mono text-[11px]">({vendor.count})</span>
           </button>
         ))}
       </div>
@@ -130,7 +130,7 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     <section id="offers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {allOffers.map((offer: any, idx: number) => (
         <article
-          class="offer-card group bg-background border-2 border-border hover:border-accent hover:bg-brand-yellow/30 transition-colors duration-300 flex flex-col justify-between relative overflow-hidden"
+          class="offer-card group bg-background border-2 border-border hover:border-accent hover:bg-accent transition-colors duration-300 flex flex-col justify-between relative overflow-hidden"
           data-vendor={offer.vendor_id}
           data-title={offer.title.toLowerCase()}
           data-category={(offer.category || '').toLowerCase()}
@@ -138,13 +138,13 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
           data-location={offer.location || 'colombo'}
         >
           <!-- Background Decorative Index Number -->
-          <div class="absolute right-2 bottom-2 text-6xl font-extrabold font-mono text-brand-seed/30 group-hover:text-foreground/10 select-none pointer-events-none transition-colors duration-300 leading-none">
+          <div class="absolute right-2 bottom-2 text-6xl font-extrabold font-mono text-muted/30 group-hover:text-black/10 select-none pointer-events-none transition-colors duration-300 leading-none">
             #{idx + 1}
           </div>
 
           <div>
             <!-- Image Header -->
-            <div class="relative h-52 overflow-hidden border-b-2 border-border bg-brand-seed/20">
+            <div class="relative h-52 overflow-hidden border-b-2 border-border bg-muted">
               <img
                 src={offer.image_url}
                 alt={offer.title}
@@ -152,38 +152,38 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
                 loading="lazy"
               />
 
-              <!-- Off Tag Badge (Beet Red) -->
+              <!-- Off Tag Badge -->
               {offer.discount_percentage > 0 && (
-                <div class="absolute top-3 right-3 bg-brand-beet text-white font-mono font-extrabold text-sm px-2.5 py-1 border-2 border-border uppercase tracking-tighter">
+                <div class="absolute top-3 right-3 bg-accent text-accent-foreground font-mono font-extrabold text-sm px-2.5 py-1 border-2 border-black uppercase tracking-tighter">
                   -{offer.discount_percentage}%
                 </div>
               )}
 
               <!-- Vendor Tag Badge -->
-              <div class="absolute bottom-3 left-3 bg-background text-foreground group-hover:bg-foreground group-hover:text-background font-mono text-xs font-bold px-2.5 py-1 border-2 border-border uppercase tracking-wider transition-colors duration-300">
+              <div class="absolute bottom-3 left-3 bg-background/95 text-foreground group-hover:bg-black group-hover:text-accent font-mono text-xs font-bold px-2.5 py-1 border-2 border-border group-hover:border-black uppercase tracking-wider transition-colors duration-300">
                 {offer.vendor_name}
               </div>
             </div>
 
             <!-- Main Info Block -->
             <div class="p-6 space-y-3 relative z-10">
-              <div class="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider text-accent group-hover:text-foreground transition-colors duration-300">
+              <div class="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider text-accent group-hover:text-black transition-colors duration-300">
                 <span>{offer.category}</span>
-                <span class="text-foreground/70">{offer.deal_type}</span>
+                <span class="text-muted-foreground group-hover:text-black/70">{offer.deal_type}</span>
               </div>
 
-              <h3 class="font-display text-2xl font-bold uppercase text-foreground leading-tight tracking-tight line-clamp-2">
+              <h3 class="font-display text-2xl font-bold uppercase text-foreground group-hover:text-black transition-colors duration-300 leading-tight tracking-tight line-clamp-2">
                 {offer.title}
               </h3>
 
-              <p class="text-foreground/80 transition-colors duration-300 text-sm font-medium leading-relaxed line-clamp-2">
+              <p class="text-muted-foreground group-hover:text-black/80 transition-colors duration-300 text-sm font-medium leading-relaxed line-clamp-2">
                 {offer.description}
               </p>
             </div>
           </div>
 
           <!-- Footer Price Bar & Deal Link -->
-          <div class="p-6 pt-4 border-t-2 border-border bg-background/60 group-hover:bg-brand-yellow/50 flex items-center justify-between relative z-10 transition-colors duration-300">
+          <div class="p-6 pt-4 border-t-2 border-border group-hover:border-black bg-background/40 group-hover:bg-accent flex items-center justify-between relative z-10 transition-colors duration-300">
             <div>
               {offer.original_price && offer.original_price > (offer.discounted_price || 0) ? (
                 <div class="text-xs font-mono text-muted-foreground group-hover:text-black/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
@@ -193,15 +193,13 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
               ) : (
                 <div class="text-lg font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300 uppercase">PROMOTIONAL OFFER</div>
               )}
-              <div class="text-xs font-mono text-foreground/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
-              <div class="text-2xl font-mono font-extrabold text-brand-beet">LKR {offer.discounted_price}</div>
             </div>
 
             <a
               href={offer.source_url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold text-xs uppercase tracking-wider px-4 py-2.5 border-2 border-border transition-all duration-200 hover:scale-105 active:scale-95"
+              class="inline-flex items-center gap-2 bg-foreground text-background group-hover:bg-black group-hover:text-accent font-bold text-xs uppercase tracking-wider px-4 py-2.5 border-2 border-foreground group-hover:border-black transition-all duration-200 hover:scale-105 active:scale-95"
             >
               <span>CLAIM DEAL</span>
               <span>→</span>
@@ -215,18 +213,18 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     <div id="no-results" class="hidden text-center py-20 bg-background border-2 border-border my-8">
       <div class="font-mono text-sm text-accent uppercase tracking-widest mb-2 font-bold">[ NO MATCHING PROMOTIONS ]</div>
       <h3 class="font-display text-3xl font-bold uppercase text-foreground mb-2">NO DEALS MATCH YOUR SEARCH</h3>
-      <p class="text-foreground/70 text-sm font-medium">ADJUST YOUR SEARCH PHRASE OR SELECT ANOTHER VENDOR FILTER ABOVE.</p>
+      <p class="text-muted-foreground text-sm font-medium">ADJUST YOUR SEARCH PHRASE OR SELECT ANOTHER VENDOR FILTER ABOVE.</p>
     </div>
 
   </main>
 
-  <footer class="border-t-2 border-border bg-background py-10 mt-20 text-xs font-mono uppercase text-foreground/70">
+  <footer class="border-t-2 border-border bg-background py-10 mt-20 text-xs font-mono uppercase text-muted-foreground">
     <div class="max-w-[95vw] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-foreground font-bold text-sm">LANKA FOOD OFFER LEDGER</p>
-        <p class="text-foreground/70 text-xs mt-1">AUTOMATED DEAL INDEXING ENGINE FOR SRI LANKA</p>
+        <p class="text-muted-foreground text-xs mt-1">AUTOMATED DEAL INDEXING ENGINE FOR SRI LANKA</p>
       </div>
-      <div class="text-xs text-foreground/70">
+      <div class="text-xs text-muted-foreground">
         PRICES UPDATED PERIODICALLY FROM OFFICIAL VENDOR PLATFORMS
       </div>
     </div>
@@ -281,12 +279,12 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     vendorTabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         vendorTabs.forEach((t) => {
-          t.classList.remove('active-tab', 'bg-accent', 'text-accent-foreground');
-          t.classList.add('bg-background', 'text-foreground');
+          t.classList.remove('active-tab', 'bg-accent', 'text-accent-foreground', 'border-accent');
+          t.classList.add('bg-background', 'text-foreground', 'border-border');
         });
 
-        tab.classList.add('active-tab', 'bg-accent', 'text-accent-foreground');
-        tab.classList.remove('bg-background', 'text-foreground');
+        tab.classList.add('active-tab', 'bg-accent', 'text-accent-foreground', 'border-accent');
+        tab.classList.remove('bg-background', 'text-foreground', 'border-border');
 
         activeVendor = tab.getAttribute('data-vendor') || 'all';
         filterOffers();

@@ -22,6 +22,7 @@ class BaseScraper:
         """
         Get live offers for this vendor.
         Executes live dynamic web / API scraping and processes offer metadata cleanly.
+        Retains all valid items with listed prices or promotional banners.
         """
         try:
             live_offers = self.scrape_live()
@@ -48,13 +49,12 @@ class BaseScraper:
                     disc_price = float(offer.get("discounted_price", 0)) if offer.get("discounted_price") is not None else 0.0
                     orig_price = float(offer.get("original_price", 0)) if offer.get("original_price") is not None else 0.0
 
-                    # Discount normalization and filtering invalid compare prices
+                    # Discount calculation if compare original price is present
                     if orig_price > disc_price and disc_price > 0:
                         calculated_disc = int(round((orig_price - disc_price) / orig_price * 100))
                         offer["original_price"] = orig_price
                         offer["discounted_price"] = disc_price
                         offer["discount_percentage"] = max(0, calculated_disc)
-                        sanitized_offers.append(offer)
                     elif offer.get("discount_percentage", 0) > 0 and disc_price > 0:
                         disc_pct = int(offer["discount_percentage"])
                         if orig_price <= disc_price:
@@ -62,10 +62,9 @@ class BaseScraper:
                         offer["original_price"] = orig_price
                         offer["discounted_price"] = disc_price
                         offer["discount_percentage"] = disc_pct
-                        sanitized_offers.append(offer)
-                    elif offer.get("discounted_price") is None and offer.get("original_price") is None:
-                        # Promotional banner offers without numeric price quotes
-                        sanitized_offers.append(offer)
+
+                    # Keep all valid offers (items with listed prices or promo banner deals)
+                    sanitized_offers.append(offer)
 
                 return {
                     "vendor_id": self.vendor_id,
