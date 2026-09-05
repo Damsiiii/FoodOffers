@@ -29,7 +29,7 @@ const lastUpdated = offersData.last_updated
       <!-- Location Selector Toggle -->
       <div class="flex items-center gap-2 px-3 py-2 bg-background border-2 border-border text-foreground hover:border-accent transition-colors duration-200">
         <span class="text-accent font-bold">●</span>
-        <span class="text-muted-foreground text-xs tracking-wider">REGION:</span>
+        <span class="text-foreground/70 text-xs tracking-wider">REGION:</span>
         <select id="location-selector" class="bg-transparent text-foreground font-bold focus:outline-none cursor-pointer uppercase tracking-tight text-xs">
           <option value="all" selected class="bg-background text-foreground">ALL SRI LANKA</option>
           <option value="colombo" class="bg-background text-foreground">COLOMBO (LK-1)</option>
@@ -40,7 +40,7 @@ const lastUpdated = offersData.last_updated
       </div>
 
       <div class="flex items-center gap-2 px-3 py-2 bg-background border-2 border-border">
-        <span class="w-2 h-2 bg-emerald-500 rounded-none"></span>
+        <span class="w-2 h-2 bg-brand-green rounded-none"></span>
         <span>{totalVendors} CHAINS</span>
       </div>
 
@@ -49,7 +49,7 @@ const lastUpdated = offersData.last_updated
         <span>ACTIVE PROMOS</span>
       </div>
 
-      <div class="hidden lg:block text-xs font-mono text-muted-foreground pl-3 border-l-2 border-border">
+      <div class="hidden lg:block text-xs font-mono text-foreground/70 pl-3 border-l-2 border-border">
         SYNCED: <time class="text-foreground font-bold">{lastUpdated}</time>
       </div>
     </div>
