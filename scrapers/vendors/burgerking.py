@@ -47,7 +47,7 @@ class BurgerKingScraper(BaseScraper):
                                 "deal_type": "Official Banner",
                                 "valid_until": "Limited Time",
                                 "source_url": self.website_url,
-                                "location": "colombo"
+                                "location": "all"
                             })
                             idx += 1
             except Exception:

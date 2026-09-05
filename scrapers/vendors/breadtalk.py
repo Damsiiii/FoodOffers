@@ -32,10 +32,14 @@ class BreadTalkScraper(BaseScraper):
                 if resp.status_code == 200:
                     soup = BeautifulSoup(resp.text, "html.parser")
                     idx = 1
+                    seen_urls = set()
                     for img in soup.find_all("img"):
                         src = img.get("src") or ""
                         alt = img.get("alt") or ""
                         if src.startswith("http") and ("bundle" in src.lower() or "slider" in src.lower()):
+                            if src in seen_urls:
+                                continue
+                            seen_urls.add(src)
                             title = alt.strip() if alt and len(alt) > 3 and not "removebg" in alt else "BreadTalk Pastry Bundle"
                             offers.append({
                                 "id": f"bt-promo-{idx}",
@@ -46,7 +50,7 @@ class BreadTalkScraper(BaseScraper):
                                 "deal_type": "Official Banner",
                                 "valid_until": "Limited Time",
                                 "source_url": self.website_url,
-                                "location": "colombo"
+                                "location": "all"
                             })
                             idx += 1
             except Exception:

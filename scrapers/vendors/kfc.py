@@ -149,7 +149,7 @@ class KFCScraper(BaseScraper):
                                     "deal_type": ocr_data.get("promo_terms", "Special Promotion") if ocr_data else "Special Promotion",
                                     "valid_until": "Limited Time",
                                     "source_url": url,
-                                    "location": "colombo"
+                                    "location": "all"
                                 }
 
                                 if price_val and price_val >= 300:

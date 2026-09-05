@@ -104,7 +104,7 @@ class UberEatsScraper(BaseScraper):
                                 "deal_type": "Uber Eats Offer",
                                 "valid_until": "Limited Time",
                                 "source_url": url,
-                                "location": "colombo"
+                                "location": "all"
                             }
 
                             pct_match = re.search(r"(\d+)%\s*off", raw_str, re.I)
@@ -151,7 +151,7 @@ class UberEatsScraper(BaseScraper):
                                     "deal_type": "Uber Eats Offer",
                                     "valid_until": "Limited Time",
                                     "source_url": url,
-                                    "location": "colombo"
+                                    "location": "all"
                                 })
                                 idx += 1
 

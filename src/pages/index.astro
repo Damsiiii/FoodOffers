@@ -135,7 +135,7 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
           data-title={offer.title.toLowerCase()}
           data-category={(offer.category || '').toLowerCase()}
           data-description={(offer.description || '').toLowerCase()}
-          data-location={offer.location || 'colombo'}
+          data-location={offer.location || 'all'}
         >
           <!-- Background Decorative Index Number -->
           <div class="absolute right-2 bottom-2 text-6xl font-extrabold font-mono text-muted/30 group-hover:text-black/10 select-none pointer-events-none transition-colors duration-300 leading-none">
@@ -246,7 +246,7 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
       let count = 0;
       offerCards.forEach((card) => {
         const vendor = card.getAttribute('data-vendor');
-        const cardLoc = card.getAttribute('data-location') || 'colombo';
+        const cardLoc = card.getAttribute('data-location') || 'all';
         const title = card.getAttribute('data-title') || '';
         const category = card.getAttribute('data-category') || '';
         const desc = card.getAttribute('data-description') || '';

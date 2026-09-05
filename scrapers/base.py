@@ -35,9 +35,9 @@ class BaseScraper:
                     if "vendor_name" not in offer:
                         offer["vendor_name"] = self.vendor_name
 
-                    # Run Vision OCR / Banner AI validation across every scraper's deal image
+                    # Run Vision OCR / Banner AI validation across deal images if not already verified
                     img_url = offer.get("image_url", "")
-                    if img_url and img_url.startswith("http"):
+                    if img_url and img_url.startswith("http") and not offer.get("ocr_verified"):
                         ocr_info = parse_banner_with_ocr(img_url, self.vendor_name)
                         if ocr_info:
                             offer["ocr_verified"] = True

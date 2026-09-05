@@ -1,20 +1,6 @@
 [
   {
     "id": "kfc-promo-1",
-    "title": "BUY 2 ZINGER BURGER & GET 1 FREE",
-    "description": "Official KFC Sri Lanka promotion: BUY 2 ZINGER BURGER & GET 1 FREE (#T&C APPLY)",
-    "category": "Burgers & Combos",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "colombo",
-    "discounted_price": 3180.0,
-    "discount_percentage": 20,
-    "original_price": 3975
-  },
-  {
-    "id": "kfc-promo-2",
     "title": "1 Pc Choice (HC)",
     "description": "Official KFC Sri Lanka promotion: 1 Pc Choice (HC)",
     "category": "Bucket Deals",
@@ -22,11 +8,11 @@
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promo",
-    "location": "colombo",
+    "location": "all",
     "discounted_price": 990.0
   },
   {
-    "id": "kfc-promo-3",
+    "id": "kfc-promo-2",
     "title": "Quarter/2Pc (HC)",
     "description": "Official KFC Sri Lanka promotion: Quarter/2Pc (HC)",
     "category": "Bucket Deals",
@@ -34,11 +20,11 @@
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promo",
-    "location": "colombo",
+    "location": "all",
     "discounted_price": 1540.0
   },
   {
-    "id": "kfc-promo-4",
+    "id": "kfc-promo-3",
     "title": "Half /4Pc (HC)",
     "description": "Official KFC Sri Lanka promotion: Half /4Pc (HC)",
     "category": "Bucket Deals",
@@ -46,35 +32,11 @@
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promo",
-    "location": "colombo",
+    "location": "all",
     "discounted_price": 2860.0
   },
   {
-    "id": "kfc-promo-5",
-    "title": "BUCKET/6PC (H&C)",
-    "description": "Official KFC Sri Lanka promotion: BUCKET/6PC (H&C)",
-    "category": "Bucket Deals",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bucket6pchce6da3a3f713349de91e51500c7168367.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promo",
-    "location": "colombo",
-    "discounted_price": 3990.0
-  },
-  {
-    "id": "kfc-promo-6",
-    "title": "Full/8Pc (HC)",
-    "description": "Official KFC Sri Lanka promotion: Full/8Pc (HC)",
-    "category": "Bucket Deals",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/full8pchca20713a1c7c342fead3b6932415376bf.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promo",
-    "location": "colombo",
-    "discounted_price": 5390.0
-  },
-  {
-    "id": "kfc-promo-7",
+    "id": "kfc-promo-4",
     "title": "Zinger Burger Combo + 400ML PEPSI",
     "description": "Official KFC Sri Lanka promotion: Zinger Burger Combo + 400ML PEPSI",
     "category": "Burgers & Combos",
@@ -82,11 +44,11 @@
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/meals-and-beverages",
-    "location": "colombo",
+    "location": "all",
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-promo-8",
+    "id": "kfc-promo-5",
     "title": "TWISTER COMBO + 400ML PEPSI",
     "description": "Official KFC Sri Lanka promotion: TWISTER COMBO + 400ML PEPSI",
     "category": "Burgers & Combos",
@@ -94,11 +56,11 @@
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/meals-and-beverages",
-    "location": "colombo",
+    "location": "all",
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-promo-9",
+    "id": "kfc-promo-6",
     "title": "Double Decker Combo + 400ML PEPSI",
     "description": "Official KFC Sri Lanka promotion: Double Decker Combo + 400ML PEPSI",
     "category": "Burgers & Combos",
@@ -106,7 +68,7 @@
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/meals-and-beverages",
-    "location": "colombo",
+    "location": "all",
     "discounted_price": 2920.0
   }
 ]
