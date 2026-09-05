@@ -8,7 +8,6 @@ from scrapers.base import BaseScraper
 
 logger = logging.getLogger(__name__)
 
-# Supported Sri Lankan target delivery locations
 SRI_LANKA_LOCATIONS = {
     "colombo": {"address": "Colombo, Sri Lanka", "latitude": 6.9271, "longitude": 79.8612},
     "kandy": {"address": "Kandy, Sri Lanka", "latitude": 7.2906, "longitude": 80.6337},
@@ -96,24 +95,30 @@ class UberEatsScraper(BaseScraper):
                         if any(w in raw_str.lower() for w in ["% off", "buy 1", "bogo", "save", "special offer", "top offer", "promo", "free item", "discount"]):
                             seen.add(title)
 
-                            disc_pct = 20
-                            pct_match = re.search(r"(\d+)%\s*off", raw_str, re.I)
-                            if pct_match:
-                                disc_pct = int(pct_match.group(1))
-
-                            offers.append({
+                            offer_obj = {
                                 "id": f"ubereats-feed-{idx}",
                                 "title": f"{title} - {badge_txt}" if badge_txt else f"{title} Promotional Offer",
                                 "description": f"Exclusive Uber Eats deal at {title}",
                                 "category": "Store Promos",
-                                "original_price": 2000.0,
-                                "discounted_price": round(2000.0 * (1 - disc_pct / 100)),
-                                "discount_percentage": disc_pct,
                                 "image_url": hero_img or "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
                                 "deal_type": "Uber Eats Offer",
                                 "valid_until": "Limited Time",
-                                "source_url": url
-                            })
+                                "source_url": url,
+                                "location": "colombo"
+                            }
+
+                            pct_match = re.search(r"(\d+)%\s*off", raw_str, re.I)
+                            price_match = re.search(r"(?:LKR|Rs\.?)\s*([\d,]+)", raw_str, re.I)
+
+                            if price_match:
+                                disc_p = float(price_match.group(1).replace(",", ""))
+                                offer_obj["discounted_price"] = disc_p
+                                if pct_match:
+                                    pct = int(pct_match.group(1))
+                                    offer_obj["discount_percentage"] = pct
+                                    offer_obj["original_price"] = round(disc_p / (1 - pct / 100))
+
+                            offers.append(offer_obj)
                             idx += 1
 
                     for item in feed_items:
@@ -142,13 +147,11 @@ class UberEatsScraper(BaseScraper):
                                     "title": title,
                                     "description": f"Uber Eats Sri Lanka promotion: {txt[:100]}",
                                     "category": "Delivery Deals",
-                                    "original_price": 2000.0,
-                                    "discounted_price": 1500.0,
-                                    "discount_percentage": 25,
                                     "image_url": img or "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
                                     "deal_type": "Uber Eats Offer",
                                     "valid_until": "Limited Time",
-                                    "source_url": url
+                                    "source_url": url,
+                                    "location": "colombo"
                                 })
                                 idx += 1
 

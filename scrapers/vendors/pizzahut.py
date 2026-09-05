@@ -17,7 +17,7 @@ class PizzaHutScraper(BaseScraper):
 
     def scrape_live(self):
         """
-        Scrapes ALL promotional deals from Pizza Hut Sri Lanka's official API:
+        Scrapes promotional deals from Pizza Hut Sri Lanka's official API:
         - Thrilling Thursday Deals
         - Grand Dipper Deals
         - Cyber Savings
@@ -79,10 +79,6 @@ class PizzaHutScraper(BaseScraper):
                         continue
                     seen_titles.add(b_title)
 
-                    disc_pct = ocr_data.get("discount_percentage", 25) if ocr_data else 25
-                    disc_price = 1950.0
-                    orig_price = round(disc_price * (1 + disc_pct / 100))
-
                     banner_url = banner.get("Url") or "https://www.pizzahut.lk"
                     if "azurewebsites.net" in banner_url or not banner_url.startswith("http"):
                         banner_url = "https://www.pizzahut.lk"
@@ -92,9 +88,6 @@ class PizzaHutScraper(BaseScraper):
                         "title": b_title,
                         "description": f"Official Pizza Hut Promo: {ocr_text if ocr_text else b_title}",
                         "category": "Cyber Savings",
-                        "original_price": orig_price,
-                        "discounted_price": disc_price,
-                        "discount_percentage": disc_pct,
                         "image_url": banner_img,
                         "deal_type": ocr_data.get("promo_terms", "Cyber Savings Deal") if ocr_data else "Cyber Savings Deal",
                         "valid_until": "Limited Time",
@@ -104,7 +97,7 @@ class PizzaHutScraper(BaseScraper):
             except Exception as b_err:
                 logger.warning(f"[{self.vendor_name}] Banner Cyber Savings extraction exception: {b_err}")
 
-            # 3. Fetch ALL Deals from the Deals Category (/api/menu/items?webCategory=promo&menuCategory=meal-deal)
+            # 3. Fetch Deals from the Deals Category
             r_promo = requests.post(
                 "https://phapis.pizzahut.lk/api/menu/items?webCategory=promo&menuCategory=meal-deal",
                 json={},
@@ -133,7 +126,6 @@ class PizzaHutScraper(BaseScraper):
 
                 # Parse Vision OCR for additional deal metadata
                 ocr_data = parse_banner_with_ocr(img_url, self.vendor_name)
-                disc_pct = ocr_data.get("discount_percentage", 20) if ocr_data else 20
 
                 # Determine Section / Category
                 lower_title = title.lower()
@@ -148,22 +140,27 @@ class PizzaHutScraper(BaseScraper):
                 else:
                     category = "Meal Deals"
 
-                disc_price = float(price_val) if price_val and float(price_val) > 0 else 2400.0
-                orig_price = round(disc_price * (1 + disc_pct / 100))
-
-                offers.append({
+                offer_item = {
                     "id": f"pizzahut-promo-{idx + 1}",
                     "title": title,
                     "description": f"Official Pizza Hut Sri Lanka Promo: {desc}",
                     "category": category,
-                    "original_price": orig_price,
-                    "discounted_price": disc_price,
-                    "discount_percentage": disc_pct,
                     "image_url": img_url,
                     "deal_type": ocr_data.get("promo_terms", "Special Promotion") if ocr_data else "Special Promotion",
                     "valid_until": "Limited Time",
                     "source_url": deal_url
-                })
+                }
+
+                if price_val and float(price_val) > 0:
+                    disc_price = float(price_val)
+                    disc_pct = ocr_data.get("discount_percentage", 20) if ocr_data else 20
+                    # Correct Inversion Formula: P_orig = P_disc / (1 - d/100)
+                    orig_price = round(disc_price / (1 - disc_pct / 100))
+                    offer_item["discounted_price"] = disc_price
+                    offer_item["original_price"] = orig_price
+                    offer_item["discount_percentage"] = disc_pct
+
+                offers.append(offer_item)
 
         except Exception as e:
             logger.warning(f"[{self.vendor_name}] API scraping exception: {e}")
