@@ -63,6 +63,12 @@ class BaseScraper:
                         offer["discounted_price"] = disc_price
                         offer["discount_percentage"] = disc_pct
                         sanitized_offers.append(offer)
+                    elif disc_price > 0 and orig_price == 0 and offer.get("discount_percentage", 0) == 0:
+                        # Deal with only a discounted price (no original price known).
+                        # This is common for meal deals, combos, and promos where
+                        # the "discounted" price is the special deal price itself.
+                        offer["discounted_price"] = disc_price
+                        sanitized_offers.append(offer)
                     elif offer.get("discounted_price") is None and offer.get("original_price") is None:
                         # Promotional banner offers without numeric price quotes
                         sanitized_offers.append(offer)
