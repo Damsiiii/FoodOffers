@@ -2,6 +2,8 @@ import logging
 import json
 import os
 import re
+import time
+import random
 import hashlib
 from typing import List, Dict, Any, Optional
 from html import unescape
@@ -14,15 +16,25 @@ logger = logging.getLogger(__name__)
 
 CACHE_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "src", "data", "kfc_cache.json")
 
-# KFC product images are hosted on this domain
+# KFC product images are hosted on this domain.
+# We match on the hostname portion only, so CDN changes are handled gracefully.
 KFC_IMAGE_HOST = "admin-kfc-web.azurewebsites.net"
 
-# Pages that contain actual promotional deals (not regular menu items)
+# Fallback known CDN hosts for KFC images (in case the primary host changes)
+KFC_IMAGE_HOST_FALLBACKS = [
+    "admin-kfc-web.azurewebsites.net",
+    "kfc.lk",
+    "kfclk",
+]
+
+# Pages that contain actual promotional deals (not regular menu items).
+# These are *parent* paths; the scraper will discover sub-pages automatically
+# when the parent redirects to a sub-category.
 KFC_PROMO_PAGES = [
     "/menu/promotions",
 ]
 
-# Pages that contain menu deals (combos, meals, etc.) that are also worth scraping
+# Pages that contain menu deals (combos, meals, etc.) that are also worth scraping.
 KFC_DEAL_PAGES = [
     "/menu/meals-and-beverages",
 ]
@@ -34,6 +46,24 @@ MIN_EXPECTED_DEALS = 1
 # Maximum ratio of deals we can lose between scrapes before we refuse to overwrite
 MAX_DEAL_DROP_RATIO = 0.5
 
+# Cloudflare / bot-protection fingerprints that appear when we get challenged
+_CF_CHALLENGE_MARKERS = [
+    "__CF$cv$params",          # Cloudflare challenge JS
+    "challenge-platform",      # Cloudflare challenge-platform URL
+    "cf-browser-verification", # Cloudflare browser check page
+    "Please enable cookies",   # Generic Cloudflare message
+    "Enable JavaScript and cookies",
+    "Checking if the site connection is secure",
+]
+
+# User-Agent pool to rotate across retries (reduces bot-detection risk)
+_USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+]
+
 
 class KFCScraper(BaseScraper):
     vendor_id = "kfc"
@@ -43,42 +73,94 @@ class KFCScraper(BaseScraper):
     categories = ["Promotions", "Bucket Deals", "Burgers & Combos", "Rice Bowls", "Meal Combos"]
 
     REQUEST_TIMEOUT = 20
-    MAX_RETRIES = 2
+    MAX_RETRIES = 3
 
     def _get_session(self) -> requests.Session:
         """Create a requests session with proper headers and cookies."""
         session = requests.Session()
         session.headers.update({
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                          "AppleWebKit/537.36 (KHTML, like Gecko) "
-                          "Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "User-Agent": random.choice(_USER_AGENTS),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "Accept-Language": "en-LK,en-US;q=0.9,en;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Upgrade-Insecure-Requests": "1",
         })
         # Visit the homepage first to obtain session cookies
         try:
-            session.get("https://www.kfc.lk/", timeout=self.REQUEST_TIMEOUT)
+            resp = session.get("https://www.kfc.lk/", timeout=self.REQUEST_TIMEOUT)
+            if self._is_challenge_page(resp.text):
+                logger.warning("KFC: Homepage returned a bot-challenge page — cookies may not be valid")
         except requests.RequestException as e:
             logger.warning(f"KFC: Failed to initialize session: {e}")
         return session
 
+    @staticmethod
+    def _is_challenge_page(html: str) -> bool:
+        """Return True if the response HTML is a Cloudflare/bot-protection challenge."""
+        if not html:
+            return False
+        # Challenge pages are typically short and contain specific marker strings
+        if len(html) < 5000:
+            for marker in _CF_CHALLENGE_MARKERS:
+                if marker in html:
+                    return True
+        return False
+
     def _fetch_page(self, session: requests.Session, path: str) -> Optional[str]:
-        """Fetch a KFC page with retries, returning the HTML or None on failure."""
+        """
+        Fetch a KFC page with exponential-backoff retries.
+
+        Returns the HTML string on success, or None on failure.
+        Treats Cloudflare challenge pages as failures and retries with a fresh
+        User-Agent to avoid re-using a fingerprinted session.
+        """
         url = f"https://www.kfc.lk{path}"
         last_error = None
         for attempt in range(1, self.MAX_RETRIES + 1):
             try:
+                # Rotate User-Agent on every retry attempt
+                session.headers.update({"User-Agent": random.choice(_USER_AGENTS)})
                 resp = session.get(url, timeout=self.REQUEST_TIMEOUT)
                 if resp.status_code == 200:
-                    return resp.text
+                    html = resp.text
+                    if self._is_challenge_page(html):
+                        logger.warning(
+                            f"KFC: {url} returned a bot-challenge page (attempt {attempt}). "
+                            "Retrying after backoff."
+                        )
+                        last_error = "bot-challenge"
+                    else:
+                        return html
                 else:
                     logger.warning(f"KFC: {url} returned status {resp.status_code} (attempt {attempt})")
                     last_error = f"HTTP {resp.status_code}"
             except requests.RequestException as e:
                 logger.warning(f"KFC: Request to {url} failed (attempt {attempt}): {e}")
                 last_error = str(e)
+
+            if attempt < self.MAX_RETRIES:
+                # Exponential backoff with jitter: 1-3s, 2-5s, ...
+                sleep_s = attempt * random.uniform(1.0, 2.5)
+                logger.debug(f"KFC: Sleeping {sleep_s:.1f}s before retry {attempt + 1}")
+                time.sleep(sleep_s)
+
         logger.error(f"KFC: All {self.MAX_RETRIES} attempts failed for {url}: {last_error}")
         return None
+
+    @staticmethod
+    def _is_kfc_product_image(url: str) -> bool:
+        """Return True if the URL looks like a KFC product image (not an icon/logo)."""
+        if not url:
+            return False
+        # Primary host check
+        if KFC_IMAGE_HOST in url:
+            return True
+        # Fallback: any known KFC CDN host containing a mainmenu path
+        for host in KFC_IMAGE_HOST_FALLBACKS:
+            if host in url and "mainmenu" in url:
+                return True
+        return False
 
     def _extract_items_from_html(self, html: str, page_path: str) -> List[Dict[str, Any]]:
         """
@@ -87,20 +169,29 @@ class KFCScraper(BaseScraper):
         The KFC website uses a consistent card structure:
         - Each card is in a div with class 'itemContainer'
         - Cards contain: <img> with product image and alt text
-        - <h3 class="menu-item-name"> with the title
+        - <h3 class="menu-item-name"> with the title (always in the `title` attribute)
         - <span class="price"> with the price
         - Optional data attributes on add-to-cart buttons: data-price, data-main-menu-name
         """
         items = []
 
+        if self._is_challenge_page(html):
+            logger.error(
+                f"KFC: _extract_items_from_html called with a bot-challenge page for {page_path}. "
+                "No items will be extracted. This indicates a Cloudflare block."
+            )
+            return items
+
         # Split on the itemContainer marker to isolate each card
         containers = html.split('itemContainer">')
         if len(containers) <= 1:
+            logger.debug(f"KFC: No 'itemContainer' divs found in HTML for {page_path} "
+                         f"(HTML length: {len(html)}). Page structure may have changed.")
             return items
 
         for card_chunk in containers[1:]:
             # Limit to a reasonable size for one card
-            card_html = card_chunk[:4000]
+            card_html = card_chunk[:5000]
 
             # Extract image URL and alt text
             img_match = re.search(
@@ -113,21 +204,30 @@ class KFCScraper(BaseScraper):
             image_url = img_match.group(1).strip()
             alt_text = unescape(img_match.group(2).strip())
 
-            # Only accept images from the KFC image host
-            if KFC_IMAGE_HOST not in image_url:
+            # Only accept images that look like KFC product images
+            if not self._is_kfc_product_image(image_url):
                 continue
 
-            # Extract title from h3.menu-item-name (desktop version has full text)
+            # Extract title from h3.menu-item-name.
+            # The KFC site renders two variants of the title heading:
+            #   - hidden-lg hidden-md  (mobile, truncated)
+            #   - hidden-sm hidden-xs  (desktop, also truncated in inner text)
+            # Both variants carry the full title in a `title="..."` attribute.
+            # We prefer that attribute over the inner text to avoid truncation issues.
             title = ""
+            # Match either desktop or mobile h3 variant, extracting the title= attribute
             title_match = re.search(
-                r'<h3\s+class="menu-item-name\s+hidden-sm\s+hidden-xs"[^>]*'
-                r'title="([^"]*)"[^>]*>([^<]*)',
+                r'<h3\s[^>]*class="menu-item-name[^"]*"[^>]*\btitle="([^"]+)"',
                 card_html
             )
             if title_match:
                 title = unescape(title_match.group(1).strip())
-                if not title:
-                    title = unescape(title_match.group(2).strip())
+
+            if not title:
+                # Fallback: try the data-main-menu-name attribute on the add-to-cart button
+                data_name = re.search(r'data-main-menu-name="([^"]+)"', card_html)
+                if data_name:
+                    title = unescape(data_name.group(1).strip())
 
             # Fallback: use alt text as the title
             if not title:

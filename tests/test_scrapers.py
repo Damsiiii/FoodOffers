@@ -279,6 +279,95 @@ class TestKFCExtraction:
         assert len(items) == 0
 
 
+class TestKFCChallengePageDetection:
+    """Test bot-challenge / Cloudflare detection — the root cause of today's failure."""
+
+    def test_normal_html_is_not_challenge(self):
+        """Real KFC HTML is not flagged as a challenge page."""
+        scraper = KFCScraper()
+        assert scraper._is_challenge_page(SAMPLE_KFC_PROMO_HTML) is False
+
+    def test_cloudflare_challenge_detected(self):
+        """HTML containing Cloudflare challenge markers is detected."""
+        scraper = KFCScraper()
+        cf_html = '<html><head></head><body>__CF$cv$params={r:\'abc\'}</body></html>'
+        assert scraper._is_challenge_page(cf_html) is True
+
+    def test_challenge_platform_url_detected(self):
+        scraper = KFCScraper()
+        cf_html = '<html><body><script src="/cdn-cgi/challenge-platform/scripts/jsd/main.js"></script></body></html>'
+        assert scraper._is_challenge_page(cf_html) is True
+
+    def test_enable_cookies_message_detected(self):
+        scraper = KFCScraper()
+        cf_html = '<html><body><p>Please enable cookies to continue.</p></body></html>'
+        assert scraper._is_challenge_page(cf_html) is True
+
+    def test_empty_html_is_not_challenge(self):
+        """Empty string is not treated as a challenge page."""
+        scraper = KFCScraper()
+        assert scraper._is_challenge_page("") is False
+        assert scraper._is_challenge_page(None) is False
+
+    def test_challenge_page_returns_no_items(self):
+        """When extraction is called with challenge HTML, it returns empty and logs an error."""
+        scraper = KFCScraper()
+        cf_html = '<html><body>__CF$cv$params={}</body></html>'
+        items = scraper._extract_items_from_html(cf_html, "/menu/promotions")
+        assert items == []
+
+    def test_challenge_page_triggers_cache_fallback(self):
+        """A Cloudflare-blocked scrape returns cached data, not an empty list."""
+        scraper = KFCScraper()
+        cached_deals = [
+            {"id": "kfc-1", "title": "Cached Deal 1"},
+            {"id": "kfc-2", "title": "Cached Deal 2"},
+        ]
+        cf_html = '<html><body>__CF$cv$params={}</body></html>'
+
+        with patch.object(scraper, '_get_session'), \
+             patch.object(scraper, '_fetch_page', return_value=cf_html), \
+             patch.object(scraper, '_load_cache', return_value=cached_deals), \
+             patch.object(scraper, '_save_cache') as mock_save:
+            result = scraper.scrape_live()
+
+        # Should return cached deals, not the empty challenge result
+        assert len(result) == 2
+        assert result[0]["title"] == "Cached Deal 1"
+        # Should NOT have overwritten the cache
+        mock_save.assert_not_called()
+
+
+class TestKFCImageHostMatching:
+    """Test the robust image-host matching that replaced exact-string comparison."""
+
+    def test_primary_host_accepted(self):
+        scraper = KFCScraper()
+        url = "https://admin-kfc-web.azurewebsites.net/images/mainmenu/item.jpg"
+        assert scraper._is_kfc_product_image(url) is True
+
+    def test_fallback_kfc_lk_with_mainmenu_accepted(self):
+        """If KFC migrates images to kfc.lk domain, mainmenu paths are still accepted."""
+        scraper = KFCScraper()
+        url = "https://kfc.lk/images/mainmenu/item.jpg"
+        assert scraper._is_kfc_product_image(url) is True
+
+    def test_icon_without_mainmenu_rejected(self):
+        """Generic icons or logos without 'mainmenu' in the path are rejected."""
+        scraper = KFCScraper()
+        url = "https://kfc.lk/images/icons/pin.png"
+        assert scraper._is_kfc_product_image(url) is False
+
+    def test_unrelated_host_rejected(self):
+        scraper = KFCScraper()
+        assert scraper._is_kfc_product_image("https://example.com/image.jpg") is False
+
+    def test_empty_url_rejected(self):
+        scraper = KFCScraper()
+        assert scraper._is_kfc_product_image("") is False
+        assert scraper._is_kfc_product_image(None) is False
+
+
 class TestKFCDealFiltering:
     """Test that normal menu items are correctly filtered out."""
 
