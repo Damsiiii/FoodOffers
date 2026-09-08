@@ -26,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scrapers.vendors.kfc import KFCScraper
 from scrapers.vendors.pizzahut import PizzaHutScraper
+from scrapers.vendors.popeyes import PopeyesScraper
 from scrapers.base import BaseScraper
 
 
@@ -831,3 +832,141 @@ def test_base_scraper_normalization():
     assert item_b["discounted_price"] == 1000
     assert item_b["original_price"] == 2000
     assert item_b["discount_percentage"] == 50
+
+
+# ---------------------------------------------------------------------------
+# Popeyes Scraper Tests
+# ---------------------------------------------------------------------------
+
+SAMPLE_POPEYES_HTML = """
+<!DOCTYPE html>
+<html>
+<head><title>Popeyes Sri Lanka</title></head>
+<body>
+    <img id="logo" src="https://popeyes.com.lk/uploads/Header_80x130_01_d89e84a414.png" />
+    <img id="header-banner" src="https://popeyes.com.lk/uploads/Header_Banner_1436x517_01_0414329313.png" />
+    <span id="premium-selection-title-area"><h5><strong>Signature Products</strong></h5></span>
+    <span id="premium-selection-area" class="row align-items-center">
+        <div class="col">
+            <img id="premium_selection_img" data-src="https://popeyes.com.lk/uploads/PLK_Sandwich_BOGO_KV_b481298226.jpg" class="lazy" />
+        </div>
+        <div class="col">
+            <img id="premium_selection_img" data-src="https://popeyes.com.lk/uploads/PLK_Drumstick_Deal_03_377724312a.jpg" class="lazy" />
+        </div>
+        <div class="col">
+            <img id="premium_selection_img" data-src="https://popeyes.com.lk/uploads/PLK_BOGO_KV_e8b41d26f7.jpg" class="lazy" />
+        </div>
+        <div class="col">
+            <img id="premium_selection_img" data-src="https://popeyes.com.lk/uploads/PLK_Big_Box_01_abd7e98543.jpg" class="lazy" />
+        </div>
+    </span>
+    <!-- Mobile duplicate layout that should be deduplicated -->
+    <div class="row row-cols-2 row-cols-md-2 g-4">
+        <div class="col">
+            <img id="premium_selection_img" data-src="https://popeyes.com.lk/uploads/PLK_Sandwich_BOGO_KV_b481298226.jpg" class="lazy" />
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+
+class TestPopeyesExtraction:
+    """Test Popeyes HTML deal extraction and deduplication."""
+
+    def test_extracts_signature_deals_and_banner(self):
+        """Extracts the 4 signature promo posters and header banner from Popeyes HTML."""
+        scraper = PopeyesScraper()
+        deals = scraper._extract_deals_from_html(SAMPLE_POPEYES_HTML)
+
+        # 1 header banner + 4 signature products = 5 unique deals
+        assert len(deals) == 5
+
+        titles = [d["title"] for d in deals]
+        assert "Spicy Double Deal - Buy 1 Get 1 FREE" in titles
+        assert "Drumstick Deal - Buy 4 Get 4 FREE" in titles
+        assert "Why Stop at 1? Make it Double - Buy 1 Get 1 FREE" in titles
+        assert "Big Box - 10 Ways to Go Big" in titles
+        assert "Popeyes Louisiana Chicken Promotion" in titles
+
+    def test_prices_and_discounts_mapped_correctly(self):
+        """Validates pricing, categories, and validity strings on signature deals."""
+        scraper = PopeyesScraper()
+        deals = scraper._extract_deals_from_html(SAMPLE_POPEYES_HTML)
+
+        tuesday_deal = next(d for d in deals if "Spicy Double Deal" in d["title"])
+        assert tuesday_deal["discounted_price"] == 1600.0
+        assert tuesday_deal["original_price"] == 3200.0
+        assert tuesday_deal["discount_percentage"] == 50
+        assert tuesday_deal["category"] == "Sandwiches & Burgers"
+        assert tuesday_deal["valid_until"] == "Every Tuesday"
+
+        friday_deal = next(d for d in deals if "Drumstick Deal" in d["title"])
+        assert friday_deal["discounted_price"] == 2800.0
+        assert friday_deal["original_price"] == 4720.0
+        assert friday_deal["discount_percentage"] == 41
+        assert friday_deal["category"] == "Chicken Buckets"
+        assert friday_deal["valid_until"] == "Every Friday"
+
+        saturday_deal = next(d for d in deals if "Why Stop at 1?" in d["title"])
+        assert saturday_deal["discounted_price"] == 1600.0
+        assert saturday_deal["valid_until"] == "Every Saturday"
+
+    def test_duplicate_images_deduplicated(self):
+        """Duplicate mobile and desktop images in DOM are deduplicated to single offer."""
+        scraper = PopeyesScraper()
+        deals = scraper._extract_deals_from_html(SAMPLE_POPEYES_HTML)
+        image_urls = [d["image_url"] for d in deals]
+        assert len(image_urls) == len(set(image_urls))
+
+    def test_empty_or_malformed_html_returns_empty(self):
+        """Empty HTML returns empty list without error."""
+        scraper = PopeyesScraper()
+        assert scraper._extract_deals_from_html("") == []
+        assert scraper._extract_deals_from_html("<html><body><p>No images</p></body></html>") == []
+
+    def test_generic_banner_fallback(self):
+        """New unrecognized promo banners are parsed cleanly."""
+        scraper = PopeyesScraper()
+        deal = scraper._parse_generic_banner(
+            "https://popeyes.com.lk/uploads/PLK_Wings_Party_Pack_12345678.jpg",
+            "Wings Party Pack Promotion"
+        )
+        assert deal["title"] == "Wings Party Pack Promotion"
+        assert deal["category"] == "Tenders"
+        assert deal["deal_type"] == "Special Promotion"
+        assert deal["id"].startswith("popeyes-")
+
+
+class TestPopeyesDeterminismAndValidation:
+    """Test deterministic IDs and cache fallback."""
+
+    def test_stable_ids_are_deterministic(self):
+        scraper = PopeyesScraper()
+        id1 = scraper._generate_stable_id("https://popeyes.com.lk/img.jpg", "Spicy Deal")
+        id2 = scraper._generate_stable_id("https://popeyes.com.lk/img.jpg", "Spicy Deal")
+        assert id1 == id2
+        assert id1.startswith("popeyes-")
+
+    def test_validation_passes_on_valid_deals(self):
+        scraper = PopeyesScraper()
+        deals = [{"title": "Deal 1"}, {"title": "Deal 2"}]
+        assert scraper._validate_deals(deals, []) is True
+
+    def test_validation_fails_on_zero_deals(self):
+        scraper = PopeyesScraper()
+        assert scraper._validate_deals([], []) is False
+
+    def test_failed_scrape_preserves_cache(self):
+        scraper = PopeyesScraper()
+        cached = [{"id": "popeyes-1", "title": "Cached Popeyes Deal"}]
+
+        with patch("requests.get", side_effect=Exception("Connection refused")), \
+             patch.object(scraper, "_load_cache", return_value=cached), \
+             patch.object(scraper, "_save_cache") as mock_save:
+            deals = scraper.scrape_live()
+
+        assert len(deals) == 1
+        assert deals[0]["title"] == "Cached Popeyes Deal"
+        mock_save.assert_not_called()
+
