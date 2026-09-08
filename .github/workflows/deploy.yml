@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -45,7 +45,14 @@ jobs:
 
       - name: Run Python scrapers and update offers JSON
         run: |
-          PYTHONPATH=. python scripts/update_offers.py
+          python scripts/update_offers.py
+
+      - name: Commit and push updated offers data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/offers.json src/data/*_cache.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): automated daily offer scrape [skip ci]" && git push)
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

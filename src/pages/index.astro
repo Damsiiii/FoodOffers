@@ -22,7 +22,16 @@ const vendorRankMap = new Map(vendors.map((v: any, idx: number) => [v.vendor_id,
 const allOffers = [...rawOffers].sort((a: any, b: any) => {
   const rankA = vendorRankMap.get(a.vendor_id) ?? 999;
   const rankB = vendorRankMap.get(b.vendor_id) ?? 999;
-  return rankA - rankB;
+  if (rankA !== rankB) return rankA - rankB;
+  // For KFC, group limited-time promotions first, followed by everyday meal combos
+  if (a.vendor_id === 'kfc' && b.vendor_id === 'kfc') {
+    const isPromoA = a.section === 'promotions' || a.deal_type === 'Special Promotion';
+    const isPromoB = b.section === 'promotions' || b.deal_type === 'Special Promotion';
+    if (isPromoA !== isPromoB) {
+      return isPromoA ? -1 : 1;
+    }
+  }
+  return 0;
 });
 
 // Map featured offers to CoverFlow Carousel Items
@@ -124,91 +133,152 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
           </button>
         ))}
       </div>
+
+      <!-- KFC Sub-Section Tabs (Appears when KFC vendor tab is active) -->
+      <div id="vendor-subfilter-bar" class="hidden flex items-center gap-2 pt-3 border-t-2 border-border/40 font-mono text-xs font-bold uppercase overflow-x-auto pb-1">
+        <span class="text-foreground/70 mr-1 whitespace-nowrap">KFC SECTIONS:</span>
+        <button
+          class="kfc-section-tab active-subtab px-3.5 py-1.5 bg-accent text-accent-foreground border-2 border-border cursor-pointer transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
+          data-kfc-section="all"
+        >
+          ALL KFC ITEMS
+        </button>
+        <button
+          class="kfc-section-tab px-3.5 py-1.5 bg-background text-foreground border-2 border-border cursor-pointer transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
+          data-kfc-section="promotions"
+        >
+          🔥 SPECIAL PROMOTIONS
+        </button>
+        <button
+          class="kfc-section-tab px-3.5 py-1.5 bg-background text-foreground border-2 border-border cursor-pointer transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
+          data-kfc-section="meals"
+        >
+          🍗 EVERYDAY MEALS & COMBOS
+        </button>
+      </div>
     </section>
 
     <!-- Offers Grid Ledger (Kinetic Typography Cards) -->
     <section id="offers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {allOffers.map((offer: any, idx: number) => (
-        <article
-          class="offer-card group bg-background border-2 border-border hover:border-accent hover:bg-brand-yellow/30 transition-colors duration-300 flex flex-col justify-between relative overflow-hidden"
-          data-vendor={offer.vendor_id}
-          data-title={offer.title.toLowerCase()}
-          data-category={(offer.category || '').toLowerCase()}
-          data-description={(offer.description || '').toLowerCase()}
-          data-location={offer.location || 'colombo'}
-        >
-          <!-- Background Decorative Index Number -->
-          <div class="absolute right-2 bottom-2 text-6xl font-extrabold font-mono text-brand-seed/30 group-hover:text-foreground/10 select-none pointer-events-none transition-colors duration-300 leading-none">
-            #{idx + 1}
-          </div>
+      {allOffers.map((offer: any, idx: number) => {
+        const isKfc = offer.vendor_id === 'kfc';
+        const sectionType = offer.section || (offer.deal_type === 'Meal Deal' ? 'meals' : 'promotions');
+        const prevOffer = allOffers[idx - 1];
+        const isFirstKfcPromo = isKfc && sectionType === 'promotions' && (!prevOffer || prevOffer.vendor_id !== 'kfc' || (prevOffer.section !== 'promotions' && prevOffer.deal_type === 'Meal Deal'));
+        const isFirstKfcMeal = isKfc && sectionType === 'meals' && (!prevOffer || prevOffer.vendor_id !== 'kfc' || prevOffer.section === 'promotions' || prevOffer.deal_type === 'Special Promotion');
 
-          <div>
-            <!-- Image Header -->
-            <div class="relative h-52 overflow-hidden border-b-2 border-border bg-brand-seed/20">
-              <img
-                src={offer.image_url}
-                alt={offer.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-
-              <!-- Off Tag Badge (Beet Red) -->
-              {offer.discount_percentage > 0 && (
-                <div class="absolute top-3 right-3 bg-brand-beet text-white font-mono font-extrabold text-sm px-2.5 py-1 border-2 border-border uppercase tracking-tighter">
-                  -{offer.discount_percentage}%
+        return (
+          <>
+            {isFirstKfcPromo && (
+              <div id="kfc-promo-header" class="col-span-full hidden py-3 px-4 bg-brand-yellow/20 border-2 border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                <div>
+                  <h3 class="font-display text-xl font-bold uppercase tracking-tight flex items-center gap-2 text-foreground">
+                    <span>🔥</span> LIMITED-TIME SPECIAL PROMOTIONS
+                  </h3>
+                  <p class="text-xs font-mono text-foreground/70 uppercase">Official limited-time promotions & discounted deal packages from KFC Sri Lanka</p>
                 </div>
-              )}
-
-              <!-- Vendor Tag Badge -->
-              <div class="absolute bottom-3 left-3 bg-background text-foreground group-hover:bg-foreground group-hover:text-background font-mono text-xs font-bold px-2.5 py-1 border-2 border-border uppercase tracking-wider transition-colors duration-300">
-                {offer.vendor_name}
+                <span class="px-2.5 py-1 bg-brand-beet text-white font-mono text-xs font-bold uppercase tracking-wider border border-border">
+                  PROMOTIONAL DEALS
+                </span>
               </div>
-            </div>
-
-            <!-- Main Info Block -->
-            <div class="p-6 space-y-3 relative z-10">
-              <div class="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider text-accent group-hover:text-foreground transition-colors duration-300">
-                <span>{offer.category}</span>
-                <span class="text-foreground/70">{offer.deal_type}</span>
+            )}
+            {isFirstKfcMeal && (
+              <div id="kfc-meals-header" class="col-span-full hidden py-3 px-4 bg-brand-seed/20 border-2 border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-4">
+                <div>
+                  <h3 class="font-display text-xl font-bold uppercase tracking-tight flex items-center gap-2 text-foreground">
+                    <span>🍗</span> EVERYDAY VALUE MEALS & COMBOS
+                  </h3>
+                  <p class="text-xs font-mono text-foreground/70 uppercase">Everyday meal combos bundled with beverages & chicken pieces</p>
+                </div>
+                <span class="px-2.5 py-1 bg-brand-yellow text-foreground font-mono text-xs font-bold uppercase tracking-wider border-2 border-border">
+                  MEAL COMBOS
+                </span>
               </div>
-
-              <h3 class="font-display text-2xl font-bold uppercase text-foreground leading-tight tracking-tight line-clamp-2">
-                {offer.title}
-              </h3>
-
-              <p class="text-foreground/80 transition-colors duration-300 text-sm font-medium leading-relaxed line-clamp-2">
-                {offer.description}
-              </p>
-            </div>
-          </div>
-
-          <!-- Footer Price Bar & Deal Link -->
-          <div class="p-6 pt-4 border-t-2 border-border bg-background/60 group-hover:bg-brand-yellow/50 flex items-center justify-between relative z-10 transition-colors duration-300">
-            <div>
-              {offer.original_price && offer.original_price > (offer.discounted_price || 0) ? (
-                <div class="text-xs font-mono text-muted-foreground group-hover:text-black/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
-              ) : null}
-              {offer.discounted_price ? (
-                <div class="text-2xl font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300">LKR {offer.discounted_price}</div>
-              ) : (
-                <div class="text-lg font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300 uppercase">PROMOTIONAL OFFER</div>
-              )}
-              <div class="text-xs font-mono text-foreground/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
-              <div class="text-2xl font-mono font-extrabold text-brand-beet">LKR {offer.discounted_price}</div>
-            </div>
-
-            <a
-              href={offer.source_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold text-xs uppercase tracking-wider px-4 py-2.5 border-2 border-border transition-all duration-200 hover:scale-105 active:scale-95"
+            )}
+            <article
+              class="offer-card group bg-background border-2 border-border hover:border-accent hover:bg-brand-yellow/30 transition-colors duration-300 flex flex-col justify-between relative overflow-hidden"
+              data-vendor={offer.vendor_id}
+              data-section={sectionType}
+              data-deal-type={(offer.deal_type || '').toLowerCase()}
+              data-title={offer.title.toLowerCase()}
+              data-category={(offer.category || '').toLowerCase()}
+              data-description={(offer.description || '').toLowerCase()}
+              data-location={offer.location || 'colombo'}
             >
-              <span>CLAIM DEAL</span>
-              <span>→</span>
-            </a>
-          </div>
-        </article>
-      ))}
+              <!-- Background Decorative Index Number -->
+              <div class="absolute right-2 bottom-2 text-6xl font-extrabold font-mono text-brand-seed/30 group-hover:text-foreground/10 select-none pointer-events-none transition-colors duration-300 leading-none">
+                #{idx + 1}
+              </div>
+
+              <div>
+                <!-- Image Header -->
+                <div class="relative h-52 overflow-hidden border-b-2 border-border bg-brand-seed/20">
+                  <img
+                    src={offer.image_url}
+                    alt={offer.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+
+                  <!-- Off Tag Badge (Beet Red) -->
+                  {offer.discount_percentage > 0 && (
+                    <div class="absolute top-3 right-3 bg-brand-beet text-white font-mono font-extrabold text-sm px-2.5 py-1 border-2 border-border uppercase tracking-tighter">
+                      -{offer.discount_percentage}%
+                    </div>
+                  )}
+
+                  <!-- Vendor Tag Badge -->
+                  <div class="absolute bottom-3 left-3 bg-background text-foreground group-hover:bg-foreground group-hover:text-background font-mono text-xs font-bold px-2.5 py-1 border-2 border-border uppercase tracking-wider transition-colors duration-300">
+                    {offer.vendor_name}
+                  </div>
+                </div>
+
+                <!-- Main Info Block -->
+                <div class="p-6 space-y-3 relative z-10">
+                  <div class="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider text-accent group-hover:text-foreground transition-colors duration-300">
+                    <span>{offer.category}</span>
+                    <span class={sectionType === 'meals' || offer.deal_type === 'Meal Deal' ? "px-2 py-0.5 bg-brand-yellow text-foreground border border-border font-bold text-[10px]" : "px-2 py-0.5 bg-brand-beet text-white font-bold text-[10px]"}>
+                      {offer.deal_type}
+                    </span>
+                  </div>
+
+                  <h3 class="font-display text-2xl font-bold uppercase text-foreground leading-tight tracking-tight line-clamp-2">
+                    {offer.title}
+                  </h3>
+
+                  <p class="text-foreground/80 transition-colors duration-300 text-sm font-medium leading-relaxed line-clamp-2">
+                    {offer.description}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Footer Price Bar & Deal Link -->
+              <div class="p-6 pt-4 border-t-2 border-border bg-background/60 group-hover:bg-brand-yellow/50 flex items-center justify-between relative z-10 transition-colors duration-300">
+                <div>
+                  {offer.original_price && offer.original_price > (offer.discounted_price || 0) ? (
+                    <div class="text-xs font-mono text-muted-foreground group-hover:text-black/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
+                  ) : null}
+                  {offer.discounted_price ? (
+                    <div class="text-2xl font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300">LKR {offer.discounted_price}</div>
+                  ) : (
+                    <div class="text-lg font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300 uppercase">PROMOTIONAL OFFER</div>
+                  )}
+                </div>
+
+                <a
+                  href={offer.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold text-xs uppercase tracking-wider px-4 py-2.5 border-2 border-border transition-all duration-200 hover:scale-105 active:scale-95"
+                >
+                  <span>CLAIM DEAL</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
+          </>
+        );
+      })}
     </section>
 
     <!-- Empty Filter State -->
@@ -240,33 +310,65 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     const visibleCount = document.getElementById('visible-count');
     const noResults = document.getElementById('no-results');
 
+    const kfcSectionTabs = document.querySelectorAll('.kfc-section-tab');
+    const subfilterBar = document.getElementById('vendor-subfilter-bar');
+    const promoHeader = document.getElementById('kfc-promo-header');
+    const mealsHeader = document.getElementById('kfc-meals-header');
+
     let activeVendor = 'all';
+    let activeKfcSection = 'all';
     let activeLocation = 'all';
     let searchQuery = '';
 
     function filterOffers() {
       let count = 0;
+      let visibleKfcPromos = 0;
+      let visibleKfcMeals = 0;
+
       offerCards.forEach((card) => {
         const vendor = card.getAttribute('data-vendor');
+        const section = card.getAttribute('data-section') || '';
         const cardLoc = card.getAttribute('data-location') || 'colombo';
         const title = card.getAttribute('data-title') || '';
         const category = card.getAttribute('data-category') || '';
         const desc = card.getAttribute('data-description') || '';
 
         const matchesVendor = activeVendor === 'all' || vendor === activeVendor;
+        const matchesKfcSection = activeVendor !== 'kfc' || activeKfcSection === 'all' || section === activeKfcSection;
         const matchesLocation = activeLocation === 'all' || cardLoc === activeLocation || cardLoc === 'all';
         const matchesSearch = !searchQuery ||
           title.includes(searchQuery) ||
           category.includes(searchQuery) ||
           desc.includes(searchQuery);
 
-        if (matchesVendor && matchesLocation && matchesSearch) {
+        if (matchesVendor && matchesKfcSection && matchesLocation && matchesSearch) {
           (card as HTMLElement).style.display = 'flex';
           count++;
+          if (vendor === 'kfc') {
+            if (section === 'promotions') visibleKfcPromos++;
+            if (section === 'meals') visibleKfcMeals++;
+          }
         } else {
           (card as HTMLElement).style.display = 'none';
         }
       });
+
+      // Show/hide KFC section banners and sub-filter bar
+      if (activeVendor === 'kfc') {
+        if (subfilterBar) subfilterBar.classList.remove('hidden');
+        if (promoHeader) {
+          const showPromo = (activeKfcSection === 'all' || activeKfcSection === 'promotions') && visibleKfcPromos > 0;
+          promoHeader.style.display = showPromo ? 'flex' : 'none';
+        }
+        if (mealsHeader) {
+          const showMeals = (activeKfcSection === 'all' || activeKfcSection === 'meals') && visibleKfcMeals > 0;
+          mealsHeader.style.display = showMeals ? 'flex' : 'none';
+        }
+      } else {
+        if (subfilterBar) subfilterBar.classList.add('hidden');
+        if (promoHeader) promoHeader.style.display = 'none';
+        if (mealsHeader) mealsHeader.style.display = 'none';
+      }
 
       if (visibleCount) visibleCount.textContent = count.toString();
       if (noResults) {
@@ -289,6 +391,34 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
         tab.classList.remove('bg-background', 'text-foreground');
 
         activeVendor = tab.getAttribute('data-vendor') || 'all';
+
+        // Reset KFC section filter to "all" when switching vendors
+        activeKfcSection = 'all';
+        kfcSectionTabs.forEach((st) => {
+          if (st.getAttribute('data-kfc-section') === 'all') {
+            st.classList.add('active-subtab', 'bg-accent', 'text-accent-foreground');
+            st.classList.remove('bg-background', 'text-foreground');
+          } else {
+            st.classList.remove('active-subtab', 'bg-accent', 'text-accent-foreground');
+            st.classList.add('bg-background', 'text-foreground');
+          }
+        });
+
+        filterOffers();
+      });
+    });
+
+    kfcSectionTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        kfcSectionTabs.forEach((t) => {
+          t.classList.remove('active-subtab', 'bg-accent', 'text-accent-foreground');
+          t.classList.add('bg-background', 'text-foreground');
+        });
+
+        tab.classList.add('active-subtab', 'bg-accent', 'text-accent-foreground');
+        tab.classList.remove('bg-background', 'text-foreground');
+
+        activeKfcSection = tab.getAttribute('data-kfc-section') || 'all';
         filterOffers();
       });
     });

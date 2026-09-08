@@ -1,7 +1,14 @@
 import json
 import logging
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+
+# Ensure repository root is in sys.path so the script can be invoked from any working directory
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
+
 from scrapers.manager import ScraperManager
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")

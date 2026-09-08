@@ -27,24 +27,21 @@ KFC_IMAGE_HOST_FALLBACKS = [
     "kfclk",
 ]
 
-# Pages that contain actual promotional deals (not regular menu items).
-# These are *parent* paths; the scraper will discover sub-pages automatically
-# when the parent redirects to a sub-category.
+# Pages that contain actual promotional deals (limited time offers)
 KFC_PROMO_PAGES = [
     "/menu/promotions",
 ]
 
-# Pages that contain menu deals (combos, meals, etc.) that are also worth scraping.
-KFC_DEAL_PAGES = [
-    "/menu/meals-and-beverages",
+# Pages that contain meal combos and everyday value meals
+KFC_MEAL_PAGES = [
+    "/menu/meals-and-beverages/combos--aggregators",
 ]
 
-# Minimum number of deals we expect from a successful scrape.
-# If we get fewer, the scrape is considered suspect.
-MIN_EXPECTED_DEALS = 1
+# Aliased for backward compatibility with tests
+KFC_DEAL_PAGES = KFC_MEAL_PAGES
 
-# Maximum ratio of deals we can lose between scrapes before we refuse to overwrite
-MAX_DEAL_DROP_RATIO = 0.5
+# Minimum number of deals we expect from a successful scrape.
+MIN_EXPECTED_DEALS = 1
 
 # Cloudflare / bot-protection fingerprints that appear when we get challenged
 _CF_CHALLENGE_MARKERS = [
@@ -303,62 +300,45 @@ class KFCScraper(BaseScraper):
 
     def _is_promotional_deal(self, item: Dict[str, Any]) -> bool:
         """
-        Determine if an item is a promotional deal rather than a regular menu item.
+        Determine if an item is a promotional deal or meal combo.
 
-        Items from /menu/promotions are always deals.
-        Items from other pages are deals if they show deal-like characteristics:
-        - Combo meals (multiple items bundled)
-        - Special pricing mentioned in the title
-        - "For Rs." pricing pattern (indicates a special price)
+        Items from /menu/promotions are always promotional deals.
+        Items from /menu/meals-and-beverages combos are meal deals.
         """
         title = item.get("title", "").lower()
-        source = item.get("source_page", "")
+        source = item.get("source_page", "").lower()
 
-        # Items from the promotions page are definitively deals
+        # Items from the promotions page are promotional deals
         if "promotions" in source:
             return True
 
-        # Items from meal pages that are combos/bundles are deals
-        if "meals" in source or "beverages" in source:
-            deal_keywords = ["combo", "meal", "bundle", "for rs", "special", "offer", "deal",
-                             "save", "free", "bucket"]
-            if any(kw in title for kw in deal_keywords):
+        # Items from meals and beverages combos page are meal combo deals
+        if "meals" in source or "combos" in source:
+            deal_keywords = ["combo", "meal", "bundle", "bucket", "for rs", "special", "offer", "deal", "save", "free", "bogo"]
+            if any(kw in title for kw in deal_keywords) or "+" in title or "pepsi" in title:
                 return True
-            # Combos with drinks are deals
-            if "+" in title or "pepsi" in title or "drink" in title:
-                return True
+            return False
 
-        # Items with "FOR RS." in the title indicate special pricing
-        if "for rs" in title:
+        # Items with explicit promotional deal keywords
+        deal_keywords = ["combo", "meal", "bundle", "bucket", "for rs", "special", "offer", "deal", "save", "free", "bogo",
+                         "buy 1 get", "buy 2 get"]
+        if any(kw in title for kw in deal_keywords):
             return True
 
         return False
 
-    def _validate_deals(self, new_deals: List[Dict], cached_deals: List[Dict]) -> bool:
+    def _validate_deals(self, new_deals: List[Dict], cached_deals: Optional[List[Dict]] = None) -> bool:
         """
         Validate that the scraped deals are reasonable.
         Returns True if the deals pass validation and should be saved.
         """
-        if len(new_deals) == 0:
-            logger.warning("KFC: Scrape returned 0 deals — refusing to overwrite cache")
+        if not new_deals or len(new_deals) == 0:
+            logger.warning("KFC: Scrape returned 0 deals — validation failed")
             return False
 
         if len(new_deals) < MIN_EXPECTED_DEALS:
             logger.warning(f"KFC: Only {len(new_deals)} deals found (minimum: {MIN_EXPECTED_DEALS})")
-            # Still accept if we have no cache
-            if not cached_deals:
-                return True
             return False
-
-        # Check for a huge unexplained drop in deals
-        if cached_deals and len(cached_deals) > 0:
-            ratio = len(new_deals) / len(cached_deals)
-            if ratio < MAX_DEAL_DROP_RATIO:
-                logger.warning(
-                    f"KFC: Deal count dropped from {len(cached_deals)} to {len(new_deals)} "
-                    f"(ratio {ratio:.2f} < {MAX_DEAL_DROP_RATIO}) — refusing to overwrite"
-                )
-                return False
 
         # Check for duplicate titles
         titles = [d.get("title", "") for d in new_deals]
@@ -393,27 +373,44 @@ class KFCScraper(BaseScraper):
 
     def scrape_live(self) -> List[Dict[str, Any]]:
         """
-        Scrape KFC Sri Lanka deals using direct HTTP requests to parse server-rendered HTML.
+        Scrape KFC Sri Lanka deals dynamically using direct HTTP requests to parse
+        server-rendered promotional HTML.
 
         Strategy:
-        1. Fetch the /menu/promotions page for explicit promotions
-        2. Fetch /menu/meals-and-beverages for combo/meal deals
-        3. Parse the HTML for product cards using the itemContainer structure
-        4. Filter to only include promotional deals (not regular menu items)
-        5. Validate results before saving to cache
-        6. Fall back to cache if the live scrape fails validation
+        1. Fetch promotional pages (/menu/promotions and any sub-categories)
+        2. Fetch everyday meal combo pages (/menu/meals-and-beverages)
+        3. Dynamically discover any sub-category promo tabs found in HTML
+        4. Parse the HTML for product cards using the itemContainer structure
+        5. Tag promotions and meal deals into distinct sections so they are not confused
+        6. Validate live results and update cache
+        7. Only fall back to cache if live scraping is completely blocked/unavailable
         """
         session = self._get_session()
         all_items = []
         seen_titles = set()
+        visited_pages = set()
 
-        # Scrape both promo and deal pages
-        pages_to_scrape = KFC_PROMO_PAGES + KFC_DEAL_PAGES
+        # Target both promo pages and meal deal pages
+        pages_to_scrape = list(KFC_PROMO_PAGES) + list(KFC_MEAL_PAGES)
 
-        for page_path in pages_to_scrape:
+        idx = 0
+        while idx < len(pages_to_scrape):
+            page_path = pages_to_scrape[idx]
+            idx += 1
+
+            if page_path in visited_pages:
+                continue
+            visited_pages.add(page_path)
+
             html = self._fetch_page(session, page_path)
             if not html:
                 continue
+
+            # Dynamically discover any sub-pages or promotional category links
+            discovered_subpages = re.findall(r'href=["\'](/menu/promotions/[^"\'?#]+)["\']', html)
+            for sub in discovered_subpages:
+                if sub not in visited_pages and sub not in pages_to_scrape:
+                    pages_to_scrape.append(sub)
 
             items = self._extract_items_from_html(html, page_path)
             logger.info(f"KFC: Extracted {len(items)} items from {page_path}")
@@ -432,7 +429,11 @@ class KFCScraper(BaseScraper):
                     logger.debug(f"KFC: Skipping non-deal item: {title}")
                     continue
 
-                category = self._determine_category(title, item["description"], item["source_page"])
+                is_promo = "promotions" in item["source_page"].lower()
+                section = "promotions" if is_promo else "meals"
+                deal_type = "Special Promotion" if is_promo else "Meal Deal"
+                category = "Special Promotions" if is_promo else "Meals & Combos"
+
                 stable_id = self._generate_stable_id(title, item["source_page"])
 
                 offer = {
@@ -440,9 +441,10 @@ class KFCScraper(BaseScraper):
                     "title": title,
                     "description": f"KFC Sri Lanka: {item['description']}",
                     "category": category,
+                    "section": section,
                     "image_url": item["image_url"],
-                    "deal_type": "Special Promotion" if "promotions" in item["source_page"] else "Meal Deal",
-                    "valid_until": "Limited Time",
+                    "deal_type": deal_type,
+                    "valid_until": "Limited Time" if is_promo else "Daily Menu",
                     "source_url": f"https://www.kfc.lk{item['source_page']}",
                     "location": "island-wide",
                 }
@@ -468,4 +470,4 @@ class KFCScraper(BaseScraper):
                 return cached
             else:
                 logger.warning("KFC: No cached deals available and live scrape failed validation")
-                return all_items  # Return what we have even if it's suspect
+                return all_items

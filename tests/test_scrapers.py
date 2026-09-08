@@ -476,12 +476,12 @@ class TestKFCValidation:
         scraper = KFCScraper()
         assert scraper._validate_deals([], []) is False
 
-    def test_deal_drop_fails_validation(self):
-        """A large drop in deal count fails validation."""
+    def test_deal_drop_passes_validation(self):
+        """Valid deal count reductions (e.g. expired promos) pass validation without being rejected."""
         scraper = KFCScraper()
         cached = [{"title": f"Deal {i}"} for i in range(10)]
         new = [{"title": "Deal 1"}]
-        assert scraper._validate_deals(new, cached) is False
+        assert scraper._validate_deals(new, cached) is True
 
     def test_normal_count_passes_validation(self):
         """A reasonable deal count passes validation."""
