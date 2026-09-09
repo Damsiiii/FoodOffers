@@ -63,31 +63,5 @@
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
     "discounted_price": 2990.0
-  },
-  {
-    "id": "kfc-27da81dd",
-    "title": "KOREAN FULL CHICKEN",
-    "description": "KFC Sri Lanka: KOREAN FULL CHICKEN",
-    "category": "Special Promotions",
-    "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/koreanfullchicken6b3a52a795be433db6ebb5b09bec5630.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "island-wide",
-    "discounted_price": 2490.0
-  },
-  {
-    "id": "kfc-a21184cd",
-    "title": "KOREAN HALF CHICKEN",
-    "description": "KFC Sri Lanka: KOREAN HALF CHICKEN",
-    "category": "Special Promotions",
-    "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/koreanhalfchicken43f064288ae24487b7c791db4f36dc17.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "island-wide",
-    "discounted_price": 1490.0
   }
 ]
