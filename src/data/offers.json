@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 32,
+  "total_offers": 29,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,7 +10,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 6,
+      "count": 3,
       "offers": [
         {
           "id": "kfc-92ba5022",
@@ -56,54 +56,6 @@
           "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
           "location": "island-wide",
           "discounted_price": 2530.0,
-          "is_fallback": false,
-          "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka"
-        },
-        {
-          "id": "kfc-007e9a6c",
-          "title": "6PCS H&C CHICKEN WITH 4 PILLAF RICE",
-          "description": "KFC Sri Lanka: 6PCS H&C CHICKEN WITH 4 PILLAF RICE",
-          "category": "Special Promotions",
-          "section": "promotions",
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/6pcshcchickenwith4pillafriceac8c194ccd3443e6b83ec6d9c7302057.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.kfc.lk/menu/promotions",
-          "location": "island-wide",
-          "discounted_price": 3990.0,
-          "is_fallback": false,
-          "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka"
-        },
-        {
-          "id": "kfc-27da81dd",
-          "title": "KOREAN FULL CHICKEN",
-          "description": "KFC Sri Lanka: KOREAN FULL CHICKEN",
-          "category": "Special Promotions",
-          "section": "promotions",
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/koreanfullchicken6b3a52a795be433db6ebb5b09bec5630.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.kfc.lk/menu/promotions",
-          "location": "island-wide",
-          "discounted_price": 2490.0,
-          "is_fallback": false,
-          "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka"
-        },
-        {
-          "id": "kfc-a21184cd",
-          "title": "KOREAN HALF CHICKEN",
-          "description": "KFC Sri Lanka: KOREAN HALF CHICKEN",
-          "category": "Special Promotions",
-          "section": "promotions",
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/koreanhalfchicken43f064288ae24487b7c791db4f36dc17.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.kfc.lk/menu/promotions",
-          "location": "island-wide",
-          "discounted_price": 1490.0,
           "is_fallback": false,
           "vendor_id": "kfc",
           "vendor_name": "KFC Sri Lanka"
@@ -551,8 +503,8 @@
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "Value Deals",
+          "description": "Uber Eats Sri Lanka promotion: Value Deals",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -565,8 +517,8 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
+          "title": "Coffee Colombo",
+          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -648,54 +600,6 @@
       "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
       "location": "island-wide",
       "discounted_price": 2530.0,
-      "is_fallback": false,
-      "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka"
-    },
-    {
-      "id": "kfc-007e9a6c",
-      "title": "6PCS H&C CHICKEN WITH 4 PILLAF RICE",
-      "description": "KFC Sri Lanka: 6PCS H&C CHICKEN WITH 4 PILLAF RICE",
-      "category": "Special Promotions",
-      "section": "promotions",
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/6pcshcchickenwith4pillafriceac8c194ccd3443e6b83ec6d9c7302057.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.kfc.lk/menu/promotions",
-      "location": "island-wide",
-      "discounted_price": 3990.0,
-      "is_fallback": false,
-      "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka"
-    },
-    {
-      "id": "kfc-27da81dd",
-      "title": "KOREAN FULL CHICKEN",
-      "description": "KFC Sri Lanka: KOREAN FULL CHICKEN",
-      "category": "Special Promotions",
-      "section": "promotions",
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/koreanfullchicken6b3a52a795be433db6ebb5b09bec5630.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.kfc.lk/menu/promotions",
-      "location": "island-wide",
-      "discounted_price": 2490.0,
-      "is_fallback": false,
-      "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka"
-    },
-    {
-      "id": "kfc-a21184cd",
-      "title": "KOREAN HALF CHICKEN",
-      "description": "KFC Sri Lanka: KOREAN HALF CHICKEN",
-      "category": "Special Promotions",
-      "section": "promotions",
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/koreanhalfchicken43f064288ae24487b7c791db4f36dc17.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.kfc.lk/menu/promotions",
-      "location": "island-wide",
-      "discounted_price": 1490.0,
       "is_fallback": false,
       "vendor_id": "kfc",
       "vendor_name": "KFC Sri Lanka"
@@ -1030,8 +934,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "Value Deals",
+      "description": "Uber Eats Sri Lanka promotion: Value Deals",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1044,8 +948,8 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
+      "title": "Coffee Colombo",
+      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1071,5 +975,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-09T15:13:59.976823+00:00"
+  "last_updated": "2026-09-09T17:20:20.845894+00:00"
 }
