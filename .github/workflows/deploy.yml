@@ -5,8 +5,23 @@ on:
     branches:
       - main
   schedule:
-    # Run daily at 00:00 UTC
-    - cron: '0 0 * * *'
+    # Crucial Food Deal Scrape Schedule (Sri Lanka IST = UTC+5:30):
+    # - 00:30 UTC -> 06:00 AM IST : Daily menu & cache reset
+    # - 02:15 UTC -> 07:45 AM IST : Breakfast & morning coffee deals
+    # - 05:00 UTC -> 10:30 AM IST : Pre-lunch promos & noon combo drops
+    # - 07:00 UTC -> 12:30 PM IST : Lunch peak rush flash discounts
+    # - 09:30 UTC -> 03:00 PM IST : Teatime, bakery & afternoon snack specials
+    # - 11:30 UTC -> 05:00 PM IST : Evening / dinner BOGO drops & happy hour promos
+    # - 13:45 UTC -> 07:15 PM IST : Dinner peak rush vouchers & meal bundles
+    # - 16:30 UTC -> 10:00 PM IST : Late-night craving & supper deals
+    - cron: '30 0 * * *'
+    - cron: '15 2 * * *'
+    - cron: '0 5 * * *'
+    - cron: '0 7 * * *'
+    - cron: '30 9 * * *'
+    - cron: '30 11 * * *'
+    - cron: '45 13 * * *'
+    - cron: '30 16 * * *'
   workflow_dispatch:
 
 permissions:
