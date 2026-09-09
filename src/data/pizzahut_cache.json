@@ -60,16 +60,6 @@
     "source_url": "https://www.pizzahut.lk/menu/promo/personal-pizza-add-on-02"
   },
   {
-    "id": "pizzahut-b173",
-    "title": "Special Pasta Offer",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Add-ons",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/e5414f44-16ba-4b38-b86f-b507d2ff1b02.jpg",
-    "deal_type": "Special Pasta Offer",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/special-appetizer-offer-for-pasta-pizza-pasta"
-  },
-  {
     "id": "pizzahut-b124",
     "title": "Cyber Saving Offer 1",
     "description": "Pizza Hut Sri Lanka: ...",
@@ -85,7 +75,7 @@
     "title": "Cyber Saving Offer 2",
     "description": "Pizza Hut Sri Lanka: ...",
     "category": "Cyber Savings",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/a9771ff1-b5b2-4d35-aa58-a92891bf719f.png",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/e182fa27-5cfe-406a-8db3-9787123fc768.jpg",
     "deal_type": "Cyber Savings",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/offers-cyber-savings-offers-august-02"
