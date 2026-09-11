@@ -109,5 +109,35 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
+  },
+  {
+    "id": "pizzahut-b175",
+    "title": "Weekend Vibes Offer 01",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/a6a37fac-9b50-4a53-a74e-31e0fded42bf.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-offer-01"
+  },
+  {
+    "id": "pizzahut-b174",
+    "title": "Weekend Vibes Offer 02",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/87de5095-f2b3-42fe-a1fa-2ac4c72e07f2.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-offer-02"
+  },
+  {
+    "id": "pizzahut-b176",
+    "title": "Weekend Vibes Offer 03",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/ba87dd85-73a8-49ac-83d4-a4753a8594e3.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-grand-dipper-1000-off"
   }
 ]

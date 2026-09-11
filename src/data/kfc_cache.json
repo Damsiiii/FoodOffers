@@ -37,5 +37,44 @@
     "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
     "location": "island-wide",
     "discounted_price": 2530.0
+  },
+  {
+    "id": "kfc-6b7c265f",
+    "title": "BOGO FREE 6PC H&C BUCKET",
+    "description": "KFC Sri Lanka: BOGO FREE 6PC H&C BUCKET",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree6pchcbucketc1f5e8a393264503ac53c4fd21ba8048.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
+  },
+  {
+    "id": "kfc-f51c8151",
+    "title": "BOGO FREE 8PC H&C BUCKET",
+    "description": "KFC Sri Lanka: BUY 1 GET 1 FREE",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree8pchcbucketa3205ea1b4a340db99db008267d8395b.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 5390.0
+  },
+  {
+    "id": "kfc-9e089eb6",
+    "title": "SUPER SAVOURY SAWAN",
+    "description": "KFC Sri Lanka: SUPER SAVOURY SAWAN",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
   }
 ]
