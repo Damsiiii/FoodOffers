@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 35,
+  "total_offers": 33,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,7 +10,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 4,
+      "count": 3,
       "offers": [
         {
           "id": "kfc-92ba5022",
@@ -56,22 +56,6 @@
           "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
           "location": "island-wide",
           "discounted_price": 2530.0,
-          "is_fallback": false,
-          "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka"
-        },
-        {
-          "id": "kfc-fb330519",
-          "title": "BUY 2 ZINGER BURGER & GET 1 FREE",
-          "description": "KFC Sri Lanka: No",
-          "category": "Special Promotions",
-          "section": "promotions",
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.kfc.lk/menu/promotions",
-          "location": "island-wide",
-          "discounted_price": 3180.0,
           "is_fallback": false,
           "vendor_id": "kfc",
           "vendor_name": "KFC Sri Lanka"
@@ -554,24 +538,10 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 5,
+      "count": 4,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Barista Coffee",
-          "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-2",
           "title": "Croffle SL",
           "description": "Uber Eats Sri Lanka promotion: Croffle SL",
           "category": "Delivery Deals",
@@ -585,9 +555,23 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
+          "id": "ubereats-dom-2",
+          "title": "25% off",
+          "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 423.75 LKR 565.00\nSuperior Heavy Flow 16 S - Fems - SKU 000561",
+          "category": "Delivery Deals",
+          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
           "id": "ubereats-dom-3",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
+          "title": "15% off",
+          "description": "Uber Eats Sri Lanka promotion: 15% off\nLKR 161.50 LKR 190.00\nDettol Skincare-Soap 100G - SKU 001182",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -600,22 +584,8 @@
         },
         {
           "id": "ubereats-dom-4",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-5",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "20% off",
+          "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 620.00 LKR 775.00\nSunsilk Nourishing Soft & Smooth Conditioner 180Ml - SKU 001374",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -683,22 +653,6 @@
       "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
       "location": "island-wide",
       "discounted_price": 2530.0,
-      "is_fallback": false,
-      "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka"
-    },
-    {
-      "id": "kfc-fb330519",
-      "title": "BUY 2 ZINGER BURGER & GET 1 FREE",
-      "description": "KFC Sri Lanka: No",
-      "category": "Special Promotions",
-      "section": "promotions",
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.kfc.lk/menu/promotions",
-      "location": "island-wide",
-      "discounted_price": 3180.0,
       "is_fallback": false,
       "vendor_id": "kfc",
       "vendor_name": "KFC Sri Lanka"
@@ -1072,20 +1026,6 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Barista Coffee",
-      "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-2",
       "title": "Croffle SL",
       "description": "Uber Eats Sri Lanka promotion: Croffle SL",
       "category": "Delivery Deals",
@@ -1099,9 +1039,23 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
+      "id": "ubereats-dom-2",
+      "title": "25% off",
+      "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 423.75 LKR 565.00\nSuperior Heavy Flow 16 S - Fems - SKU 000561",
+      "category": "Delivery Deals",
+      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
       "id": "ubereats-dom-3",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
+      "title": "15% off",
+      "description": "Uber Eats Sri Lanka promotion: 15% off\nLKR 161.50 LKR 190.00\nDettol Skincare-Soap 100G - SKU 001182",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1114,22 +1068,8 @@
     },
     {
       "id": "ubereats-dom-4",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-5",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "20% off",
+      "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 620.00 LKR 775.00\nSunsilk Nourishing Soft & Smooth Conditioner 180Ml - SKU 001374",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1141,5 +1081,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-12T16:30:06.284516+00:00"
+  "last_updated": "2026-09-12T18:37:30.169744+00:00"
 }
