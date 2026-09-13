@@ -37,5 +37,18 @@
     "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
     "location": "island-wide",
     "discounted_price": 2530.0
+  },
+  {
+    "id": "kfc-566445f1",
+    "title": "8PC H&C BUCKET FOR RS.2990",
+    "description": "KFC Sri Lanka: 8PC H&C BUCKET FOR RS.2990",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pchcbucketforrs.2990b745be4b019046158266dcc1eccf5d66.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 2990.0
   }
 ]
