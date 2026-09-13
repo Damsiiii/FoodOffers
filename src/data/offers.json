@@ -572,8 +572,8 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "SaveMo",
+          "description": "Uber Eats Sri Lanka promotion: SaveMo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -586,8 +586,8 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "Department of Coffee",
-          "description": "Uber Eats Sri Lanka promotion: Department of Coffee",
+          "title": "Coffee Colombo",
+          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -1058,8 +1058,8 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "SaveMo",
+      "description": "Uber Eats Sri Lanka promotion: SaveMo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1072,8 +1072,8 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "Department of Coffee",
-      "description": "Uber Eats Sri Lanka promotion: Department of Coffee",
+      "title": "Coffee Colombo",
+      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1085,5 +1085,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-13T09:55:40.768227+00:00"
+  "last_updated": "2026-09-13T12:38:48.454044+00:00"
 }
