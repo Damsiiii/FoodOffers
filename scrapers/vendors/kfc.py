@@ -201,11 +201,8 @@ class KFCScraper(BaseScraper):
             image_url = img_match.group(1).strip()
             alt_text = unescape(img_match.group(2).strip())
 
-            # For promotions pages, accept any non-empty image URL — promotional
-            # banners are often hosted on a different CDN than product images.
-            # For other pages, still enforce the strict host check.
-            is_promo_page = "promotions" in page_path
-            if not is_promo_page and not self._is_kfc_product_image(image_url):
+            # Only accept images that look like KFC product images
+            if not self._is_kfc_product_image(image_url):
                 continue
 
             # Extract title from h3.menu-item-name.
