@@ -39,19 +39,6 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-007e9a6c",
-    "title": "6PCS H&C CHICKEN WITH 4 PILLAF RICE",
-    "description": "KFC Sri Lanka: 6PCS H&C CHICKEN WITH 4 PILLAF RICE",
-    "category": "Special Promotions",
-    "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/6pcshcchickenwith4pillafriceac8c194ccd3443e6b83ec6d9c7302057.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "island-wide",
-    "discounted_price": 3990.0
-  },
-  {
     "id": "kfc-c5d3f335",
     "title": "ZESTY CRUNCH FULL CHICKEN",
     "description": "KFC Sri Lanka: ZESTY CRUNCH FULL CHICKEN",
