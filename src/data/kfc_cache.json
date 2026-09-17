@@ -39,29 +39,16 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-c5d3f335",
-    "title": "ZESTY CRUNCH FULL CHICKEN",
-    "description": "KFC Sri Lanka: ZESTY CRUNCH FULL CHICKEN",
+    "id": "kfc-9e089eb6",
+    "title": "SUPER SAVOURY SAWAN",
+    "description": "KFC Sri Lanka: SUPER SAVOURY SAWAN",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/zestycrunchfullchicken16506aecbbe74c3eab27ebbe579e28c4.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
-    "discounted_price": 2490.0
-  },
-  {
-    "id": "kfc-e5fe20f8",
-    "title": "ZESTY CRUNCH HALF CHICKEN",
-    "description": "KFC Sri Lanka: ZESTY CRUNCH HALF CHICKEN",
-    "category": "Special Promotions",
-    "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/zestycrunchhalfchicken0a165a5550d044219f1acbb9fffc7548.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "island-wide",
-    "discounted_price": 1490.0
+    "discounted_price": 3990.0
   }
 ]
