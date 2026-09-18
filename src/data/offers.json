@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 55,
+  "total_offers": 65,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -10,7 +10,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 3,
+      "count": 6,
       "offers": [
         {
           "id": "kfc-92ba5022",
@@ -59,6 +59,56 @@
           "is_fallback": false,
           "vendor_id": "kfc",
           "vendor_name": "KFC Sri Lanka"
+        },
+        {
+          "id": "kfc-6b7c265f",
+          "title": "BOGO FREE 6PC H&C BUCKET",
+          "description": "KFC Sri Lanka: BOGO FREE 6PC H&C BUCKET",
+          "category": "Special Promotions",
+          "section": "promotions",
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree6pchcbucketc1f5e8a393264503ac53c4fd21ba8048.jpg",
+          "deal_type": "Buy 1 Get 1 Free",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "location": "island-wide",
+          "discounted_price": 3990.0,
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka",
+          "ocr_verified": true
+        },
+        {
+          "id": "kfc-f51c8151",
+          "title": "BOGO FREE 8PC H&C BUCKET",
+          "description": "KFC Sri Lanka: BUY 1 GET 1 FREE",
+          "category": "Special Promotions",
+          "section": "promotions",
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree8pchcbucketa3205ea1b4a340db99db008267d8395b.jpg",
+          "deal_type": "Buy 1 Get 1 Free",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "location": "island-wide",
+          "discounted_price": 5390.0,
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka",
+          "ocr_verified": true
+        },
+        {
+          "id": "kfc-9e089eb6",
+          "title": "SUPER SAVOURY SAWAN",
+          "description": "KFC Sri Lanka: SUPER SAVOURY SAWAN",
+          "category": "Special Promotions",
+          "section": "promotions",
+          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+          "deal_type": "Special Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.kfc.lk/menu/promotions",
+          "location": "island-wide",
+          "discounted_price": 3990.0,
+          "is_fallback": false,
+          "vendor_id": "kfc",
+          "vendor_name": "KFC Sri Lanka"
         }
       ]
     },
@@ -68,7 +118,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.pizzahut.lk",
       "status": "live",
-      "count": 11,
+      "count": 17,
       "offers": [
         {
           "id": "pizzahut-j431",
@@ -210,6 +260,84 @@
           "deal_type": "Grand Dipper Deals",
           "valid_until": "Limited Time",
           "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer",
+          "is_fallback": false,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "pizzahut-b036",
+          "title": "Offer 1 - Weekend Vibes",
+          "description": "Pizza Hut Sri Lanka: ...",
+          "category": "Meal Deals",
+          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/f15c3b1e-0f19-435c-8f4e-2369565ec6aa.png",
+          "deal_type": "Weekend Vibes",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes1-buy-2-large-pan1-get-2000-off",
+          "is_fallback": false,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "pizzahut-b039",
+          "title": "Offer 2 - Weekend Vibes",
+          "description": "Pizza Hut Sri Lanka: ...",
+          "category": "Meal Deals",
+          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/58f5a446-8bb6-4581-a8b7-af26311a2cca.png",
+          "deal_type": "Weekend Vibes",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibe-buy-2-large-pan-get-1-free",
+          "is_fallback": false,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "pizzahut-b038",
+          "title": "Offer 3 - Weekend Vibes",
+          "description": "Pizza Hut Sri Lanka: ...",
+          "category": "Meal Deals",
+          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/1690898e-e859-4981-a8e7-a4bd74a4822a.jpg",
+          "deal_type": "Weekend Vibes",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-buy-2-gd-flex-get-2000-off",
+          "is_fallback": false,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "pizzahut-b041",
+          "title": "Offer 4 - Weekend Vibes",
+          "description": "Pizza Hut Sri Lanka: ...",
+          "category": "Meal Deals",
+          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/10abfb49-8f23-4b33-b1aa-12f692625716.png",
+          "deal_type": "Weekend Vibes",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibe-buy-2-gd-flex-delight-free",
+          "is_fallback": false,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "pizzahut-b037",
+          "title": "Offer 5 - Weekend Vibes",
+          "description": "Pizza Hut Sri Lanka: ...",
+          "category": "Meal Deals",
+          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/e4d88bf0-8f5e-442d-876d-c0dad9ad6cf3.jpg",
+          "deal_type": "Weekend Vibes",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes1-buy-2-medium-pan-get-1000-off",
+          "is_fallback": false,
+          "vendor_id": "pizzahut",
+          "vendor_name": "Pizza Hut Sri Lanka"
+        },
+        {
+          "id": "pizzahut-b042",
+          "title": "Offer 6 - Weekend Vibes",
+          "description": "Pizza Hut Sri Lanka: ...",
+          "category": "Meal Deals",
+          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/31e1a9f6-8895-4554-bcd4-b91082f39e79.jpg",
+          "deal_type": "Weekend Vibes",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-buy-2-medium-pan-get-1-free",
           "is_fallback": false,
           "vendor_id": "pizzahut",
           "vendor_name": "Pizza Hut Sri Lanka"
@@ -503,6 +631,48 @@
       "offers": [
         {
           "id": "ubereats-feed-1",
+          "title": "Keells Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Keells",
+          "category": "Store Promos",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/32b7fd6ebc11eeed91406e3f244a8bb4/1da9a9e826d15157cea1c5bb8696f248.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-feed-2",
+          "title": "Gifts by Flowers Haritha Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Gifts by Flowers Haritha",
+          "category": "Store Promos",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/485949cad7333c6afe649423d49a8a82/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-feed-3",
+          "title": "Wishque Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Wishque",
+          "category": "Store Promos",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9564637efff196fd93863efb217cfc69/4a9dc0556f3090689240dd59b4617ba7.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-feed-4",
           "title": "Celeste Daily Promotional Offer",
           "description": "Exclusive Uber Eats deal at Celeste Daily",
           "category": "Store Promos",
@@ -516,53 +686,11 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-2",
-          "title": "Online Kade Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Online Kade",
-          "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/479a6a4fb9a25f1fe0942bdcf00ece74/cdbf718e74f23061854f430977faed8b.png",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-feed-3",
-          "title": "Royal Super Food City Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Royal Super Food City",
-          "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/fbebbeae8c276f2f2caf81883f7c52db/4eed3468b168fc6e31dff0bb81a347bc.jpeg",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-feed-4",
-          "title": "Alerics Ice Cream  Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Alerics Ice Cream ",
-          "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/db9140c8c043fcecce363df1d3994bb9/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
           "id": "ubereats-feed-5",
-          "title": "Gastro Club by Saha Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Gastro Club by Saha",
+          "title": "Elegant Flowers Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Elegant Flowers",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/11ea5126b35e1ca8dc5fc7d7bdee0919/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/b80753265c276e74462712e0c7388f96/27e61c23ec521f1402b99cf98d1d6682.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -573,10 +701,10 @@
         },
         {
           "id": "ubereats-feed-6",
-          "title": "Supermart Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Supermart",
+          "title": "Flowers by Haritha Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Flowers by Haritha",
           "category": "Store Promos",
-          "image_url": "https://d1ralsognjng37.cloudfront.net/ff24a44b-49e8-4cb4-a54a-d5e1fed45671.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8d976d89b346ac38e4f05ba65952feec/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -587,10 +715,10 @@
         },
         {
           "id": "ubereats-feed-7",
-          "title": "Celeste Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Celeste",
+          "title": "Sugar World   Park Road Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/f77c58d49404db78d70a433798061ee0/aa13fff7e2466014ca51307be81e7738.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -601,10 +729,10 @@
         },
         {
           "id": "ubereats-feed-8",
-          "title": "Pets N Stuffs Colombo 05 Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Pets N Stuffs Colombo 05",
+          "title": "Choco Sensations Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Choco Sensations",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/07bec470ef986501545d03be75e20892/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -615,10 +743,10 @@
         },
         {
           "id": "ubereats-feed-9",
-          "title": "ZZ Mobile Accessories Promotional Offer",
-          "description": "Exclusive Uber Eats deal at ZZ Mobile Accessories",
+          "title": "Sandal Blossom Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Sandal Blossom",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9c06bf8cb158c138047d808a8bbaa1d8/27e61c23ec521f1402b99cf98d1d6682.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/c1ee1d08335274443565c9effe3f2b5a/268ee1a1296808aa6eae11eb597de84d.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -629,10 +757,10 @@
         },
         {
           "id": "ubereats-feed-10",
-          "title": "Saphera Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Saphera",
+          "title": "Ancient Nutra Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Ancient Nutra",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/d009afb31b27933fdd845f00251894cc/db809eadd12d21eb61044e0f3bf7c9b7.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/2e1269fb3e210fcb267183c73e2d6a19/aa13fff7e2466014ca51307be81e7738.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -643,10 +771,10 @@
         },
         {
           "id": "ubereats-feed-11",
-          "title": "Power Crunch Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Power Crunch",
+          "title": "Beauty City Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Beauty City",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/437e81fdde879c1366992fb770d2e998/aa13fff7e2466014ca51307be81e7738.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8fae05ebd1f55addcf55754a2caef0c2/27e61c23ec521f1402b99cf98d1d6682.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -657,10 +785,10 @@
         },
         {
           "id": "ubereats-feed-12",
-          "title": "Peppary Mart Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Peppary Mart",
+          "title": "BEAUTY CITY Promotional Offer",
+          "description": "Exclusive Uber Eats deal at BEAUTY CITY",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/c77a124bef691da748bb0c3a7461f234/268ee1a1296808aa6eae11eb597de84d.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/b5c1e7fca8630ca811dbf6296455cbc0/27e61c23ec521f1402b99cf98d1d6682.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -677,7 +805,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop",
       "website_url": "https://pickme.lk/services/food/",
       "status": "live",
-      "count": 17,
+      "count": 18,
       "offers": [
         {
           "id": "pickme-live-1",
@@ -713,6 +841,22 @@
         },
         {
           "id": "pickme-live-3",
+          "title": "PickMe Food - Your favourites, just a tap away",
+          "description": "PickMe Food Sri Lanka deal: Your favourites, just a tap away",
+          "category": "PickMe Promos",
+          "original_price": 1800.0,
+          "discounted_price": 1440.0,
+          "discount_percentage": 20,
+          "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&fit=crop",
+          "deal_type": "PickMe Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://pickme.lk/services/food/",
+          "is_fallback": false,
+          "vendor_id": "pickme",
+          "vendor_name": "PickMe Food"
+        },
+        {
+          "id": "pickme-live-4",
           "title": "PickMe Food - Satisfy Every Craving With Our Exceptional Food Delivery",
           "description": "PickMe Food Sri Lanka deal: Satisfy Every Craving With Our Exceptional Food Delivery",
           "category": "PickMe Promos",
@@ -728,7 +872,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-4",
+          "id": "pickme-live-5",
           "title": "PickMe Food - Your favourite brands at your fingertips.",
           "description": "PickMe Food Sri Lanka deal: Your favourite brands at your fingertips.",
           "category": "PickMe Promos",
@@ -744,7 +888,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-5",
+          "id": "pickme-live-6",
           "title": "PickMe Food - How long does delivery take?",
           "description": "PickMe Food Sri Lanka deal: How long does delivery take?",
           "category": "PickMe Promos",
@@ -760,7 +904,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-6",
+          "id": "pickme-live-7",
           "title": "PickMe Food - Can I schedule an order for later?",
           "description": "PickMe Food Sri Lanka deal: Can I schedule an order for later?",
           "category": "PickMe Promos",
@@ -776,7 +920,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-7",
+          "id": "pickme-live-8",
           "title": "PickMe Food - Can I place multiple orders at the same time?",
           "description": "PickMe Food Sri Lanka deal: Can I place multiple orders at the same time?",
           "category": "PickMe Promos",
@@ -792,7 +936,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-8",
+          "id": "pickme-live-9",
           "title": "PickMe Food - Can I order for someone else?",
           "description": "PickMe Food Sri Lanka deal: Can I order for someone else?",
           "category": "PickMe Promos",
@@ -808,7 +952,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-9",
+          "id": "pickme-live-10",
           "title": "PickMe Food - Can I pick up my order directly from the restaurant?",
           "description": "PickMe Food Sri Lanka deal: Can I pick up my order directly from the restaurant?",
           "category": "PickMe Promos",
@@ -824,7 +968,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-10",
+          "id": "pickme-live-11",
           "title": "PickMe Food - Can I cancel my order after placing it?",
           "description": "PickMe Food Sri Lanka deal: Can I cancel my order after placing it?",
           "category": "PickMe Promos",
@@ -840,7 +984,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-11",
+          "id": "pickme-live-12",
           "title": "PickMe Food - What happens if my order is delayed or not delivered?",
           "description": "PickMe Food Sri Lanka deal: What happens if my order is delayed or not delivered?",
           "category": "PickMe Promos",
@@ -856,7 +1000,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-12",
+          "id": "pickme-live-13",
           "title": "PickMe Food - What if I receive the wrong order or my food is missing items?",
           "description": "PickMe Food Sri Lanka deal: What if I receive the wrong order or my food is missing items?",
           "category": "PickMe Promos",
@@ -872,7 +1016,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-13",
+          "id": "pickme-live-14",
           "title": "PickMe Food - Can I modify my order after placing it?",
           "description": "PickMe Food Sri Lanka deal: Can I modify my order after placing it?",
           "category": "PickMe Promos",
@@ -888,7 +1032,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-14",
+          "id": "pickme-live-15",
           "title": "PickMe Food - How can I contact PickMe Food customer support?",
           "description": "PickMe Food Sri Lanka deal: How can I contact PickMe Food customer support?",
           "category": "PickMe Promos",
@@ -904,7 +1048,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-15",
+          "id": "pickme-live-16",
           "title": "PickMe Food - Why the prices of PickMe food is higher than the in-store prices?",
           "description": "PickMe Food Sri Lanka deal: Why the prices of PickMe food is higher than the in-store prices?",
           "category": "PickMe Promos",
@@ -920,7 +1064,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-16",
+          "id": "pickme-live-17",
           "title": "PickMe Food - Is PickMe Food available in all cities?",
           "description": "PickMe Food Sri Lanka deal: Is PickMe Food available in all cities?",
           "category": "PickMe Promos",
@@ -936,7 +1080,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-17",
+          "id": "pickme-live-18",
           "title": "PickMe Food - Can I order from multiple restaurants in one order?",
           "description": "PickMe Food Sri Lanka deal: Can I order from multiple restaurants in one order?",
           "category": "PickMe Promos",
@@ -999,6 +1143,56 @@
       "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
       "location": "island-wide",
       "discounted_price": 2530.0,
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka"
+    },
+    {
+      "id": "kfc-6b7c265f",
+      "title": "BOGO FREE 6PC H&C BUCKET",
+      "description": "KFC Sri Lanka: BOGO FREE 6PC H&C BUCKET",
+      "category": "Special Promotions",
+      "section": "promotions",
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree6pchcbucketc1f5e8a393264503ac53c4fd21ba8048.jpg",
+      "deal_type": "Buy 1 Get 1 Free",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "location": "island-wide",
+      "discounted_price": 3990.0,
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka",
+      "ocr_verified": true
+    },
+    {
+      "id": "kfc-f51c8151",
+      "title": "BOGO FREE 8PC H&C BUCKET",
+      "description": "KFC Sri Lanka: BUY 1 GET 1 FREE",
+      "category": "Special Promotions",
+      "section": "promotions",
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree8pchcbucketa3205ea1b4a340db99db008267d8395b.jpg",
+      "deal_type": "Buy 1 Get 1 Free",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "location": "island-wide",
+      "discounted_price": 5390.0,
+      "is_fallback": false,
+      "vendor_id": "kfc",
+      "vendor_name": "KFC Sri Lanka",
+      "ocr_verified": true
+    },
+    {
+      "id": "kfc-9e089eb6",
+      "title": "SUPER SAVOURY SAWAN",
+      "description": "KFC Sri Lanka: SUPER SAVOURY SAWAN",
+      "category": "Special Promotions",
+      "section": "promotions",
+      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/savourysawan2pepsi400mlcfdeed02118d4fa1820d019fe67e974d.jpg",
+      "deal_type": "Special Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.kfc.lk/menu/promotions",
+      "location": "island-wide",
+      "discounted_price": 3990.0,
       "is_fallback": false,
       "vendor_id": "kfc",
       "vendor_name": "KFC Sri Lanka"
@@ -1143,6 +1337,84 @@
       "deal_type": "Grand Dipper Deals",
       "valid_until": "Limited Time",
       "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer",
+      "is_fallback": false,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
+      "id": "pizzahut-b036",
+      "title": "Offer 1 - Weekend Vibes",
+      "description": "Pizza Hut Sri Lanka: ...",
+      "category": "Meal Deals",
+      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/f15c3b1e-0f19-435c-8f4e-2369565ec6aa.png",
+      "deal_type": "Weekend Vibes",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes1-buy-2-large-pan1-get-2000-off",
+      "is_fallback": false,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
+      "id": "pizzahut-b039",
+      "title": "Offer 2 - Weekend Vibes",
+      "description": "Pizza Hut Sri Lanka: ...",
+      "category": "Meal Deals",
+      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/58f5a446-8bb6-4581-a8b7-af26311a2cca.png",
+      "deal_type": "Weekend Vibes",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibe-buy-2-large-pan-get-1-free",
+      "is_fallback": false,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
+      "id": "pizzahut-b038",
+      "title": "Offer 3 - Weekend Vibes",
+      "description": "Pizza Hut Sri Lanka: ...",
+      "category": "Meal Deals",
+      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/1690898e-e859-4981-a8e7-a4bd74a4822a.jpg",
+      "deal_type": "Weekend Vibes",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-buy-2-gd-flex-get-2000-off",
+      "is_fallback": false,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
+      "id": "pizzahut-b041",
+      "title": "Offer 4 - Weekend Vibes",
+      "description": "Pizza Hut Sri Lanka: ...",
+      "category": "Meal Deals",
+      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/10abfb49-8f23-4b33-b1aa-12f692625716.png",
+      "deal_type": "Weekend Vibes",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibe-buy-2-gd-flex-delight-free",
+      "is_fallback": false,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
+      "id": "pizzahut-b037",
+      "title": "Offer 5 - Weekend Vibes",
+      "description": "Pizza Hut Sri Lanka: ...",
+      "category": "Meal Deals",
+      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/e4d88bf0-8f5e-442d-876d-c0dad9ad6cf3.jpg",
+      "deal_type": "Weekend Vibes",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes1-buy-2-medium-pan-get-1000-off",
+      "is_fallback": false,
+      "vendor_id": "pizzahut",
+      "vendor_name": "Pizza Hut Sri Lanka"
+    },
+    {
+      "id": "pizzahut-b042",
+      "title": "Offer 6 - Weekend Vibes",
+      "description": "Pizza Hut Sri Lanka: ...",
+      "category": "Meal Deals",
+      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/31e1a9f6-8895-4554-bcd4-b91082f39e79.jpg",
+      "deal_type": "Weekend Vibes",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-buy-2-medium-pan-get-1-free",
       "is_fallback": false,
       "vendor_id": "pizzahut",
       "vendor_name": "Pizza Hut Sri Lanka"
@@ -1333,6 +1605,48 @@
     },
     {
       "id": "ubereats-feed-1",
+      "title": "Keells Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Keells",
+      "category": "Store Promos",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/32b7fd6ebc11eeed91406e3f244a8bb4/1da9a9e826d15157cea1c5bb8696f248.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-feed-2",
+      "title": "Gifts by Flowers Haritha Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Gifts by Flowers Haritha",
+      "category": "Store Promos",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/485949cad7333c6afe649423d49a8a82/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-feed-3",
+      "title": "Wishque Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Wishque",
+      "category": "Store Promos",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9564637efff196fd93863efb217cfc69/4a9dc0556f3090689240dd59b4617ba7.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-feed-4",
       "title": "Celeste Daily Promotional Offer",
       "description": "Exclusive Uber Eats deal at Celeste Daily",
       "category": "Store Promos",
@@ -1346,53 +1660,11 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-2",
-      "title": "Online Kade Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Online Kade",
-      "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/479a6a4fb9a25f1fe0942bdcf00ece74/cdbf718e74f23061854f430977faed8b.png",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-feed-3",
-      "title": "Royal Super Food City Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Royal Super Food City",
-      "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/fbebbeae8c276f2f2caf81883f7c52db/4eed3468b168fc6e31dff0bb81a347bc.jpeg",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-feed-4",
-      "title": "Alerics Ice Cream  Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Alerics Ice Cream ",
-      "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/db9140c8c043fcecce363df1d3994bb9/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
       "id": "ubereats-feed-5",
-      "title": "Gastro Club by Saha Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Gastro Club by Saha",
+      "title": "Elegant Flowers Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Elegant Flowers",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/11ea5126b35e1ca8dc5fc7d7bdee0919/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/b80753265c276e74462712e0c7388f96/27e61c23ec521f1402b99cf98d1d6682.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1403,10 +1675,10 @@
     },
     {
       "id": "ubereats-feed-6",
-      "title": "Supermart Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Supermart",
+      "title": "Flowers by Haritha Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Flowers by Haritha",
       "category": "Store Promos",
-      "image_url": "https://d1ralsognjng37.cloudfront.net/ff24a44b-49e8-4cb4-a54a-d5e1fed45671.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8d976d89b346ac38e4f05ba65952feec/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1417,10 +1689,10 @@
     },
     {
       "id": "ubereats-feed-7",
-      "title": "Celeste Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Celeste",
+      "title": "Sugar World   Park Road Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/f77c58d49404db78d70a433798061ee0/aa13fff7e2466014ca51307be81e7738.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1431,10 +1703,10 @@
     },
     {
       "id": "ubereats-feed-8",
-      "title": "Pets N Stuffs Colombo 05 Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Pets N Stuffs Colombo 05",
+      "title": "Choco Sensations Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Choco Sensations",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/07bec470ef986501545d03be75e20892/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1445,10 +1717,10 @@
     },
     {
       "id": "ubereats-feed-9",
-      "title": "ZZ Mobile Accessories Promotional Offer",
-      "description": "Exclusive Uber Eats deal at ZZ Mobile Accessories",
+      "title": "Sandal Blossom Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Sandal Blossom",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9c06bf8cb158c138047d808a8bbaa1d8/27e61c23ec521f1402b99cf98d1d6682.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/c1ee1d08335274443565c9effe3f2b5a/268ee1a1296808aa6eae11eb597de84d.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1459,10 +1731,10 @@
     },
     {
       "id": "ubereats-feed-10",
-      "title": "Saphera Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Saphera",
+      "title": "Ancient Nutra Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Ancient Nutra",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/d009afb31b27933fdd845f00251894cc/db809eadd12d21eb61044e0f3bf7c9b7.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/2e1269fb3e210fcb267183c73e2d6a19/aa13fff7e2466014ca51307be81e7738.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1473,10 +1745,10 @@
     },
     {
       "id": "ubereats-feed-11",
-      "title": "Power Crunch Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Power Crunch",
+      "title": "Beauty City Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Beauty City",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/437e81fdde879c1366992fb770d2e998/aa13fff7e2466014ca51307be81e7738.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8fae05ebd1f55addcf55754a2caef0c2/27e61c23ec521f1402b99cf98d1d6682.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1487,10 +1759,10 @@
     },
     {
       "id": "ubereats-feed-12",
-      "title": "Peppary Mart Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Peppary Mart",
+      "title": "BEAUTY CITY Promotional Offer",
+      "description": "Exclusive Uber Eats deal at BEAUTY CITY",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/c77a124bef691da748bb0c3a7461f234/268ee1a1296808aa6eae11eb597de84d.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/b5c1e7fca8630ca811dbf6296455cbc0/27e61c23ec521f1402b99cf98d1d6682.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1533,6 +1805,22 @@
     },
     {
       "id": "pickme-live-3",
+      "title": "PickMe Food - Your favourites, just a tap away",
+      "description": "PickMe Food Sri Lanka deal: Your favourites, just a tap away",
+      "category": "PickMe Promos",
+      "original_price": 1800.0,
+      "discounted_price": 1440.0,
+      "discount_percentage": 20,
+      "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&fit=crop",
+      "deal_type": "PickMe Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://pickme.lk/services/food/",
+      "is_fallback": false,
+      "vendor_id": "pickme",
+      "vendor_name": "PickMe Food"
+    },
+    {
+      "id": "pickme-live-4",
       "title": "PickMe Food - Satisfy Every Craving With Our Exceptional Food Delivery",
       "description": "PickMe Food Sri Lanka deal: Satisfy Every Craving With Our Exceptional Food Delivery",
       "category": "PickMe Promos",
@@ -1548,7 +1836,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-4",
+      "id": "pickme-live-5",
       "title": "PickMe Food - Your favourite brands at your fingertips.",
       "description": "PickMe Food Sri Lanka deal: Your favourite brands at your fingertips.",
       "category": "PickMe Promos",
@@ -1564,7 +1852,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-5",
+      "id": "pickme-live-6",
       "title": "PickMe Food - How long does delivery take?",
       "description": "PickMe Food Sri Lanka deal: How long does delivery take?",
       "category": "PickMe Promos",
@@ -1580,7 +1868,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-6",
+      "id": "pickme-live-7",
       "title": "PickMe Food - Can I schedule an order for later?",
       "description": "PickMe Food Sri Lanka deal: Can I schedule an order for later?",
       "category": "PickMe Promos",
@@ -1596,7 +1884,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-7",
+      "id": "pickme-live-8",
       "title": "PickMe Food - Can I place multiple orders at the same time?",
       "description": "PickMe Food Sri Lanka deal: Can I place multiple orders at the same time?",
       "category": "PickMe Promos",
@@ -1612,7 +1900,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-8",
+      "id": "pickme-live-9",
       "title": "PickMe Food - Can I order for someone else?",
       "description": "PickMe Food Sri Lanka deal: Can I order for someone else?",
       "category": "PickMe Promos",
@@ -1628,7 +1916,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-9",
+      "id": "pickme-live-10",
       "title": "PickMe Food - Can I pick up my order directly from the restaurant?",
       "description": "PickMe Food Sri Lanka deal: Can I pick up my order directly from the restaurant?",
       "category": "PickMe Promos",
@@ -1644,7 +1932,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-10",
+      "id": "pickme-live-11",
       "title": "PickMe Food - Can I cancel my order after placing it?",
       "description": "PickMe Food Sri Lanka deal: Can I cancel my order after placing it?",
       "category": "PickMe Promos",
@@ -1660,7 +1948,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-11",
+      "id": "pickme-live-12",
       "title": "PickMe Food - What happens if my order is delayed or not delivered?",
       "description": "PickMe Food Sri Lanka deal: What happens if my order is delayed or not delivered?",
       "category": "PickMe Promos",
@@ -1676,7 +1964,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-12",
+      "id": "pickme-live-13",
       "title": "PickMe Food - What if I receive the wrong order or my food is missing items?",
       "description": "PickMe Food Sri Lanka deal: What if I receive the wrong order or my food is missing items?",
       "category": "PickMe Promos",
@@ -1692,7 +1980,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-13",
+      "id": "pickme-live-14",
       "title": "PickMe Food - Can I modify my order after placing it?",
       "description": "PickMe Food Sri Lanka deal: Can I modify my order after placing it?",
       "category": "PickMe Promos",
@@ -1708,7 +1996,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-14",
+      "id": "pickme-live-15",
       "title": "PickMe Food - How can I contact PickMe Food customer support?",
       "description": "PickMe Food Sri Lanka deal: How can I contact PickMe Food customer support?",
       "category": "PickMe Promos",
@@ -1724,7 +2012,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-15",
+      "id": "pickme-live-16",
       "title": "PickMe Food - Why the prices of PickMe food is higher than the in-store prices?",
       "description": "PickMe Food Sri Lanka deal: Why the prices of PickMe food is higher than the in-store prices?",
       "category": "PickMe Promos",
@@ -1740,7 +2028,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-16",
+      "id": "pickme-live-17",
       "title": "PickMe Food - Is PickMe Food available in all cities?",
       "description": "PickMe Food Sri Lanka deal: Is PickMe Food available in all cities?",
       "category": "PickMe Promos",
@@ -1756,7 +2044,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-17",
+      "id": "pickme-live-18",
       "title": "PickMe Food - Can I order from multiple restaurants in one order?",
       "description": "PickMe Food Sri Lanka deal: Can I order from multiple restaurants in one order?",
       "category": "PickMe Promos",
@@ -1772,5 +2060,5 @@
       "vendor_name": "PickMe Food"
     }
   ],
-  "last_updated": "2026-09-17T19:49:28.717772+00:00"
+  "last_updated": "2026-09-18T05:01:50.043535+00:00"
 }
