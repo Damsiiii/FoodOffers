@@ -13,6 +13,45 @@
     "discounted_price": 2920.0
   },
   {
+    "id": "kfc-8a99cf44",
+    "title": "FAMILY 2 PCS MEAL FOR DELIVERY",
+    "description": "KFC Sri Lanka: 2 PCS + 01Rice piilaf + 01Onion sambol + 01Gravy + 01 Pepsi (400ml)",
+    "category": "Meals & Combos",
+    "section": "meals",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/family2pcsmealfordelivery2dbf6f4d71cd4d27a130a0e95d1c7959.jpg",
+    "deal_type": "Meal Deal",
+    "valid_until": "Daily Menu",
+    "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
+    "location": "island-wide",
+    "discounted_price": 2290.0
+  },
+  {
+    "id": "kfc-9aabf327",
+    "title": "FAMILY 4 PCS MEAL FOR DELIVERY",
+    "description": "KFC Sri Lanka: 4 PCS + 02 Rice piilaf + 02 Onion sambol + 02 Gravy + 01 Pepsi (400ml)",
+    "category": "Meals & Combos",
+    "section": "meals",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/family4pcsmealfordelivery2c6ee0cea46a46008c1f9261b9b12586.jpg",
+    "deal_type": "Meal Deal",
+    "valid_until": "Daily Menu",
+    "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
+    "location": "island-wide",
+    "discounted_price": 4180.0
+  },
+  {
+    "id": "kfc-02be2698",
+    "title": "FAMILY 8 PCS MEAL FOR DELIVERY",
+    "description": "KFC Sri Lanka: 8 PCS + 04 Rice piilaf + 04 Onion sambol + 04 Gravy + 02 Pepsi (400ml)",
+    "category": "Meals & Combos",
+    "section": "meals",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/family8pcsmealfordeliverycbda9d0efc0c4d21a863e94637e3b58a.jpg",
+    "deal_type": "Meal Deal",
+    "valid_until": "Daily Menu",
+    "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
+    "location": "island-wide",
+    "discounted_price": 8310.0
+  },
+  {
     "id": "kfc-5af8cfc2",
     "title": "TWISTER COMBO + 400ML PEPSI",
     "description": "KFC Sri Lanka: KFC Twister + 01pc Hot and Crispy Chicken + 400ml Pepsi",
