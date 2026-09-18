@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 56,
+  "total_offers": 55,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -607,12 +607,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 5,
+      "count": 3,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "Saveira Indian Restaurant",
+          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -639,36 +639,8 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-4",
-          "title": "25% off",
-          "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-5",
-          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+          "title": "Coffee Colombo",
+          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -687,7 +659,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop",
       "website_url": "https://pickme.lk/services/food/",
       "status": "live",
-      "count": 17,
+      "count": 18,
       "offers": [
         {
           "id": "pickme-live-1",
@@ -723,6 +695,22 @@
         },
         {
           "id": "pickme-live-3",
+          "title": "PickMe Food - Your favourites, just a tap away",
+          "description": "PickMe Food Sri Lanka deal: Your favourites, just a tap away",
+          "category": "PickMe Promos",
+          "original_price": 1800.0,
+          "discounted_price": 1440.0,
+          "discount_percentage": 20,
+          "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&fit=crop",
+          "deal_type": "PickMe Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://pickme.lk/services/food/",
+          "is_fallback": false,
+          "vendor_id": "pickme",
+          "vendor_name": "PickMe Food"
+        },
+        {
+          "id": "pickme-live-4",
           "title": "PickMe Food - Satisfy Every Craving With Our Exceptional Food Delivery",
           "description": "PickMe Food Sri Lanka deal: Satisfy Every Craving With Our Exceptional Food Delivery",
           "category": "PickMe Promos",
@@ -738,7 +726,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-4",
+          "id": "pickme-live-5",
           "title": "PickMe Food - Your favourite brands at your fingertips.",
           "description": "PickMe Food Sri Lanka deal: Your favourite brands at your fingertips.",
           "category": "PickMe Promos",
@@ -754,7 +742,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-5",
+          "id": "pickme-live-6",
           "title": "PickMe Food - How long does delivery take?",
           "description": "PickMe Food Sri Lanka deal: How long does delivery take?",
           "category": "PickMe Promos",
@@ -770,7 +758,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-6",
+          "id": "pickme-live-7",
           "title": "PickMe Food - Can I schedule an order for later?",
           "description": "PickMe Food Sri Lanka deal: Can I schedule an order for later?",
           "category": "PickMe Promos",
@@ -786,7 +774,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-7",
+          "id": "pickme-live-8",
           "title": "PickMe Food - Can I place multiple orders at the same time?",
           "description": "PickMe Food Sri Lanka deal: Can I place multiple orders at the same time?",
           "category": "PickMe Promos",
@@ -802,7 +790,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-8",
+          "id": "pickme-live-9",
           "title": "PickMe Food - Can I order for someone else?",
           "description": "PickMe Food Sri Lanka deal: Can I order for someone else?",
           "category": "PickMe Promos",
@@ -818,7 +806,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-9",
+          "id": "pickme-live-10",
           "title": "PickMe Food - Can I pick up my order directly from the restaurant?",
           "description": "PickMe Food Sri Lanka deal: Can I pick up my order directly from the restaurant?",
           "category": "PickMe Promos",
@@ -834,7 +822,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-10",
+          "id": "pickme-live-11",
           "title": "PickMe Food - Can I cancel my order after placing it?",
           "description": "PickMe Food Sri Lanka deal: Can I cancel my order after placing it?",
           "category": "PickMe Promos",
@@ -850,7 +838,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-11",
+          "id": "pickme-live-12",
           "title": "PickMe Food - What happens if my order is delayed or not delivered?",
           "description": "PickMe Food Sri Lanka deal: What happens if my order is delayed or not delivered?",
           "category": "PickMe Promos",
@@ -866,7 +854,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-12",
+          "id": "pickme-live-13",
           "title": "PickMe Food - What if I receive the wrong order or my food is missing items?",
           "description": "PickMe Food Sri Lanka deal: What if I receive the wrong order or my food is missing items?",
           "category": "PickMe Promos",
@@ -882,7 +870,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-13",
+          "id": "pickme-live-14",
           "title": "PickMe Food - Can I modify my order after placing it?",
           "description": "PickMe Food Sri Lanka deal: Can I modify my order after placing it?",
           "category": "PickMe Promos",
@@ -898,7 +886,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-14",
+          "id": "pickme-live-15",
           "title": "PickMe Food - How can I contact PickMe Food customer support?",
           "description": "PickMe Food Sri Lanka deal: How can I contact PickMe Food customer support?",
           "category": "PickMe Promos",
@@ -914,7 +902,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-15",
+          "id": "pickme-live-16",
           "title": "PickMe Food - Why the prices of PickMe food is higher than the in-store prices?",
           "description": "PickMe Food Sri Lanka deal: Why the prices of PickMe food is higher than the in-store prices?",
           "category": "PickMe Promos",
@@ -930,7 +918,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-16",
+          "id": "pickme-live-17",
           "title": "PickMe Food - Is PickMe Food available in all cities?",
           "description": "PickMe Food Sri Lanka deal: Is PickMe Food available in all cities?",
           "category": "PickMe Promos",
@@ -946,7 +934,7 @@
           "vendor_name": "PickMe Food"
         },
         {
-          "id": "pickme-live-17",
+          "id": "pickme-live-18",
           "title": "PickMe Food - Can I order from multiple restaurants in one order?",
           "description": "PickMe Food Sri Lanka deal: Can I order from multiple restaurants in one order?",
           "category": "PickMe Promos",
@@ -1451,8 +1439,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "Saveira Indian Restaurant",
+      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1479,36 +1467,8 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-4",
-      "title": "25% off",
-      "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-5",
-      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+      "title": "Coffee Colombo",
+      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1553,6 +1513,22 @@
     },
     {
       "id": "pickme-live-3",
+      "title": "PickMe Food - Your favourites, just a tap away",
+      "description": "PickMe Food Sri Lanka deal: Your favourites, just a tap away",
+      "category": "PickMe Promos",
+      "original_price": 1800.0,
+      "discounted_price": 1440.0,
+      "discount_percentage": 20,
+      "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&fit=crop",
+      "deal_type": "PickMe Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://pickme.lk/services/food/",
+      "is_fallback": false,
+      "vendor_id": "pickme",
+      "vendor_name": "PickMe Food"
+    },
+    {
+      "id": "pickme-live-4",
       "title": "PickMe Food - Satisfy Every Craving With Our Exceptional Food Delivery",
       "description": "PickMe Food Sri Lanka deal: Satisfy Every Craving With Our Exceptional Food Delivery",
       "category": "PickMe Promos",
@@ -1568,7 +1544,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-4",
+      "id": "pickme-live-5",
       "title": "PickMe Food - Your favourite brands at your fingertips.",
       "description": "PickMe Food Sri Lanka deal: Your favourite brands at your fingertips.",
       "category": "PickMe Promos",
@@ -1584,7 +1560,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-5",
+      "id": "pickme-live-6",
       "title": "PickMe Food - How long does delivery take?",
       "description": "PickMe Food Sri Lanka deal: How long does delivery take?",
       "category": "PickMe Promos",
@@ -1600,7 +1576,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-6",
+      "id": "pickme-live-7",
       "title": "PickMe Food - Can I schedule an order for later?",
       "description": "PickMe Food Sri Lanka deal: Can I schedule an order for later?",
       "category": "PickMe Promos",
@@ -1616,7 +1592,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-7",
+      "id": "pickme-live-8",
       "title": "PickMe Food - Can I place multiple orders at the same time?",
       "description": "PickMe Food Sri Lanka deal: Can I place multiple orders at the same time?",
       "category": "PickMe Promos",
@@ -1632,7 +1608,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-8",
+      "id": "pickme-live-9",
       "title": "PickMe Food - Can I order for someone else?",
       "description": "PickMe Food Sri Lanka deal: Can I order for someone else?",
       "category": "PickMe Promos",
@@ -1648,7 +1624,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-9",
+      "id": "pickme-live-10",
       "title": "PickMe Food - Can I pick up my order directly from the restaurant?",
       "description": "PickMe Food Sri Lanka deal: Can I pick up my order directly from the restaurant?",
       "category": "PickMe Promos",
@@ -1664,7 +1640,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-10",
+      "id": "pickme-live-11",
       "title": "PickMe Food - Can I cancel my order after placing it?",
       "description": "PickMe Food Sri Lanka deal: Can I cancel my order after placing it?",
       "category": "PickMe Promos",
@@ -1680,7 +1656,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-11",
+      "id": "pickme-live-12",
       "title": "PickMe Food - What happens if my order is delayed or not delivered?",
       "description": "PickMe Food Sri Lanka deal: What happens if my order is delayed or not delivered?",
       "category": "PickMe Promos",
@@ -1696,7 +1672,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-12",
+      "id": "pickme-live-13",
       "title": "PickMe Food - What if I receive the wrong order or my food is missing items?",
       "description": "PickMe Food Sri Lanka deal: What if I receive the wrong order or my food is missing items?",
       "category": "PickMe Promos",
@@ -1712,7 +1688,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-13",
+      "id": "pickme-live-14",
       "title": "PickMe Food - Can I modify my order after placing it?",
       "description": "PickMe Food Sri Lanka deal: Can I modify my order after placing it?",
       "category": "PickMe Promos",
@@ -1728,7 +1704,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-14",
+      "id": "pickme-live-15",
       "title": "PickMe Food - How can I contact PickMe Food customer support?",
       "description": "PickMe Food Sri Lanka deal: How can I contact PickMe Food customer support?",
       "category": "PickMe Promos",
@@ -1744,7 +1720,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-15",
+      "id": "pickme-live-16",
       "title": "PickMe Food - Why the prices of PickMe food is higher than the in-store prices?",
       "description": "PickMe Food Sri Lanka deal: Why the prices of PickMe food is higher than the in-store prices?",
       "category": "PickMe Promos",
@@ -1760,7 +1736,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-16",
+      "id": "pickme-live-17",
       "title": "PickMe Food - Is PickMe Food available in all cities?",
       "description": "PickMe Food Sri Lanka deal: Is PickMe Food available in all cities?",
       "category": "PickMe Promos",
@@ -1776,7 +1752,7 @@
       "vendor_name": "PickMe Food"
     },
     {
-      "id": "pickme-live-17",
+      "id": "pickme-live-18",
       "title": "PickMe Food - Can I order from multiple restaurants in one order?",
       "description": "PickMe Food Sri Lanka deal: Can I order from multiple restaurants in one order?",
       "category": "PickMe Promos",
@@ -1792,5 +1768,5 @@
       "vendor_name": "PickMe Food"
     }
   ],
-  "last_updated": "2026-09-18T13:44:43.276140+00:00"
+  "last_updated": "2026-09-18T15:05:11.198660+00:00"
 }
