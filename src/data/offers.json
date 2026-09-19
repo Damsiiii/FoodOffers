@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 35,
+  "total_offers": 36,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -573,14 +573,14 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 3,
+      "count": 4,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "title": "25% off",
+          "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
           "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/77e7fb4d92dbbe9c781fe5b58f3b30a6/e0b5f48f76ed66702f2c6f7df0cab2dd.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -591,8 +591,22 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+          "category": "Delivery Deals",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/317733b58a9c6d9fb88a700f520356a7/e0b5f48f76ed66702f2c6f7df0cab2dd.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-dom-3",
+          "title": "15% off",
+          "description": "Uber Eats Sri Lanka promotion: 15% off\nLKR 161.50 LKR 190.00\nDettol Skincare-Soap 100G - SKU 001182",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -604,9 +618,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-3",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
+          "id": "ubereats-dom-4",
+          "title": "20% off",
+          "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 620.00 LKR 775.00\nSunsilk Nourishing Soft & Smooth Conditioner 180Ml - SKU 001374",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -1082,10 +1096,10 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "title": "25% off",
+      "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
       "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/77e7fb4d92dbbe9c781fe5b58f3b30a6/e0b5f48f76ed66702f2c6f7df0cab2dd.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1096,8 +1110,22 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+      "category": "Delivery Deals",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/317733b58a9c6d9fb88a700f520356a7/e0b5f48f76ed66702f2c6f7df0cab2dd.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-dom-3",
+      "title": "15% off",
+      "description": "Uber Eats Sri Lanka promotion: 15% off\nLKR 161.50 LKR 190.00\nDettol Skincare-Soap 100G - SKU 001182",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1109,9 +1137,9 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-3",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
+      "id": "ubereats-dom-4",
+      "title": "20% off",
+      "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 620.00 LKR 775.00\nSunsilk Nourishing Soft & Smooth Conditioner 180Ml - SKU 001374",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1123,5 +1151,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-19T14:35:36.666812+00:00"
+  "last_updated": "2026-09-19T16:49:13.087658+00:00"
 }
