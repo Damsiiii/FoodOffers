@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 35,
+  "total_offers": 36,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -573,12 +573,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 3,
+      "count": 4,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
+          "title": "Croffle SL",
+          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -591,6 +591,20 @@
         },
         {
           "id": "ubereats-dom-2",
+          "title": "Coffee Colombo",
+          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "category": "Delivery Deals",
+          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-dom-3",
           "title": "Saveira Indian Restaurant",
           "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
           "category": "Delivery Deals",
@@ -604,9 +618,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-3",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+          "id": "ubereats-dom-4",
+          "title": "SaveMo",
+          "description": "Uber Eats Sri Lanka promotion: SaveMo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -1082,8 +1096,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
+      "title": "Croffle SL",
+      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1096,6 +1110,20 @@
     },
     {
       "id": "ubereats-dom-2",
+      "title": "Coffee Colombo",
+      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "category": "Delivery Deals",
+      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-dom-3",
       "title": "Saveira Indian Restaurant",
       "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
       "category": "Delivery Deals",
@@ -1109,9 +1137,9 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-3",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
+      "id": "ubereats-dom-4",
+      "title": "SaveMo",
+      "description": "Uber Eats Sri Lanka promotion: SaveMo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1123,5 +1151,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-19T11:52:25.432695+00:00"
+  "last_updated": "2026-09-19T13:17:46.308856+00:00"
 }
