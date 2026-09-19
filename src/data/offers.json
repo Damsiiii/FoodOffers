@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 39,
+  "total_offers": 35,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -573,12 +573,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 7,
+      "count": 3,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Croffle SL",
-          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
+          "title": "SaveMo",
+          "description": "Uber Eats Sri Lanka promotion: SaveMo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -605,62 +605,6 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-4",
-          "title": "25% off",
-          "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-5",
-          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-6",
-          "title": "Barista Coffee",
-          "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-7",
           "title": "Coffee Colombo",
           "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
@@ -1138,8 +1082,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Croffle SL",
-      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
+      "title": "SaveMo",
+      "description": "Uber Eats Sri Lanka promotion: SaveMo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1166,62 +1110,6 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-4",
-      "title": "25% off",
-      "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-5",
-      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-6",
-      "title": "Barista Coffee",
-      "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-7",
       "title": "Coffee Colombo",
       "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
@@ -1235,5 +1123,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-19T09:07:26.856720+00:00"
+  "last_updated": "2026-09-19T11:52:25.432695+00:00"
 }
