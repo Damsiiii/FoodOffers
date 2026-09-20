@@ -605,10 +605,10 @@
         },
         {
           "id": "ubereats-feed-3",
-          "title": "Flowers by Haritha Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Flowers by Haritha",
+          "title": "Alerics Ice Cream  Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Alerics Ice Cream ",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8d976d89b346ac38e4f05ba65952feec/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/db9140c8c043fcecce363df1d3994bb9/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -633,10 +633,10 @@
         },
         {
           "id": "ubereats-feed-5",
-          "title": "Tayo Bear Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Tayo Bear",
+          "title": "Flowers by Haritha Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Flowers by Haritha",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7949bf24f8bdb06d68329fc38d9a6610/aa13fff7e2466014ca51307be81e7738.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8d976d89b346ac38e4f05ba65952feec/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -647,10 +647,10 @@
         },
         {
           "id": "ubereats-feed-6",
-          "title": "Shirohana Romantico Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Shirohana Romantico",
+          "title": "Sugar World   Park Road Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7670e096d196b403f13357a513bfab48/5283d81c664b43c5f57a3a186d273063.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -675,20 +675,6 @@
         },
         {
           "id": "ubereats-feed-8",
-          "title": "Oopsy Daisy Flowers Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Oopsy Daisy Flowers",
-          "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/fa2c8707bde6c11b30bfe698c6d11fb3/27e61c23ec521f1402b99cf98d1d6682.jpeg",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-feed-9",
           "title": "Sugar World Promotional Offer",
           "description": "Exclusive Uber Eats deal at Sugar World",
           "category": "Store Promos",
@@ -702,7 +688,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-10",
+          "id": "ubereats-feed-9",
           "title": "Sandal Blossom Promotional Offer",
           "description": "Exclusive Uber Eats deal at Sandal Blossom",
           "category": "Store Promos",
@@ -716,11 +702,25 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-11",
-          "title": "Ancient Nutra Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Ancient Nutra",
+          "id": "ubereats-feed-10",
+          "title": "Shirohana Romantico Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Shirohana Romantico",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/2e1269fb3e210fcb267183c73e2d6a19/aa13fff7e2466014ca51307be81e7738.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7670e096d196b403f13357a513bfab48/5283d81c664b43c5f57a3a186d273063.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-feed-11",
+          "title": "Perfuma Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Perfuma",
+          "category": "Store Promos",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9d999cbcdd2267f207f5d1b036510688/268ee1a1296808aa6eae11eb597de84d.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1236,10 +1236,10 @@
     },
     {
       "id": "ubereats-feed-3",
-      "title": "Flowers by Haritha Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Flowers by Haritha",
+      "title": "Alerics Ice Cream  Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Alerics Ice Cream ",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8d976d89b346ac38e4f05ba65952feec/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/db9140c8c043fcecce363df1d3994bb9/c9252e6c6cd289c588c3381bc77b1dfc.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1264,10 +1264,10 @@
     },
     {
       "id": "ubereats-feed-5",
-      "title": "Tayo Bear Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Tayo Bear",
+      "title": "Flowers by Haritha Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Flowers by Haritha",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7949bf24f8bdb06d68329fc38d9a6610/aa13fff7e2466014ca51307be81e7738.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8d976d89b346ac38e4f05ba65952feec/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1278,10 +1278,10 @@
     },
     {
       "id": "ubereats-feed-6",
-      "title": "Shirohana Romantico Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Shirohana Romantico",
+      "title": "Sugar World   Park Road Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7670e096d196b403f13357a513bfab48/5283d81c664b43c5f57a3a186d273063.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1306,20 +1306,6 @@
     },
     {
       "id": "ubereats-feed-8",
-      "title": "Oopsy Daisy Flowers Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Oopsy Daisy Flowers",
-      "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/fa2c8707bde6c11b30bfe698c6d11fb3/27e61c23ec521f1402b99cf98d1d6682.jpeg",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-feed-9",
       "title": "Sugar World Promotional Offer",
       "description": "Exclusive Uber Eats deal at Sugar World",
       "category": "Store Promos",
@@ -1333,7 +1319,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-10",
+      "id": "ubereats-feed-9",
       "title": "Sandal Blossom Promotional Offer",
       "description": "Exclusive Uber Eats deal at Sandal Blossom",
       "category": "Store Promos",
@@ -1347,11 +1333,25 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-11",
-      "title": "Ancient Nutra Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Ancient Nutra",
+      "id": "ubereats-feed-10",
+      "title": "Shirohana Romantico Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Shirohana Romantico",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/2e1269fb3e210fcb267183c73e2d6a19/aa13fff7e2466014ca51307be81e7738.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7670e096d196b403f13357a513bfab48/5283d81c664b43c5f57a3a186d273063.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-feed-11",
+      "title": "Perfuma Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Perfuma",
+      "category": "Store Promos",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9d999cbcdd2267f207f5d1b036510688/268ee1a1296808aa6eae11eb597de84d.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1375,5 +1375,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-20T05:13:31.628407+00:00"
+  "last_updated": "2026-09-20T07:44:15.958644+00:00"
 }
