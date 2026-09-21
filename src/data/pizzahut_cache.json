@@ -111,6 +111,17 @@
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
   },
   {
+    "id": "pizzahut-b146",
+    "title": "Offer 1 - Hut Savers",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/82e9eb21-adac-486e-b052-89f4311ad517.png",
+    "deal_type": "Hut Savers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-personal-pan-offer",
+    "discounted_price": 899.0
+  },
+  {
     "id": "pizzahut-b177",
     "title": "Offer 1 - Mega Monday",
     "description": "Pizza Hut Sri Lanka: ...",
@@ -121,6 +132,17 @@
     "source_url": "https://www.pizzahut.lk/menu/promo/mega-monday-offer-1-gd-fix-for-cba"
   },
   {
+    "id": "pizzahut-b147",
+    "title": "Offer 2 - Hut Savers",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/6bb119c3-9074-41a4-a0d2-92d2b2fd7957.png",
+    "deal_type": "Hut Savers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-medium-pan-offer",
+    "discounted_price": 1499.0
+  },
+  {
     "id": "pizzahut-b178",
     "title": "Offer 2 - Mega Monday",
     "description": "Pizza Hut Sri Lanka: ...",
@@ -129,5 +151,16 @@
     "deal_type": "Mega Monday",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/mega-monday-offer-2-gd-flex-for-cba"
+  },
+  {
+    "id": "pizzahut-b148",
+    "title": "Offer 3 - Hut Savers",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/d8106068-3e77-442b-837e-956b1765bfc2.png",
+    "deal_type": "Hut Savers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-large-pan-offer",
+    "discounted_price": 2999.0
   }
 ]
