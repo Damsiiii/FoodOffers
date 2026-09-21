@@ -109,25 +109,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-b177",
-    "title": "Offer 1 - Mega Monday",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/75809a4e-0961-48eb-9d0b-ab533356bf49.jpg",
-    "deal_type": "Mega Monday",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/mega-monday-offer-1-gd-fix-for-cba"
-  },
-  {
-    "id": "pizzahut-b178",
-    "title": "Offer 2 - Mega Monday",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/a70e9917-ecd9-41c0-9c17-b16a61869b0d.jpg",
-    "deal_type": "Mega Monday",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/mega-monday-offer-2-gd-flex-for-cba"
   }
 ]
