@@ -78,6 +78,32 @@
     "discounted_price": 2530.0
   },
   {
+    "id": "kfc-a5149370",
+    "title": "10PC HOT DRUMLETS OFFER",
+    "description": "KFC Sri Lanka: 10PC HOT DRUMLETS OFFER",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/10pchotdrumletsoffer4c320b61b79a4e9aa1fba8e4732f67f6.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 1790.0
+  },
+  {
+    "id": "kfc-ef3fba98",
+    "title": "20PC HOT DRUMLETS OFFER",
+    "description": "KFC Sri Lanka: 20PC HOT DRUMLETS OFFER",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/20pchotdrumletsofferd62b95673091473ab2ba98d53a16573f.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3490.0
+  },
+  {
     "id": "kfc-c5d3f335",
     "title": "ZESTY CRUNCH FULL CHICKEN",
     "description": "KFC Sri Lanka: ZESTY CRUNCH FULL CHICKEN",
