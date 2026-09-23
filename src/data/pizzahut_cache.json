@@ -109,15 +109,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-b179",
-    "title": "Mid-Week Specials",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/939a0f9d-3bae-44ab-b0e1-e745cbcee4fb.jpg",
-    "deal_type": "Mid-Week Specials",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/mid-week-pasta-pizza-offer"
   }
 ]
