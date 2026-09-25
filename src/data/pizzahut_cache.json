@@ -109,5 +109,35 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
+  },
+  {
+    "id": "pizzahut-j805",
+    "title": "Offer 1 - Party Hut Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/91b70232-16df-4b63-8046-37210a1bcf3b.jpg",
+    "deal_type": "Party Hut Friday",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/party-hut-friday-bogo-dec-1"
+  },
+  {
+    "id": "pizzahut-b046",
+    "title": "Offer 2 - Party Hut Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/cc0cf6ae-2da4-4444-b071-b9029304fd9f.jpg",
+    "deal_type": "Party Hut Friday",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/party-hut-friday-bogo-grand-dipper"
+  },
+  {
+    "id": "pizzahut-b150",
+    "title": "Offer 3 - Party Hut Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/8f02841f-cefb-4197-b767-25e488d43138.jpg",
+    "deal_type": "Party Hut Friday",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/buy-1-gd-flex-get-1-fix-or-flex-free"
   }
 ]
