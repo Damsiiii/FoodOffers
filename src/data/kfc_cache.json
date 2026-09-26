@@ -78,19 +78,6 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-fb330519",
-    "title": "BUY 2 ZINGER BURGER & GET 1 FREE",
-    "description": "KFC Sri Lanka: No",
-    "category": "Special Promotions",
-    "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "island-wide",
-    "discounted_price": 3180.0
-  },
-  {
     "id": "kfc-ef75ea52",
     "title": "BUY TWO LARGE BURIYANI GET ONE FREE",
     "description": "KFC Sri Lanka: 31",
