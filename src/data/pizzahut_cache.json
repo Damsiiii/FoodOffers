@@ -109,5 +109,65 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
+  },
+  {
+    "id": "pizzahut-b036",
+    "title": "Offer 1 - Weekend Vibes",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/8261b124-e999-40d4-a818-c0d6a3b1d38b.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes1-buy-2-large-pan1-get-2000-off"
+  },
+  {
+    "id": "pizzahut-b039",
+    "title": "Offer 2 - Weekend Vibes",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/36210647-cc4f-4ee5-9073-c11363604b7a.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibe-buy-2-large-pan-get-1-free"
+  },
+  {
+    "id": "pizzahut-b038",
+    "title": "Offer 3 - Weekend Vibes",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/1ba24c97-ed36-48f1-b237-fd8a4d2b278a.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-buy-2-gd-flex-get-2000-off"
+  },
+  {
+    "id": "pizzahut-b041",
+    "title": "Offer 4 - Weekend Vibes",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/16972021-60c3-40eb-a893-7c0de2787910.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibe-buy-2-gd-flex-delight-free"
+  },
+  {
+    "id": "pizzahut-b037",
+    "title": "Offer 5 - Weekend Vibes",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/a728557a-4a7b-452c-8e48-6e3e7fba1308.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes1-buy-2-medium-pan-get-1000-off"
+  },
+  {
+    "id": "pizzahut-b042",
+    "title": "Offer 6 - Weekend Vibes",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/3edf461a-f5cf-43a7-9506-0e6ceca43a78.jpg",
+    "deal_type": "Weekend Vibes",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-buy-2-medium-pan-get-1-free"
   }
 ]
