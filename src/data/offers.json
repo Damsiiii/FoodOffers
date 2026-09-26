@@ -607,20 +607,6 @@
         },
         {
           "id": "ubereats-feed-2",
-          "title": "Sugar World Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Sugar World",
-          "category": "Store Promos",
-          "image_url": "https://d1ralsognjng37.cloudfront.net/860276a3-965f-4474-84ef-e99647ade8ef.jpeg",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-feed-3",
           "title": "Celeste Daily Promotional Offer",
           "description": "Exclusive Uber Eats deal at Celeste Daily",
           "category": "Store Promos",
@@ -634,11 +620,11 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-4",
-          "title": "Sugar World   Park Road Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
+          "id": "ubereats-feed-3",
+          "title": "Sugar World Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Sugar World",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
+          "image_url": "https://d1ralsognjng37.cloudfront.net/860276a3-965f-4474-84ef-e99647ade8ef.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -648,7 +634,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-5",
+          "id": "ubereats-feed-4",
           "title": "Beauty City Promotional Offer",
           "description": "Exclusive Uber Eats deal at Beauty City",
           "category": "Store Promos",
@@ -662,11 +648,25 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-6",
+          "id": "ubereats-feed-5",
           "title": "Tayo Bear Promotional Offer",
           "description": "Exclusive Uber Eats deal at Tayo Bear",
           "category": "Store Promos",
           "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7949bf24f8bdb06d68329fc38d9a6610/aa13fff7e2466014ca51307be81e7738.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-feed-6",
+          "title": "Sugar World   Park Road Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
+          "category": "Store Promos",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -691,10 +691,10 @@
         },
         {
           "id": "ubereats-feed-8",
-          "title": "Sandal Blossom Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Sandal Blossom",
+          "title": "Grandeur Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Grandeur",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/c1ee1d08335274443565c9effe3f2b5a/268ee1a1296808aa6eae11eb597de84d.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8879a9d5dfbba13297d97e24c3a99dfb/4eed3468b168fc6e31dff0bb81a347bc.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -705,20 +705,6 @@
         },
         {
           "id": "ubereats-feed-9",
-          "title": "Nibbles Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Nibbles",
-          "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/bebd69da27a4306d74a81e2740930652/5283d81c664b43c5f57a3a186d273063.jpeg",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-feed-10",
           "title": "Unik Creations Promotional Offer",
           "description": "Exclusive Uber Eats deal at Unik Creations",
           "category": "Store Promos",
@@ -732,11 +718,25 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-feed-11",
-          "title": "Ancient Nutra Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Ancient Nutra",
+          "id": "ubereats-feed-10",
+          "title": "Eveyoed Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Eveyoed",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/2e1269fb3e210fcb267183c73e2d6a19/aa13fff7e2466014ca51307be81e7738.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9803bd51902cba1d5fff448803847698/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-feed-11",
+          "title": "Nibbles Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Nibbles",
+          "category": "Store Promos",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/bebd69da27a4306d74a81e2740930652/5283d81c664b43c5f57a3a186d273063.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -747,10 +747,10 @@
         },
         {
           "id": "ubereats-feed-12",
-          "title": "Sugari.lk Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Sugari.lk",
+          "title": "Tropical Fresh Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Tropical Fresh",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/d009afb31b27933fdd845f00251894cc/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
+          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/17ea155f31a75e8eb561395a3d2e796a/16bb0a3ab8ea98cfe8906135767f7bf4.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1254,20 +1254,6 @@
     },
     {
       "id": "ubereats-feed-2",
-      "title": "Sugar World Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Sugar World",
-      "category": "Store Promos",
-      "image_url": "https://d1ralsognjng37.cloudfront.net/860276a3-965f-4474-84ef-e99647ade8ef.jpeg",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-feed-3",
       "title": "Celeste Daily Promotional Offer",
       "description": "Exclusive Uber Eats deal at Celeste Daily",
       "category": "Store Promos",
@@ -1281,11 +1267,11 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-4",
-      "title": "Sugar World   Park Road Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
+      "id": "ubereats-feed-3",
+      "title": "Sugar World Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Sugar World",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
+      "image_url": "https://d1ralsognjng37.cloudfront.net/860276a3-965f-4474-84ef-e99647ade8ef.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1295,7 +1281,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-5",
+      "id": "ubereats-feed-4",
       "title": "Beauty City Promotional Offer",
       "description": "Exclusive Uber Eats deal at Beauty City",
       "category": "Store Promos",
@@ -1309,11 +1295,25 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-6",
+      "id": "ubereats-feed-5",
       "title": "Tayo Bear Promotional Offer",
       "description": "Exclusive Uber Eats deal at Tayo Bear",
       "category": "Store Promos",
       "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7949bf24f8bdb06d68329fc38d9a6610/aa13fff7e2466014ca51307be81e7738.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-feed-6",
+      "title": "Sugar World   Park Road Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Sugar World   Park Road",
+      "category": "Store Promos",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/7184365aa7084934219a7d2cf9815002/5283d81c664b43c5f57a3a186d273063.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1338,10 +1338,10 @@
     },
     {
       "id": "ubereats-feed-8",
-      "title": "Sandal Blossom Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Sandal Blossom",
+      "title": "Grandeur Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Grandeur",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/c1ee1d08335274443565c9effe3f2b5a/268ee1a1296808aa6eae11eb597de84d.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/8879a9d5dfbba13297d97e24c3a99dfb/4eed3468b168fc6e31dff0bb81a347bc.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1352,20 +1352,6 @@
     },
     {
       "id": "ubereats-feed-9",
-      "title": "Nibbles Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Nibbles",
-      "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/bebd69da27a4306d74a81e2740930652/5283d81c664b43c5f57a3a186d273063.jpeg",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-feed-10",
       "title": "Unik Creations Promotional Offer",
       "description": "Exclusive Uber Eats deal at Unik Creations",
       "category": "Store Promos",
@@ -1379,11 +1365,25 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-feed-11",
-      "title": "Ancient Nutra Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Ancient Nutra",
+      "id": "ubereats-feed-10",
+      "title": "Eveyoed Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Eveyoed",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/2e1269fb3e210fcb267183c73e2d6a19/aa13fff7e2466014ca51307be81e7738.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9803bd51902cba1d5fff448803847698/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-feed-11",
+      "title": "Nibbles Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Nibbles",
+      "category": "Store Promos",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/bebd69da27a4306d74a81e2740930652/5283d81c664b43c5f57a3a186d273063.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1394,10 +1394,10 @@
     },
     {
       "id": "ubereats-feed-12",
-      "title": "Sugari.lk Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Sugari.lk",
+      "title": "Tropical Fresh Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Tropical Fresh",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/d009afb31b27933fdd845f00251894cc/30be7d11a3ed6f6183354d1933fbb6c7.jpeg",
+      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/17ea155f31a75e8eb561395a3d2e796a/16bb0a3ab8ea98cfe8906135767f7bf4.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1407,5 +1407,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-09-26T07:38:05.011746+00:00"
+  "last_updated": "2026-09-26T09:39:52.102063+00:00"
 }
