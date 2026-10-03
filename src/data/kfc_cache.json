@@ -78,29 +78,16 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-5f8e51fe",
-    "title": "10PC HOT DRUMLETS + 1 PEPSI 400ML",
-    "description": "KFC Sri Lanka: 10PC HOT DRUMLETS + 1 PEPSI 400ML",
+    "id": "kfc-fb330519",
+    "title": "BUY 2 ZINGER BURGER & GET 1 FREE",
+    "description": "KFC Sri Lanka: No",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/10pchotdrumlets1pepsi400ml745682ce26ea400db2a508670f0a7840.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buy2zingerburgerget1free11d0a5beeadf4e05b6f6fe3249eac83f.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
-    "discounted_price": 1790.0
-  },
-  {
-    "id": "kfc-7463cf73",
-    "title": "20PCS HOT DRUMLET + 2 PEPSI 400ML",
-    "description": "KFC Sri Lanka: 20PCS HOT DRUMLET + 2 PEPSI 400ML",
-    "category": "Special Promotions",
-    "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/20pcshotdrumlet2pepsi400mlbb73e61d1c474f638f13def6a21d406c.jpg",
-    "deal_type": "Special Promotion",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.kfc.lk/menu/promotions",
-    "location": "island-wide",
-    "discounted_price": 3490.0
+    "discounted_price": 3180.0
   }
 ]
