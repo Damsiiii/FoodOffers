@@ -60,6 +60,16 @@
     "source_url": "https://www.pizzahut.lk/menu/promo/personal-pizza-add-on-02"
   },
   {
+    "id": "pizzahut-b200",
+    "title": "Cyber Saving Offer",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Cyber Savings",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/be18de94-c97b-4c68-ac66-14a93a9713cd.jpg",
+    "deal_type": "Cyber Savings",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/buy-1-melt-from-any-range-20-off"
+  },
+  {
     "id": "pizzahut-098aea2d",
     "title": "Pizza Hut Featured Promotion",
     "description": "Pizza Hut Sri Lanka: Featured promotion",
