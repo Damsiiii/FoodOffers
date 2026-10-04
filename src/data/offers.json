@@ -512,8 +512,8 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "Island Tea & Ceylon Coffee Club",
-          "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
+          "title": "SaveMo",
+          "description": "Uber Eats Sri Lanka promotion: SaveMo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -526,8 +526,8 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+          "title": "Croffle SL",
+          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -554,8 +554,8 @@
         },
         {
           "id": "ubereats-dom-5",
-          "title": "Croffle SL",
-          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
+          "title": "SaveMo Delights",
+          "description": "Uber Eats Sri Lanka promotion: SaveMo Delights",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -966,8 +966,8 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "Island Tea & Ceylon Coffee Club",
-      "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
+      "title": "SaveMo",
+      "description": "Uber Eats Sri Lanka promotion: SaveMo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -980,8 +980,8 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+      "title": "Croffle SL",
+      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1008,8 +1008,8 @@
     },
     {
       "id": "ubereats-dom-5",
-      "title": "Croffle SL",
-      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
+      "title": "SaveMo Delights",
+      "description": "Uber Eats Sri Lanka promotion: SaveMo Delights",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1021,5 +1021,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-10-04T14:55:54.739240+00:00"
+  "last_updated": "2026-10-04T15:54:32.261538+00:00"
 }
