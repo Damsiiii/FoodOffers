@@ -88,25 +88,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-b181",
-    "title": "Offer 1 - Childrens Day",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/55a9cbd9-748b-46da-a5ea-c2b279686dae.jpg",
-    "deal_type": "Children's Day Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/childrens-day-special-offer"
-  },
-  {
-    "id": "pizzahut-b191",
-    "title": "Offer 2 - Childrens Day",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/ef1022c7-e3ca-4b61-90fc-b821c170d442.jpg",
-    "deal_type": "Children's Day Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/childrens-day-special-offer-gd-flex"
   }
 ]
