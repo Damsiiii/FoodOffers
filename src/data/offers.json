@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 32,
+  "total_offers": 30,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -497,12 +497,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 6,
+      "count": 4,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Ceylonstar Coffee and Tea",
-          "description": "Uber Eats Sri Lanka promotion: Ceylonstar Coffee and Tea",
+          "title": "SaveMo",
+          "description": "Uber Eats Sri Lanka promotion: SaveMo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -543,34 +543,6 @@
         },
         {
           "id": "ubereats-dom-4",
-          "title": "Croffle SL",
-          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-5",
-          "title": "CyberDeals.lk",
-          "description": "Uber Eats Sri Lanka promotion: CyberDeals.lk",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-6",
           "title": "Coffee Colombo",
           "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
@@ -972,8 +944,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Ceylonstar Coffee and Tea",
-      "description": "Uber Eats Sri Lanka promotion: Ceylonstar Coffee and Tea",
+      "title": "SaveMo",
+      "description": "Uber Eats Sri Lanka promotion: SaveMo",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1014,34 +986,6 @@
     },
     {
       "id": "ubereats-dom-4",
-      "title": "Croffle SL",
-      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-5",
-      "title": "CyberDeals.lk",
-      "description": "Uber Eats Sri Lanka promotion: CyberDeals.lk",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-6",
       "title": "Coffee Colombo",
       "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
@@ -1055,5 +999,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-10-05T11:59:01.584496+00:00"
+  "last_updated": "2026-10-05T15:43:20.047661+00:00"
 }
