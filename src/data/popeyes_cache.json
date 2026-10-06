@@ -9,59 +9,5 @@
     "valid_until": "Ongoing",
     "source_url": "https://popeyes.com.lk",
     "location": "colombo, kandy, negombo"
-  },
-  {
-    "id": "popeyes-172715f9",
-    "title": "Spicy Double Deal - Buy 1 Get 1 FREE",
-    "description": "Every Tuesday: Buy One Get One FREE Spicy Chicken Sandwich for just Rs. 1,600. Valid for delivery and dine-in.",
-    "category": "Sandwiches & Burgers",
-    "image_url": "https://popeyes.com.lk/uploads/PLK_Sandwich_BOGO_KV_b481298226.jpg",
-    "deal_type": "Day Specific Deal",
-    "valid_until": "Every Tuesday",
-    "source_url": "https://popeyes.com.lk",
-    "location": "colombo, kandy, negombo",
-    "discounted_price": 1600.0,
-    "original_price": 3200.0,
-    "discount_percentage": 50
-  },
-  {
-    "id": "popeyes-244c82a1",
-    "title": "Drumstick Deal - Buy 4 Get 4 FREE",
-    "description": "Every Friday: Buy 4 Get 4 FREE Drumsticks for just Rs. 2,800. Save Rs. 1,920! Valid for delivery and dine-in.",
-    "category": "Chicken Buckets",
-    "image_url": "https://popeyes.com.lk/uploads/PLK_Drumstick_Deal_03_377724312a.jpg",
-    "deal_type": "Day Specific Deal",
-    "valid_until": "Every Friday",
-    "source_url": "https://popeyes.com.lk",
-    "location": "colombo, kandy, negombo",
-    "discounted_price": 2800.0,
-    "original_price": 4720.0,
-    "discount_percentage": 41
-  },
-  {
-    "id": "popeyes-12635cf4",
-    "title": "Why Stop at 1? Make it Double - Buy 1 Get 1 FREE",
-    "description": "Every Saturday: Buy One Get One FREE Spicy Chicken Sandwich or Grilled Chicken Burger for just Rs. 1,600. Exclusively for delivery.",
-    "category": "Sandwiches & Burgers",
-    "image_url": "https://popeyes.com.lk/uploads/PLK_BOGO_KV_e8b41d26f7.jpg",
-    "deal_type": "Day Specific Deal",
-    "valid_until": "Every Saturday",
-    "source_url": "https://popeyes.com.lk",
-    "location": "colombo, kandy, negombo",
-    "discounted_price": 1600.0,
-    "original_price": 3200.0,
-    "discount_percentage": 50
-  },
-  {
-    "id": "popeyes-6fa5887c",
-    "title": "Big Box - 10 Ways to Go Big",
-    "description": "Choose your box, feast your way and save up to Rs. 2,070 with Popeyes signature Big Box meal combinations. Dine-in, takeaway or delivery.",
-    "category": "Chicken Buckets",
-    "image_url": "https://popeyes.com.lk/uploads/PLK_Big_Box_01_abd7e98543.jpg",
-    "deal_type": "Combo Deal",
-    "valid_until": "Limited Time",
-    "source_url": "https://popeyes.com.lk",
-    "location": "colombo, kandy, negombo",
-    "discount_percentage": 25
   }
 ]
