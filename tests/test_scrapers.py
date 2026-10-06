@@ -27,6 +27,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from scrapers.vendors.kfc import KFCScraper
 from scrapers.vendors.pizzahut import PizzaHutScraper
 from scrapers.vendors.popeyes import PopeyesScraper
+from scrapers.vendors.dominos import DominosScraper
+from scrapers.vendors.creperunner import CrepeRunnerScraper
 from scrapers.base import BaseScraper
 
 
@@ -226,6 +228,124 @@ SAMPLE_PIZZAHUT_BANNER_RESPONSE = {
     }
 }
 
+
+# ---------------------------------------------------------------------------
+# Domino's Scraper Tests
+# ---------------------------------------------------------------------------
+
+SAMPLE_DOMINOS_HTML = """
+<!DOCTYPE html>
+<html>
+<body>
+    <body-background-component module-props="{&quot;backgroundPostion&quot;:&quot;absolute&quot;}" data-api="https://apis.dominoslk.com/olo-lka-prod-api/contents/home-cms/jU3ZsM1EuNckQVzDRMWsfgo0TFOkYsCwcqfoqalB.jpg"></body-background-component>
+    <div module-props="[{&quot;imageUrl&quot;:&quot;https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766.jpg&quot;,&quot;sortOrder&quot;:&quot;3&quot;}]"></div>
+    <div module-props="[{&quot;startTimeStamp&quot;:&quot;2026-07-30 05:41:33&quot;,&quot;imageUrl&quot;:&quot;https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize.png&quot;}]"></div>
+    <!-- Regular image not encoded in module-props -->
+    <img src="https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner_test.jpg" />
+</body>
+</html>
+"""
+
+class TestDominosExtraction:
+    """Test Domino's HTML deal extraction and deduplication."""
+
+    def test_extracts_promo_banners_from_html(self):
+        scraper = DominosScraper()
+        deals = scraper._extract_deals_from_html(SAMPLE_DOMINOS_HTML)
+
+        # 1 from direct regex (Chicken Fiesta), 2 from JSON decoded module-props
+        assert len(deals) == 3
+
+        titles = [d["title"] for d in deals]
+        assert "Domino's Special Offer" in titles
+        assert "Domino's Party Pack" in titles
+        assert "Domino's Pizza Promotion" in titles
+        
+        image_urls = [d["image_url"] for d in deals]
+        assert any("Banners_400x220" in url for url in image_urls)
+        assert any("Party_Pack_1" in url for url in image_urls)
+        assert any("Chicken_Fiesta_Top_Home_Banner" in url for url in image_urls)
+
+    def test_empty_html_returns_no_items(self):
+        scraper = DominosScraper()
+        assert scraper._extract_deals_from_html("") == []
+
+class TestDominosDeterminismAndValidation:
+    """Test deterministic IDs and cache fallback."""
+
+    def test_stable_ids_are_deterministic(self):
+        scraper = DominosScraper()
+        id1 = scraper._generate_stable_id("https://apis.dominoslk.com/banner.jpg", "Special Deal")
+        id2 = scraper._generate_stable_id("https://apis.dominoslk.com/banner.jpg", "Special Deal")
+        assert id1 == id2
+        assert id1.startswith("dominos-")
+
+    def test_validation_fails_on_zero_deals(self):
+        scraper = DominosScraper()
+        assert scraper._validate_deals([], []) is False
+
+    @patch("scrapers.vendors.dominos.intercept_api_deals")
+    def test_playwright_fallback_triggered_on_empty_html_scrape(self, mock_intercept):
+        mock_intercept.return_value = [{"title": "Fallback Deal", "image_url": "http://test.jpg"}]
+        
+        scraper = DominosScraper()
+        
+        with patch.object(scraper, "_fetch_api_deals", return_value=[]), \
+             patch.object(scraper, "_save_cache"):
+            deals = scraper.scrape_live()
+            
+        assert len(deals) == 1
+        assert deals[0]["title"] == "Fallback Deal"
+        assert deals[0]["is_fallback"] is True
+        assert deals[0]["id"].startswith("dominos-")
+        mock_intercept.assert_called_once()
+
+# ---------------------------------------------------------------------------
+# Crepe Runner Scraper Tests
+# ---------------------------------------------------------------------------
+
+class TestCrepeRunnerScraper:
+    """Test Crepe Runner HTML extraction and image processing."""
+
+    def test_extracts_full_size_images_from_thumbnails(self):
+        scraper = CrepeRunnerScraper()
+        
+        # Mock HTML with thumbnail images
+        html = """
+        <html>
+            <body>
+                <img src="https://creperunner.lk/wp-content/uploads/2022/10/Signature-crepes-300x235.png" />
+                <img src="https://creperunner.lk/wp-content/uploads/2022/10/savoury-crepes-284x300.jpg" />
+                <img src="https://creperunner.lk/wp-content/uploads/2022/12/mojito-150x150.png" />
+                <!-- Non-menu image that should be ignored -->
+                <img src="https://creperunner.lk/wp-content/uploads/2022/10/logo.png" />
+            </body>
+        </html>
+        """
+        
+        with patch("scrapers.vendors.creperunner.requests.get") as mock_get:
+            mock_get.return_value.status_code = 200
+            mock_get.return_value.text = html
+            
+            deals = scraper._fetch_api_deals()
+            
+        assert len(deals) == 3
+        
+        image_urls = [d["image_url"] for d in deals]
+        assert "https://creperunner.lk/wp-content/uploads/2022/10/Signature-crepes.png" in image_urls
+        assert "https://creperunner.lk/wp-content/uploads/2022/10/savoury-crepes.jpg" in image_urls
+        assert "https://creperunner.lk/wp-content/uploads/2022/12/mojito.png" in image_urls
+
+        titles = [d["title"] for d in deals]
+        assert "Signature Crepes" in titles
+        assert "Savoury Crepes" in titles
+        assert "Mojito" in titles
+
+    def test_validation_fails_with_few_images(self):
+        scraper = CrepeRunnerScraper()
+        # Ensure validation requires at least 3 items
+        assert scraper._validate_deals([{"title": "1"}, {"title": "2"}], []) is False
+        assert scraper._validate_deals([{"title": "1"}, {"title": "2"}, {"title": "3"}], []) is True
 
 # ---------------------------------------------------------------------------
 # KFC Scraper Tests

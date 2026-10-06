@@ -1,0 +1,122 @@
+[
+  {
+    "id": "creperunner-97f41f36",
+    "title": "Cropped Crepe Runner Meta 1",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/08/cropped-Crepe-Runner-Meta-1.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-5af46d63",
+    "title": "Mojito",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/09/mojito.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-5fa86884",
+    "title": "Chips",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/09/chips.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-71aa659d",
+    "title": "Coffee",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/09/coffee.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-45f0ad46",
+    "title": "Signature Crepes",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/10/Signature-crepes.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-2a95dfa1",
+    "title": "Savoury Crepes",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/10/savoury-crepes.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-7e83e6b1",
+    "title": "Sweet Crepes",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/10/sweet-crepes.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-dd6bd10b",
+    "title": "Drinks",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/10/Drinks.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-5b1c317a",
+    "title": "Mojito",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/12/mojito.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  },
+  {
+    "id": "creperunner-108ecdc7",
+    "title": "Coffee",
+    "description": "Crepe Runner Sri Lanka Menu Item. Prices and details included in image.",
+    "category": "Signature Crepes",
+    "image_url": "https://creperunner.lk/wp-content/uploads/2022/12/coffee.png",
+    "deal_type": "Menu",
+    "valid_until": "Ongoing",
+    "source_url": "https://creperunner.lk/menu/",
+    "location": "colombo",
+    "is_fallback": false
+  }
+]
