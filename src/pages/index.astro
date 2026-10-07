@@ -618,18 +618,18 @@ function formatBreakdown(desc: string) {
         compareSet.forEach((offerData, id) => {
           const el = document.createElement('div');
           el.className = "flex-none w-[280px] border-2 border-border p-3 bg-white relative snap-start";
-          el.innerHTML = \`
-            <button class="absolute top-2 right-2 text-foreground/50 hover:text-brand-beet font-bold text-lg leading-none compare-remove" data-id="\${id}">×</button>
+          el.innerHTML = `
+            <button class="absolute top-2 right-2 text-foreground/50 hover:text-brand-beet font-bold text-lg leading-none compare-remove" data-id="${id}">×</button>
             <div class="flex gap-3">
-              <img src="\${offerData.image_url}" class="w-16 h-16 object-cover border border-border shrink-0" />
+              <img src="${offerData.image_url}" class="w-16 h-16 object-cover border border-border shrink-0" />
               <div class="space-y-1 overflow-hidden">
-                <div class="text-xs font-mono font-bold text-accent truncate uppercase">\${offerData.vendor_name}</div>
-                <div class="font-display font-bold text-sm leading-tight truncate" title="\${offerData.title}">\${offerData.title}</div>
-                <div class="font-mono text-xs font-bold">\${offerData.discounted_price ? 'LKR ' + offerData.discounted_price : 'PROMO'}</div>
+                <div class="text-xs font-mono font-bold text-accent truncate uppercase">${offerData.vendor_name}</div>
+                <div class="font-display font-bold text-sm leading-tight truncate" title="${offerData.title}">${offerData.title}</div>
+                <div class="font-mono text-xs font-bold">${offerData.discounted_price ? 'LKR ' + offerData.discounted_price : 'PROMO'}</div>
               </div>
             </div>
-            <a href="\${offerData.source_url}" target="_blank" class="block w-full mt-3 text-center bg-accent text-accent-foreground font-bold text-xs uppercase py-1.5 border border-border">CLAIM →</a>
-          \`;
+            <a href="${offerData.source_url}" target="_blank" class="block w-full mt-3 text-center bg-accent text-accent-foreground font-bold text-xs uppercase py-1.5 border border-border">CLAIM →</a>
+          `;
           compareContainer.appendChild(el);
         });
 
@@ -638,7 +638,7 @@ function formatBreakdown(desc: string) {
             const id = (e.target as HTMLElement).getAttribute('data-id');
             if (id) {
               compareSet.delete(id);
-              const cb = document.querySelector(\`.compare-cb[data-id="\${id}"]\`) as HTMLInputElement;
+              const cb = document.querySelector(`.compare-cb[data-id="${id}"]`) as HTMLInputElement;
               if (cb) cb.checked = false;
               updateCompareDrawer();
             }
