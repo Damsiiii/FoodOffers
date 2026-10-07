@@ -74,9 +74,32 @@ function formatBreakdown(desc: string) {
   // Split by plus or newline
   return cleanDesc.split(/\+|\n/).map((item: string) => item.trim()).filter(Boolean);
 }
+
+// Safe offer lookup map for the compare feature — injected via define:vars to avoid
+// HTML attribute escaping issues that occur with data-raw-offer={JSON.stringify(offer)}
+const offerLookupMap: Record<string, any> = Object.fromEntries(
+  allOffers.map((o: any, i: number) => [
+    o.id || `${o.vendor_id}-${i}`,
+    {
+      title: o.title,
+      vendor_name: o.vendor_name,
+      image_url: o.image_url,
+      discounted_price: o.discounted_price || null,
+      source_url: o.source_url,
+      category: o.category,
+      deal_type: o.deal_type,
+      location: o.location || 'Island-wide',
+      valid_until: o.valid_until || 'Limited Time',
+    }
+  ])
+);
 ---
 
 <Layout title="LANKA FOOD OFFER LEDGER | FAST FOOD DEALS">
+  <!-- Inject offer lookup map safely via Astro define:vars (avoids HTML attribute escaping issues) -->
+  <script define:vars={{ offerLookupMap }}>
+    window.__offerLookupMap = offerLookupMap;
+  </script>
   <Header />
 
   <!-- Infinite Ticker Marquee Bar -->
@@ -231,7 +254,6 @@ function formatBreakdown(desc: string) {
                         data-price={offer.discounted_price || 999999}
                         data-discount={offer.discount_percentage || 0}
                         data-id={offerId}
-                        data-raw-offer={JSON.stringify(offer)}
                       >
                         <!-- Image Header -->
                         <div class="relative h-48 overflow-hidden border-b-2 border-border bg-brand-seed/20 shrink-0">
@@ -649,10 +671,13 @@ function formatBreakdown(desc: string) {
 
     compareCheckboxes.forEach(cb => {
       cb.addEventListener('change', (e) => {
+        e.stopPropagation();
         const id = cb.getAttribute('data-id');
-        const raw = cb.closest('.offer-card')?.getAttribute('data-raw-offer');
-        
-        if (!id || !raw) return;
+        // Use the pre-built lookup map injected by Astro define:vars
+        // (avoids JSON.parse on a mangled HTML attribute value)
+        const offerData = (window as any).__offerLookupMap?.[id!];
+
+        if (!id || !offerData) return;
 
         if (cb.checked) {
           if (compareSet.size >= 3) {
@@ -660,7 +685,7 @@ function formatBreakdown(desc: string) {
             cb.checked = false;
             return;
           }
-          compareSet.set(id, JSON.parse(raw));
+          compareSet.set(id, offerData);
         } else {
           compareSet.delete(id);
         }
