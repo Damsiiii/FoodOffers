@@ -7,22 +7,40 @@ import offersData from '../data/offers.json';
 const rawVendors = offersData.vendors || [];
 const rawOffers = offersData.all_offers || [];
 
-// Sort vendors hierarchically: highest offer count first, then alphabetical by name
+// Hardcoded popularity ranking based on real-world brand recognition in Sri Lanka
+const POPULARITY_ORDER: Record<string, number> = {
+  kfc: 1,
+  pizzahut: 2,
+  dominos: 3,
+  burgerking: 4,
+  subway: 5,
+  tacobell: 6,
+  popeyes: 7,
+  chinesedragon: 8,
+  dinemore: 9,
+  creperunner: 10,
+  breadtalk: 11,
+  fullerburgers: 12,
+  ubereats: 13,
+  pickme: 14,
+};
+
+// Sort vendors by popularity
 const vendors = [...rawVendors].sort((a: any, b: any) => {
-  if (b.count !== a.count) {
-    return b.count - a.count;
-  }
-  return (a.vendor_name || '').localeCompare(b.vendor_name || '');
+  const rankA = POPULARITY_ORDER[a.vendor_id] ?? 99;
+  const rankB = POPULARITY_ORDER[b.vendor_id] ?? 99;
+  return rankA - rankB;
 });
 
 // Map vendor_id to rank index in sorted hierarchy
 const vendorRankMap = new Map(vendors.map((v: any, idx: number) => [v.vendor_id, idx]));
 
-// Sort offers according to vendor hierarchy (vendor with most offers appears first)
+// Sort offers according to vendor hierarchy
 const allOffers = [...rawOffers].sort((a: any, b: any) => {
   const rankA = vendorRankMap.get(a.vendor_id) ?? 999;
   const rankB = vendorRankMap.get(b.vendor_id) ?? 999;
   if (rankA !== rankB) return rankA - rankB;
+  
   // For KFC, group limited-time promotions first, followed by everyday meal combos
   if (a.vendor_id === 'kfc' && b.vendor_id === 'kfc') {
     const isPromoA = a.section === 'promotions' || a.deal_type === 'Special Promotion';
@@ -47,12 +65,21 @@ const featuredCarouselItems = allOffers.slice(0, 5).map((offer: any) => ({
 
 // Build infinite marquee ticker string items
 const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toUpperCase()}: ${o.title.toUpperCase()}` + (o.discounted_price ? ` [LKR ${o.discounted_price}]` : ' [SPECIAL PROMO]'));
+
+// Helper to format item breakdown from description
+function formatBreakdown(desc: string) {
+  if (!desc) return [];
+  // Remove brand prefix if present (e.g. "KFC Sri Lanka: ")
+  let cleanDesc = desc.replace(/^.*?: /, '');
+  // Split by plus or newline
+  return cleanDesc.split(/\+|\n/).map((item: string) => item.trim()).filter(Boolean);
+}
 ---
 
 <Layout title="LANKA FOOD OFFER LEDGER | FAST FOOD DEALS">
   <Header />
 
-  <!-- Infinite Ticker Marquee Bar (Sungold Orange / Cream text) -->
+  <!-- Infinite Ticker Marquee Bar -->
   <div class="w-full bg-accent text-accent-foreground border-b-2 border-border overflow-hidden py-2.5 select-none font-bold">
     <div class="flex whitespace-nowrap animate-marquee font-bold text-sm md:text-base tracking-tighter uppercase gap-8">
       {marqueeItems.concat(marqueeItems).map((text: string) => (
@@ -66,9 +93,8 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
 
   <main class="max-w-[95vw] mx-auto px-4 py-12 flex-1 w-full space-y-16">
 
-    <!-- Hero Section: Kinetic Typography Headline -->
+    <!-- Hero Section -->
     <section class="relative border-b-2 border-border pb-12 overflow-hidden">
-      <!-- Massive Decorative Graphic Number in Background -->
       <div class="absolute right-0 top-0 text-[10rem] md:text-[18rem] font-bold font-mono text-brand-seed/40 select-none pointer-events-none leading-none -translate-y-8">
         LK
       </div>
@@ -94,192 +120,246 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     </section>
 
     <!-- Controls Bar: Search & Vendor Filter -->
-    <section class="space-y-6 pt-4">
-      <div class="flex flex-col md:flex-row gap-6 items-stretch md:items-end justify-between border-b-2 border-border pb-6">
-
-        <!-- Search Field (Kinetic Style Input) -->
+    <section class="space-y-6 pt-4 sticky top-16 z-40 bg-background pb-4 border-b-2 border-border">
+      <div class="flex flex-col md:flex-row gap-6 items-stretch md:items-end justify-between">
+        
+        <!-- Search Field -->
         <div class="w-full md:w-1/2 space-y-2">
           <label for="search-input" class="block font-mono text-xs text-foreground/70 font-bold uppercase tracking-widest">SEARCH INDEXED PROMOTIONS</label>
           <div class="relative">
             <input
               type="text"
               id="search-input"
-              placeholder="TYPE TO SEARCH (E.G., BURGER, PIZZA, BUCKET)..."
+              placeholder="TYPE TO SEARCH (E.G., BURGER, PIZZA)..."
               class="w-full bg-transparent border-b-2 border-border text-foreground placeholder:text-foreground/50 text-lg md:text-xl px-0 py-3 focus:outline-none focus:border-accent transition-colors font-bold uppercase tracking-tight"
             />
           </div>
         </div>
 
-        <div class="font-mono text-sm font-bold uppercase tracking-tight text-foreground flex items-center gap-3">
-          <span class="px-3 py-1.5 bg-brand-yellow border-2 border-border text-foreground">INDEXED: <strong id="visible-count" class="text-brand-beet font-extrabold">{allOffers.length}</strong> DEALS</span>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 px-3 py-2 bg-background border-2 border-border hidden md:flex">
+            <span class="text-foreground/70 text-xs font-mono font-bold uppercase tracking-wider">SORT BY:</span>
+            <select id="sort-selector" class="bg-transparent text-foreground font-bold focus:outline-none text-xs uppercase tracking-tight">
+              <option value="popularity">FRANCHISE POPULARITY</option>
+              <option value="price-asc">PRICE: LOW → HIGH</option>
+              <option value="price-desc">PRICE: HIGH → LOW</option>
+              <option value="discount">DISCOUNT %</option>
+            </select>
+          </div>
+          <div class="font-mono text-sm font-bold uppercase tracking-tight text-foreground flex items-center gap-3">
+            <span class="px-3 py-2 bg-brand-yellow border-2 border-border text-foreground">INDEXED: <strong id="visible-count" class="text-brand-beet font-extrabold">{allOffers.length}</strong> DEALS</span>
+          </div>
         </div>
       </div>
 
-      <!-- Vendor Filter Tabs (Sharp Brutalist Buttons) -->
+      <!-- Vendor Filter Tabs -->
       <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none font-bold text-xs uppercase tracking-tight">
         <button
           class="vendor-tab active-tab bg-accent text-accent-foreground px-4 py-2.5 border-2 border-border transition-transform duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
           data-vendor="all"
         >
-          ALL VENDORS [{allOffers.length}]
+          ALL VENDORS
         </button>
-        {vendors.map((vendor: any) => (
+        {vendors.map((vendor: any, vIdx: number) => (
           <button
             class="vendor-tab bg-background hover:bg-brand-seed hover:text-foreground text-foreground px-4 py-2.5 border-2 border-border transition-all duration-200 whitespace-nowrap flex items-center gap-2 hover:scale-105 active:scale-95"
             data-vendor={vendor.vendor_id}
           >
+            <span class="font-mono text-[10px] text-foreground/50">#{vIdx + 1}</span>
             <span>{vendor.vendor_name.toUpperCase()}</span>
-            <span class="text-foreground/70 font-mono text-[11px]">({vendor.count})</span>
+            <span class="text-foreground/70 font-mono text-[11px] vendor-count" data-vendor={vendor.vendor_id}>({vendor.count})</span>
           </button>
         ))}
       </div>
-
-      <!-- KFC Sub-Section Tabs (Appears when KFC vendor tab is active) -->
-      <div id="vendor-subfilter-bar" class="hidden flex items-center gap-2 pt-3 border-t-2 border-border/40 font-mono text-xs font-bold uppercase overflow-x-auto pb-1">
-        <span class="text-foreground/70 mr-1 whitespace-nowrap">KFC SECTIONS:</span>
-        <button
-          class="kfc-section-tab active-subtab px-3.5 py-1.5 bg-accent text-accent-foreground border-2 border-border cursor-pointer transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
-          data-kfc-section="all"
-        >
-          ALL KFC ITEMS
-        </button>
-        <button
-          class="kfc-section-tab px-3.5 py-1.5 bg-background text-foreground border-2 border-border cursor-pointer transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
-          data-kfc-section="promotions"
-        >
-          🔥 SPECIAL PROMOTIONS
-        </button>
-        <button
-          class="kfc-section-tab px-3.5 py-1.5 bg-background text-foreground border-2 border-border cursor-pointer transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
-          data-kfc-section="meals"
-        >
-          🍗 EVERYDAY MEALS & COMBOS
-        </button>
-      </div>
     </section>
 
-    <!-- Offers Grid Ledger (Kinetic Typography Cards) -->
-    <section id="offers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {allOffers.map((offer: any, idx: number) => {
-        const isKfc = offer.vendor_id === 'kfc';
-        const sectionType = offer.section || (offer.deal_type === 'Meal Deal' ? 'meals' : 'promotions');
-        const prevOffer = allOffers[idx - 1];
-        const isFirstKfcPromo = isKfc && sectionType === 'promotions' && (!prevOffer || prevOffer.vendor_id !== 'kfc' || (prevOffer.section !== 'promotions' && prevOffer.deal_type === 'Meal Deal'));
-        const isFirstKfcMeal = isKfc && sectionType === 'meals' && (!prevOffer || prevOffer.vendor_id !== 'kfc' || prevOffer.section === 'promotions' || prevOffer.deal_type === 'Special Promotion');
-
+    <!-- Franchise-Grouped Sections -->
+    <div id="franchise-container" class="space-y-12">
+      {vendors.map((vendor: any, vIdx: number) => {
+        const vendorOffers = allOffers.filter((o: any) => o.vendor_id === vendor.vendor_id);
+        const isInitiallyExpanded = vIdx < 3;
+        
         return (
-          <>
-            {isFirstKfcPromo && (
-              <div id="kfc-promo-header" class="col-span-full hidden py-3 px-4 bg-brand-yellow/20 border-2 border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <div>
-                  <h3 class="font-display text-xl font-bold uppercase tracking-tight flex items-center gap-2 text-foreground">
-                    <span>🔥</span> LIMITED-TIME SPECIAL PROMOTIONS
-                  </h3>
-                  <p class="text-xs font-mono text-foreground/70 uppercase">Official limited-time promotions & discounted deal packages from KFC Sri Lanka</p>
-                </div>
-                <span class="px-2.5 py-1 bg-brand-beet text-white font-mono text-xs font-bold uppercase tracking-wider border border-border">
-                  PROMOTIONAL DEALS
+          <section
+            class="franchise-section border-2 border-border bg-background"
+            data-vendor={vendor.vendor_id}
+          >
+            <!-- Franchise Header Bar -->
+            <button class="w-full flex items-center justify-between px-4 py-4 md:px-6 border-b-2 border-border bg-brand-seed/10 hover:bg-brand-seed/20 transition-colors franchise-header" data-vendor={vendor.vendor_id}>
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-xs font-bold text-accent bg-accent/10 px-2 py-1 border border-border">
+                  #{vIdx + 1}
+                </span>
+                <h2 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-foreground text-left">
+                  {vendor.vendor_name}
+                </h2>
+                <span class="hidden md:inline font-mono text-xs text-foreground/60 uppercase vendor-section-count" data-vendor={vendor.vendor_id}>
+                  {vendor.count} {vendor.count === 1 ? 'OFFER' : 'OFFERS'}
                 </span>
               </div>
-            )}
-            {isFirstKfcMeal && (
-              <div id="kfc-meals-header" class="col-span-full hidden py-3 px-4 bg-brand-seed/20 border-2 border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-4">
-                <div>
-                  <h3 class="font-display text-xl font-bold uppercase tracking-tight flex items-center gap-2 text-foreground">
-                    <span>🍗</span> EVERYDAY VALUE MEALS & COMBOS
-                  </h3>
-                  <p class="text-xs font-mono text-foreground/70 uppercase">Everyday meal combos bundled with beverages & chicken pieces</p>
+              <div class="flex items-center gap-4">
+                {vendor.website_url && (
+                  <a href={vendor.website_url} target="_blank" rel="noopener noreferrer" class="hidden md:block font-mono text-xs font-bold uppercase text-accent hover:underline px-3 py-1 border border-border bg-background" onclick="event.stopPropagation()">
+                    VISIT SITE →
+                  </a>
+                )}
+                <div class={`transform transition-transform duration-300 ${isInitiallyExpanded ? 'rotate-180' : ''} section-chevron`} data-vendor={vendor.vendor_id}>
+                  ▼
                 </div>
-                <span class="px-2.5 py-1 bg-brand-yellow text-foreground font-mono text-xs font-bold uppercase tracking-wider border-2 border-border">
-                  MEAL COMBOS
-                </span>
               </div>
-            )}
-            <article
-              class="offer-card group bg-background border-2 border-border hover:border-accent hover:bg-brand-yellow/30 transition-colors duration-300 flex flex-col justify-between relative overflow-hidden"
-              data-vendor={offer.vendor_id}
-              data-section={sectionType}
-              data-deal-type={(offer.deal_type || '').toLowerCase()}
-              data-title={offer.title.toLowerCase()}
-              data-category={(offer.category || '').toLowerCase()}
-              data-description={(offer.description || '').toLowerCase()}
-              data-location={offer.location || 'colombo'}
-            >
-              <!-- Background Decorative Index Number -->
-              <div class="absolute right-2 bottom-2 text-6xl font-extrabold font-mono text-brand-seed/30 group-hover:text-foreground/10 select-none pointer-events-none transition-colors duration-300 leading-none">
-                #{idx + 1}
-              </div>
+            </button>
 
-              <div>
-                <!-- Image Header -->
-                <div class="relative h-52 overflow-hidden border-b-2 border-border bg-brand-seed/20">
-                  <img
-                    src={offer.image_url}
-                    alt={offer.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
+            <!-- Offer Cards Grid -->
+            <div class={`franchise-content ${isInitiallyExpanded ? 'block' : 'hidden'} transition-all`} data-vendor={vendor.vendor_id}>
+              {vendorOffers.length > 0 ? (
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:p-6 offers-grid">
+                  {vendorOffers.map((offer: any, idx: number) => {
+                    const sectionType = offer.section || (offer.deal_type === 'Meal Deal' ? 'meals' : 'promotions');
+                    const breakdown = formatBreakdown(offer.description);
+                    const offerId = offer.id || `${offer.vendor_id}-${idx}`;
 
-                  <!-- Off Tag Badge (Beet Red) -->
-                  {offer.discount_percentage > 0 && (
-                    <div class="absolute top-3 right-3 bg-brand-beet text-white font-mono font-extrabold text-sm px-2.5 py-1 border-2 border-border uppercase tracking-tighter">
-                      -{offer.discount_percentage}%
-                    </div>
-                  )}
+                    return (
+                      <article
+                        class="offer-card group bg-background border-2 border-border hover:border-accent hover:shadow-[4px_4px_0_0_#47510B] transition-all duration-300 flex flex-col relative overflow-hidden"
+                        data-vendor={offer.vendor_id}
+                        data-section={sectionType}
+                        data-deal-type={(offer.deal_type || '').toLowerCase()}
+                        data-title={offer.title.toLowerCase()}
+                        data-category={(offer.category || '').toLowerCase()}
+                        data-description={(offer.description || '').toLowerCase()}
+                        data-location={offer.location || 'colombo'}
+                        data-price={offer.discounted_price || 999999}
+                        data-discount={offer.discount_percentage || 0}
+                        data-id={offerId}
+                        data-raw-offer={JSON.stringify(offer)}
+                      >
+                        <!-- Image Header -->
+                        <div class="relative h-48 overflow-hidden border-b-2 border-border bg-brand-seed/20 shrink-0">
+                          <img
+                            src={offer.image_url}
+                            alt={offer.title}
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                          />
+                          
+                          <!-- Compare Checkbox -->
+                          <div class="absolute top-3 left-3 bg-background border-2 border-border p-1.5 flex items-center justify-center cursor-pointer hover:bg-brand-yellow group/compare">
+                            <input type="checkbox" class="w-4 h-4 cursor-pointer compare-cb accent-accent" data-id={offerId} />
+                            <span class="ml-1.5 text-[10px] font-mono font-bold uppercase tracking-wider hidden group-hover/compare:block text-foreground">Compare</span>
+                          </div>
 
-                  <!-- Vendor Tag Badge -->
-                  <div class="absolute bottom-3 left-3 bg-background text-foreground group-hover:bg-foreground group-hover:text-background font-mono text-xs font-bold px-2.5 py-1 border-2 border-border uppercase tracking-wider transition-colors duration-300">
-                    {offer.vendor_name}
+                          <!-- Off Tag Badge -->
+                          {offer.discount_percentage > 0 && (
+                            <div class="absolute top-3 right-3 bg-brand-beet text-white font-mono font-extrabold text-sm px-2.5 py-1 border-2 border-border uppercase tracking-tighter">
+                              -{offer.discount_percentage}%
+                            </div>
+                          )}
+                        </div>
+
+                        <!-- Main Info Block -->
+                        <div class="p-4 space-y-3 flex-1 flex flex-col bg-background z-10 relative">
+                          <div class="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider text-accent">
+                            <span class="line-clamp-1 truncate">{offer.category}</span>
+                            <span class={sectionType === 'meals' || offer.deal_type === 'Meal Deal' ? "px-2 py-0.5 bg-brand-yellow text-foreground border border-border font-bold text-[10px] whitespace-nowrap ml-2" : "px-2 py-0.5 bg-brand-beet text-white font-bold text-[10px] whitespace-nowrap ml-2"}>
+                              {offer.deal_type}
+                            </span>
+                          </div>
+
+                          <h3 class="font-display text-xl font-bold uppercase text-foreground leading-tight tracking-tight searchable-text">
+                            {offer.title}
+                          </h3>
+
+                          <!-- Item Breakdown -->
+                          <div class="flex-1 bg-brand-seed/10 border border-border/30 p-3 mt-2">
+                            <p class="font-mono text-[10px] uppercase font-bold text-foreground/50 mb-1.5 border-b border-border/20 pb-1">What's included:</p>
+                            <ul class="text-xs font-medium space-y-1 text-foreground/80">
+                              {breakdown.slice(0, 3).map((item: string) => (
+                                <li class="flex items-start gap-1.5">
+                                  <span class="text-accent mt-0.5">▪</span>
+                                  <span class="line-clamp-1 searchable-text">{item}</span>
+                                </li>
+                              ))}
+                              {breakdown.length > 3 && (
+                                <li class="text-xs italic text-foreground/50 pl-3">+{breakdown.length - 3} more items...</li>
+                              )}
+                              {breakdown.length === 0 && (
+                                <li class="text-xs text-foreground/50">See full details for inclusions.</li>
+                              )}
+                            </ul>
+                          </div>
+
+                          <!-- Location & Validity -->
+                          <div class="flex items-center gap-3 font-mono text-[10px] uppercase font-bold text-foreground/70 mt-2">
+                            <span class="flex items-center gap-1">
+                              <span>📍</span> {offer.location || 'Island-wide'}
+                            </span>
+                            <span class="flex items-center gap-1">
+                              <span>⏰</span> {offer.valid_until || 'Limited Time'}
+                            </span>
+                          </div>
+                        </div>
+
+                        <!-- Footer Price Bar & Deal Link -->
+                        <div class="p-4 pt-3 border-t-2 border-border bg-background/60 group-hover:bg-brand-yellow/30 flex items-center justify-between relative z-10 transition-colors duration-300">
+                          <div>
+                            {offer.original_price && offer.original_price > (offer.discounted_price || 0) ? (
+                              <div class="text-xs font-mono text-muted-foreground group-hover:text-black/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
+                            ) : null}
+                            {offer.discounted_price ? (
+                              <div class="text-xl font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300">LKR {offer.discounted_price}</div>
+                            ) : (
+                              <div class="text-sm font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300 uppercase">PROMOTIONAL OFFER</div>
+                            )}
+                          </div>
+
+                          <a
+                            href={offer.source_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1 bg-accent text-accent-foreground font-bold text-[10px] uppercase tracking-wider px-3 py-2 border-2 border-border transition-all duration-200 hover:scale-105 active:scale-95"
+                          >
+                            <span>CLAIM</span>
+                            <span>→</span>
+                          </a>
+                        </div>
+                        
+                        <!-- Expand details trigger -->
+                        <button class="expand-trigger w-full py-1.5 border-t-2 border-border bg-brand-seed/20 hover:bg-brand-seed/40 text-xs font-mono font-bold uppercase transition-colors text-foreground" data-id={offerId}>
+                          ▸ Expand Details
+                        </button>
+                        
+                        <!-- Expandable Details Panel (Hidden by default) -->
+                        <div class="detail-panel hidden overflow-hidden transition-all duration-300 bg-brand-cream border-t-2 border-border" id={`detail-${offerId}`}>
+                          <div class="p-5 space-y-4 text-sm font-medium">
+                            <div>
+                              <p class="font-mono text-xs uppercase font-bold text-foreground/50 mb-1">Full Description</p>
+                              <p class="text-foreground/90 leading-relaxed searchable-text">{offer.description}</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-y-3 gap-x-2 font-mono text-xs text-foreground">
+                              <div><span class="font-bold text-foreground/50">Category:</span><br/>{offer.category}</div>
+                              <div><span class="font-bold text-foreground/50">Deal Type:</span><br/>{offer.deal_type}</div>
+                              <div><span class="font-bold text-foreground/50">Location:</span><br/>{offer.location || 'Island-wide'}</div>
+                              <div><span class="font-bold text-foreground/50">Valid Until:</span><br/>{offer.valid_until || 'Limited Time'}</div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </article>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div class="py-12 px-6 text-center bg-brand-seed/5">
+                  <div class="font-mono text-sm text-foreground/50 uppercase tracking-widest font-bold">
+                    [ NO ACTIVE OFFERS — CHECK BACK SOON ]
                   </div>
                 </div>
-
-                <!-- Main Info Block -->
-                <div class="p-6 space-y-3 relative z-10">
-                  <div class="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-wider text-accent group-hover:text-foreground transition-colors duration-300">
-                    <span>{offer.category}</span>
-                    <span class={sectionType === 'meals' || offer.deal_type === 'Meal Deal' ? "px-2 py-0.5 bg-brand-yellow text-foreground border border-border font-bold text-[10px]" : "px-2 py-0.5 bg-brand-beet text-white font-bold text-[10px]"}>
-                      {offer.deal_type}
-                    </span>
-                  </div>
-
-                  <h3 class="font-display text-2xl font-bold uppercase text-foreground leading-tight tracking-tight line-clamp-2">
-                    {offer.title}
-                  </h3>
-
-                  <p class="text-foreground/80 transition-colors duration-300 text-sm font-medium leading-relaxed line-clamp-2">
-                    {offer.description}
-                  </p>
-                </div>
-              </div>
-
-              <!-- Footer Price Bar & Deal Link -->
-              <div class="p-6 pt-4 border-t-2 border-border bg-background/60 group-hover:bg-brand-yellow/50 flex items-center justify-between relative z-10 transition-colors duration-300">
-                <div>
-                  {offer.original_price && offer.original_price > (offer.discounted_price || 0) ? (
-                    <div class="text-xs font-mono text-muted-foreground group-hover:text-black/60 line-through transition-colors duration-300">LKR {offer.original_price}</div>
-                  ) : null}
-                  {offer.discounted_price ? (
-                    <div class="text-2xl font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300">LKR {offer.discounted_price}</div>
-                  ) : (
-                    <div class="text-lg font-mono font-extrabold text-foreground group-hover:text-black transition-colors duration-300 uppercase">PROMOTIONAL OFFER</div>
-                  )}
-                </div>
-
-                <a
-                  href={offer.source_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold text-xs uppercase tracking-wider px-4 py-2.5 border-2 border-border transition-all duration-200 hover:scale-105 active:scale-95"
-                >
-                  <span>CLAIM DEAL</span>
-                  <span>→</span>
-                </a>
-              </div>
-            </article>
-          </>
+              )}
+            </div>
+          </section>
         );
       })}
-    </section>
+    </div>
 
     <!-- Empty Filter State -->
     <div id="no-results" class="hidden text-center py-20 bg-background border-2 border-border my-8">
@@ -302,77 +382,183 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
     </div>
   </footer>
 
+  <!-- Compare Drawer -->
+  <div id="compare-drawer" class="fixed bottom-0 left-0 right-0 bg-background border-t-4 border-accent shadow-[0_-10px_40px_rgba(0,0,0,0.2)] z-50 transform translate-y-full transition-transform duration-300">
+    <div class="max-w-[95vw] mx-auto p-4 md:p-6">
+      <div class="flex justify-between items-center mb-4 border-b-2 border-border pb-2">
+        <h3 class="font-display text-xl font-bold uppercase tracking-tight text-foreground flex items-center gap-2">
+          COMPARE OFFERS <span class="text-xs font-mono bg-accent text-accent-foreground px-2 py-0.5" id="compare-count">0 selected</span>
+        </h3>
+        <button id="compare-clear" class="font-mono text-xs font-bold uppercase border-2 border-border px-3 py-1 hover:bg-brand-beet hover:text-white hover:border-brand-beet transition-colors text-foreground">
+          × CLEAR
+        </button>
+      </div>
+      
+      <div class="flex gap-4 overflow-x-auto pb-4 snap-x" id="compare-items-container">
+        <!-- Compare items injected via JS -->
+      </div>
+    </div>
+  </div>
+
   <script>
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
-    const locationSelector = document.getElementById('location-selector') as HTMLSelectElement;
+    const sortSelector = document.getElementById('sort-selector') as HTMLSelectElement;
     const vendorTabs = document.querySelectorAll('.vendor-tab');
-    const offerCards = document.querySelectorAll('.offer-card');
+    const franchiseSections = document.querySelectorAll('.franchise-section');
     const visibleCount = document.getElementById('visible-count');
     const noResults = document.getElementById('no-results');
-
-    const kfcSectionTabs = document.querySelectorAll('.kfc-section-tab');
-    const subfilterBar = document.getElementById('vendor-subfilter-bar');
-    const promoHeader = document.getElementById('kfc-promo-header');
-    const mealsHeader = document.getElementById('kfc-meals-header');
-
+    
+    // Compare Drawer Elements
+    const compareCheckboxes = document.querySelectorAll('.compare-cb') as NodeListOf<HTMLInputElement>;
+    const compareDrawer = document.getElementById('compare-drawer');
+    const compareCountEl = document.getElementById('compare-count');
+    const compareClearBtn = document.getElementById('compare-clear');
+    const compareContainer = document.getElementById('compare-items-container');
+    
     let activeVendor = 'all';
-    let activeKfcSection = 'all';
-    let activeLocation = 'all';
     let searchQuery = '';
+    let currentSort = 'popularity';
+    let compareSet = new Map();
+
+    // Section Toggle Logic
+    document.querySelectorAll('.franchise-header').forEach(header => {
+      header.addEventListener('click', (e) => {
+        const vendor = header.getAttribute('data-vendor');
+        const content = document.querySelector(`.franchise-content[data-vendor="${vendor}"]`);
+        const chevron = document.querySelector(`.section-chevron[data-vendor="${vendor}"]`);
+        
+        if (content && chevron) {
+          if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            content.classList.add('block');
+            chevron.classList.add('rotate-180');
+          } else {
+            content.classList.add('hidden');
+            content.classList.remove('block');
+            chevron.classList.remove('rotate-180');
+          }
+        }
+      });
+    });
+
+    // Expand Detail Toggle
+    document.querySelectorAll('.expand-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = trigger.getAttribute('data-id');
+        const detailPanel = document.getElementById(`detail-${id}`);
+        if (detailPanel) {
+          if (detailPanel.classList.contains('hidden')) {
+            detailPanel.classList.remove('hidden');
+            trigger.innerHTML = '▾ Hide Details';
+          } else {
+            detailPanel.classList.add('hidden');
+            trigger.innerHTML = '▸ Expand Details';
+          }
+        }
+      });
+    });
+
+    // Sorting Logic within Grids
+    function sortCards(method: string) {
+      document.querySelectorAll('.offers-grid').forEach(grid => {
+        const cards = Array.from(grid.querySelectorAll('.offer-card')) as HTMLElement[];
+        
+        cards.sort((a, b) => {
+          if (method === 'price-asc' || method === 'price-desc') {
+            const priceA = parseFloat(a.getAttribute('data-price') || '999999');
+            const priceB = parseFloat(b.getAttribute('data-price') || '999999');
+            return method === 'price-asc' ? priceA - priceB : priceB - priceA;
+          } else if (method === 'discount') {
+            const discA = parseFloat(a.getAttribute('data-discount') || '0');
+            const discB = parseFloat(b.getAttribute('data-discount') || '0');
+            return discB - discA; // desc
+          } else {
+            return 0; 
+          }
+        });
+        
+        // Re-append to DOM
+        cards.forEach(card => grid.appendChild(card));
+      });
+    }
+
+    sortSelector?.addEventListener('change', (e) => {
+      currentSort = (e.target as HTMLSelectElement).value;
+      if (currentSort !== 'popularity') {
+        sortCards(currentSort);
+      } else {
+        location.reload(); 
+      }
+    });
+
+    // Highlighting text function
+    function highlightText(text: string, query: string) {
+      if (!query) return text;
+      const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')})`, 'gi');
+      return text.replace(regex, '<mark class="bg-brand-yellow text-foreground">$1</mark>');
+    }
 
     function filterOffers() {
-      let count = 0;
-      let visibleKfcPromos = 0;
-      let visibleKfcMeals = 0;
+      let globalCount = 0;
 
-      offerCards.forEach((card) => {
-        const vendor = card.getAttribute('data-vendor');
-        const section = card.getAttribute('data-section') || '';
-        const cardLoc = card.getAttribute('data-location') || 'colombo';
-        const title = card.getAttribute('data-title') || '';
-        const category = card.getAttribute('data-category') || '';
-        const desc = card.getAttribute('data-description') || '';
+      franchiseSections.forEach((section) => {
+        const vendor = section.getAttribute('data-vendor');
+        const matchesVendorTab = activeVendor === 'all' || vendor === activeVendor;
+        
+        let sectionVisibleCards = 0;
+        
+        const cards = section.querySelectorAll('.offer-card');
+        
+        cards.forEach((card) => {
+          const title = card.getAttribute('data-title') || '';
+          const desc = card.getAttribute('data-description') || '';
+          
+          const matchesSearch = !searchQuery ||
+            title.includes(searchQuery) ||
+            desc.includes(searchQuery);
 
-        const matchesVendor = activeVendor === 'all' || vendor === activeVendor;
-        const matchesKfcSection = activeVendor !== 'kfc' || activeKfcSection === 'all' || section === activeKfcSection;
-        const matchesLocation = activeLocation === 'all' || cardLoc === activeLocation || cardLoc === 'all';
-        const matchesSearch = !searchQuery ||
-          title.includes(searchQuery) ||
-          category.includes(searchQuery) ||
-          desc.includes(searchQuery);
+          if (matchesVendorTab && matchesSearch) {
+            (card as HTMLElement).style.display = 'flex';
+            sectionVisibleCards++;
+            globalCount++;
+            
+            // Highlight text if searching
+            const textNodes = card.querySelectorAll('.searchable-text');
+            textNodes.forEach(node => {
+              if (!node.hasAttribute('data-orig')) {
+                node.setAttribute('data-orig', node.innerHTML);
+              }
+              const orig = node.getAttribute('data-orig') || '';
+              node.innerHTML = searchQuery ? highlightText(orig, searchQuery) : orig;
+            });
 
-        if (matchesVendor && matchesKfcSection && matchesLocation && matchesSearch) {
-          (card as HTMLElement).style.display = 'flex';
-          count++;
-          if (vendor === 'kfc') {
-            if (section === 'promotions') visibleKfcPromos++;
-            if (section === 'meals') visibleKfcMeals++;
+          } else {
+            (card as HTMLElement).style.display = 'none';
           }
+        });
+
+        // Hide entire section if no cards match search AND we have cards
+        if (!matchesVendorTab) {
+           (section as HTMLElement).style.display = 'none';
+        } else if (searchQuery && sectionVisibleCards === 0 && cards.length > 0) {
+           (section as HTMLElement).style.display = 'none';
         } else {
-          (card as HTMLElement).style.display = 'none';
+           (section as HTMLElement).style.display = 'block';
+           // Update section count text
+           const countLabel = section.querySelector('.vendor-section-count');
+           if (countLabel) {
+             countLabel.textContent = `${sectionVisibleCards} ${sectionVisibleCards === 1 ? 'OFFER' : 'OFFERS'}`;
+           }
         }
       });
 
-      // Show/hide KFC section banners and sub-filter bar
-      if (activeVendor === 'kfc') {
-        if (subfilterBar) subfilterBar.classList.remove('hidden');
-        if (promoHeader) {
-          const showPromo = (activeKfcSection === 'all' || activeKfcSection === 'promotions') && visibleKfcPromos > 0;
-          promoHeader.style.display = showPromo ? 'flex' : 'none';
-        }
-        if (mealsHeader) {
-          const showMeals = (activeKfcSection === 'all' || activeKfcSection === 'meals') && visibleKfcMeals > 0;
-          mealsHeader.style.display = showMeals ? 'flex' : 'none';
-        }
-      } else {
-        if (subfilterBar) subfilterBar.classList.add('hidden');
-        if (promoHeader) promoHeader.style.display = 'none';
-        if (mealsHeader) mealsHeader.style.display = 'none';
-      }
-
-      if (visibleCount) visibleCount.textContent = count.toString();
+      if (visibleCount) visibleCount.textContent = globalCount.toString();
+      
       if (noResults) {
-        if (count === 0) {
+        if (globalCount === 0 && activeVendor !== 'all') {
+           noResults.classList.add('hidden');
+        } else if (globalCount === 0) {
           noResults.classList.remove('hidden');
         } else {
           noResults.classList.add('hidden');
@@ -382,44 +568,31 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
 
     vendorTabs.forEach((tab) => {
       tab.addEventListener('click', () => {
+        const vendor = tab.getAttribute('data-vendor') || 'all';
+        
         vendorTabs.forEach((t) => {
           t.classList.remove('active-tab', 'bg-accent', 'text-accent-foreground');
           t.classList.add('bg-background', 'text-foreground');
         });
-
         tab.classList.add('active-tab', 'bg-accent', 'text-accent-foreground');
         tab.classList.remove('bg-background', 'text-foreground');
 
-        activeVendor = tab.getAttribute('data-vendor') || 'all';
+        activeVendor = vendor;
+        filterOffers();
 
-        // Reset KFC section filter to "all" when switching vendors
-        activeKfcSection = 'all';
-        kfcSectionTabs.forEach((st) => {
-          if (st.getAttribute('data-kfc-section') === 'all') {
-            st.classList.add('active-subtab', 'bg-accent', 'text-accent-foreground');
-            st.classList.remove('bg-background', 'text-foreground');
-          } else {
-            st.classList.remove('active-subtab', 'bg-accent', 'text-accent-foreground');
-            st.classList.add('bg-background', 'text-foreground');
+        if (vendor !== 'all') {
+          const section = document.querySelector(`.franchise-section[data-vendor="${vendor}"]`);
+          if (section) {
+            const content = section.querySelector('.franchise-content');
+            const chevron = section.querySelector('.section-chevron');
+            if (content && content.classList.contains('hidden')) {
+              content.classList.remove('hidden');
+              content.classList.add('block');
+              chevron?.classList.add('rotate-180');
+            }
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
-        });
-
-        filterOffers();
-      });
-    });
-
-    kfcSectionTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        kfcSectionTabs.forEach((t) => {
-          t.classList.remove('active-subtab', 'bg-accent', 'text-accent-foreground');
-          t.classList.add('bg-background', 'text-foreground');
-        });
-
-        tab.classList.add('active-subtab', 'bg-accent', 'text-accent-foreground');
-        tab.classList.remove('bg-background', 'text-foreground');
-
-        activeKfcSection = tab.getAttribute('data-kfc-section') || 'all';
-        filterOffers();
+        }
       });
     });
 
@@ -428,9 +601,78 @@ const marqueeItems = allOffers.slice(0, 10).map((o: any) => `${o.vendor_name.toU
       filterOffers();
     });
 
-    locationSelector?.addEventListener('change', (e) => {
-      activeLocation = (e.target as HTMLSelectElement).value.toLowerCase();
-      filterOffers();
+    // --- Compare Logic ---
+    function updateCompareDrawer() {
+      if (compareSet.size > 0) {
+        compareDrawer?.classList.remove('translate-y-full');
+      } else {
+        compareDrawer?.classList.add('translate-y-full');
+      }
+      
+      if (compareCountEl) {
+        compareCountEl.textContent = `${compareSet.size} selected`;
+      }
+
+      if (compareContainer) {
+        compareContainer.innerHTML = '';
+        compareSet.forEach((offerData, id) => {
+          const el = document.createElement('div');
+          el.className = "flex-none w-[280px] border-2 border-border p-3 bg-white relative snap-start";
+          el.innerHTML = \`
+            <button class="absolute top-2 right-2 text-foreground/50 hover:text-brand-beet font-bold text-lg leading-none compare-remove" data-id="\${id}">×</button>
+            <div class="flex gap-3">
+              <img src="\${offerData.image_url}" class="w-16 h-16 object-cover border border-border shrink-0" />
+              <div class="space-y-1 overflow-hidden">
+                <div class="text-xs font-mono font-bold text-accent truncate uppercase">\${offerData.vendor_name}</div>
+                <div class="font-display font-bold text-sm leading-tight truncate" title="\${offerData.title}">\${offerData.title}</div>
+                <div class="font-mono text-xs font-bold">\${offerData.discounted_price ? 'LKR ' + offerData.discounted_price : 'PROMO'}</div>
+              </div>
+            </div>
+            <a href="\${offerData.source_url}" target="_blank" class="block w-full mt-3 text-center bg-accent text-accent-foreground font-bold text-xs uppercase py-1.5 border border-border">CLAIM →</a>
+          \`;
+          compareContainer.appendChild(el);
+        });
+
+        document.querySelectorAll('.compare-remove').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = (e.target as HTMLElement).getAttribute('data-id');
+            if (id) {
+              compareSet.delete(id);
+              const cb = document.querySelector(\`.compare-cb[data-id="\${id}"]\`) as HTMLInputElement;
+              if (cb) cb.checked = false;
+              updateCompareDrawer();
+            }
+          });
+        });
+      }
+    }
+
+    compareCheckboxes.forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        const id = cb.getAttribute('data-id');
+        const raw = cb.closest('.offer-card')?.getAttribute('data-raw-offer');
+        
+        if (!id || !raw) return;
+
+        if (cb.checked) {
+          if (compareSet.size >= 3) {
+            alert("You can only compare up to 3 offers at once.");
+            cb.checked = false;
+            return;
+          }
+          compareSet.set(id, JSON.parse(raw));
+        } else {
+          compareSet.delete(id);
+        }
+        updateCompareDrawer();
+      });
     });
+
+    compareClearBtn?.addEventListener('click', () => {
+      compareSet.clear();
+      compareCheckboxes.forEach(cb => cb.checked = false);
+      updateCompareDrawer();
+    });
+
   </script>
 </Layout>
