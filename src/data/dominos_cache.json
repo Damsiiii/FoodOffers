@@ -1,10 +1,10 @@
 [
   {
-    "id": "dominos-074f77cb",
-    "title": "Domino's Special Offer",
+    "id": "dominos-76db931e",
+    "title": "Domino's Pizza Promotion",
     "description": "Domino's Sri Lanka promotion. See website for full details.",
     "category": "Pizza Deals",
-    "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550.jpg",
+    "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://pizzaonline.dominoslk.com/",
@@ -24,11 +24,11 @@
     "is_fallback": false
   },
   {
-    "id": "dominos-76db931e",
-    "title": "Domino's Pizza Promotion",
+    "id": "dominos-074f77cb",
+    "title": "Domino's Special Offer",
     "description": "Domino's Sri Lanka promotion. See website for full details.",
     "category": "Pizza Deals",
-    "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546.jpg",
+    "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://pizzaonline.dominoslk.com/",
