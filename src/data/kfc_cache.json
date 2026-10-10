@@ -89,5 +89,18 @@
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
     "discounted_price": 3180.0
+  },
+  {
+    "id": "kfc-ef75ea52",
+    "title": "BUY TWO LARGE BURIYANI GET ONE FREE",
+    "description": "KFC Sri Lanka: 31",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buytwolargeburiyanigetonefreed627f189f0d04d6b9bcc7f7ea86c1e41.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 1780.0
   }
 ]
