@@ -98,45 +98,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-b175",
-    "title": "Offer 01 - Weekend Vibes",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/dfe16ac9-321c-48b2-bbb2-115ed8ff74c7.jpg",
-    "deal_type": "Weekend Vibes",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-offer-01"
-  },
-  {
-    "id": "pizzahut-b223",
-    "title": "Offer 02 - Weekend Vibes",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/47ba977c-9ec6-4f7f-a254-ee81192d43e3.jpg",
-    "deal_type": "Weekend Vibes",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-01-free-lava-cake-and-garlic-bread"
-  },
-  {
-    "id": "pizzahut-b174",
-    "title": "Offer 03 - Weekend Vibes",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/75de521c-a2e3-4f34-aa63-dfe6021ddc8d.jpg",
-    "deal_type": "Weekend Vibes",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-offer-02"
-  },
-  {
-    "id": "pizzahut-b224",
-    "title": "Offer 04 - Weekend Vibes",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/20e7f3c9-099c-48fb-abea-0944446d361d.jpg",
-    "deal_type": "Weekend Vibes",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/weekend-vibes-02-free-lava-cake-or-garlic-bread"
   }
 ]
