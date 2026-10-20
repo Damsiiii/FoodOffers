@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 47,
+  "total_offers": 45,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -323,11 +323,11 @@
       "count": 3,
       "offers": [
         {
-          "id": "dominos-6fe75b2e",
-          "title": "Domino's Party Pack",
+          "id": "dominos-e47e33a4",
+          "title": "Domino's Pizza Promotion",
           "description": "Domino's Sri Lanka promotion. See website for full details.",
           "category": "Pizza Deals",
-          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize_202501151736922615_202505051746431525_202604091775725754_202604171776410697_202604271777272970_202605271779863438_202607301785413492_202610131791882030_202610141791961725_202610141791962070.png",
+          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217.jpg",
           "deal_type": "Special Promotion",
           "valid_until": "Limited Time",
           "source_url": "https://pizzaonline.dominoslk.com/",
@@ -337,11 +337,11 @@
           "vendor_name": "Domino's Pizza Sri Lanka"
         },
         {
-          "id": "dominos-e47e33a4",
-          "title": "Domino's Pizza Promotion",
+          "id": "dominos-6fe75b2e",
+          "title": "Domino's Party Pack",
           "description": "Domino's Sri Lanka promotion. See website for full details.",
           "category": "Pizza Deals",
-          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217.jpg",
+          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize_202501151736922615_202505051746431525_202604091775725754_202604171776410697_202604271777272970_202605271779863438_202607301785413492_202610131791882030_202610141791961725_202610141791962070.png",
           "deal_type": "Special Promotion",
           "valid_until": "Limited Time",
           "source_url": "https://pizzaonline.dominoslk.com/",
@@ -729,38 +729,10 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 5,
+      "count": 3,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Coffee Break",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Break",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-2",
-          "title": "CyberDeals.lk",
-          "description": "Uber Eats Sri Lanka promotion: CyberDeals.lk",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-3",
           "title": "Saveira Indian Restaurant",
           "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
           "category": "Delivery Deals",
@@ -774,7 +746,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-4",
+          "id": "ubereats-dom-2",
           "title": "Barista Coffee",
           "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
           "category": "Delivery Deals",
@@ -788,7 +760,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-5",
+          "id": "ubereats-dom-3",
           "title": "Coffee Colombo",
           "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
@@ -1105,11 +1077,11 @@
       "vendor_name": "Pizza Hut Sri Lanka"
     },
     {
-      "id": "dominos-6fe75b2e",
-      "title": "Domino's Party Pack",
+      "id": "dominos-e47e33a4",
+      "title": "Domino's Pizza Promotion",
       "description": "Domino's Sri Lanka promotion. See website for full details.",
       "category": "Pizza Deals",
-      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize_202501151736922615_202505051746431525_202604091775725754_202604171776410697_202604271777272970_202605271779863438_202607301785413492_202610131791882030_202610141791961725_202610141791962070.png",
+      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217.jpg",
       "deal_type": "Special Promotion",
       "valid_until": "Limited Time",
       "source_url": "https://pizzaonline.dominoslk.com/",
@@ -1119,11 +1091,11 @@
       "vendor_name": "Domino's Pizza Sri Lanka"
     },
     {
-      "id": "dominos-e47e33a4",
-      "title": "Domino's Pizza Promotion",
+      "id": "dominos-6fe75b2e",
+      "title": "Domino's Party Pack",
       "description": "Domino's Sri Lanka promotion. See website for full details.",
       "category": "Pizza Deals",
-      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217.jpg",
+      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize_202501151736922615_202505051746431525_202604091775725754_202604171776410697_202604271777272970_202605271779863438_202607301785413492_202610131791882030_202610141791961725_202610141791962070.png",
       "deal_type": "Special Promotion",
       "valid_until": "Limited Time",
       "source_url": "https://pizzaonline.dominoslk.com/",
@@ -1420,34 +1392,6 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Coffee Break",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Break",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-2",
-      "title": "CyberDeals.lk",
-      "description": "Uber Eats Sri Lanka promotion: CyberDeals.lk",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-3",
       "title": "Saveira Indian Restaurant",
       "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
       "category": "Delivery Deals",
@@ -1461,7 +1405,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-4",
+      "id": "ubereats-dom-2",
       "title": "Barista Coffee",
       "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
       "category": "Delivery Deals",
@@ -1475,7 +1419,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-5",
+      "id": "ubereats-dom-3",
       "title": "Coffee Colombo",
       "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
@@ -1489,5 +1433,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-10-20T12:38:12.057770+00:00"
+  "last_updated": "2026-10-20T14:26:18.188424+00:00"
 }
