@@ -1,10 +1,10 @@
 [
   {
-    "id": "dominos-074f77cb",
+    "id": "dominos-4d261f14",
     "title": "Domino's Special Offer",
     "description": "Domino's Sri Lanka promotion. See website for full details.",
     "category": "Pizza Deals",
-    "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550.jpg",
+    "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550_202610201792481903_202610201792482178_202610201792482492.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://pizzaonline.dominoslk.com/",
