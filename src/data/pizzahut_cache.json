@@ -98,5 +98,36 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
+  },
+  {
+    "id": "pizzahut-b238",
+    "title": "Offer 01 - Thrilling Thursday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Thrilling Thursday",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/20b8330d-e34c-41cf-829a-08ede8c9e78c.jpg",
+    "deal_type": "Thrilling Thursdays",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursdays-202610-offer-1"
+  },
+  {
+    "id": "pizzahut-b239",
+    "title": "Offer 02 - Thrilling Thursday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Thrilling Thursday",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/be4ce052-2737-4abb-a6bb-4f78511d7d0c.jpg",
+    "deal_type": "Thrilling Thursdays",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursdays-202610-offer-2"
+  },
+  {
+    "id": "pizzahut-b034",
+    "title": "Offer 03 - Thrilling Thursday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Thrilling Thursday",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/99515790-3c38-43cc-bfc4-cd585225cf24.jpg",
+    "deal_type": "Thrilling Thursdays",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/thrilling-thursday-offer-03",
+    "discounted_price": 2750.0
   }
 ]
