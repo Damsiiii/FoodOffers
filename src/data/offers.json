@@ -10,7 +10,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.kfc.lk",
       "status": "live",
-      "count": 7,
+      "count": 6,
       "offers": [
         {
           "id": "kfc-92ba5022",
@@ -104,22 +104,6 @@
           "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
           "location": "island-wide",
           "discounted_price": 2530.0,
-          "is_fallback": false,
-          "vendor_id": "kfc",
-          "vendor_name": "KFC Sri Lanka"
-        },
-        {
-          "id": "kfc-566445f1",
-          "title": "8PC H&C BUCKET FOR RS.2990",
-          "description": "KFC Sri Lanka: 8PC H&C BUCKET FOR RS.2990",
-          "category": "Special Promotions",
-          "section": "promotions",
-          "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pchcbucketforrs.2990b745be4b019046158266dcc1eccf5d66.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.kfc.lk/menu/promotions",
-          "location": "island-wide",
-          "discounted_price": 2990.0,
           "is_fallback": false,
           "vendor_id": "kfc",
           "vendor_name": "KFC Sri Lanka"
@@ -353,11 +337,11 @@
       "count": 3,
       "offers": [
         {
-          "id": "dominos-11e659d2",
-          "title": "Domino's Pizza Promotion",
+          "id": "dominos-4d261f14",
+          "title": "Domino's Special Offer",
           "description": "Domino's Sri Lanka promotion. See website for full details.",
           "category": "Pizza Deals",
-          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423.jpg",
+          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550_202610201792481903_202610201792482178_202610201792482492.jpg",
           "deal_type": "Special Promotion",
           "valid_until": "Limited Time",
           "source_url": "https://pizzaonline.dominoslk.com/",
@@ -381,11 +365,11 @@
           "vendor_name": "Domino's Pizza Sri Lanka"
         },
         {
-          "id": "dominos-4d261f14",
-          "title": "Domino's Special Offer",
+          "id": "dominos-11e659d2",
+          "title": "Domino's Pizza Promotion",
           "description": "Domino's Sri Lanka promotion. See website for full details.",
           "category": "Pizza Deals",
-          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550_202610201792481903_202610201792482178_202610201792482492.jpg",
+          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423.jpg",
           "deal_type": "Special Promotion",
           "valid_until": "Limited Time",
           "source_url": "https://pizzaonline.dominoslk.com/",
@@ -759,12 +743,12 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 5,
+      "count": 6,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "SaveMo",
-          "description": "Uber Eats Sri Lanka promotion: SaveMo",
+          "title": "Value Deals",
+          "description": "Uber Eats Sri Lanka promotion: Value Deals",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -777,8 +761,8 @@
         },
         {
           "id": "ubereats-dom-2",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+          "title": "Magic Offers LK",
+          "description": "Uber Eats Sri Lanka promotion: Magic Offers LK",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -791,8 +775,8 @@
         },
         {
           "id": "ubereats-dom-3",
-          "title": "NESTLE COFFEEMATE POUCH 450G",
-          "description": "Uber Eats Sri Lanka promotion: LKR 1,750.00\nNESTLE COFFEEMATE POUCH 450G",
+          "title": "25% off",
+          "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -805,8 +789,8 @@
         },
         {
           "id": "ubereats-dom-4",
-          "title": "K/SHONG COFF CREAM NON DAIRY POU 3G*50S",
-          "description": "Uber Eats Sri Lanka promotion: LKR 1,230.00\nK/SHONG COFF CREAM NON DAIRY POU 3G*50S",
+          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -819,6 +803,20 @@
         },
         {
           "id": "ubereats-dom-5",
+          "title": "20% off",
+          "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 64.00 LKR 80.00\nYoghurt 90G - Highland - SKU 001740",
+          "category": "Delivery Deals",
+          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-dom-6",
           "title": "Coffee Colombo",
           "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
@@ -936,22 +934,6 @@
       "source_url": "https://www.kfc.lk/menu/meals-and-beverages/combos--aggregators",
       "location": "island-wide",
       "discounted_price": 2530.0,
-      "is_fallback": false,
-      "vendor_id": "kfc",
-      "vendor_name": "KFC Sri Lanka"
-    },
-    {
-      "id": "kfc-566445f1",
-      "title": "8PC H&C BUCKET FOR RS.2990",
-      "description": "KFC Sri Lanka: 8PC H&C BUCKET FOR RS.2990",
-      "category": "Special Promotions",
-      "section": "promotions",
-      "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pchcbucketforrs.2990b745be4b019046158266dcc1eccf5d66.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.kfc.lk/menu/promotions",
-      "location": "island-wide",
-      "discounted_price": 2990.0,
       "is_fallback": false,
       "vendor_id": "kfc",
       "vendor_name": "KFC Sri Lanka"
@@ -1165,11 +1147,11 @@
       "vendor_name": "Pizza Hut Sri Lanka"
     },
     {
-      "id": "dominos-11e659d2",
-      "title": "Domino's Pizza Promotion",
+      "id": "dominos-4d261f14",
+      "title": "Domino's Special Offer",
       "description": "Domino's Sri Lanka promotion. See website for full details.",
       "category": "Pizza Deals",
-      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423.jpg",
+      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550_202610201792481903_202610201792482178_202610201792482492.jpg",
       "deal_type": "Special Promotion",
       "valid_until": "Limited Time",
       "source_url": "https://pizzaonline.dominoslk.com/",
@@ -1193,11 +1175,11 @@
       "vendor_name": "Domino's Pizza Sri Lanka"
     },
     {
-      "id": "dominos-4d261f14",
-      "title": "Domino's Special Offer",
+      "id": "dominos-11e659d2",
+      "title": "Domino's Pizza Promotion",
       "description": "Domino's Sri Lanka promotion. See website for full details.",
       "category": "Pizza Deals",
-      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Banners_400x220_202412191734592455_202505051746430766_202604091775725785_202607081783486868_202607301785413508_202608201787197550_202610201792481903_202610201792482178_202610201792482492.jpg",
+      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423.jpg",
       "deal_type": "Special Promotion",
       "valid_until": "Limited Time",
       "source_url": "https://pizzaonline.dominoslk.com/",
@@ -1480,8 +1462,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "SaveMo",
-      "description": "Uber Eats Sri Lanka promotion: SaveMo",
+      "title": "Value Deals",
+      "description": "Uber Eats Sri Lanka promotion: Value Deals",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1494,8 +1476,8 @@
     },
     {
       "id": "ubereats-dom-2",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+      "title": "Magic Offers LK",
+      "description": "Uber Eats Sri Lanka promotion: Magic Offers LK",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1508,8 +1490,8 @@
     },
     {
       "id": "ubereats-dom-3",
-      "title": "NESTLE COFFEEMATE POUCH 450G",
-      "description": "Uber Eats Sri Lanka promotion: LKR 1,750.00\nNESTLE COFFEEMATE POUCH 450G",
+      "title": "25% off",
+      "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 2,160.00 LKR 2,880.00\nWhipping Cream 1L - Blue Band - SKU 008324",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1522,8 +1504,8 @@
     },
     {
       "id": "ubereats-dom-4",
-      "title": "K/SHONG COFF CREAM NON DAIRY POU 3G*50S",
-      "description": "Uber Eats Sri Lanka promotion: LKR 1,230.00\nK/SHONG COFF CREAM NON DAIRY POU 3G*50S",
+      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
+      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1536,6 +1518,20 @@
     },
     {
       "id": "ubereats-dom-5",
+      "title": "20% off",
+      "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 64.00 LKR 80.00\nYoghurt 90G - Highland - SKU 001740",
+      "category": "Delivery Deals",
+      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-dom-6",
       "title": "Coffee Colombo",
       "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
@@ -1549,5 +1545,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-10-25T15:00:43.642577+00:00"
+  "last_updated": "2026-10-25T17:14:48.584085+00:00"
 }
