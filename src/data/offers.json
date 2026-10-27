@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 52,
+  "total_offers": 48,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -180,7 +180,7 @@
       "vendor_logo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=100&h=100&fit=crop",
       "website_url": "https://www.pizzahut.lk",
       "status": "live",
-      "count": 16,
+      "count": 13,
       "offers": [
         {
           "id": "pizzahut-j431",
@@ -326,20 +326,6 @@
           "vendor_name": "Pizza Hut Sri Lanka"
         },
         {
-          "id": "pizzahut-b146",
-          "title": "Offer 1 - Hut Savers",
-          "description": "Pizza Hut Sri Lanka: ...",
-          "category": "Meal Deals",
-          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/7dfe1211-f89e-4004-b796-afb214c05370.png",
-          "deal_type": "Hut Savers",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-personal-pan-offer",
-          "discounted_price": 899.0,
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka"
-        },
-        {
           "id": "pizzahut-j961",
           "title": "Offer 2 - Dont Cook Tuesday",
           "description": "Pizza Hut Sri Lanka: ...",
@@ -348,20 +334,6 @@
           "deal_type": "Don't Cook Tuesday",
           "valid_until": "Limited Time",
           "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-gd-offer",
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka"
-        },
-        {
-          "id": "pizzahut-b147",
-          "title": "Offer 2 - Hut Savers",
-          "description": "Pizza Hut Sri Lanka: ...",
-          "category": "Meal Deals",
-          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/d5e86918-8c61-450f-84ad-bf72a97b338a.png",
-          "deal_type": "Hut Savers",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-medium-pan-offer",
-          "discounted_price": 1499.0,
           "is_fallback": false,
           "vendor_id": "pizzahut",
           "vendor_name": "Pizza Hut Sri Lanka"
@@ -376,20 +348,6 @@
           "valid_until": "Limited Time",
           "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-tuesday-2025-medium-new",
           "discounted_price": 3000.0,
-          "is_fallback": false,
-          "vendor_id": "pizzahut",
-          "vendor_name": "Pizza Hut Sri Lanka"
-        },
-        {
-          "id": "pizzahut-b148",
-          "title": "Offer 3 - Hut Savers",
-          "description": "Pizza Hut Sri Lanka: ...",
-          "category": "Meal Deals",
-          "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/0ec541ec-a9f0-403b-b72e-273ce504aedc.png",
-          "deal_type": "Hut Savers",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-large-pan-offer",
-          "discounted_price": 2999.0,
           "is_fallback": false,
           "vendor_id": "pizzahut",
           "vendor_name": "Pizza Hut Sri Lanka"
@@ -811,24 +769,10 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 4,
+      "count": 3,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Cakes and Coffee",
-          "description": "Uber Eats Sri Lanka promotion: Cakes and Coffee",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-2",
           "title": "Coffee Colombo",
           "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
@@ -842,9 +786,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-3",
-          "title": "Saveira Indian Restaurant",
-          "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+          "id": "ubereats-dom-2",
+          "title": "NESTLE COFFEEMATE POUCH 450G",
+          "description": "Uber Eats Sri Lanka promotion: LKR 1,750.00\nNESTLE COFFEEMATE POUCH 450G",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -856,9 +800,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-4",
-          "title": "Croffle SL",
-          "description": "Uber Eats Sri Lanka promotion: Croffle SL",
+          "id": "ubereats-dom-3",
+          "title": "K/SHONG COFF CREAM NON DAIRY POU 3G*50S",
+          "description": "Uber Eats Sri Lanka promotion: LKR 1,230.00\nK/SHONG COFF CREAM NON DAIRY POU 3G*50S",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -1186,20 +1130,6 @@
       "vendor_name": "Pizza Hut Sri Lanka"
     },
     {
-      "id": "pizzahut-b146",
-      "title": "Offer 1 - Hut Savers",
-      "description": "Pizza Hut Sri Lanka: ...",
-      "category": "Meal Deals",
-      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/7dfe1211-f89e-4004-b796-afb214c05370.png",
-      "deal_type": "Hut Savers",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-personal-pan-offer",
-      "discounted_price": 899.0,
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka"
-    },
-    {
       "id": "pizzahut-j961",
       "title": "Offer 2 - Dont Cook Tuesday",
       "description": "Pizza Hut Sri Lanka: ...",
@@ -1208,20 +1138,6 @@
       "deal_type": "Don't Cook Tuesday",
       "valid_until": "Limited Time",
       "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-gd-offer",
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka"
-    },
-    {
-      "id": "pizzahut-b147",
-      "title": "Offer 2 - Hut Savers",
-      "description": "Pizza Hut Sri Lanka: ...",
-      "category": "Meal Deals",
-      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/d5e86918-8c61-450f-84ad-bf72a97b338a.png",
-      "deal_type": "Hut Savers",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-medium-pan-offer",
-      "discounted_price": 1499.0,
       "is_fallback": false,
       "vendor_id": "pizzahut",
       "vendor_name": "Pizza Hut Sri Lanka"
@@ -1236,20 +1152,6 @@
       "valid_until": "Limited Time",
       "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-tuesday-2025-medium-new",
       "discounted_price": 3000.0,
-      "is_fallback": false,
-      "vendor_id": "pizzahut",
-      "vendor_name": "Pizza Hut Sri Lanka"
-    },
-    {
-      "id": "pizzahut-b148",
-      "title": "Offer 3 - Hut Savers",
-      "description": "Pizza Hut Sri Lanka: ...",
-      "category": "Meal Deals",
-      "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/0ec541ec-a9f0-403b-b72e-273ce504aedc.png",
-      "deal_type": "Hut Savers",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-large-pan-offer",
-      "discounted_price": 2999.0,
       "is_fallback": false,
       "vendor_id": "pizzahut",
       "vendor_name": "Pizza Hut Sri Lanka"
@@ -1570,20 +1472,6 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Cakes and Coffee",
-      "description": "Uber Eats Sri Lanka promotion: Cakes and Coffee",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-2",
       "title": "Coffee Colombo",
       "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
       "category": "Delivery Deals",
@@ -1597,9 +1485,9 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-3",
-      "title": "Saveira Indian Restaurant",
-      "description": "Uber Eats Sri Lanka promotion: Saveira Indian Restaurant",
+      "id": "ubereats-dom-2",
+      "title": "NESTLE COFFEEMATE POUCH 450G",
+      "description": "Uber Eats Sri Lanka promotion: LKR 1,750.00\nNESTLE COFFEEMATE POUCH 450G",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1611,9 +1499,9 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-4",
-      "title": "Croffle SL",
-      "description": "Uber Eats Sri Lanka promotion: Croffle SL",
+      "id": "ubereats-dom-3",
+      "title": "K/SHONG COFF CREAM NON DAIRY POU 3G*50S",
+      "description": "Uber Eats Sri Lanka promotion: LKR 1,230.00\nK/SHONG COFF CREAM NON DAIRY POU 3G*50S",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1625,5 +1513,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-10-27T10:10:01.639753+00:00"
+  "last_updated": "2026-10-27T13:05:28.098367+00:00"
 }
