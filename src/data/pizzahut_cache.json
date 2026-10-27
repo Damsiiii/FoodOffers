@@ -98,36 +98,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-j950",
-    "title": "Offer 1 - Dont Cook Tuesday",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/e42dab61-d067-4c57-8e75-df08f5de08c6.jpg",
-    "deal_type": "Don't Cook Tuesday",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-tuesday-pan-and-ultimate-cheese"
-  },
-  {
-    "id": "pizzahut-j961",
-    "title": "Offer 2 - Dont Cook Tuesday",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/085d1f69-2812-45bf-97d7-0f8e03e4db6b.jpg",
-    "deal_type": "Don't Cook Tuesday",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-gd-offer"
-  },
-  {
-    "id": "pizzahut-j531",
-    "title": "Offer 3 - Dont Cook Tuesday",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/0082a06b-43e4-4ba9-b4bb-1142c0ef50c7.jpg",
-    "deal_type": "Don't Cook Tuesday",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/dont-cook-tuesday-2025-medium-new",
-    "discounted_price": 3000.0
   }
 ]
