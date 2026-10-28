@@ -2,7 +2,7 @@
   "total_vendors": 14,
   "live_vendors": 14,
   "fallback_vendors": 0,
-  "total_offers": 48,
+  "total_offers": 46,
   "vendors": [
     {
       "vendor_id": "kfc",
@@ -307,20 +307,6 @@
       "count": 3,
       "offers": [
         {
-          "id": "dominos-870c256a",
-          "title": "Domino's Pizza Promotion",
-          "description": "Domino's Sri Lanka promotion. See website for full details.",
-          "category": "Pizza Deals",
-          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423_202610271793084549_202610281793165020_202610281793165288_202610281793165562.jpg",
-          "deal_type": "Special Promotion",
-          "valid_until": "Limited Time",
-          "source_url": "https://pizzaonline.dominoslk.com/",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "dominos",
-          "vendor_name": "Domino's Pizza Sri Lanka"
-        },
-        {
           "id": "dominos-4d261f14",
           "title": "Domino's Special Offer",
           "description": "Domino's Sri Lanka promotion. See website for full details.",
@@ -340,6 +326,20 @@
           "description": "Domino's Sri Lanka promotion. See website for full details.",
           "category": "Pizza Deals",
           "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize_202501151736922615_202505051746431525_202604091775725754_202604171776410697_202604271777272970_202605271779863438_202607301785413492_202610131791882030_202610141791961725_202610141791962070.png",
+          "deal_type": "Special Promotion",
+          "valid_until": "Limited Time",
+          "source_url": "https://pizzaonline.dominoslk.com/",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "dominos",
+          "vendor_name": "Domino's Pizza Sri Lanka"
+        },
+        {
+          "id": "dominos-870c256a",
+          "title": "Domino's Pizza Promotion",
+          "description": "Domino's Sri Lanka promotion. See website for full details.",
+          "category": "Pizza Deals",
+          "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423_202610271793084549_202610281793165020_202610281793165288_202610281793165562.jpg",
           "deal_type": "Special Promotion",
           "valid_until": "Limited Time",
           "source_url": "https://pizzaonline.dominoslk.com/",
@@ -713,24 +713,10 @@
       "vendor_logo": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=100&h=100&fit=crop",
       "website_url": "https://www.ubereats.com/lk",
       "status": "live",
-      "count": 7,
+      "count": 5,
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Ceylonstar Coffee and Tea",
-          "description": "Uber Eats Sri Lanka promotion: Ceylonstar Coffee and Tea",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-2",
           "title": "30% off",
           "description": "Uber Eats Sri Lanka promotion: 30% off\nLKR 395.50 LKR 565.00\nSuperior Heavy Flow 16 S - Fems - SKU 000561",
           "category": "Delivery Deals",
@@ -744,7 +730,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-3",
+          "id": "ubereats-dom-2",
           "title": "40% off",
           "description": "Uber Eats Sri Lanka promotion: 40% off\nLKR 1,710.00 LKR 2,850.00\nBeautiful Curls Conditioner 380Ml - Dove - Sku 007328",
           "category": "Delivery Deals",
@@ -758,7 +744,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-4",
+          "id": "ubereats-dom-3",
           "title": "25% off",
           "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 232.50 LKR 310.00\nSuperior Heavy Flow 8 S - Fems - SKU 000562",
           "category": "Delivery Deals",
@@ -772,7 +758,7 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-5",
+          "id": "ubereats-dom-4",
           "title": "20% off",
           "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 620.00 LKR 775.00\nSunsilk Nourishing Soft & Smooth Conditioner 180Ml - SKU 001374",
           "category": "Delivery Deals",
@@ -786,23 +772,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-6",
+          "id": "ubereats-dom-5",
           "title": "15% off",
           "description": "Uber Eats Sri Lanka promotion: 15% off\nLKR 408.00 LKR 480.00\nHair-Removal Cream Snsitive 30G - Veet - SKU 006800",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-7",
-          "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-          "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -1101,20 +1073,6 @@
       "vendor_name": "Pizza Hut Sri Lanka"
     },
     {
-      "id": "dominos-870c256a",
-      "title": "Domino's Pizza Promotion",
-      "description": "Domino's Sri Lanka promotion. See website for full details.",
-      "category": "Pizza Deals",
-      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423_202610271793084549_202610281793165020_202610281793165288_202610281793165562.jpg",
-      "deal_type": "Special Promotion",
-      "valid_until": "Limited Time",
-      "source_url": "https://pizzaonline.dominoslk.com/",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "dominos",
-      "vendor_name": "Domino's Pizza Sri Lanka"
-    },
-    {
       "id": "dominos-4d261f14",
       "title": "Domino's Special Offer",
       "description": "Domino's Sri Lanka promotion. See website for full details.",
@@ -1134,6 +1092,20 @@
       "description": "Domino's Sri Lanka promotion. See website for full details.",
       "category": "Pizza Deals",
       "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Party_Pack_1_Resize_202501151736922615_202505051746431525_202604091775725754_202604171776410697_202604271777272970_202605271779863438_202607301785413492_202610131791882030_202610141791961725_202610141791962070.png",
+      "deal_type": "Special Promotion",
+      "valid_until": "Limited Time",
+      "source_url": "https://pizzaonline.dominoslk.com/",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "dominos",
+      "vendor_name": "Domino's Pizza Sri Lanka"
+    },
+    {
+      "id": "dominos-870c256a",
+      "title": "Domino's Pizza Promotion",
+      "description": "Domino's Sri Lanka promotion. See website for full details.",
+      "category": "Pizza Deals",
+      "image_url": "https://apis.dominoslk.com/olo-lka-prod-api/images/Chicken_Fiesta_Top_Home_Banner__202402271709034005_202406131718258685_202412191734592482_202505051746431572_202605271779863407_202605291780045112_202607081783486858_202608211787286496_202608211787308335_202610011790827654_202610021790916092_202610021790916507_202610091791520546_202610201792479898_202610201792480217_202610211792589840_202610211792590139_202610211792590423_202610271793084549_202610281793165020_202610281793165288_202610281793165562.jpg",
       "deal_type": "Special Promotion",
       "valid_until": "Limited Time",
       "source_url": "https://pizzaonline.dominoslk.com/",
@@ -1416,20 +1388,6 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Ceylonstar Coffee and Tea",
-      "description": "Uber Eats Sri Lanka promotion: Ceylonstar Coffee and Tea",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-2",
       "title": "30% off",
       "description": "Uber Eats Sri Lanka promotion: 30% off\nLKR 395.50 LKR 565.00\nSuperior Heavy Flow 16 S - Fems - SKU 000561",
       "category": "Delivery Deals",
@@ -1443,7 +1401,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-3",
+      "id": "ubereats-dom-2",
       "title": "40% off",
       "description": "Uber Eats Sri Lanka promotion: 40% off\nLKR 1,710.00 LKR 2,850.00\nBeautiful Curls Conditioner 380Ml - Dove - Sku 007328",
       "category": "Delivery Deals",
@@ -1457,7 +1415,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-4",
+      "id": "ubereats-dom-3",
       "title": "25% off",
       "description": "Uber Eats Sri Lanka promotion: 25% off\nLKR 232.50 LKR 310.00\nSuperior Heavy Flow 8 S - Fems - SKU 000562",
       "category": "Delivery Deals",
@@ -1471,7 +1429,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-5",
+      "id": "ubereats-dom-4",
       "title": "20% off",
       "description": "Uber Eats Sri Lanka promotion: 20% off\nLKR 620.00 LKR 775.00\nSunsilk Nourishing Soft & Smooth Conditioner 180Ml - SKU 001374",
       "category": "Delivery Deals",
@@ -1485,7 +1443,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-6",
+      "id": "ubereats-dom-5",
       "title": "15% off",
       "description": "Uber Eats Sri Lanka promotion: 15% off\nLKR 408.00 LKR 480.00\nHair-Removal Cream Snsitive 30G - Veet - SKU 006800",
       "category": "Delivery Deals",
@@ -1497,21 +1455,7 @@
       "is_fallback": false,
       "vendor_id": "ubereats",
       "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-7",
-      "title": "Set Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "description": "Uber Eats Sri Lanka promotion: LKR 400.00\nSet Yoghurt Promo Pack (6X80G) - Kotmale - SKU 006412",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-10-28T19:07:58.434860+00:00"
+  "last_updated": "2026-10-28T21:16:35.432659+00:00"
 }
