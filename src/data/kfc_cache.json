@@ -78,12 +78,12 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-a5149370",
-    "title": "10PC HOT DRUMLETS OFFER",
-    "description": "KFC Sri Lanka: 10PC HOT DRUMLETS OFFER",
+    "id": "kfc-5f8e51fe",
+    "title": "10PC HOT DRUMLETS + 1 PEPSI 400ML",
+    "description": "KFC Sri Lanka: 10PC HOT DRUMLETS + 1 PEPSI 400ML",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/10pchotdrumletsoffer947f767c371b4ed79aa31ea892db9708.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/10pchotdrumlets1pepsi400ml745682ce26ea400db2a508670f0a7840.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
@@ -91,12 +91,12 @@
     "discounted_price": 1790.0
   },
   {
-    "id": "kfc-ef3fba98",
-    "title": "20PC HOT DRUMLETS OFFER",
-    "description": "KFC Sri Lanka: 20PC HOT DRUMLETS OFFER",
+    "id": "kfc-7463cf73",
+    "title": "20PCS HOT DRUMLET + 2 PEPSI 400ML",
+    "description": "KFC Sri Lanka: 20PCS HOT DRUMLET + 2 PEPSI 400ML",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/20pchotdrumletsofferd49133d9820c4868b37f2ae25515c702.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/20pcshotdrumlet2pepsi400mlbb73e61d1c474f638f13def6a21d406c.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
