@@ -78,16 +78,29 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-ef75ea52",
-    "title": "BUY TWO LARGE BURIYANI GET ONE FREE",
-    "description": "KFC Sri Lanka: 31",
+    "id": "kfc-1e3d4e88",
+    "title": "6PCS H&C BUCKET+ZESTY HALF CHICKEN",
+    "description": "KFC Sri Lanka: 6PCS H&C BUCKET+ZESTY HALF CHICKEN",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/buytwolargeburiyanigetonefreed627f189f0d04d6b9bcc7f7ea86c1e41.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/6pcshcbucketzestyhalfchicken80e63eb5e4324da5a9b7f4f4db36867a.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
-    "discounted_price": 1780.0
+    "discounted_price": 3990.0
+  },
+  {
+    "id": "kfc-e21e5df8",
+    "title": "8PCS H&C BUCKET+ZESTY FULL CHICKEN",
+    "description": "KFC Sri Lanka: 8PCS H&C BUCKET+ZESTY FULL CHICKEN",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pcshcbucketzestyfullchicken52e3b7605c57417fbbc14d6b6e0ccedd.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 5390.0
   }
 ]
