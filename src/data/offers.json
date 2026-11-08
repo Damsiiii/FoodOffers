@@ -795,8 +795,8 @@
       "offers": [
         {
           "id": "ubereats-dom-1",
-          "title": "Island Tea & Ceylon Coffee Club",
-          "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
+          "title": "Magic Offers LK",
+          "description": "Uber Eats Sri Lanka promotion: Magic Offers LK",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -823,6 +823,20 @@
         },
         {
           "id": "ubereats-dom-3",
+          "title": "Island Tea & Ceylon Coffee Club",
+          "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
+          "category": "Delivery Deals",
+          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+          "deal_type": "Uber Eats Offer",
+          "valid_until": "Limited Time",
+          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+          "location": "colombo",
+          "is_fallback": false,
+          "vendor_id": "ubereats",
+          "vendor_name": "Uber Eats Sri Lanka"
+        },
+        {
+          "id": "ubereats-dom-4",
           "title": "Barista Coffee",
           "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
           "category": "Delivery Deals",
@@ -836,23 +850,9 @@
           "vendor_name": "Uber Eats Sri Lanka"
         },
         {
-          "id": "ubereats-dom-4",
+          "id": "ubereats-dom-5",
           "title": "Department of Coffee",
           "description": "Uber Eats Sri Lanka promotion: Department of Coffee",
-          "category": "Delivery Deals",
-          "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-          "deal_type": "Uber Eats Offer",
-          "valid_until": "Limited Time",
-          "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-          "location": "colombo",
-          "is_fallback": false,
-          "vendor_id": "ubereats",
-          "vendor_name": "Uber Eats Sri Lanka"
-        },
-        {
-          "id": "ubereats-dom-5",
-          "title": "Coffee Colombo",
-          "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
           "category": "Delivery Deals",
           "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
           "deal_type": "Uber Eats Offer",
@@ -1544,8 +1544,8 @@
     },
     {
       "id": "ubereats-dom-1",
-      "title": "Island Tea & Ceylon Coffee Club",
-      "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
+      "title": "Magic Offers LK",
+      "description": "Uber Eats Sri Lanka promotion: Magic Offers LK",
       "category": "Delivery Deals",
       "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
       "deal_type": "Uber Eats Offer",
@@ -1572,6 +1572,20 @@
     },
     {
       "id": "ubereats-dom-3",
+      "title": "Island Tea & Ceylon Coffee Club",
+      "description": "Uber Eats Sri Lanka promotion: Island Tea & Ceylon Coffee Club",
+      "category": "Delivery Deals",
+      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
+      "deal_type": "Uber Eats Offer",
+      "valid_until": "Limited Time",
+      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
+      "location": "colombo",
+      "is_fallback": false,
+      "vendor_id": "ubereats",
+      "vendor_name": "Uber Eats Sri Lanka"
+    },
+    {
+      "id": "ubereats-dom-4",
       "title": "Barista Coffee",
       "description": "Uber Eats Sri Lanka promotion: Barista Coffee",
       "category": "Delivery Deals",
@@ -1585,7 +1599,7 @@
       "vendor_name": "Uber Eats Sri Lanka"
     },
     {
-      "id": "ubereats-dom-4",
+      "id": "ubereats-dom-5",
       "title": "Department of Coffee",
       "description": "Uber Eats Sri Lanka promotion: Department of Coffee",
       "category": "Delivery Deals",
@@ -1597,21 +1611,7 @@
       "is_fallback": false,
       "vendor_id": "ubereats",
       "vendor_name": "Uber Eats Sri Lanka"
-    },
-    {
-      "id": "ubereats-dom-5",
-      "title": "Coffee Colombo",
-      "description": "Uber Eats Sri Lanka promotion: Coffee Colombo",
-      "category": "Delivery Deals",
-      "image_url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&fit=crop",
-      "deal_type": "Uber Eats Offer",
-      "valid_until": "Limited Time",
-      "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
-      "location": "colombo",
-      "is_fallback": false,
-      "vendor_id": "ubereats",
-      "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-11-08T14:10:56.649646+00:00"
+  "last_updated": "2026-11-08T16:10:08.043926+00:00"
 }
