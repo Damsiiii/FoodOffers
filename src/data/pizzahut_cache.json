@@ -98,25 +98,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-b273",
-    "title": "11:11 Offer 1",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/c387c4fa-5c9f-477a-8c45-782b29f3ef2d.jpg",
-    "deal_type": "11:11 Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/11x11-offer-30x-off"
-  },
-  {
-    "id": "pizzahut-b275",
-    "title": "11:11 Offer 2",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/48d80837-f675-42a3-b41d-d6d3e5c5705e.jpg",
-    "deal_type": "11:11 Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/11x11-offer-flex-30x-off"
   }
 ]
