@@ -78,29 +78,29 @@
     "discounted_price": 2530.0
   },
   {
-    "id": "kfc-1e3d4e88",
-    "title": "6PCS H&C BUCKET+ZESTY HALF CHICKEN",
-    "description": "KFC Sri Lanka: 6PCS H&C BUCKET+ZESTY HALF CHICKEN",
+    "id": "kfc-9e7d2405",
+    "title": "2 BBQ MAYO BURGER+6PC DRUMLETS",
+    "description": "KFC Sri Lanka: 2 BBQ MAYO BURGER+6PC DRUMLETS",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/6pcshcbucketzestyhalfchicken80e63eb5e4324da5a9b7f4f4db36867a.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/2bbqmayoburger6pcdrumletse28c89878387466dbd01218ed826a707.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
-    "discounted_price": 3990.0
+    "discounted_price": 1590.0
   },
   {
-    "id": "kfc-e21e5df8",
-    "title": "8PCS H&C BUCKET+ZESTY FULL CHICKEN",
-    "description": "KFC Sri Lanka: 8PCS H&C BUCKET+ZESTY FULL CHICKEN",
+    "id": "kfc-8b9a5478",
+    "title": "4 BBQ MAYO BURGER+10PC DRUMLETS",
+    "description": "KFC Sri Lanka: 4 BBQ MAYO BURGER+10PC DRUMLETS",
     "category": "Special Promotions",
     "section": "promotions",
-    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/8pcshcbucketzestyfullchicken52e3b7605c57417fbbc14d6b6e0ccedd.jpg",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/4bbqmayoburger10pcdrumlets57f2a6bd5c29419db796299a851690b2.jpg",
     "deal_type": "Special Promotion",
     "valid_until": "Limited Time",
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
-    "discounted_price": 5390.0
+    "discounted_price": 2990.0
   }
 ]
