@@ -88,37 +88,5 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
-  },
-  {
-    "id": "pizzahut-b278",
-    "title": "Offer 1 - Mens Day",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/a95d5ac3-7765-4562-8e05-2e92675d6e1f.jpg",
-    "deal_type": "Men's Day Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/mens-day-lp-offer",
-    "discounted_price": 4950.0
-  },
-  {
-    "id": "pizzahut-b279",
-    "title": "Offer 2 - Mens Day",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/6bc43719-f57a-46c6-b142-7cd3ff21f3ef.jpg",
-    "deal_type": "Men's Day Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/mens-day-gd-offer"
-  },
-  {
-    "id": "pizzahut-b280",
-    "title": "Offer 3 - Mens Day",
-    "description": "Pizza Hut Sri Lanka: ...",
-    "category": "Meal Deals",
-    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/080aa1bb-db26-40c7-be32-7e38e792c2bc.jpg",
-    "deal_type": "Men's Day Offers",
-    "valid_until": "Limited Time",
-    "source_url": "https://www.pizzahut.lk/menu/promo/mens-day-mp-offer",
-    "discounted_price": 2690.0
   }
 ]
