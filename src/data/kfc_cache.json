@@ -102,5 +102,83 @@
     "source_url": "https://www.kfc.lk/menu/promotions",
     "location": "island-wide",
     "discounted_price": 3490.0
+  },
+  {
+    "id": "kfc-6b7c265f",
+    "title": "BOGO FREE 6PC H&C BUCKET",
+    "description": "KFC Sri Lanka: BOGO FREE 6PC H&C BUCKET",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree6pchcbucketc1f5e8a393264503ac53c4fd21ba8048.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
+  },
+  {
+    "id": "kfc-f51c8151",
+    "title": "BOGO FREE 8PC H&C BUCKET",
+    "description": "KFC Sri Lanka: BUY 1 GET 1 FREE",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/bogofree8pchcbucketa3205ea1b4a340db99db008267d8395b.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 5390.0
+  },
+  {
+    "id": "kfc-803f2b7d",
+    "title": "CHRISTMAS BURGER COMBO",
+    "description": "KFC Sri Lanka: Zinger 4 \nNuggets 8 \nMega Pepsi 1",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/christmaszingercombob088f5aaa78941b0a7c1f20ddb87c62f.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
+  },
+  {
+    "id": "kfc-b534dc14",
+    "title": "CHRISTMAS CHICKEN COMBO",
+    "description": "KFC Sri Lanka: H &C Chicken 6 \nDrumlets 6\n Nuggets 8\nMega Pepsi 1",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/festivechickencombo46fb32cde6994e029c2ee9819e31702d.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
+  },
+  {
+    "id": "kfc-2f95b3e6",
+    "title": "CHRISTMAS RICE COMBO",
+    "description": "KFC Sri Lanka: H & C Chicken 4 \nPilaf Biriyani 4\nDrumlets 4 \nNuggets 8 \nMega pepsi 1",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/merryricecombob013039acf114256a9d4ded33a37176f.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
+  },
+  {
+    "id": "kfc-5a767d32",
+    "title": "KFC PARTY COMBO",
+    "description": "KFC Sri Lanka: Drumlets 15\nChicken Bites 9\nNuggets 8 \nMega Ppesi 1",
+    "category": "Special Promotions",
+    "section": "promotions",
+    "image_url": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/christmaspartycombo0bc038b5fcd94d048900f923b04f7012.jpg",
+    "deal_type": "Special Promotion",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.kfc.lk/menu/promotions",
+    "location": "island-wide",
+    "discounted_price": 3990.0
   }
 ]
