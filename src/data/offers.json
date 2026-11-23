@@ -919,10 +919,10 @@
         },
         {
           "id": "ubereats-feed-12",
-          "title": "Eveyoed Promotional Offer",
-          "description": "Exclusive Uber Eats deal at Eveyoed",
+          "title": "Fish Food & Essentials Promotional Offer",
+          "description": "Exclusive Uber Eats deal at Fish Food & Essentials",
           "category": "Store Promos",
-          "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9803bd51902cba1d5fff448803847698/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+          "image_url": "https://d1ralsognjng37.cloudfront.net/4d21e026-0475-4919-9734-d8b9b9e95767.jpeg",
           "deal_type": "Uber Eats Offer",
           "valid_until": "Limited Time",
           "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1736,10 +1736,10 @@
     },
     {
       "id": "ubereats-feed-12",
-      "title": "Eveyoed Promotional Offer",
-      "description": "Exclusive Uber Eats deal at Eveyoed",
+      "title": "Fish Food & Essentials Promotional Offer",
+      "description": "Exclusive Uber Eats deal at Fish Food & Essentials",
       "category": "Store Promos",
-      "image_url": "https://tb-static.uber.com/prod/image-proc/processed_images/9803bd51902cba1d5fff448803847698/5e48b5818af0117f322d7c4ae77977a8.jpeg",
+      "image_url": "https://d1ralsognjng37.cloudfront.net/4d21e026-0475-4919-9734-d8b9b9e95767.jpeg",
       "deal_type": "Uber Eats Offer",
       "valid_until": "Limited Time",
       "source_url": "https://www.ubereats.com/lk/feed?pl=eyJhZGRyZXNzIjogIkNvbG9tYm8sIFNyaSBMYW5rYSIsICJsYXRpdHVkZSI6IDYuOTI3MSwgImxvbmdpdHVkZSI6IDc5Ljg2MTJ9",
@@ -1749,5 +1749,5 @@
       "vendor_name": "Uber Eats Sri Lanka"
     }
   ],
-  "last_updated": "2026-11-23T21:37:27.806518+00:00"
+  "last_updated": "2026-11-23T22:48:50.210810+00:00"
 }
