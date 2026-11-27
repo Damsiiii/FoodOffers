@@ -98,5 +98,78 @@
     "deal_type": "Grand Dipper Deals",
     "valid_until": "Limited Time",
     "source_url": "https://www.pizzahut.lk/menu/promo/grand-dipper-flex-special-offer"
+  },
+  {
+    "id": "pizzahut-b299",
+    "title": "Offer 1 - Black Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/72dd4581-1171-4a90-97fe-8a57cd130a58.jpg",
+    "deal_type": "Black Friday Offers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/black-friday-offer-01-pan-large"
+  },
+  {
+    "id": "pizzahut-b146",
+    "title": "Offer 1 - Hut Savers",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/7dfe1211-f89e-4004-b796-afb214c05370.png",
+    "deal_type": "Hut Savers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-personal-pan-offer",
+    "discounted_price": 899.0
+  },
+  {
+    "id": "pizzahut-b302",
+    "title": "Offer 2 - Black Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/1695fa4e-e66e-4640-8ffe-350ac115dc51.jpg",
+    "deal_type": "Black Friday Offers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/black-friday-offer-02-gd-flex-get-lp"
+  },
+  {
+    "id": "pizzahut-b147",
+    "title": "Offer 2 - Hut Savers",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/d5e86918-8c61-450f-84ad-bf72a97b338a.png",
+    "deal_type": "Hut Savers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-medium-pan-offer",
+    "discounted_price": 1499.0
+  },
+  {
+    "id": "pizzahut-b303",
+    "title": "Offer 3 - Black Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/7ff2282a-c2ba-4d58-9eba-69b48d0d8119.jpg",
+    "deal_type": "Black Friday Offers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/black-friday-offer-03-gd-flex-get-fix-or-flex"
+  },
+  {
+    "id": "pizzahut-b148",
+    "title": "Offer 3 - Hut Savers",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/0ec541ec-a9f0-403b-b72e-273ce504aedc.png",
+    "deal_type": "Hut Savers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/hut-savers-large-pan-offer",
+    "discounted_price": 2999.0
+  },
+  {
+    "id": "pizzahut-b306",
+    "title": "Offer 4 - Black Friday",
+    "description": "Pizza Hut Sri Lanka: ...",
+    "category": "Meal Deals",
+    "image_url": "https://adminsc.pizzahut.lk/images/mainmenu/e5a343b4-29c4-4cac-8022-2542f9646c95.jpg",
+    "deal_type": "Black Friday Offers",
+    "valid_until": "Limited Time",
+    "source_url": "https://www.pizzahut.lk/menu/promo/black-friday-offer-04-thin-crust-offer"
   }
 ]
